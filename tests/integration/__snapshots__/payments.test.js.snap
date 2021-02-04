@@ -1,0 +1,1801 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payments Callback it can cancel a payment 1`] = `
+Object {
+  "body": Object {
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can capture a payment 1`] = `
+Object {
+  "body": Object {
+    "captureOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "card": Object {
+          "cardNumber": "string",
+          "expiryDate": "stri",
+        },
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "initialSchemeTransactionId": "string",
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "mobilePaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "network": "string",
+        "paymentData": Object {
+          "dpan": "string",
+          "expiryDate": "stri",
+        },
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+      },
+      "paymentMethod": "string",
+      "redirectPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct840SpecificOutput": Object {
+          "billingAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "customerAccount": Object {
+            "accountId": "customer-account@email.com",
+            "companyName": "Customer Company Name",
+            "countryCode": "BE",
+            "customerAccountStatus": "verified",
+            "customerAddressStatus": "confirmed",
+            "firstName": "John",
+            "payerId": "RRCYJUTFJGZTA",
+            "surname": "Doe",
+          },
+          "customerAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "protectionEligibility": Object {
+            "eligibility": "Eligible",
+            "type": "ItemNotReceivedEligible",
+          },
+        },
+        "paymentProductId": 840,
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+      "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct771SpecificOutput": Object {},
+        "paymentProductId": 840,
+      },
+    },
+    "id": "string",
+    "status": "CREATED",
+    "statusOutput": Object {
+      "statusCode": -2147483648,
+    },
+  },
+  "isSuccess": true,
+  "status": 201,
+}
+`;
+
+exports[`Payments Callback it can complete a payment 1`] = `
+Object {
+  "body": Object {
+    "creationOutput": Object {
+      "externalReference": "string",
+      "isNewToken": true,
+      "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      "tokenizationSucceeded": true,
+    },
+    "merchantAction": Object {
+      "actionType": "string",
+      "redirectData": Object {
+        "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
+        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+      },
+    },
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can create a payment 1`] = `
+Object {
+  "body": Object {
+    "creationOutput": Object {
+      "externalReference": "string",
+      "isNewToken": true,
+      "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      "tokenizationSucceeded": true,
+    },
+    "merchantAction": Object {
+      "actionType": "string",
+      "redirectData": Object {
+        "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
+        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+      },
+    },
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can get a payment 1`] = `
+Object {
+  "body": Object {
+    "hostedCheckoutSpecificOutput": Object {
+      "hostedCheckoutId": 3066019730,
+      "variant": "my-custom-template.html",
+    },
+    "id": "string",
+    "paymentOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "card": Object {
+          "cardNumber": "string",
+          "expiryDate": "stri",
+        },
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "initialSchemeTransactionId": "string",
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "mobilePaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "network": "string",
+        "paymentData": Object {
+          "dpan": "string",
+          "expiryDate": "stri",
+        },
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+      },
+      "paymentMethod": "string",
+      "redirectPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct840SpecificOutput": Object {
+          "billingAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "customerAccount": Object {
+            "accountId": "customer-account@email.com",
+            "companyName": "Customer Company Name",
+            "countryCode": "BE",
+            "customerAccountStatus": "verified",
+            "customerAddressStatus": "confirmed",
+            "firstName": "John",
+            "payerId": "RRCYJUTFJGZTA",
+            "surname": "Doe",
+          },
+          "customerAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "protectionEligibility": Object {
+            "eligibility": "Eligible",
+            "type": "ItemNotReceivedEligible",
+          },
+        },
+        "paymentProductId": 840,
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+      "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct771SpecificOutput": Object {},
+        "paymentProductId": 840,
+      },
+    },
+    "status": "CREATED",
+    "statusOutput": Object {
+      "errors": Array [
+        Object {
+          "category": "DIRECT_PLATFORM_ERROR",
+          "code": 50001130,
+          "httpStatusCode": 404,
+          "id": "UNKNOWN_PAYMENT_ID",
+          "message": "Authorisation declined",
+          "propertyName": "paymentId",
+        },
+      ],
+      "isAuthorized": true,
+      "isCancellable": true,
+      "isRefundable": true,
+      "statusCategory": "CREATED",
+      "statusCode": -2147483648,
+      "statusCodeChangeDateTime": "string",
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can get a refunds 1`] = `
+Object {
+  "body": Object {
+    "refunds": Array [
+      Object {
+        "id": "string",
+        "refundOutput": Object {
+          "amountOfMoney": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
+          "amountPaid": -9223372036854776000,
+          "cardRefundMethodSpecificOutput": Object {
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "eWalletRefundMethodSpecificOutput": Object {
+            "paymentProduct840SpecificOutput": Object {
+              "customerAccount": Object {
+                "customerAccountStatus": "string",
+                "customerAddressStatus": "string",
+                "payerId": "RRCYJUTFJGZTA",
+              },
+            },
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "mobileRefundMethodSpecificOutput": Object {
+            "network": "string",
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "paymentMethod": "string",
+          "redirectRefundMethodSpecificOutput": Object {
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "references": Object {
+            "merchantReference": "your-order-6372",
+          },
+        },
+        "status": "CREATED",
+        "statusOutput": Object {
+          "errors": Array [
+            Object {
+              "category": "DIRECT_PLATFORM_ERROR",
+              "code": 50001130,
+              "httpStatusCode": 404,
+              "id": "UNKNOWN_PAYMENT_ID",
+              "message": "Authorisation declined",
+              "propertyName": "paymentId",
+            },
+          ],
+          "isCancellable": true,
+          "statusCategory": "CREATED",
+          "statusCode": -2147483648,
+          "statusCodeChangeDateTime": "string",
+        },
+      },
+    ],
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can get captures 1`] = `
+Object {
+  "body": Object {
+    "captures": Array [
+      Object {
+        "captureOutput": Object {
+          "amountOfMoney": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
+          "amountPaid": -9223372036854776000,
+          "cardPaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
+            "card": Object {
+              "cardNumber": "string",
+              "expiryDate": "stri",
+            },
+            "fraudResults": Object {
+              "avsResult": "string",
+              "cvvResult": "string",
+              "fraudServiceResult": "string",
+            },
+            "initialSchemeTransactionId": "string",
+            "paymentProductId": 840,
+            "threeDSecureResults": Object {
+              "eci": "string",
+              "xid": "string",
+            },
+            "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+          },
+          "mobilePaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
+            "fraudResults": Object {
+              "avsResult": "string",
+              "cvvResult": "string",
+              "fraudServiceResult": "string",
+            },
+            "network": "string",
+            "paymentData": Object {
+              "dpan": "string",
+              "expiryDate": "stri",
+            },
+            "paymentProductId": 840,
+            "threeDSecureResults": Object {
+              "eci": "string",
+              "xid": "string",
+            },
+          },
+          "paymentMethod": "string",
+          "redirectPaymentMethodSpecificOutput": Object {
+            "fraudResults": Object {
+              "fraudServiceResult": "string",
+            },
+            "paymentProduct840SpecificOutput": Object {
+              "billingAddress": Object {
+                "additionalInfo": "floor 9",
+                "city": "Zaventem",
+                "countryCode": "BE",
+                "houseNumber": 3,
+                "state": "string",
+                "street": "Da Vinci street",
+                "zip": 1930,
+              },
+              "customerAccount": Object {
+                "accountId": "customer-account@email.com",
+                "companyName": "Customer Company Name",
+                "countryCode": "BE",
+                "customerAccountStatus": "verified",
+                "customerAddressStatus": "confirmed",
+                "firstName": "John",
+                "payerId": "RRCYJUTFJGZTA",
+                "surname": "Doe",
+              },
+              "customerAddress": Object {
+                "additionalInfo": "floor 9",
+                "city": "Zaventem",
+                "countryCode": "BE",
+                "houseNumber": 3,
+                "state": "string",
+                "street": "Da Vinci street",
+                "zip": 1930,
+              },
+              "protectionEligibility": Object {
+                "eligibility": "Eligible",
+                "type": "ItemNotReceivedEligible",
+              },
+            },
+            "paymentProductId": 840,
+            "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+          },
+          "references": Object {
+            "merchantReference": "your-order-6372",
+          },
+          "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+            "fraudResults": Object {
+              "fraudServiceResult": "string",
+            },
+            "paymentProduct771SpecificOutput": Object {},
+            "paymentProductId": 840,
+          },
+        },
+        "id": "string",
+        "status": "CREATED",
+        "statusOutput": Object {
+          "statusCode": -2147483648,
+        },
+      },
+    ],
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Callback it can refund a payment 1`] = `
+Object {
+  "body": Object {
+    "id": "string",
+    "refundOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardRefundMethodSpecificOutput": Object {
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "eWalletRefundMethodSpecificOutput": Object {
+        "paymentProduct840SpecificOutput": Object {
+          "customerAccount": Object {
+            "customerAccountStatus": "string",
+            "customerAddressStatus": "string",
+            "payerId": "RRCYJUTFJGZTA",
+          },
+        },
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "mobileRefundMethodSpecificOutput": Object {
+        "network": "string",
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "paymentMethod": "string",
+      "redirectRefundMethodSpecificOutput": Object {
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+    },
+    "status": "CREATED",
+    "statusOutput": Object {
+      "errors": Array [
+        Object {
+          "category": "DIRECT_PLATFORM_ERROR",
+          "code": 50001130,
+          "httpStatusCode": 404,
+          "id": "UNKNOWN_PAYMENT_ID",
+          "message": "Authorisation declined",
+          "propertyName": "paymentId",
+        },
+      ],
+      "isCancellable": true,
+      "statusCategory": "CREATED",
+      "statusCode": -2147483648,
+      "statusCodeChangeDateTime": "string",
+    },
+  },
+  "isSuccess": true,
+  "status": 201,
+}
+`;
+
+exports[`Payments Promisees it can cancel a payment 1`] = `
+Object {
+  "body": Object {
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can capture a payment 1`] = `
+Object {
+  "body": Object {
+    "captureOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "card": Object {
+          "cardNumber": "string",
+          "expiryDate": "stri",
+        },
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "initialSchemeTransactionId": "string",
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "mobilePaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "network": "string",
+        "paymentData": Object {
+          "dpan": "string",
+          "expiryDate": "stri",
+        },
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+      },
+      "paymentMethod": "string",
+      "redirectPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct840SpecificOutput": Object {
+          "billingAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "customerAccount": Object {
+            "accountId": "customer-account@email.com",
+            "companyName": "Customer Company Name",
+            "countryCode": "BE",
+            "customerAccountStatus": "verified",
+            "customerAddressStatus": "confirmed",
+            "firstName": "John",
+            "payerId": "RRCYJUTFJGZTA",
+            "surname": "Doe",
+          },
+          "customerAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "protectionEligibility": Object {
+            "eligibility": "Eligible",
+            "type": "ItemNotReceivedEligible",
+          },
+        },
+        "paymentProductId": 840,
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+      "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct771SpecificOutput": Object {},
+        "paymentProductId": 840,
+      },
+    },
+    "id": "string",
+    "status": "CREATED",
+    "statusOutput": Object {
+      "statusCode": -2147483648,
+    },
+  },
+  "isSuccess": true,
+  "status": 201,
+}
+`;
+
+exports[`Payments Promisees it can complete a payment 1`] = `
+Object {
+  "body": Object {
+    "creationOutput": Object {
+      "externalReference": "string",
+      "isNewToken": true,
+      "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      "tokenizationSucceeded": true,
+    },
+    "merchantAction": Object {
+      "actionType": "string",
+      "redirectData": Object {
+        "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
+        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+      },
+    },
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can create a payment 1`] = `
+Object {
+  "body": Object {
+    "creationOutput": Object {
+      "externalReference": "string",
+      "isNewToken": true,
+      "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      "tokenizationSucceeded": true,
+    },
+    "merchantAction": Object {
+      "actionType": "string",
+      "redirectData": Object {
+        "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
+        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+      },
+    },
+    "payment": Object {
+      "hostedCheckoutSpecificOutput": Object {
+        "hostedCheckoutId": 3066019730,
+        "variant": "my-custom-template.html",
+      },
+      "id": "string",
+      "paymentOutput": Object {
+        "amountOfMoney": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
+        "amountPaid": -9223372036854776000,
+        "cardPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "card": Object {
+            "cardNumber": "string",
+            "expiryDate": "stri",
+          },
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "initialSchemeTransactionId": "string",
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "mobilePaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
+          "fraudResults": Object {
+            "avsResult": "string",
+            "cvvResult": "string",
+            "fraudServiceResult": "string",
+          },
+          "network": "string",
+          "paymentData": Object {
+            "dpan": "string",
+            "expiryDate": "stri",
+          },
+          "paymentProductId": 840,
+          "threeDSecureResults": Object {
+            "eci": "string",
+            "xid": "string",
+          },
+        },
+        "paymentMethod": "string",
+        "redirectPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct840SpecificOutput": Object {
+            "billingAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "customerAccount": Object {
+              "accountId": "customer-account@email.com",
+              "companyName": "Customer Company Name",
+              "countryCode": "BE",
+              "customerAccountStatus": "verified",
+              "customerAddressStatus": "confirmed",
+              "firstName": "John",
+              "payerId": "RRCYJUTFJGZTA",
+              "surname": "Doe",
+            },
+            "customerAddress": Object {
+              "additionalInfo": "floor 9",
+              "city": "Zaventem",
+              "countryCode": "BE",
+              "houseNumber": 3,
+              "state": "string",
+              "street": "Da Vinci street",
+              "zip": 1930,
+            },
+            "protectionEligibility": Object {
+              "eligibility": "Eligible",
+              "type": "ItemNotReceivedEligible",
+            },
+          },
+          "paymentProductId": 840,
+          "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+        },
+        "references": Object {
+          "merchantReference": "your-order-6372",
+        },
+        "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+          "fraudResults": Object {
+            "fraudServiceResult": "string",
+          },
+          "paymentProduct771SpecificOutput": Object {},
+          "paymentProductId": 840,
+        },
+      },
+      "status": "CREATED",
+      "statusOutput": Object {
+        "errors": Array [
+          Object {
+            "category": "DIRECT_PLATFORM_ERROR",
+            "code": 50001130,
+            "httpStatusCode": 404,
+            "id": "UNKNOWN_PAYMENT_ID",
+            "message": "Authorisation declined",
+            "propertyName": "paymentId",
+          },
+        ],
+        "isAuthorized": true,
+        "isCancellable": true,
+        "isRefundable": true,
+        "statusCategory": "CREATED",
+        "statusCode": -2147483648,
+        "statusCodeChangeDateTime": "string",
+      },
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can get a payment 1`] = `
+Object {
+  "body": Object {
+    "hostedCheckoutSpecificOutput": Object {
+      "hostedCheckoutId": 3066019730,
+      "variant": "my-custom-template.html",
+    },
+    "id": "string",
+    "paymentOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "card": Object {
+          "cardNumber": "string",
+          "expiryDate": "stri",
+        },
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "initialSchemeTransactionId": "string",
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "mobilePaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
+        "fraudResults": Object {
+          "avsResult": "string",
+          "cvvResult": "string",
+          "fraudServiceResult": "string",
+        },
+        "network": "string",
+        "paymentData": Object {
+          "dpan": "string",
+          "expiryDate": "stri",
+        },
+        "paymentProductId": 840,
+        "threeDSecureResults": Object {
+          "eci": "string",
+          "xid": "string",
+        },
+      },
+      "paymentMethod": "string",
+      "redirectPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct840SpecificOutput": Object {
+          "billingAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "customerAccount": Object {
+            "accountId": "customer-account@email.com",
+            "companyName": "Customer Company Name",
+            "countryCode": "BE",
+            "customerAccountStatus": "verified",
+            "customerAddressStatus": "confirmed",
+            "firstName": "John",
+            "payerId": "RRCYJUTFJGZTA",
+            "surname": "Doe",
+          },
+          "customerAddress": Object {
+            "additionalInfo": "floor 9",
+            "city": "Zaventem",
+            "countryCode": "BE",
+            "houseNumber": 3,
+            "state": "string",
+            "street": "Da Vinci street",
+            "zip": 1930,
+          },
+          "protectionEligibility": Object {
+            "eligibility": "Eligible",
+            "type": "ItemNotReceivedEligible",
+          },
+        },
+        "paymentProductId": 840,
+        "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+      "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+        "fraudResults": Object {
+          "fraudServiceResult": "string",
+        },
+        "paymentProduct771SpecificOutput": Object {},
+        "paymentProductId": 840,
+      },
+    },
+    "status": "CREATED",
+    "statusOutput": Object {
+      "errors": Array [
+        Object {
+          "category": "DIRECT_PLATFORM_ERROR",
+          "code": 50001130,
+          "httpStatusCode": 404,
+          "id": "UNKNOWN_PAYMENT_ID",
+          "message": "Authorisation declined",
+          "propertyName": "paymentId",
+        },
+      ],
+      "isAuthorized": true,
+      "isCancellable": true,
+      "isRefundable": true,
+      "statusCategory": "CREATED",
+      "statusCode": -2147483648,
+      "statusCodeChangeDateTime": "string",
+    },
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can get a refunds 1`] = `
+Object {
+  "body": Object {
+    "refunds": Array [
+      Object {
+        "id": "string",
+        "refundOutput": Object {
+          "amountOfMoney": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
+          "amountPaid": -9223372036854776000,
+          "cardRefundMethodSpecificOutput": Object {
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "eWalletRefundMethodSpecificOutput": Object {
+            "paymentProduct840SpecificOutput": Object {
+              "customerAccount": Object {
+                "customerAccountStatus": "string",
+                "customerAddressStatus": "string",
+                "payerId": "RRCYJUTFJGZTA",
+              },
+            },
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "mobileRefundMethodSpecificOutput": Object {
+            "network": "string",
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "paymentMethod": "string",
+          "redirectRefundMethodSpecificOutput": Object {
+            "totalAmountPaid": -9223372036854776000,
+            "totalAmountRefunded": -9223372036854776000,
+          },
+          "references": Object {
+            "merchantReference": "your-order-6372",
+          },
+        },
+        "status": "CREATED",
+        "statusOutput": Object {
+          "errors": Array [
+            Object {
+              "category": "DIRECT_PLATFORM_ERROR",
+              "code": 50001130,
+              "httpStatusCode": 404,
+              "id": "UNKNOWN_PAYMENT_ID",
+              "message": "Authorisation declined",
+              "propertyName": "paymentId",
+            },
+          ],
+          "isCancellable": true,
+          "statusCategory": "CREATED",
+          "statusCode": -2147483648,
+          "statusCodeChangeDateTime": "string",
+        },
+      },
+    ],
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can get captures 1`] = `
+Object {
+  "body": Object {
+    "captures": Array [
+      Object {
+        "captureOutput": Object {
+          "amountOfMoney": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
+          "amountPaid": -9223372036854776000,
+          "cardPaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
+            "card": Object {
+              "cardNumber": "string",
+              "expiryDate": "stri",
+            },
+            "fraudResults": Object {
+              "avsResult": "string",
+              "cvvResult": "string",
+              "fraudServiceResult": "string",
+            },
+            "initialSchemeTransactionId": "string",
+            "paymentProductId": 840,
+            "threeDSecureResults": Object {
+              "eci": "string",
+              "xid": "string",
+            },
+            "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+          },
+          "mobilePaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
+            "fraudResults": Object {
+              "avsResult": "string",
+              "cvvResult": "string",
+              "fraudServiceResult": "string",
+            },
+            "network": "string",
+            "paymentData": Object {
+              "dpan": "string",
+              "expiryDate": "stri",
+            },
+            "paymentProductId": 840,
+            "threeDSecureResults": Object {
+              "eci": "string",
+              "xid": "string",
+            },
+          },
+          "paymentMethod": "string",
+          "redirectPaymentMethodSpecificOutput": Object {
+            "fraudResults": Object {
+              "fraudServiceResult": "string",
+            },
+            "paymentProduct840SpecificOutput": Object {
+              "billingAddress": Object {
+                "additionalInfo": "floor 9",
+                "city": "Zaventem",
+                "countryCode": "BE",
+                "houseNumber": 3,
+                "state": "string",
+                "street": "Da Vinci street",
+                "zip": 1930,
+              },
+              "customerAccount": Object {
+                "accountId": "customer-account@email.com",
+                "companyName": "Customer Company Name",
+                "countryCode": "BE",
+                "customerAccountStatus": "verified",
+                "customerAddressStatus": "confirmed",
+                "firstName": "John",
+                "payerId": "RRCYJUTFJGZTA",
+                "surname": "Doe",
+              },
+              "customerAddress": Object {
+                "additionalInfo": "floor 9",
+                "city": "Zaventem",
+                "countryCode": "BE",
+                "houseNumber": 3,
+                "state": "string",
+                "street": "Da Vinci street",
+                "zip": 1930,
+              },
+              "protectionEligibility": Object {
+                "eligibility": "Eligible",
+                "type": "ItemNotReceivedEligible",
+              },
+            },
+            "paymentProductId": 840,
+            "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
+          },
+          "references": Object {
+            "merchantReference": "your-order-6372",
+          },
+          "sepaDirectDebitPaymentMethodSpecificOutput": Object {
+            "fraudResults": Object {
+              "fraudServiceResult": "string",
+            },
+            "paymentProduct771SpecificOutput": Object {},
+            "paymentProductId": 840,
+          },
+        },
+        "id": "string",
+        "status": "CREATED",
+        "statusOutput": Object {
+          "statusCode": -2147483648,
+        },
+      },
+    ],
+  },
+  "isSuccess": true,
+  "status": 200,
+}
+`;
+
+exports[`Payments Promisees it can refund a payment 1`] = `
+Object {
+  "body": Object {
+    "id": "string",
+    "refundOutput": Object {
+      "amountOfMoney": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
+      "amountPaid": -9223372036854776000,
+      "cardRefundMethodSpecificOutput": Object {
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "eWalletRefundMethodSpecificOutput": Object {
+        "paymentProduct840SpecificOutput": Object {
+          "customerAccount": Object {
+            "customerAccountStatus": "string",
+            "customerAddressStatus": "string",
+            "payerId": "RRCYJUTFJGZTA",
+          },
+        },
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "mobileRefundMethodSpecificOutput": Object {
+        "network": "string",
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "paymentMethod": "string",
+      "redirectRefundMethodSpecificOutput": Object {
+        "totalAmountPaid": -9223372036854776000,
+        "totalAmountRefunded": -9223372036854776000,
+      },
+      "references": Object {
+        "merchantReference": "your-order-6372",
+      },
+    },
+    "status": "CREATED",
+    "statusOutput": Object {
+      "errors": Array [
+        Object {
+          "category": "DIRECT_PLATFORM_ERROR",
+          "code": 50001130,
+          "httpStatusCode": 404,
+          "id": "UNKNOWN_PAYMENT_ID",
+          "message": "Authorisation declined",
+          "propertyName": "paymentId",
+        },
+      ],
+      "isCancellable": true,
+      "statusCategory": "CREATED",
+      "statusCode": -2147483648,
+      "statusCodeChangeDateTime": "string",
+    },
+  },
+  "isSuccess": true,
+  "status": 201,
+}
+`;

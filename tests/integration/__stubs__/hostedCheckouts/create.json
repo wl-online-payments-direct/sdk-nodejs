@@ -1,0 +1,18 @@
+{
+  "order" : {
+    "amountOfMoney" : {
+      "currencyCode" : "USD",
+      "amount" : 2345
+    },
+    "customer" : {
+      "merchantCustomerId" : "1234",
+      "billingAddress" : {
+        "countryCode" : "US"
+      }
+    }
+  },
+  "hostedCheckoutSpecificInput" : {
+    "variant" : "testVariant",
+    "locale" : "en_GB"
+  }
+}

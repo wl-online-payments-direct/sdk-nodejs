@@ -1,0 +1,7 @@
+{
+  "paymentProductSession302SpecificInput" : {
+    "domainName" : "pay1.secured-by-ingenico.com",
+    "displayName" : "Ingenico",
+    "validationUrl" : "<VALIDATION URL RECEIVED FROM APPLE>"
+  }
+}

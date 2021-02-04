@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sessions it can create a session 1`] = `
+Object {
+  "body": Object {
+    "assetUrl": "string",
+    "clientApiUrl": "string",
+    "clientSessionId": "string",
+    "customerId": "string",
+    "invalidTokens": Array [
+      "string",
+    ],
+  },
+  "isSuccess": true,
+  "status": 201,
+}
+`;

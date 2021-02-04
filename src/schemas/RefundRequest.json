@@ -1,0 +1,25 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "amountOfMoney" : {
+      "$ref" : "#/definitions/AmountOfMoney"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "maximum" : 999999999999
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

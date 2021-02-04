@@ -1,0 +1,52 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "card" : {
+      "$ref" : "#/definitions/TokenCardSpecificInput"
+    },
+    "paymentProductId" : {
+      "type" : "integer",
+      "maximum" : 99999
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "Card" : {
+      "type" : "object",
+      "properties" : {
+        "cardNumber" : {
+          "type" : "string"
+        },
+        "cardholderName" : {
+          "type" : "string"
+        },
+        "cvv" : {
+          "type" : "string"
+        },
+        "expiryDate" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "TokenCardSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "$ref" : "#/definitions/TokenData"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "TokenData" : {
+      "type" : "object",
+      "properties" : {
+        "card" : {
+          "$ref" : "#/definitions/Card"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

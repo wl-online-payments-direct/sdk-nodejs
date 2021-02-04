@@ -1,0 +1,19 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "askConsumerConsent" : {
+      "type" : "boolean"
+    },
+    "locale" : {
+      "type" : "string"
+    },
+    "tokens" : {
+      "type" : "string"
+    },
+    "variant" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false
+}

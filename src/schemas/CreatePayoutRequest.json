@@ -1,0 +1,74 @@
+{
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "properties" : {
+    "amountOfMoney" : {
+      "$ref" : "#/definitions/AmountOfMoney"
+    },
+    "cardPayoutMethodSpecificInput" : {
+      "$ref" : "#/definitions/CardPayoutMethodSpecificInput"
+    },
+    "references" : {
+      "$ref" : "#/definitions/PaymentReferences"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "maximum" : 999999999999
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Card" : {
+      "type" : "object",
+      "properties" : {
+        "cardNumber" : {
+          "type" : "string"
+        },
+        "cardholderName" : {
+          "type" : "string"
+        },
+        "cvv" : {
+          "type" : "string"
+        },
+        "expiryDate" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CardPayoutMethodSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "card" : {
+          "$ref" : "#/definitions/Card"
+        },
+        "paymentProductId" : {
+          "type" : "integer",
+          "maximum" : 99999
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentReferences" : {
+      "type" : "object",
+      "properties" : {
+        "merchantReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}
