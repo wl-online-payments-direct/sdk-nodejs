@@ -217,6 +217,10 @@
         "flightNumber" : {
           "type" : "string"
         },
+        "legFare" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
         "number" : {
           "type" : "integer",
           "maximum" : 99999
@@ -289,6 +293,9 @@
           "maximum" : 99
         },
         "javaEnabled" : {
+          "type" : "boolean"
+        },
+        "javaScriptEnabled" : {
           "type" : "boolean"
         },
         "screenHeight" : {
@@ -677,6 +684,14 @@
         },
         "isFirstUsage" : {
           "type" : "boolean"
+        },
+        "shippingCost" : {
+          "type" : "integer",
+          "maximum" : 2147483647
+        },
+        "shippingCostTax" : {
+          "type" : "integer",
+          "maximum" : 2147483647
         },
         "type" : {
           "type" : "string"
