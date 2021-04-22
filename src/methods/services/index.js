@@ -6,4 +6,5 @@
  */
 module.exports = {
   testConnection: require('./testConnection'),
+  getIINDetails: require('./getIINDetails'),
 };
