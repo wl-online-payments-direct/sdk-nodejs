@@ -362,15 +362,6 @@
       },
       "additionalProperties" : false
     },
-    "CardPaymentMethodSpecificInputForHostedCheckout" : {
-      "type" : "object",
-      "properties" : {
-        "groupCards" : {
-          "type" : "boolean"
-        }
-      },
-      "additionalProperties" : false
-    },
     "CardRecurrenceDetails" : {
       "type" : "object",
       "properties" : {
@@ -561,9 +552,6 @@
     "HostedCheckoutSpecificInput" : {
       "type" : "object",
       "properties" : {
-        "cardPaymentMethodSpecificInput" : {
-          "$ref" : "#/definitions/CardPaymentMethodSpecificInputForHostedCheckout"
-        },
         "isRecurring" : {
           "type" : "boolean"
         },
@@ -575,6 +563,10 @@
         },
         "returnUrl" : {
           "type" : "string"
+        },
+        "sessionTimeout" : {
+          "type" : "integer",
+          "maximum" : 1440
         },
         "showResultPage" : {
           "type" : "boolean"
