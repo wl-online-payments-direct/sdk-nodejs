@@ -12,5 +12,6 @@ module.exports = {
   refundPayment: require('./refundPayment'),
   capturePayment: require('./capturePayment'),
   getCaptures: require('./getCaptures'),
+  getPaymentDetails: require('./getPaymentDetails'),
   getRefunds: require('./getRefunds'),
 };

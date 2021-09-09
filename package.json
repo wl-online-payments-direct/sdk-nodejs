@@ -1,19 +1,19 @@
 {
   "name": "direct-sdk-nodejs",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "SDK to communicate with the Ingenico ePayments platform using the Ingenico Direct Server API",
   "scripts": {
     "test": "jest",
     "lint": "eslint {src,tests}/**/*.js src/*.js --fix"
   },
   "dependencies": {
-    "dateformat": "^1.0.12",
+    "dateformat": "^4.5.1",
     "form-data": "^2.3.3",
     "jsonschema": "^1.1.0",
-    "lodash": "^4.7.0",
-    "uuid": "^8.3.1",
+    "lodash": "^4.17.21",
+    "secure-compare": "^3.0.1",
     "traverse": "^0.6.6",
-    "secure-compare": "^3.0.1"
+    "uuid": "^8.3.1"
   },
   "main": "src/index.js",
   "devDependencies": {

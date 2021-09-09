@@ -6,7 +6,7 @@ Object {
     "card": Object {
       "cardNumber": "string",
       "cardholderName": "string",
-      "expiryDate": "stri",
+      "expiryDate": "0529",
     },
     "externalTokenLinked": Object {
       "GTSComputedToken": "string",
@@ -29,7 +29,7 @@ Object {
         "cardWithoutCvv": Object {
           "cardNumber": "string",
           "cardholderName": "string",
-          "expiryDate": "stri",
+          "expiryDate": "0529",
         },
       },
     },
@@ -60,6 +60,7 @@ Object {
       "GTSComputedToken": "string",
     },
     "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
+    "isTemporary": true,
     "paymentProductId": 840,
   },
   "isSuccess": true,
@@ -81,7 +82,7 @@ Object {
     "card": Object {
       "cardNumber": "string",
       "cardholderName": "string",
-      "expiryDate": "stri",
+      "expiryDate": "0529",
     },
     "externalTokenLinked": Object {
       "GTSComputedToken": "string",
@@ -104,7 +105,7 @@ Object {
         "cardWithoutCvv": Object {
           "cardNumber": "string",
           "cardholderName": "string",
-          "expiryDate": "stri",
+          "expiryDate": "0529",
         },
       },
     },
@@ -135,6 +136,7 @@ Object {
       "GTSComputedToken": "string",
     },
     "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
+    "isTemporary": true,
     "paymentProductId": 840,
   },
   "isSuccess": true,

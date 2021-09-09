@@ -4,6 +4,9 @@
   "properties" : {
     "amountOfMoney" : {
       "$ref" : "#/definitions/AmountOfMoney"
+    },
+    "references" : {
+      "$ref" : "#/definitions/PaymentReferences"
     }
   },
   "additionalProperties" : false,
@@ -16,6 +19,15 @@
           "maximum" : 999999999999
         },
         "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentReferences" : {
+      "type" : "object",
+      "properties" : {
+        "merchantReference" : {
           "type" : "string"
         }
       },

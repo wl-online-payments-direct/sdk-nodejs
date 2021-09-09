@@ -20,6 +20,9 @@
         "loanRecipient" : {
           "$ref" : "#/definitions/LoanRecipient"
         },
+        "lodgingData" : {
+          "$ref" : "#/definitions/LodgingData"
+        },
         "typeInformation" : {
           "$ref" : "#/definitions/OrderTypeInformation"
         }
@@ -537,6 +540,15 @@
           "type" : "string"
         },
         "zip" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "LodgingData" : {
+      "type" : "object",
+      "properties" : {
+        "checkInDate" : {
           "type" : "string"
         }
       },

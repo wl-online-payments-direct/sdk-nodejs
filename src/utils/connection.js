@@ -45,6 +45,11 @@ const handleError = function (e, context, logger, uuidString, cb) {
 const sendJSON = function (options, postData, context, cb) {
   const logger = context.getLogger();
   const uuidString = uuid.v4();
+  const body = postData ? JSON.stringify(postData) : null;
+  if (body) {
+    // eslint-disable-next-line no-param-reassign
+    options.headers['Content-Length'] = Buffer.byteLength(body);
+  }
   if (context.isLoggingEnabled()) {
     logger(
       'info',
@@ -61,8 +66,8 @@ const sendJSON = function (options, postData, context, cb) {
     handleError(e, context, logger, uuidString, cb);
   });
 
-  if (postData) {
-    req.write(JSON.stringify(postData));
+  if (body) {
+    req.write(body);
   }
   req.end();
 };

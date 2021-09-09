@@ -8,7 +8,21 @@
     },
     "isFinal" : {
       "type" : "boolean"
+    },
+    "references" : {
+      "$ref" : "#/definitions/PaymentReferences"
     }
   },
-  "additionalProperties" : false
+  "additionalProperties" : false,
+  "definitions" : {
+    "PaymentReferences" : {
+      "type" : "object",
+      "properties" : {
+        "merchantReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
 }

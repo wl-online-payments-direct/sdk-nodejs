@@ -97,6 +97,17 @@ Object {
     ],
     "id": -2147483648,
     "paymentMethod": "string",
+    "paymentProduct302SpecificData": Object {
+      "networks": Array [
+        "string",
+      ],
+    },
+    "paymentProduct320SpecificData": Object {
+      "gateway": "string",
+      "networks": Array [
+        "string",
+      ],
+    },
     "paymentProductGroup": "string",
     "usesRedirectionTo3rdParty": true,
   },
@@ -232,6 +243,17 @@ Object {
         ],
         "id": -2147483648,
         "paymentMethod": "string",
+        "paymentProduct302SpecificData": Object {
+          "networks": Array [
+            "string",
+          ],
+        },
+        "paymentProduct320SpecificData": Object {
+          "gateway": "string",
+          "networks": Array [
+            "string",
+          ],
+        },
         "paymentProductGroup": "string",
         "usesRedirectionTo3rdParty": true,
       },
@@ -339,6 +361,17 @@ Object {
     ],
     "id": -2147483648,
     "paymentMethod": "string",
+    "paymentProduct302SpecificData": Object {
+      "networks": Array [
+        "string",
+      ],
+    },
+    "paymentProduct320SpecificData": Object {
+      "gateway": "string",
+      "networks": Array [
+        "string",
+      ],
+    },
     "paymentProductGroup": "string",
     "usesRedirectionTo3rdParty": true,
   },
@@ -474,6 +507,17 @@ Object {
         ],
         "id": -2147483648,
         "paymentMethod": "string",
+        "paymentProduct302SpecificData": Object {
+          "networks": Array [
+            "string",
+          ],
+        },
+        "paymentProduct320SpecificData": Object {
+          "gateway": "string",
+          "networks": Array [
+            "string",
+          ],
+        },
         "paymentProductGroup": "string",
         "usesRedirectionTo3rdParty": true,
       },

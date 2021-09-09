@@ -64,6 +64,8 @@ const prepareRequest = function (o, context, options, contentType) {
 
   if (o.body && (o.method === 'POST' || o.method === 'PUT')) {
     options.headers['Content-Type'] = contentType;
+  } else {
+    contentType = '';
   }
 
   const extraHeaders = [];
