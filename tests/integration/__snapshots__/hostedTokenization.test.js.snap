@@ -53,7 +53,9 @@ Object {
         },
       },
       "externalTokenLinked": Object {
+        "ComputedToken": "string",
         "GTSComputedToken": "string",
+        "GeneratedToken": "string",
       },
       "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
       "isTemporary": true,
@@ -119,7 +121,9 @@ Object {
         },
       },
       "externalTokenLinked": Object {
+        "ComputedToken": "string",
         "GTSComputedToken": "string",
+        "GeneratedToken": "string",
       },
       "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
       "isTemporary": true,

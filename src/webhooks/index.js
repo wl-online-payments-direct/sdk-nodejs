@@ -2,6 +2,8 @@
 const crypto = require('crypto');
 const compare = require('secure-compare');
 
+const sdkApiVersion = 'v1';
+
 const webhooksContext = {};
 
 const secretKeyStore = {};
@@ -69,7 +71,6 @@ const validateBody = function (body, requestHeaders, cb) {
 
 // returns void || throws Error {eventApiVersion, sdkApiVersion}
 const validateApiVersion = function (event) {
-  const sdkApiVersion = wrapper.API_VERSION;
   if (sdkApiVersion !== event.apiVersion) {
     const e = new Error(
       `event API version ${event.apiVersion} is not compatible with SDK API version ${sdkApiVersion}`

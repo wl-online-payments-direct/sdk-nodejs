@@ -9,7 +9,9 @@ Object {
       "expiryDate": "0529",
     },
     "externalTokenLinked": Object {
+      "ComputedToken": "string",
       "GTSComputedToken": "string",
+      "GeneratedToken": "string",
     },
     "isNewToken": true,
     "token": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
@@ -57,7 +59,9 @@ Object {
       },
     },
     "externalTokenLinked": Object {
+      "ComputedToken": "string",
       "GTSComputedToken": "string",
+      "GeneratedToken": "string",
     },
     "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
     "isTemporary": true,
@@ -85,7 +89,9 @@ Object {
       "expiryDate": "0529",
     },
     "externalTokenLinked": Object {
+      "ComputedToken": "string",
       "GTSComputedToken": "string",
+      "GeneratedToken": "string",
     },
     "isNewToken": true,
     "token": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
@@ -133,7 +139,9 @@ Object {
       },
     },
     "externalTokenLinked": Object {
+      "ComputedToken": "string",
       "GTSComputedToken": "string",
+      "GeneratedToken": "string",
     },
     "id": "43763dd9-6b6b-4b05-914a-5953b14dcbba",
     "isTemporary": true,

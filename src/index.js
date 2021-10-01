@@ -23,8 +23,6 @@ const apiRootMethods = {
 
 const webhooks = require('./webhooks');
 
-webhooks.API_VERSION = apiVersion;
-
 const setProtocolAndPort = (context) => {
   if (typeof context.scheme === 'undefined') {
     context.scheme = 'https';

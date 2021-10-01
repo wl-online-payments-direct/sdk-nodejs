@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const Converter = require('api-spec-converter');
 const { setup: setupServer } = require('jest-dev-server');
-const { port, openApiUrl, openApiDocPath } = require('../__fixture__/config');
+const { port, openApiUrl, openApiDocPath, enableLogging } = require('../__fixture__/config');
 
 module.exports = async () => {
   const convertedDoc = await Converter.convert({
@@ -19,5 +19,6 @@ module.exports = async () => {
     command: `prism mock ${openApiDocPath} --p=${port}`,
     port,
     launchTimeout: 20 * 1000,
+    debug: enableLogging,
   });
 };
