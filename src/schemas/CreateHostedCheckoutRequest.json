@@ -714,6 +714,9 @@
         "descriptor" : {
           "type" : "string"
         },
+        "merchantParameters" : {
+          "type" : "string"
+        },
         "merchantReference" : {
           "type" : "string"
         }

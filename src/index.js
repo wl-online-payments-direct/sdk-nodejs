@@ -10,15 +10,15 @@ const sdkContext = require('./utils/context');
 const promisify = require('./utils/promisify');
 
 const apiRootMethods = {
-  products: require('./methods/products'),
-  sessions: require('./methods/sessions'),
-  payouts: require('./methods/payouts'),
-  payments: require('./methods/payments'),
-  services: require('./methods/services'),
-  productGroups: require('./methods/productGroups'),
-  hostedTokenization: require('./methods/hostedTokenization'),
-  tokens: require('./methods/tokens'),
   hostedCheckout: require('./methods/hostedCheckout'),
+  hostedTokenization: require('./methods/hostedTokenization'),
+  payments: require('./methods/payments'),
+  payouts: require('./methods/payouts'),
+  productGroups: require('./methods/productGroups'),
+  products: require('./methods/products'),
+  services: require('./methods/services'),
+  sessions: require('./methods/sessions'),
+  tokens: require('./methods/tokens'),
 };
 
 const webhooks = require('./webhooks');

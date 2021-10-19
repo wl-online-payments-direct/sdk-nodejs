@@ -27,6 +27,9 @@
     "PaymentReferences" : {
       "type" : "object",
       "properties" : {
+        "merchantParameters" : {
+          "type" : "string"
+        },
         "merchantReference" : {
           "type" : "string"
         }
