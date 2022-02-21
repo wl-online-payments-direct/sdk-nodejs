@@ -1,16 +1,14 @@
-# Ingenico Direct Node.js SDK
+# Online Payments Node.js SDK
 
 ## Introduction
 
-The Node.js SDK helps you to communicate with the [Ingenico Direct](https://support.direct.ingenico.com/) Server API. Its primary features are:
+The Node.js SDK helps you to communicate with the payment platform server API. Its primary features are:
 
 * convenient JavaScript wrapper around the API calls,
 * authentication of all calls
 * logging support by proxying log calls to a custom user defined logger instance
 * validation of input and
 * a logfile obfuscater
-
-See the [Ingenico Direct Developer Hub](https://support.direct.ingenico.com/documentation/sdk/server/java/) for more information on how to use the SDK.
 
 ## Structure of this repository
 
@@ -27,7 +25,7 @@ Node.js 8 or higher is required.
 
 From the folder where your `package.json` is located, run the following command to install the SDK:
 
-    npm i direct-sdk-nodejs
+    npm i onlinepayments-sdk-nodejs
 
 ## Building the repository
 
@@ -38,7 +36,7 @@ From the root of the project install all dependencies:
 ## Running tests 
 
 The example integration tests run against a mock server set up with [Prism](https://stoplight.io/open-source/prism), which returns a mock response based
-on the current OpenAPI specification of Direct.
+on the current OpenAPI specification of Online Payments.
 
 The project must first be set up with the following commands:
 

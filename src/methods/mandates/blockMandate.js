@@ -3,14 +3,14 @@
  */
 const communicator = require('../../utils/communicator');
 
-const cancelPayment = (merchantId, paymentId, paymentContext, cb) => {
+const blockMandate = (merchantId, uniqueMandateReference, paymentContext, cb) => {
   communicator.json({
     method: 'POST',
-    modulePath: `/v2/${merchantId}/payments/${paymentId}/cancel`,
+    modulePath: `/v2/${merchantId}/mandates/${uniqueMandateReference}/block`,
     body: null,
     paymentContext,
     cb,
   });
 };
 
-module.exports = cancelPayment;
+module.exports = blockMandate;

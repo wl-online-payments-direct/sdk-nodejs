@@ -1,7 +1,7 @@
 {
-  "name": "direct-sdk-nodejs",
-  "version": "1.7.0",
-  "description": "SDK to communicate with the Ingenico ePayments platform using the Ingenico Direct Server API",
+  "name": "onlinepayments-sdk-nodejs",
+  "version": "3.0.0",
+  "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "scripts": {
     "test": "jest",
     "lint": "eslint {src,tests}/**/*.js src/*.js --fix"
@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ingenico/direct-sdk-nodejs.git"
+    "url": "git+https://github.com/wl-online-payments-direct/sdk-nodejs.git"
   },
-  "author": "Ingenico",
+  "author": "Online Payments",
   "license": "SEE LICENSE IN LICENSE.txt",
   "bugs": {
-    "url": "https://github.com/Ingenico/direct-sdk-nodejs/issues"
+    "url": "https://github.com/wl-online-payments-direct/sdk-nodejs/issues"
   },
-  "homepage": "https://github.com/Ingenico/direct-sdk-nodejs#readme",
+  "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
   "files": [
     "src/*"
   ]

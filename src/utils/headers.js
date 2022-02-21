@@ -8,7 +8,7 @@ const serverMetaInfo = function (sdkContext) {
   const info = {
     key: 'X-GCS-ServerMetaInfo',
     value: {
-      sdkCreator: 'Ingenico',
+      sdkCreator: 'OnlinePayments',
       sdkIdentifier: 'NodejsServerSDK/v3.9.0',
       platformIdentifier: `${process.env.OS} Node.js/${process.versions.node}`,
     },

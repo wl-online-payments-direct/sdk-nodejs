@@ -1,8 +1,7 @@
 /* eslint-disable global-require */
 
 /*
- * This file was auto-generated from the API references found at
- * https://support.direct.ingenico.com/documentation/api/reference/
+ * This class was auto-generated.
  */
 module.exports = {
   createToken: require('./createToken'),

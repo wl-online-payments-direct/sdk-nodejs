@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle, global-require */
+
 /*
- * This file was auto-generated from the API references found at
- * https://support.direct.ingenico.com/documentation/api/reference/
+ * This class was auto-generated.
  */
 // SDK
 const apiVersion = 'v2';
@@ -12,6 +12,7 @@ const promisify = require('./utils/promisify');
 const apiRootMethods = {
   hostedCheckout: require('./methods/hostedCheckout'),
   hostedTokenization: require('./methods/hostedTokenization'),
+  mandates: require('./methods/mandates'),
   payments: require('./methods/payments'),
   payouts: require('./methods/payouts'),
   productGroups: require('./methods/productGroups'),

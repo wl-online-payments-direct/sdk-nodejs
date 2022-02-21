@@ -6,5 +6,5 @@
   "contactPerson" : "Wile Coyote",
   "emailAddress" : "wile.e.coyote@acmelabs.com",
   "replyTo" : "r.runner@acmelabs.com",
-  "requestMessage" : "This is the message from the merchant to GlobalCollect. It is a a freeform text field."
+  "requestMessage" : "This is the message from the merchant to OnlinePayments. It is a a freeform text field."
 }

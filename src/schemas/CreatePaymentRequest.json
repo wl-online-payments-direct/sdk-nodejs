@@ -19,6 +19,9 @@
     },
     "redirectPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/RedirectPaymentMethodSpecificInput"
+    },
+    "sepaDirectDebitPaymentMethodSpecificInput" : {
+      "$ref" : "#/definitions/SepaDirectDebitPaymentMethodSpecificInput"
     }
   },
   "additionalProperties" : false,
@@ -300,6 +303,15 @@
       },
       "additionalProperties" : false
     },
+    "BankAccountIban" : {
+      "type" : "object",
+      "properties" : {
+        "iban" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "BrowserData" : {
       "type" : "object",
       "properties" : {
@@ -426,6 +438,36 @@
           "type" : "string"
         },
         "workPhoneNumber" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CreateMandateWithReturnUrl" : {
+      "type" : "object",
+      "properties" : {
+        "alias" : {
+          "type" : "string"
+        },
+        "customer" : {
+          "$ref" : "#/definitions/MandateCustomer"
+        },
+        "customerReference" : {
+          "type" : "string"
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "recurrenceType" : {
+          "type" : "string"
+        },
+        "returnUrl" : {
+          "type" : "string"
+        },
+        "signatureType" : {
+          "type" : "string"
+        },
+        "uniqueMandateReference" : {
           "type" : "string"
         }
       },
@@ -711,6 +753,81 @@
       },
       "additionalProperties" : false
     },
+    "MandateAddress" : {
+      "type" : "object",
+      "properties" : {
+        "city" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "houseNumber" : {
+          "type" : "string"
+        },
+        "street" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MandateContactDetails" : {
+      "type" : "object",
+      "properties" : {
+        "emailAddress" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MandateCustomer" : {
+      "type" : "object",
+      "properties" : {
+        "bankAccountIban" : {
+          "$ref" : "#/definitions/BankAccountIban"
+        },
+        "companyName" : {
+          "type" : "string"
+        },
+        "contactDetails" : {
+          "$ref" : "#/definitions/MandateContactDetails"
+        },
+        "mandateAddress" : {
+          "$ref" : "#/definitions/MandateAddress"
+        },
+        "personalInformation" : {
+          "$ref" : "#/definitions/MandatePersonalInformation"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MandatePersonalInformation" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "$ref" : "#/definitions/MandatePersonalName"
+        },
+        "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MandatePersonalName" : {
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "surname" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "MobilePaymentMethodSpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -961,6 +1078,31 @@
       "properties" : {
         "returnUrl" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SepaDirectDebitPaymentMethodSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "paymentProduct771SpecificInput" : {
+          "$ref" : "#/definitions/SepaDirectDebitPaymentProduct771SpecificInput"
+        },
+        "paymentProductId" : {
+          "type" : "integer",
+          "maximum" : 99999
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SepaDirectDebitPaymentProduct771SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "existingUniqueMandateReference" : {
+          "type" : "string"
+        },
+        "mandate" : {
+          "$ref" : "#/definitions/CreateMandateWithReturnUrl"
         }
       },
       "additionalProperties" : false

@@ -254,7 +254,7 @@ Object {
       "actionType": "string",
       "redirectData": Object {
         "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
-        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+        "redirectURL": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
       },
     },
     "payment": Object {
@@ -398,7 +398,7 @@ Object {
       "actionType": "string",
       "redirectData": Object {
         "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
-        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+        "redirectURL": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
       },
     },
     "payment": Object {
@@ -1154,7 +1154,7 @@ Object {
       "actionType": "string",
       "redirectData": Object {
         "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
-        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+        "redirectURL": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
       },
     },
     "payment": Object {
@@ -1298,7 +1298,7 @@ Object {
       "actionType": "string",
       "redirectData": Object {
         "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
-        "redirectURL": "direct.ingenico.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+        "redirectURL": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
       },
     },
     "payment": Object {

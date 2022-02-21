@@ -3,14 +3,14 @@
  */
 const communicator = require('../../utils/communicator');
 
-const getCaptures = (merchantId, paymentId, paymentContext, cb) => {
+const getMandate = (merchantId, uniqueMandateReference, paymentContext, cb) => {
   communicator.json({
     method: 'GET',
-    modulePath: `/v2/${merchantId}/payments/${paymentId}/captures`,
+    modulePath: `/v2/${merchantId}/mandates/${uniqueMandateReference}`,
     body: null,
     paymentContext,
     cb,
   });
 };
 
-module.exports = getCaptures;
+module.exports = getMandate;
