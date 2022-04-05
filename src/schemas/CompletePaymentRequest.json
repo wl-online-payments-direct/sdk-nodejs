@@ -157,16 +157,13 @@
           "type" : "string"
         },
         "totalFare" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "totalFee" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "totalTaxes" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "travelAgencyName" : {
           "type" : "string"
@@ -214,19 +211,16 @@
           "type" : "string"
         },
         "fee" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "flightNumber" : {
           "type" : "string"
         },
         "legFare" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "number" : {
-          "type" : "integer",
-          "maximum" : 99999
+          "type" : "integer"
         },
         "originAirport" : {
           "type" : "string"
@@ -238,8 +232,7 @@
           "type" : "string"
         },
         "taxes" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -266,8 +259,7 @@
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer",
-          "maximum" : 9223372036854775807
+          "type" : "integer"
         },
         "type" : {
           "type" : "string"
@@ -279,8 +271,7 @@
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer",
-          "maximum" : 999999999999
+          "type" : "integer"
         },
         "currencyCode" : {
           "type" : "string"
@@ -292,8 +283,7 @@
       "type" : "object",
       "properties" : {
         "colorDepth" : {
-          "type" : "integer",
-          "maximum" : 99
+          "type" : "integer"
         },
         "javaEnabled" : {
           "type" : "boolean"
@@ -473,16 +463,13 @@
       "type" : "object",
       "properties" : {
         "numberOfPaymentAttemptsLast24Hours" : {
-          "type" : "integer",
-          "maximum" : 999
+          "type" : "integer"
         },
         "numberOfPaymentAttemptsLastYear" : {
-          "type" : "integer",
-          "maximum" : 999
+          "type" : "integer"
         },
         "numberOfPurchasesLast6Months" : {
-          "type" : "integer",
-          "maximum" : 9999
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -494,8 +481,7 @@
           "$ref" : "#/definitions/AmountOfMoney"
         },
         "numberOfGiftCards" : {
-          "type" : "integer",
-          "maximum" : 99
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -582,8 +568,7 @@
       "type" : "object",
       "properties" : {
         "discountAmount" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "productCode" : {
           "type" : "string"
@@ -592,19 +577,16 @@
           "type" : "string"
         },
         "productPrice" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "productType" : {
           "type" : "string"
         },
         "quantity" : {
-          "type" : "integer",
-          "maximum" : 9999
+          "type" : "integer"
         },
         "taxAmount" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "unit" : {
           "type" : "string"
@@ -646,8 +628,7 @@
           "type" : "string"
         },
         "numberOfCardOnFileCreationAttemptsLast24Hours" : {
-          "type" : "integer",
-          "maximum" : 999
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -701,12 +682,10 @@
           "type" : "boolean"
         },
         "shippingCost" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "shippingCostTax" : {
-          "type" : "integer",
-          "maximum" : 2147483647
+          "type" : "integer"
         },
         "type" : {
           "type" : "string"

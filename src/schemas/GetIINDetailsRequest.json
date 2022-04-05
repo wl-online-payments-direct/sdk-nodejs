@@ -15,8 +15,7 @@
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer",
-          "maximum" : 999999999999
+          "type" : "integer"
         },
         "currencyCode" : {
           "type" : "string"

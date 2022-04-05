@@ -6,8 +6,7 @@
       "$ref" : "#/definitions/TokenCardSpecificInput"
     },
     "paymentProductId" : {
-      "type" : "integer",
-      "maximum" : 99999
+      "type" : "integer"
     }
   },
   "additionalProperties" : false,

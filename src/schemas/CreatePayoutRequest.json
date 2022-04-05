@@ -18,8 +18,7 @@
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer",
-          "maximum" : 999999999999
+          "type" : "integer"
         },
         "currencyCode" : {
           "type" : "string"
@@ -52,8 +51,7 @@
           "$ref" : "#/definitions/Card"
         },
         "paymentProductId" : {
-          "type" : "integer",
-          "maximum" : 99999
+          "type" : "integer"
         },
         "token" : {
           "type" : "string"

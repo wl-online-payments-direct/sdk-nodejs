@@ -3,8 +3,7 @@
   "type" : "object",
   "properties" : {
     "amount" : {
-      "type" : "integer",
-      "maximum" : 9223372036854775807
+      "type" : "integer"
     },
     "isFinal" : {
       "type" : "boolean"
