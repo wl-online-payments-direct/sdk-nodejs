@@ -363,6 +363,9 @@
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
         },
+        "paymentProduct3012SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3012SpecificInput"
+        },
         "paymentProductId" : {
           "type" : "integer"
         },
@@ -968,6 +971,18 @@
         },
         "usecase" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3012SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "forceAuthentication" : {
+          "type" : "boolean"
+        },
+        "isWipTransaction" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
