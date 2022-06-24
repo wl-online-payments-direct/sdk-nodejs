@@ -1,9 +1,11 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "scripts": {
-    "test": "jest",
+    "test": "run-p test:*",
+    "test:unit": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
     "lint": "eslint {src,tests}/**/*.js src/*.js --fix"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.6.1",
     "jest-dev-server": "^4.4.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "2.1.2",
     "rimraf": "^3.0.2"
   },

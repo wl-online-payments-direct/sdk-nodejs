@@ -6,6 +6,8 @@
 // SDK
 const apiVersion = 'v2';
 
+const _ = require('lodash');
+
 const sdkContext = require('./utils/context');
 const promisify = require('./utils/promisify');
 
@@ -68,6 +70,9 @@ const defaultApi = {
     sdkContext.setIntegrator(context.integrator);
     sdkContext.setShoppingCartExtension(context.shoppingCartExtension);
     return defaultApi;
+  },
+  immutableInit(context) {
+    return _.cloneDeep(this.init(context));
   },
   ...promisify(apiRootMethods),
   context: sdkContext,

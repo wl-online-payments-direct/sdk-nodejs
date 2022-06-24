@@ -4,7 +4,17 @@
  */
 
 module.exports = {
-  globalSetup: './tests/integration/__setup__/globalSetup.js',
-  globalTeardown: './tests/integration/__setup__/globalTeardown.js',
   testEnvironment: 'node',
+  projects: [
+    {
+      displayName: 'unit',
+      testMatch: ['<rootDir>/tests/unit/**/*.js'],
+    },
+    {
+      displayName: 'integration',
+      globalSetup: './tests/integration/__setup__/globalSetup.js',
+      globalTeardown: './tests/integration/__setup__/globalTeardown.js',
+      testMatch: ['<rootDir>/tests/integration/**/*.js'],
+    },
+  ],
 };
