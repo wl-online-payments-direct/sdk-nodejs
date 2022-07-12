@@ -1,6 +1,8 @@
 {
+  "id" : "CreatePaymentRequest",
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
+  "description" : "This file was auto-generated.",
   "properties" : {
     "cardPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/CardPaymentMethodSpecificInput"
@@ -363,9 +365,6 @@
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
         },
-        "paymentProduct3012SpecificInput" : {
-          "$ref" : "#/definitions/PaymentProduct3012SpecificInput"
-        },
         "paymentProductId" : {
           "type" : "integer"
         },
@@ -373,6 +372,9 @@
           "$ref" : "#/definitions/CardRecurrenceDetails"
         },
         "returnUrl" : {
+          "type" : "string"
+        },
+        "schemeReferenceData" : {
           "type" : "string"
         },
         "skipAuthentication" : {
@@ -971,18 +973,6 @@
         },
         "usecase" : {
           "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "PaymentProduct3012SpecificInput" : {
-      "type" : "object",
-      "properties" : {
-        "forceAuthentication" : {
-          "type" : "boolean"
-        },
-        "isWipTransaction" : {
-          "type" : "boolean"
         }
       },
       "additionalProperties" : false

@@ -1,29 +1,9 @@
 /* eslint-disable no-underscore-dangle, global-require */
 
-/*
- * This class was auto-generated.
- */
-// SDK
 const apiVersion = 'v2';
 
-const _ = require('lodash');
-
-const sdkContext = require('./utils/context');
-const promisify = require('./utils/promisify');
-
-const apiRootMethods = {
-  hostedCheckout: require('./methods/hostedCheckout'),
-  hostedTokenization: require('./methods/hostedTokenization'),
-  mandates: require('./methods/mandates'),
-  payments: require('./methods/payments'),
-  payouts: require('./methods/payouts'),
-  productGroups: require('./methods/productGroups'),
-  products: require('./methods/products'),
-  services: require('./methods/services'),
-  sessions: require('./methods/sessions'),
-  tokens: require('./methods/tokens'),
-};
-
+const clientContext = require('./utils/context');
+const client = require('./client');
 const webhooks = require('./webhooks');
 
 const setProtocolAndPort = (context) => {
@@ -52,9 +32,12 @@ const setHttpOptions = (context) => {
 
 const defaultApi = {
   init(context) {
+    const sdkContext = clientContext();
     setHttpOptions(context);
     context.API_VERSION = apiVersion;
     sdkContext.setContext(context);
+    sdkContext.setIntegrator(context.integrator);
+    sdkContext.setShoppingCartExtension(context.shoppingCartExtension);
     sdkContext.setLogger((level, message) => {
       if (typeof context.logger !== 'undefined' && context.logger) {
         context.logger[level](message);
@@ -67,15 +50,8 @@ const defaultApi = {
     } else {
       sdkContext.setEnableLogging(false);
     }
-    sdkContext.setIntegrator(context.integrator);
-    sdkContext.setShoppingCartExtension(context.shoppingCartExtension);
-    return defaultApi;
+    return client(sdkContext);
   },
-  immutableInit(context) {
-    return _.cloneDeep(this.init(context));
-  },
-  ...promisify(apiRootMethods),
-  context: sdkContext,
   webhooks,
 };
 

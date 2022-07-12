@@ -2,11 +2,11 @@
 const communicator = require('../../utils/communicator');
 
 module.exports = (sdkContext) => {
-  return function (merchantId, uniqueMandateReference, paymentContext, cb = null) {
+  return function (merchantId, paymentContext, cb = null) {
     communicator.json(
       {
-        method: 'POST',
-        modulePath: `/v2/${merchantId}/mandates/${uniqueMandateReference}/unblock`,
+        method: 'GET',
+        modulePath: `/v2/${merchantId}/services/privacypolicy`,
         body: null,
         paymentContext,
         cb,

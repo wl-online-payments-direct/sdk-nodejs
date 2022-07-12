@@ -1,6 +1,8 @@
 {
+  "id" : "CompletePaymentRequest",
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
+  "description" : "This file was auto-generated.",
   "properties" : {
     "cardPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/CompletePaymentCardPaymentMethodSpecificInput"

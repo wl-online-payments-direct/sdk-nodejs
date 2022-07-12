@@ -1,6 +1,6 @@
 module.exports = {
   openApiDocPath: `${process.cwd()}/contract-definition.json`,
-  openApiUrl: 'https://payment.preprod.online-payments.com/v1/public-contract-definition.yaml',
+  openApiUrl: 'https://payment.preprod.direct.worldline-solutions.com/v1/public-contract-definition.yaml',
   port: 4010,
   merchantId: 'MERCHANT_ID',
   apiKeyId: 'API_KEY_ID',

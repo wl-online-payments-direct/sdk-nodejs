@@ -1,12 +1,17 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createMandate: require('./createMandate'),
-  getMandate: require('./getMandate'),
-  blockMandate: require('./blockMandate'),
-  unblockMandate: require('./unblockMandate'),
-  revokeMandate: require('./revokeMandate'),
+const createMandate = require('./createMandate');
+const getMandate = require('./getMandate');
+const blockMandate = require('./blockMandate');
+const unblockMandate = require('./unblockMandate');
+const revokeMandate = require('./revokeMandate');
+
+module.exports = function (sdkContext) {
+  return {
+    createMandate: createMandate(sdkContext),
+    getMandate: getMandate(sdkContext),
+    blockMandate: blockMandate(sdkContext),
+    unblockMandate: unblockMandate(sdkContext),
+    revokeMandate: revokeMandate(sdkContext),
+  };
 };

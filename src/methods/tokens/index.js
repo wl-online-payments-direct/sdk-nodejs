@@ -1,10 +1,13 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createToken: require('./createToken'),
-  getToken: require('./getToken'),
-  removeToken: require('./removeToken'),
+const createToken = require('./createToken');
+const getToken = require('./getToken');
+const removeToken = require('./removeToken');
+
+module.exports = function (sdkContext) {
+  return {
+    createToken: createToken(sdkContext),
+    getToken: getToken(sdkContext),
+    removeToken: removeToken(sdkContext),
+  };
 };

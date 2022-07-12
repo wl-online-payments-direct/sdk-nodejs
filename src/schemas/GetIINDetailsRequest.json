@@ -1,6 +1,8 @@
 {
+  "id" : "GetIINDetailsRequest",
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
+  "description" : "This file was auto-generated. Input for the retrieval of the IIN details request",
   "properties" : {
     "bin" : {
       "type" : "string"

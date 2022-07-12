@@ -3,11 +3,10 @@ const _ = require('lodash');
 
 const headers = require('./headers');
 const connection = require('./connection');
-const sdkcontext = require('./context');
 
-const addServerMetaInfo = function (options, extraHeaders) {
+const addServerMetaInfo = function (options, extraHeaders, sdkContext) {
   // add X-GCS-ServerMetaInfo
-  const serverMetaInfo = headers.serverMetaInfo(sdkcontext);
+  const serverMetaInfo = headers.serverMetaInfo(sdkContext);
   options.headers[serverMetaInfo.key] = serverMetaInfo.value;
   extraHeaders.push(serverMetaInfo);
 };
@@ -56,7 +55,7 @@ const constructRequestPath = function (o) {
   return path;
 };
 
-const prepareRequest = function (o, context, options, contentType) {
+const prepareRequest = function (o, sdkContext, options, contentType) {
   const date = headers.date();
   options.path = constructRequestPath(o);
   options.method = o.method;
@@ -70,10 +69,10 @@ const prepareRequest = function (o, context, options, contentType) {
 
   const extraHeaders = [];
   addIdemPotenceHeader(o, options, extraHeaders);
-  addServerMetaInfo(options, extraHeaders);
+  addServerMetaInfo(options, extraHeaders, sdkContext);
   addExtraHeaders(o, options, extraHeaders);
 
-  options.headers.Authorization = `GCS v1HMAC:${context.apiKeyId}:${sdkcontext.getSignature(
+  options.headers.Authorization = `GCS v1HMAC:${sdkContext.getContext().apiKeyId}:${sdkContext.getSignature(
     o.method,
     contentType,
     date,
@@ -82,12 +81,12 @@ const prepareRequest = function (o, context, options, contentType) {
   )}`;
 };
 
-const handleResponse = function (error, response, cb) {
+const handleResponse = function (error, response, cb, sdkContext) {
   if (error) {
     cb(error, null);
   } else {
     if (response.headers['x-gcs-idempotence-request-timestamp']) {
-      sdkcontext.setIdempotenceRequestTimestamp(response.headers['x-gcs-idempotence-request-timestamp']);
+      sdkContext.setIdempotenceRequestTimestamp(response.headers['x-gcs-idempotence-request-timestamp']);
     }
 
     let body = '';
@@ -118,12 +117,11 @@ const handleResponse = function (error, response, cb) {
   }
 };
 
-const json = function (o) {
-  const context = sdkcontext.getContext();
-  const options = _.merge({}, context.httpOptions);
-  prepareRequest(o, context, options, 'application/json');
-  connection.sendJSON(options, o.body, sdkcontext, function (error, response) {
-    handleResponse(error, response, o.cb);
+const json = function (o, sdkContext) {
+  const options = _.merge({}, sdkContext.getContext().httpOptions);
+  prepareRequest(o, sdkContext, options, 'application/json');
+  connection.sendJSON(options, o.body, sdkContext, function (error, response) {
+    handleResponse(error, response, o.cb, sdkContext);
   });
 };
 

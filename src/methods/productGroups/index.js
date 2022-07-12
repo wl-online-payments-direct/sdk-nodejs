@@ -1,9 +1,11 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  getProductGroups: require('./getProductGroups'),
-  getProductGroup: require('./getProductGroup'),
+const getProductGroups = require('./getProductGroups');
+const getProductGroup = require('./getProductGroup');
+
+module.exports = function (sdkContext) {
+  return {
+    getProductGroups: getProductGroups(sdkContext),
+    getProductGroup: getProductGroup(sdkContext),
+  };
 };

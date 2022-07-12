@@ -1,9 +1,11 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createPayout: require('./createPayout'),
-  getPayout: require('./getPayout'),
+const createPayout = require('./createPayout');
+const getPayout = require('./getPayout');
+
+module.exports = function (sdkContext) {
+  return {
+    createPayout: createPayout(sdkContext),
+    getPayout: getPayout(sdkContext),
+  };
 };

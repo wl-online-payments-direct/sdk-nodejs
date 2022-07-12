@@ -1,8 +1,9 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createSession: require('./createSession'),
+const createSession = require('./createSession');
+
+module.exports = function (sdkContext) {
+  return {
+    createSession: createSession(sdkContext),
+  };
 };

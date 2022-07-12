@@ -10,7 +10,8 @@ Object {
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
     "merchantReference": "your-order-6372",
-    "partialRedirectUrl": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+    "partialRedirectUrl": "string",
+    "redirectUrl": "string",
   },
   "isSuccess": true,
   "status": 200,
@@ -34,10 +35,18 @@ Object {
           },
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
+            "authenticatedAmount": -9223372036854776000,
             "authorisationCode": "string",
             "card": Object {
+              "bin": "string",
               "cardNumber": "string",
-              "expiryDate": "stri",
+              "countryCode": "BE",
+              "expiryDate": "0529",
+            },
+            "externalTokenLinked": Object {
+              "ComputedToken": "string",
+              "GTSComputedToken": "string",
+              "GeneratedToken": "string",
             },
             "fraudResults": Object {
               "avsResult": "string",
@@ -45,13 +54,30 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "paymentOption": "string",
             "paymentProductId": 840,
             "threeDSecureResults": Object {
+              "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
+              "appliedExemption": "low-value",
+              "authenticationStatus": "Y",
+              "cavv": "string",
+              "challengeIndicator": "no-preference",
+              "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "flow": "frictionless",
+              "liability": "issuer",
+              "schemeEci": 5,
+              "version": "2.2.0",
               "xid": "string",
             },
             "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
           },
+          "customer": Object {
+            "device": Object {
+              "ipAddressCountryCode": "BE",
+            },
+          },
+          "merchantParameters": "SessionID=126548354&ShopperID=73541312",
           "mobilePaymentMethodSpecificOutput": Object {
             "authorisationCode": "string",
             "fraudResults": Object {
@@ -62,11 +88,21 @@ Object {
             "network": "string",
             "paymentData": Object {
               "dpan": "string",
-              "expiryDate": "stri",
+              "expiryDate": "0529",
             },
             "paymentProductId": 840,
             "threeDSecureResults": Object {
+              "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
+              "appliedExemption": "low-value",
+              "authenticationStatus": "Y",
+              "cavv": "string",
+              "challengeIndicator": "no-preference",
+              "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "flow": "frictionless",
+              "liability": "issuer",
+              "schemeEci": 5,
+              "version": "2.2.0",
               "xid": "string",
             },
           },
@@ -74,6 +110,15 @@ Object {
           "redirectPaymentMethodSpecificOutput": Object {
             "fraudResults": Object {
               "fraudServiceResult": "string",
+            },
+            "paymentOption": "string",
+            "paymentProduct5402SpecificOutput": Object {
+              "brand": "string",
+            },
+            "paymentProduct5500SpecificOutput": Object {
+              "paymentEndDate": "string",
+              "paymentReference": "string",
+              "paymentStartDate": "string",
             },
             "paymentProduct840SpecificOutput": Object {
               "billingAddress": Object {
@@ -113,13 +158,16 @@ Object {
             "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
           },
           "references": Object {
+            "merchantParameters": "SessionID=126548354&ShopperID=73541312",
             "merchantReference": "your-order-6372",
           },
           "sepaDirectDebitPaymentMethodSpecificOutput": Object {
             "fraudResults": Object {
               "fraudServiceResult": "string",
             },
-            "paymentProduct771SpecificOutput": Object {},
+            "paymentProduct771SpecificOutput": Object {
+              "mandateReference": "string",
+            },
             "paymentProductId": 840,
           },
         },
@@ -127,8 +175,9 @@ Object {
         "statusOutput": Object {
           "errors": Array [
             Object {
-              "category": "DIRECT_PLATFORM_ERROR",
+              "category": "PAYMENT_PLATFORM_ERROR",
               "code": 50001130,
+              "errorCode": 50001130,
               "httpStatusCode": 404,
               "id": "UNKNOWN_PAYMENT_ID",
               "message": "Authorisation declined",
@@ -162,7 +211,8 @@ Object {
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
     "merchantReference": "your-order-6372",
-    "partialRedirectUrl": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+    "partialRedirectUrl": "string",
+    "redirectUrl": "string",
   },
   "isSuccess": true,
   "status": 200,
@@ -186,10 +236,18 @@ Object {
           },
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
+            "authenticatedAmount": -9223372036854776000,
             "authorisationCode": "string",
             "card": Object {
+              "bin": "string",
               "cardNumber": "string",
-              "expiryDate": "stri",
+              "countryCode": "BE",
+              "expiryDate": "0529",
+            },
+            "externalTokenLinked": Object {
+              "ComputedToken": "string",
+              "GTSComputedToken": "string",
+              "GeneratedToken": "string",
             },
             "fraudResults": Object {
               "avsResult": "string",
@@ -197,13 +255,30 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "paymentOption": "string",
             "paymentProductId": 840,
             "threeDSecureResults": Object {
+              "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
+              "appliedExemption": "low-value",
+              "authenticationStatus": "Y",
+              "cavv": "string",
+              "challengeIndicator": "no-preference",
+              "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "flow": "frictionless",
+              "liability": "issuer",
+              "schemeEci": 5,
+              "version": "2.2.0",
               "xid": "string",
             },
             "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
           },
+          "customer": Object {
+            "device": Object {
+              "ipAddressCountryCode": "BE",
+            },
+          },
+          "merchantParameters": "SessionID=126548354&ShopperID=73541312",
           "mobilePaymentMethodSpecificOutput": Object {
             "authorisationCode": "string",
             "fraudResults": Object {
@@ -214,11 +289,21 @@ Object {
             "network": "string",
             "paymentData": Object {
               "dpan": "string",
-              "expiryDate": "stri",
+              "expiryDate": "0529",
             },
             "paymentProductId": 840,
             "threeDSecureResults": Object {
+              "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
+              "appliedExemption": "low-value",
+              "authenticationStatus": "Y",
+              "cavv": "string",
+              "challengeIndicator": "no-preference",
+              "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "flow": "frictionless",
+              "liability": "issuer",
+              "schemeEci": 5,
+              "version": "2.2.0",
               "xid": "string",
             },
           },
@@ -226,6 +311,15 @@ Object {
           "redirectPaymentMethodSpecificOutput": Object {
             "fraudResults": Object {
               "fraudServiceResult": "string",
+            },
+            "paymentOption": "string",
+            "paymentProduct5402SpecificOutput": Object {
+              "brand": "string",
+            },
+            "paymentProduct5500SpecificOutput": Object {
+              "paymentEndDate": "string",
+              "paymentReference": "string",
+              "paymentStartDate": "string",
             },
             "paymentProduct840SpecificOutput": Object {
               "billingAddress": Object {
@@ -265,13 +359,16 @@ Object {
             "token": "0ca037cc-9079-4df7-8f6f-f2a3443ee521",
           },
           "references": Object {
+            "merchantParameters": "SessionID=126548354&ShopperID=73541312",
             "merchantReference": "your-order-6372",
           },
           "sepaDirectDebitPaymentMethodSpecificOutput": Object {
             "fraudResults": Object {
               "fraudServiceResult": "string",
             },
-            "paymentProduct771SpecificOutput": Object {},
+            "paymentProduct771SpecificOutput": Object {
+              "mandateReference": "string",
+            },
             "paymentProductId": 840,
           },
         },
@@ -279,8 +376,9 @@ Object {
         "statusOutput": Object {
           "errors": Array [
             Object {
-              "category": "DIRECT_PLATFORM_ERROR",
+              "category": "PAYMENT_PLATFORM_ERROR",
               "code": 50001130,
+              "errorCode": 50001130,
               "httpStatusCode": 404,
               "id": "UNKNOWN_PAYMENT_ID",
               "message": "Authorisation declined",

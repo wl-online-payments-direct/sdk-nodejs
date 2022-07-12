@@ -1,5 +1,5 @@
 {
-  "id" : "RefundRequest",
+  "id" : "CancelPaymentRequest",
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
   "description" : "This file was auto-generated.",
@@ -7,8 +7,8 @@
     "amountOfMoney" : {
       "$ref" : "#/definitions/AmountOfMoney"
     },
-    "references" : {
-      "$ref" : "#/definitions/PaymentReferences"
+    "isFinal" : {
+      "type" : "boolean"
     }
   },
   "additionalProperties" : false,
@@ -20,18 +20,6 @@
           "type" : "integer"
         },
         "currencyCode" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "PaymentReferences" : {
-      "type" : "object",
-      "properties" : {
-        "merchantParameters" : {
-          "type" : "string"
-        },
-        "merchantReference" : {
           "type" : "string"
         }
       },

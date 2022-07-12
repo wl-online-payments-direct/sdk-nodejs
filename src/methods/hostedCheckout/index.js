@@ -1,9 +1,11 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createHostedCheckout: require('./createHostedCheckout'),
-  getHostedCheckout: require('./getHostedCheckout'),
+const createHostedCheckout = require('./createHostedCheckout');
+const getHostedCheckout = require('./getHostedCheckout');
+
+module.exports = function (sdkContext) {
+  return {
+    createHostedCheckout: createHostedCheckout(sdkContext),
+    getHostedCheckout: getHostedCheckout(sdkContext),
+  };
 };

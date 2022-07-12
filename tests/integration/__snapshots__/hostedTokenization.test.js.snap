@@ -3,12 +3,16 @@
 exports[`Hosted tokenization Callback it can create a hosted tokenization 1`] = `
 Object {
   "body": Object {
+    "expiredCardTokens": Array [
+      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
+      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
+    ],
     "hostedTokenizationId": "string",
     "invalidTokens": Array [
       "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
-    "partialRedirectUrl": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+    "partialRedirectUrl": "string",
   },
   "isSuccess": true,
   "status": 200,
@@ -71,12 +75,16 @@ Object {
 exports[`Hosted tokenization Promises it can create a hosted tokenization 1`] = `
 Object {
   "body": Object {
+    "expiredCardTokens": Array [
+      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
+      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
+    ],
     "hostedTokenizationId": "string",
     "invalidTokens": Array [
       "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
-    "partialRedirectUrl": "onlinepayments.com/hostedcheckout/Payment/Form/b614f1c655fa40e08b2dcfd6dededd24",
+    "partialRedirectUrl": "string",
   },
   "isSuccess": true,
   "status": 200,

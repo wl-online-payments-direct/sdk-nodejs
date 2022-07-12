@@ -1,16 +1,17 @@
-/*
- * This class was auto-generated.
- */
+/* This file was auto-generated. */
 const communicator = require('../../utils/communicator');
 
-const getHostedTokenization = (merchantId, hostedTokenizationId, paymentContext, cb) => {
-  communicator.json({
-    method: 'GET',
-    modulePath: `/v2/${merchantId}/hostedtokenizations/${hostedTokenizationId}`,
-    body: null,
-    paymentContext,
-    cb,
-  });
+module.exports = (sdkContext) => {
+  return function (merchantId, hostedTokenizationId, paymentContext, cb = null) {
+    communicator.json(
+      {
+        method: 'GET',
+        modulePath: `/v2/${merchantId}/hostedtokenizations/${hostedTokenizationId}`,
+        body: null,
+        paymentContext,
+        cb,
+      },
+      sdkContext
+    );
+  };
 };
-
-module.exports = getHostedTokenization;

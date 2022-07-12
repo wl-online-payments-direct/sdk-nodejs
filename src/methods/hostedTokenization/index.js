@@ -1,9 +1,11 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  createHostedTokenization: require('./createHostedTokenization'),
-  getHostedTokenization: require('./getHostedTokenization'),
+const createHostedTokenization = require('./createHostedTokenization');
+const getHostedTokenization = require('./getHostedTokenization');
+
+module.exports = function (sdkContext) {
+  return {
+    createHostedTokenization: createHostedTokenization(sdkContext),
+    getHostedTokenization: getHostedTokenization(sdkContext),
+  };
 };

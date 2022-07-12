@@ -1,11 +1,15 @@
-/* eslint-disable global-require */
+/* This file was auto-generated. */
 
-/*
- * This class was auto-generated.
- */
-module.exports = {
-  getPaymentProducts: require('./getPaymentProducts'),
-  getPaymentProduct: require('./getPaymentProduct'),
-  getProductDirectory: require('./getProductDirectory'),
-  getPaymentProductNetworks: require('./getPaymentProductNetworks'),
+const getPaymentProducts = require('./getPaymentProducts');
+const getPaymentProduct = require('./getPaymentProduct');
+const getProductDirectory = require('./getProductDirectory');
+const getPaymentProductNetworks = require('./getPaymentProductNetworks');
+
+module.exports = function (sdkContext) {
+  return {
+    getPaymentProducts: getPaymentProducts(sdkContext),
+    getPaymentProduct: getPaymentProduct(sdkContext),
+    getProductDirectory: getProductDirectory(sdkContext),
+    getPaymentProductNetworks: getPaymentProductNetworks(sdkContext),
+  };
 };

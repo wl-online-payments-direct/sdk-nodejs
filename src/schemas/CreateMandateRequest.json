@@ -1,6 +1,8 @@
 {
+  "id" : "CreateMandateRequest",
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
+  "description" : "This file was auto-generated. Object containing information to create a SEPA Direct Debit mandate.",
   "properties" : {
     "alias" : {
       "type" : "string"
