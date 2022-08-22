@@ -6,7 +6,7 @@ const validator = require('../../utils/validator');
 module.exports = (sdkContext) => {
   return function (merchantId, paymentId, postData, paymentContext, cb = null) {
     // validate postData
-    validator.validatePostData(postData, requestSchema);
+    validator.validatePostData(postData, requestSchema, sdkContext);
 
     communicator.json(
       {

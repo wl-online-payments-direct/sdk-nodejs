@@ -54,7 +54,8 @@ const sendJSON = function (options, postData, context, cb) {
     logger(
       'info',
       `Request with Message ID: ${uuidString}, ${options.method} to ${options.path}, headers: ${obfuscate.getObfuscated(
-        options.headers
+        options.headers,
+        context
       )}, body: ${obfuscate.getObfuscated(postData, context)}`
     );
   }

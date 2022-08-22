@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign, global-require, no-unused-vars */
 const traverse = require('traverse');
-const _ = require('lodash');
 
 const INDENT = 2;
 
@@ -15,7 +14,7 @@ const obfuscateValue = function (json, property) {
   });
 };
 const obfuscateSensitiveValue = function (json, property) {
-  traverse(json).forEach(function (node) {
+  traverse(json).forEach(function () {
     if (this.key === property) {
       this.update('***');
     }
@@ -24,9 +23,6 @@ const obfuscateSensitiveValue = function (json, property) {
 
 const obfuscate = {
   getObfuscated(input, context) {
-    if (!context) {
-      context = require('./context');
-    }
     if (!input) {
       return '';
     }
@@ -34,9 +30,8 @@ const obfuscate = {
       try {
         input = JSON.parse(input);
       } catch (e) {
-        const logger = context.getLogger();
-        if (context.isLoggingEnabled()) {
-          logger('warn', `Cannot parse input to JSON: ${input}`);
+        if (context && context.isLoggingEnabled()) {
+          context.getLogger()('warn', `Cannot parse input to JSON: ${input}`);
         }
         return input;
       }

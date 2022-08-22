@@ -45,11 +45,9 @@ const defaultApi = {
         console[level](message);
       }
     });
-    if (Object.prototype.hasOwnProperty.call(context, 'enableLogging')) {
-      sdkContext.setEnableLogging(context.enableLogging);
-    } else {
-      sdkContext.setEnableLogging(false);
-    }
+    sdkContext.setEnableLogging(
+      Object.prototype.hasOwnProperty.call(context, 'enableLogging') && context.enableLogging
+    );
     return client(sdkContext);
   },
   webhooks,
