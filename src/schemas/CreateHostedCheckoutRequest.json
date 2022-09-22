@@ -574,6 +574,13 @@
         },
         "customerIpAddress" : {
           "type" : "string"
+        },
+        "productCategories" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false
         }
       },
       "additionalProperties" : false
@@ -1056,10 +1063,31 @@
         "isFirstUsage" : {
           "type" : "boolean"
         },
+        "method" : {
+          "$ref" : "#/definitions/ShippingMethod"
+        },
         "shippingCost" : {
           "type" : "integer"
         },
         "shippingCostTax" : {
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "ShippingMethod" : {
+      "type" : "object",
+      "properties" : {
+        "details" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "speed" : {
           "type" : "integer"
         },
         "type" : {
