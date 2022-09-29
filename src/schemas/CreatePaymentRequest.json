@@ -632,6 +632,9 @@
         "eci" : {
           "type" : "integer"
         },
+        "flow" : {
+          "type" : "string"
+        },
         "schemeRiskScore" : {
           "type" : "integer"
         },

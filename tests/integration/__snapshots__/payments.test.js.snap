@@ -10,6 +10,10 @@ Object {
       },
       "id": "string",
       "paymentOutput": Object {
+        "acquiredAmount": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
         "amountOfMoney": Object {
           "amount": 1000,
           "currencyCode": "EUR",
@@ -37,6 +41,7 @@ Object {
           "initialSchemeTransactionId": "string",
           "paymentOption": "string",
           "paymentProductId": 840,
+          "schemeReferenceData": "string",
           "threeDSecureResults": Object {
             "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "appliedExemption": "low-value",
@@ -45,6 +50,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -80,6 +86,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -183,6 +190,10 @@ exports[`Payments Callback it can capture a payment 1`] = `
 Object {
   "body": Object {
     "captureOutput": Object {
+      "acquiredAmount": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
       "amountOfMoney": Object {
         "amount": 1000,
         "currencyCode": "EUR",
@@ -210,6 +221,7 @@ Object {
         "initialSchemeTransactionId": "string",
         "paymentOption": "string",
         "paymentProductId": 840,
+        "schemeReferenceData": "string",
         "threeDSecureResults": Object {
           "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "appliedExemption": "low-value",
@@ -218,6 +230,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -248,6 +261,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -498,6 +512,10 @@ Object {
       },
       "id": "string",
       "paymentOutput": Object {
+        "acquiredAmount": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
         "amountOfMoney": Object {
           "amount": 1000,
           "currencyCode": "EUR",
@@ -525,6 +543,7 @@ Object {
           "initialSchemeTransactionId": "string",
           "paymentOption": "string",
           "paymentProductId": 840,
+          "schemeReferenceData": "string",
           "threeDSecureResults": Object {
             "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "appliedExemption": "low-value",
@@ -533,6 +552,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -568,6 +588,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -676,6 +697,10 @@ Object {
     },
     "id": "string",
     "paymentOutput": Object {
+      "acquiredAmount": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
       "amountOfMoney": Object {
         "amount": 1000,
         "currencyCode": "EUR",
@@ -703,6 +728,7 @@ Object {
         "initialSchemeTransactionId": "string",
         "paymentOption": "string",
         "paymentProductId": 840,
+        "schemeReferenceData": "string",
         "threeDSecureResults": Object {
           "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "appliedExemption": "low-value",
@@ -711,6 +737,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -746,6 +773,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -919,6 +947,10 @@ Object {
     "captures": Array [
       Object {
         "captureOutput": Object {
+          "acquiredAmount": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
           "amountOfMoney": Object {
             "amount": 1000,
             "currencyCode": "EUR",
@@ -946,6 +978,7 @@ Object {
             "initialSchemeTransactionId": "string",
             "paymentOption": "string",
             "paymentProductId": 840,
+            "schemeReferenceData": "string",
             "threeDSecureResults": Object {
               "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "appliedExemption": "low-value",
@@ -954,6 +987,7 @@ Object {
               "challengeIndicator": "no-preference",
               "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
               "flow": "frictionless",
               "liability": "issuer",
               "schemeEci": 5,
@@ -984,6 +1018,7 @@ Object {
               "challengeIndicator": "no-preference",
               "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
               "flow": "frictionless",
               "liability": "issuer",
               "schemeEci": 5,
@@ -1144,6 +1179,10 @@ Object {
       },
       "id": "string",
       "paymentOutput": Object {
+        "acquiredAmount": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
         "amountOfMoney": Object {
           "amount": 1000,
           "currencyCode": "EUR",
@@ -1171,6 +1210,7 @@ Object {
           "initialSchemeTransactionId": "string",
           "paymentOption": "string",
           "paymentProductId": 840,
+          "schemeReferenceData": "string",
           "threeDSecureResults": Object {
             "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "appliedExemption": "low-value",
@@ -1179,6 +1219,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -1214,6 +1255,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -1317,6 +1359,10 @@ exports[`Payments Promises it can capture a payment 1`] = `
 Object {
   "body": Object {
     "captureOutput": Object {
+      "acquiredAmount": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
       "amountOfMoney": Object {
         "amount": 1000,
         "currencyCode": "EUR",
@@ -1344,6 +1390,7 @@ Object {
         "initialSchemeTransactionId": "string",
         "paymentOption": "string",
         "paymentProductId": 840,
+        "schemeReferenceData": "string",
         "threeDSecureResults": Object {
           "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "appliedExemption": "low-value",
@@ -1352,6 +1399,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -1382,6 +1430,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -1488,6 +1537,10 @@ Object {
       },
       "id": "string",
       "paymentOutput": Object {
+        "acquiredAmount": Object {
+          "amount": 1000,
+          "currencyCode": "EUR",
+        },
         "amountOfMoney": Object {
           "amount": 1000,
           "currencyCode": "EUR",
@@ -1515,6 +1568,7 @@ Object {
           "initialSchemeTransactionId": "string",
           "paymentOption": "string",
           "paymentProductId": 840,
+          "schemeReferenceData": "string",
           "threeDSecureResults": Object {
             "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "appliedExemption": "low-value",
@@ -1523,6 +1577,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -1558,6 +1613,7 @@ Object {
             "challengeIndicator": "no-preference",
             "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
             "eci": "string",
+            "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
             "flow": "frictionless",
             "liability": "issuer",
             "schemeEci": 5,
@@ -1666,6 +1722,10 @@ Object {
     },
     "id": "string",
     "paymentOutput": Object {
+      "acquiredAmount": Object {
+        "amount": 1000,
+        "currencyCode": "EUR",
+      },
       "amountOfMoney": Object {
         "amount": 1000,
         "currencyCode": "EUR",
@@ -1693,6 +1753,7 @@ Object {
         "initialSchemeTransactionId": "string",
         "paymentOption": "string",
         "paymentProductId": 840,
+        "schemeReferenceData": "string",
         "threeDSecureResults": Object {
           "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "appliedExemption": "low-value",
@@ -1701,6 +1762,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -1736,6 +1798,7 @@ Object {
           "challengeIndicator": "no-preference",
           "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
           "eci": "string",
+          "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
           "flow": "frictionless",
           "liability": "issuer",
           "schemeEci": 5,
@@ -1909,6 +1972,10 @@ Object {
     "captures": Array [
       Object {
         "captureOutput": Object {
+          "acquiredAmount": Object {
+            "amount": 1000,
+            "currencyCode": "EUR",
+          },
           "amountOfMoney": Object {
             "amount": 1000,
             "currencyCode": "EUR",
@@ -1936,6 +2003,7 @@ Object {
             "initialSchemeTransactionId": "string",
             "paymentOption": "string",
             "paymentProductId": 840,
+            "schemeReferenceData": "string",
             "threeDSecureResults": Object {
               "acsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "appliedExemption": "low-value",
@@ -1944,6 +2012,7 @@ Object {
               "challengeIndicator": "no-preference",
               "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
               "flow": "frictionless",
               "liability": "issuer",
               "schemeEci": 5,
@@ -1974,6 +2043,7 @@ Object {
               "challengeIndicator": "no-preference",
               "dsTransactionId": "3E1D57DF-8DB1-4614-91D5-B11962519703",
               "eci": "string",
+              "exemptionEngineFlow": "not-applicable-challenge-indicator-received",
               "flow": "frictionless",
               "liability": "issuer",
               "schemeEci": 5,

@@ -17,4 +17,8 @@ module.exports = {
       testMatch: ['<rootDir>/tests/integration/**/*.test.js'],
     },
   ],
+  reporters: [
+    'default',
+    ['jest-junit', { includeShortConsoleOutput: true }]
+  ],
 };

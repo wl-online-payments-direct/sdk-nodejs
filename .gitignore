@@ -2,3 +2,6 @@ node_modules
 logfile.txt
 .vscode
 .idea
+
+# test reports
+junit*.xml
