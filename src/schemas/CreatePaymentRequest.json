@@ -356,6 +356,12 @@
         "card" : {
           "$ref" : "#/definitions/Card"
         },
+        "cardOnFileRecurringExpiration" : {
+          "type" : "string"
+        },
+        "cardOnFileRecurringFrequency" : {
+          "type" : "string"
+        },
         "initialSchemeTransactionId" : {
           "type" : "string"
         },
