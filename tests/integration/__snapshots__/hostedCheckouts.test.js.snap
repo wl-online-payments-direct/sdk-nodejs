@@ -27,7 +27,7 @@ Object {
           "hostedCheckoutId": 3066019730,
           "variant": "my-custom-template.html",
         },
-        "id": "string",
+        "id": "3066019730_0",
         "paymentOutput": Object {
           "acquiredAmount": Object {
             "amount": 1000,
@@ -236,7 +236,7 @@ Object {
           "hostedCheckoutId": 3066019730,
           "variant": "my-custom-template.html",
         },
-        "id": "string",
+        "id": "3066019730_0",
         "paymentOutput": Object {
           "acquiredAmount": Object {
             "amount": 1000,

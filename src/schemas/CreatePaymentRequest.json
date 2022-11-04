@@ -118,6 +118,9 @@
         "flightDate" : {
           "type" : "string"
         },
+        "flightIndicator" : {
+          "type" : "string"
+        },
         "flightLegs" : {
           "type" : "array",
           "items" : {
@@ -168,6 +171,9 @@
           "type" : "string"
         },
         "posCityCode" : {
+          "type" : "string"
+        },
+        "ticketCurrency" : {
           "type" : "string"
         },
         "ticketDeliveryMethod" : {
@@ -260,7 +266,13 @@
     "AirlinePassenger" : {
       "type" : "object",
       "properties" : {
+        "airlineLoyaltyStatus" : {
+          "type" : "string"
+        },
         "firstName" : {
+          "type" : "string"
+        },
+        "passengerType" : {
           "type" : "string"
         },
         "surname" : {

@@ -8,7 +8,7 @@ Object {
         "hostedCheckoutId": 3066019730,
         "variant": "my-custom-template.html",
       },
-      "id": "string",
+      "id": "3066019730_0",
       "paymentOutput": Object {
         "acquiredAmount": Object {
           "amount": 1000,
@@ -335,7 +335,7 @@ Object {
         "paymentProductId": 840,
       },
     },
-    "id": "string",
+    "id": "3066019730_1",
     "status": "CREATED",
     "statusOutput": Object {
       "statusCode": -2147483648,
@@ -511,7 +511,7 @@ Object {
         "hostedCheckoutId": 3066019730,
         "variant": "my-custom-template.html",
       },
-      "id": "string",
+      "id": "3066019730_0",
       "paymentOutput": Object {
         "acquiredAmount": Object {
           "amount": 1000,
@@ -697,7 +697,7 @@ Object {
       "hostedCheckoutId": 3066019730,
       "variant": "my-custom-template.html",
     },
-    "id": "string",
+    "id": "3066019730_0",
     "paymentOutput": Object {
       "acquiredAmount": Object {
         "amount": 1000,
@@ -880,7 +880,7 @@ Object {
   "body": Object {
     "refunds": Array [
       Object {
-        "id": "string",
+        "id": "3066019730_1",
         "refundOutput": Object {
           "amountOfMoney": Object {
             "amount": 1000,
@@ -1111,7 +1111,7 @@ Object {
 exports[`Payments Callback it can refund a payment 1`] = `
 Object {
   "body": Object {
-    "id": "string",
+    "id": "3066019730_1",
     "refundOutput": Object {
       "amountOfMoney": Object {
         "amount": 1000,
@@ -1182,7 +1182,7 @@ Object {
         "hostedCheckoutId": 3066019730,
         "variant": "my-custom-template.html",
       },
-      "id": "string",
+      "id": "3066019730_0",
       "paymentOutput": Object {
         "acquiredAmount": Object {
           "amount": 1000,
@@ -1509,7 +1509,7 @@ Object {
         "paymentProductId": 840,
       },
     },
-    "id": "string",
+    "id": "3066019730_1",
     "status": "CREATED",
     "statusOutput": Object {
       "statusCode": -2147483648,
@@ -1541,7 +1541,7 @@ Object {
         "hostedCheckoutId": 3066019730,
         "variant": "my-custom-template.html",
       },
-      "id": "string",
+      "id": "3066019730_0",
       "paymentOutput": Object {
         "acquiredAmount": Object {
           "amount": 1000,
@@ -1727,7 +1727,7 @@ Object {
       "hostedCheckoutId": 3066019730,
       "variant": "my-custom-template.html",
     },
-    "id": "string",
+    "id": "3066019730_0",
     "paymentOutput": Object {
       "acquiredAmount": Object {
         "amount": 1000,
@@ -1910,7 +1910,7 @@ Object {
   "body": Object {
     "refunds": Array [
       Object {
-        "id": "string",
+        "id": "3066019730_1",
         "refundOutput": Object {
           "amountOfMoney": Object {
             "amount": 1000,
@@ -2141,7 +2141,7 @@ Object {
 exports[`Payments Promises it can refund a payment 1`] = `
 Object {
   "body": Object {
-    "id": "string",
+    "id": "3066019730_1",
     "refundOutput": Object {
       "amountOfMoney": Object {
         "amount": 1000,
