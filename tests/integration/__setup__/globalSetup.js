@@ -1,17 +1,18 @@
 const fs = require('fs').promises;
-const Converter = require('api-spec-converter');
+const Converter = require('swagger2openapi');
 const { setup: setupServer } = require('jest-dev-server');
 const { port, openApiUrl, openApiDocPath, enableLogging } = require('../__fixture__/config');
 
 module.exports = async () => {
-  const convertedDoc = await Converter.convert({
-    from: 'swagger_2',
-    to: 'openapi_3',
-    syntax: 'json',
+  const convertOptions = {
     source: openApiUrl,
-  });
+    origin: true,
+    patch: true,
+    resolve: true,
+  };
+  const convertedDoc = await Converter.convertUrl(openApiUrl, convertOptions);
 
-  const openApiDocContent = JSON.stringify(convertedDoc.spec, null, 2);
+  const openApiDocContent = JSON.stringify(convertedDoc.openapi, null, 2);
 
   await fs.writeFile(openApiDocPath, openApiDocContent, 'utf-8');
 

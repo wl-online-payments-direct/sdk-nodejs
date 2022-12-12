@@ -8,6 +8,7 @@ Object {
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
     "hostedTokenizationId": "string",
+    "hostedTokenizationUrl": "https://payment.domain.com/hostedtokenization/tokenization/form/e18f459488504991858dcf624a94257f",
     "invalidTokens": Array [
       "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
@@ -80,6 +81,7 @@ Object {
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
     ],
     "hostedTokenizationId": "string",
+    "hostedTokenizationUrl": "https://payment.domain.com/hostedtokenization/tokenization/form/e18f459488504991858dcf624a94257f",
     "invalidTokens": Array [
       "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
       "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
