@@ -574,6 +574,9 @@
         },
         "shoppingCart" : {
           "$ref" : "#/definitions/ShoppingCart"
+        },
+        "surchargeSpecificInput" : {
+          "$ref" : "#/definitions/SurchargeSpecificInput"
         }
       },
       "additionalProperties" : false
@@ -756,6 +759,18 @@
         },
         "reOrderIndicator" : {
           "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SurchargeSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "mode" : {
+          "type" : "string"
+        },
+        "surchargeAmount" : {
+          "$ref" : "#/definitions/AmountOfMoney"
         }
       },
       "additionalProperties" : false

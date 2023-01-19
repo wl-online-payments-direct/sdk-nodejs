@@ -6,7 +6,7 @@ Object {
     "card": Object {
       "cardNumber": "string",
       "cardholderName": "string",
-      "expiryDate": "0529",
+      "expiryDate": 529,
     },
     "externalTokenLinked": Object {
       "ComputedToken": "string",
@@ -31,7 +31,7 @@ Object {
         "cardWithoutCvv": Object {
           "cardNumber": "string",
           "cardholderName": "string",
-          "expiryDate": "0529",
+          "expiryDate": 529,
         },
       },
     },
@@ -86,7 +86,7 @@ Object {
     "card": Object {
       "cardNumber": "string",
       "cardholderName": "string",
-      "expiryDate": "0529",
+      "expiryDate": 529,
     },
     "externalTokenLinked": Object {
       "ComputedToken": "string",
@@ -111,7 +111,7 @@ Object {
         "cardWithoutCvv": Object {
           "cardNumber": "string",
           "cardholderName": "string",
-          "expiryDate": "0529",
+          "expiryDate": 529,
         },
       },
     },

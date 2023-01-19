@@ -3,16 +3,10 @@
 exports[`Hosted tokenization Callback it can create a hosted tokenization 1`] = `
 Object {
   "body": Object {
-    "expiredCardTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "expiredCardTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1','b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "hostedTokenizationId": "string",
     "hostedTokenizationUrl": "https://payment.domain.com/hostedtokenization/tokenization/form/e18f459488504991858dcf624a94257f",
-    "invalidTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "invalidTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1','b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "partialRedirectUrl": "string",
   },
   "isSuccess": true,
@@ -30,7 +24,7 @@ Object {
           "cardWithoutCvv": Object {
             "cardNumber": "string",
             "cardholderName": "string",
-            "expiryDate": "0529",
+            "expiryDate": 529,
           },
         },
       },
@@ -76,16 +70,10 @@ Object {
 exports[`Hosted tokenization Promises it can create a hosted tokenization 1`] = `
 Object {
   "body": Object {
-    "expiredCardTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "expiredCardTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1','b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "hostedTokenizationId": "string",
     "hostedTokenizationUrl": "https://payment.domain.com/hostedtokenization/tokenization/form/e18f459488504991858dcf624a94257f",
-    "invalidTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "invalidTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1','b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "partialRedirectUrl": "string",
   },
   "isSuccess": true,
@@ -103,7 +91,7 @@ Object {
           "cardWithoutCvv": Object {
             "cardNumber": "string",
             "cardholderName": "string",
-            "expiryDate": "0529",
+            "expiryDate": 529,
           },
         },
       },

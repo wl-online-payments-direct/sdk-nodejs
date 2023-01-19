@@ -1,0 +1,59 @@
+{
+  "id" : "CalculateSurchargeRequest",
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "description" : "This file was auto-generated.",
+  "properties" : {
+    "amountOfMoney" : {
+      "$ref" : "#/definitions/AmountOfMoney"
+    },
+    "cardSource" : {
+      "$ref" : "#/definitions/CardSource"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer"
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CardSource" : {
+      "type" : "object",
+      "properties" : {
+        "card" : {
+          "$ref" : "#/definitions/SurchargeCalculationCard"
+        },
+        "encryptedCustomerInput" : {
+          "type" : "string"
+        },
+        "hostedTokenizationId" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SurchargeCalculationCard" : {
+      "type" : "object",
+      "properties" : {
+        "cardNumber" : {
+          "type" : "string"
+        },
+        "paymentProductId" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

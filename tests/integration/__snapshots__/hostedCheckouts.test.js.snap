@@ -5,10 +5,7 @@ Object {
   "body": Object {
     "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
     "hostedCheckoutId": 3066019730,
-    "invalidTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "invalidTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1', 'b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "merchantReference": "your-order-6372",
     "partialRedirectUrl": "string",
     "redirectUrl": "string",
@@ -45,7 +42,7 @@ Object {
               "bin": "string",
               "cardNumber": "string",
               "countryCode": "BE",
-              "expiryDate": "0529",
+              "expiryDate": 529,
             },
             "externalTokenLinked": Object {
               "ComputedToken": "string",
@@ -94,7 +91,7 @@ Object {
             "network": "string",
             "paymentData": Object {
               "dpan": "string",
-              "expiryDate": "0529",
+              "expiryDate": 529,
             },
             "paymentProductId": 840,
             "threeDSecureResults": Object {
@@ -176,6 +173,13 @@ Object {
               "mandateReference": "string",
             },
             "paymentProductId": 840,
+          },
+          "surchargeSpecificOutput": Object {
+            "mode": "pass-through",
+            "surchargeAmount": Object {
+              "amount": 1000,
+              "currencyCode": "EUR",
+            },
           },
         },
         "status": "CREATED",
@@ -214,10 +218,7 @@ Object {
   "body": Object {
     "RETURNMAC": "fecab85c-9b0e-42ee-a9d9-ebb69b0c2eb0",
     "hostedCheckoutId": 3066019730,
-    "invalidTokens": Array [
-      "0a7042d6-bf24-40b6-85c5-dec24b9dd1d1",
-      "b7042dff-1fbd-46d2-9ecb-bddaa2c31165",
-    ],
+    "invalidTokens": "['0a7042d6-bf24-40b6-85c5-dec24b9dd1d1', 'b7042dff-1fbd-46d2-9ecb-bddaa2c31165']",
     "merchantReference": "your-order-6372",
     "partialRedirectUrl": "string",
     "redirectUrl": "string",
@@ -254,7 +255,7 @@ Object {
               "bin": "string",
               "cardNumber": "string",
               "countryCode": "BE",
-              "expiryDate": "0529",
+              "expiryDate": 529,
             },
             "externalTokenLinked": Object {
               "ComputedToken": "string",
@@ -303,7 +304,7 @@ Object {
             "network": "string",
             "paymentData": Object {
               "dpan": "string",
-              "expiryDate": "0529",
+              "expiryDate": 529,
             },
             "paymentProductId": 840,
             "threeDSecureResults": Object {
@@ -385,6 +386,13 @@ Object {
               "mandateReference": "string",
             },
             "paymentProductId": 840,
+          },
+          "surchargeSpecificOutput": Object {
+            "mode": "pass-through",
+            "surchargeAmount": Object {
+              "amount": 1000,
+              "currencyCode": "EUR",
+            },
           },
         },
         "status": "CREATED",
