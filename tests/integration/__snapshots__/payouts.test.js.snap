@@ -9,6 +9,7 @@ Object {
         "amount": 1000,
         "currencyCode": "EUR",
       },
+      "payoutReason": "Gambling",
     },
     "status": "CREATED",
     "statusOutput": Object {
@@ -31,6 +32,7 @@ Object {
         "amount": 1000,
         "currencyCode": "EUR",
       },
+      "payoutReason": "Gambling",
     },
     "status": "CREATED",
     "statusOutput": Object {
@@ -53,6 +55,7 @@ Object {
         "amount": 1000,
         "currencyCode": "EUR",
       },
+      "payoutReason": "Gambling",
     },
     "status": "CREATED",
     "statusOutput": Object {
@@ -75,6 +78,7 @@ Object {
         "amount": 1000,
         "currencyCode": "EUR",
       },
+      "payoutReason": "Gambling",
     },
     "status": "CREATED",
     "statusOutput": Object {

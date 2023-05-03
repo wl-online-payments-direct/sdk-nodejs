@@ -55,6 +55,9 @@
         "paymentProductId" : {
           "type" : "integer"
         },
+        "payoutReason" : {
+          "type" : "string"
+        },
         "token" : {
           "type" : "string"
         }

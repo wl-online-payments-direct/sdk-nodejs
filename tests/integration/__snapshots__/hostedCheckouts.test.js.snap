@@ -116,6 +116,9 @@ Object {
               "fraudServiceResult": "string",
             },
             "paymentOption": "string",
+            "paymentProduct5001SpecificOutput": Object {
+              "authorisationCode": "string",
+            },
             "paymentProduct5402SpecificOutput": Object {
               "brand": "string",
             },
@@ -329,6 +332,9 @@ Object {
               "fraudServiceResult": "string",
             },
             "paymentOption": "string",
+            "paymentProduct5001SpecificOutput": Object {
+              "authorisationCode": "string",
+            },
             "paymentProduct5402SpecificOutput": Object {
               "brand": "string",
             },
