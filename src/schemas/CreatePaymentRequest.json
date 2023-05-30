@@ -377,6 +377,9 @@
         "cardOnFileRecurringFrequency" : {
           "type" : "string"
         },
+        "currencyConversion" : {
+          "$ref" : "#/definitions/CurrencyConversionInput"
+        },
         "initialSchemeTransactionId" : {
           "type" : "string"
         },
@@ -385,6 +388,12 @@
         },
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
+        },
+        "paymentProduct3208SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3208SpecificInput"
+        },
+        "paymentProduct3209SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3209SpecificInput"
         },
         "paymentProductId" : {
           "type" : "integer"
@@ -486,6 +495,18 @@
           "type" : "string"
         },
         "uniqueMandateReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CurrencyConversionInput" : {
+      "type" : "object",
+      "properties" : {
+        "acceptedByUser" : {
+          "type" : "boolean"
+        },
+        "dccSessionId" : {
           "type" : "string"
         }
       },
@@ -1006,6 +1027,24 @@
           "type" : "integer"
         },
         "usecase" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3208SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "merchantFinanceCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3209SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "merchantFinanceCode" : {
           "type" : "string"
         }
       },

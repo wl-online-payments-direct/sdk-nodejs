@@ -44,6 +44,28 @@ Object {
               "countryCode": "BE",
               "expiryDate": 529,
             },
+            "currencyConversion": Object {
+              "acceptedByUser": true,
+              "proposal": Object {
+                "baseAmount": Object {
+                  "amount": 1000,
+                  "currencyCode": "EUR",
+                },
+                "disclaimerDisplay": "Make sure you understand the costs of currency conversion as they may be different ...",
+                "disclaimerReceipt": "",
+                "rate": Object {
+                  "exchangeRate": 1.57,
+                  "invertedExchangeRate": 0.63694,
+                  "markUpRate": 3.12,
+                  "quotationDateTime": "2021-07-21T08:00:00Z",
+                  "source": "European Central Bank",
+                },
+                "targetAmount": Object {
+                  "amount": 1000,
+                  "currencyCode": "EUR",
+                },
+              },
+            },
             "externalTokenLinked": Object {
               "ComputedToken": "string",
               "GTSComputedToken": "string",
@@ -56,6 +78,12 @@ Object {
             },
             "initialSchemeTransactionId": "string",
             "paymentOption": "string",
+            "paymentProduct3208SpecificOutput": Object {
+              "buyerCompliantBankMessage": "string",
+            },
+            "paymentProduct3209SpecificOutput": Object {
+              "buyerCompliantBankMessage": "string",
+            },
             "paymentProductId": 840,
             "schemeReferenceData": "string",
             "threeDSecureResults": Object {
@@ -260,6 +288,28 @@ Object {
               "countryCode": "BE",
               "expiryDate": 529,
             },
+            "currencyConversion": Object {
+              "acceptedByUser": true,
+              "proposal": Object {
+                "baseAmount": Object {
+                  "amount": 1000,
+                  "currencyCode": "EUR",
+                },
+                "disclaimerDisplay": "Make sure you understand the costs of currency conversion as they may be different ...",
+                "disclaimerReceipt": "",
+                "rate": Object {
+                  "exchangeRate": 1.57,
+                  "invertedExchangeRate": 0.63694,
+                  "markUpRate": 3.12,
+                  "quotationDateTime": "2021-07-21T08:00:00Z",
+                  "source": "European Central Bank",
+                },
+                "targetAmount": Object {
+                  "amount": 1000,
+                  "currencyCode": "EUR",
+                },
+              },
+            },
             "externalTokenLinked": Object {
               "ComputedToken": "string",
               "GTSComputedToken": "string",
@@ -272,6 +322,12 @@ Object {
             },
             "initialSchemeTransactionId": "string",
             "paymentOption": "string",
+            "paymentProduct3208SpecificOutput": Object {
+              "buyerCompliantBankMessage": "string",
+            },
+            "paymentProduct3209SpecificOutput": Object {
+              "buyerCompliantBankMessage": "string",
+            },
             "paymentProductId": 840,
             "schemeReferenceData": "string",
             "threeDSecureResults": Object {

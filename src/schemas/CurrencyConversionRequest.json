@@ -1,0 +1,53 @@
+{
+  "id" : "CurrencyConversionRequest",
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "description" : "This file was auto-generated.",
+  "properties" : {
+    "card" : {
+      "$ref" : "#/definitions/CardInfo"
+    },
+    "transaction" : {
+      "$ref" : "#/definitions/Transaction"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer"
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CardInfo" : {
+      "type" : "object",
+      "properties" : {
+        "cardNumber" : {
+          "type" : "string"
+        },
+        "paymentProductId" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "Transaction" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "$ref" : "#/definitions/AmountOfMoney"
+        },
+        "localDateTime" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

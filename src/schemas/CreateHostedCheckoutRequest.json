@@ -347,11 +347,20 @@
         "authorizationMode" : {
           "type" : "string"
         },
+        "currencyConversionSpecificInput" : {
+          "$ref" : "#/definitions/CurrencyConversionSpecificInput"
+        },
         "initialSchemeTransactionId" : {
           "type" : "string"
         },
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
+        },
+        "paymentProduct3208SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3208SpecificInput"
+        },
+        "paymentProduct3209SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3209SpecificInput"
         },
         "paymentProduct5100SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct5100SpecificInput"
@@ -457,6 +466,15 @@
         },
         "uniqueMandateReference" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CurrencyConversionSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "dccEnabled" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
@@ -615,6 +633,9 @@
     "HostedCheckoutSpecificInput" : {
       "type" : "object",
       "properties" : {
+        "allowedNumberOfPaymentAttempts" : {
+          "type" : "integer"
+        },
         "cardPaymentMethodSpecificInput" : {
           "$ref" : "#/definitions/CardPaymentMethodSpecificInputForHostedCheckout"
         },
@@ -904,6 +925,24 @@
           "type" : "integer"
         },
         "usecase" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3208SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "merchantFinanceCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3209SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "merchantFinanceCode" : {
           "type" : "string"
         }
       },
