@@ -7,6 +7,7 @@ const webhooks = require('./webhooks');
 const hostedCheckout = require('./methods/hostedCheckout');
 const hostedTokenization = require('./methods/hostedTokenization');
 const mandates = require('./methods/mandates');
+const paymentLinks = require('./methods/paymentLinks');
 const payments = require('./methods/payments');
 const payouts = require('./methods/payouts');
 const productGroups = require('./methods/productGroups');
@@ -20,6 +21,7 @@ module.exports = function (sdkContext) {
     hostedCheckout: hostedCheckout(sdkContext),
     hostedTokenization: hostedTokenization(sdkContext),
     mandates: mandates(sdkContext),
+    paymentLinks: paymentLinks(sdkContext),
     payments: payments(sdkContext),
     payouts: payouts(sdkContext),
     productGroups: productGroups(sdkContext),

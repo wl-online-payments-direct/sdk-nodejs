@@ -1,0 +1,47 @@
+{
+  "id" : "CreatePaymentLinkRequest",
+  "$schema" : "http://json-schema.org/draft-04/schema#",
+  "type" : "object",
+  "description" : "This file was auto-generated. An object containing the Create PaymentLink request.",
+  "properties" : {
+    "description" : {
+      "type" : "string"
+    },
+    "expirationDate" : {
+      "type" : "string"
+    },
+    "paymentLinkOrder" : {
+      "$ref" : "#/definitions/PaymentLinkOrder"
+    },
+    "recipientName" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false,
+  "definitions" : {
+    "AmountOfMoney" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer"
+        },
+        "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentLinkOrder" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "$ref" : "#/definitions/AmountOfMoney"
+        },
+        "merchantReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
+}

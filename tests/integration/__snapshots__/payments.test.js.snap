@@ -586,6 +586,10 @@ Object {
           "appSwitchLink": "string",
           "qrCodeUrl": "string",
         },
+        "paymentProduct5407": Object {
+          "pairingToken": "string",
+          "qrCode": "string",
+        },
       },
     },
     "payment": Object {
@@ -1855,6 +1859,10 @@ Object {
         "paymentProduct5404": Object {
           "appSwitchLink": "string",
           "qrCodeUrl": "string",
+        },
+        "paymentProduct5407": Object {
+          "pairingToken": "string",
+          "qrCode": "string",
         },
       },
     },

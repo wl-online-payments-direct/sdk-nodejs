@@ -1027,6 +1027,9 @@
         "paymentOption" : {
           "type" : "string"
         },
+        "paymentProduct3306SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct3306SpecificInput"
+        },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct809SpecificInput"
         },
@@ -1047,6 +1050,15 @@
         },
         "tokenize" : {
           "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct3306SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "extraMerchantData" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
