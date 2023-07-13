@@ -42,9 +42,6 @@
       "properties" : {
         "amount" : {
           "$ref" : "#/definitions/AmountOfMoney"
-        },
-        "localDateTime" : {
-          "type" : "string"
         }
       },
       "additionalProperties" : false

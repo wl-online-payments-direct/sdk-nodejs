@@ -36,6 +36,9 @@ Object {
           },
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
+            "acquirerInformation": Object {
+              "name": "string",
+            },
             "authenticatedAmount": -9223372036854776000,
             "authorisationCode": "string",
             "card": Object {
@@ -210,6 +213,12 @@ Object {
             "surchargeAmount": Object {
               "amount": 1000,
               "currencyCode": "EUR",
+            },
+            "surchargeRate": Object {
+              "adValoremRate": 2.5,
+              "specificRate": 20,
+              "surchargeProductTypeId": "VISA_DOMESTIC_DEBIT",
+              "surchargeProductTypeVersion": "8667F70E-9DDB-41FF-8822-A00FC43FCCAF",
             },
           },
         },
@@ -280,6 +289,9 @@ Object {
           },
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
+            "acquirerInformation": Object {
+              "name": "string",
+            },
             "authenticatedAmount": -9223372036854776000,
             "authorisationCode": "string",
             "card": Object {
@@ -454,6 +466,12 @@ Object {
             "surchargeAmount": Object {
               "amount": 1000,
               "currencyCode": "EUR",
+            },
+            "surchargeRate": Object {
+              "adValoremRate": 2.5,
+              "specificRate": 20,
+              "surchargeProductTypeId": "VISA_DOMESTIC_DEBIT",
+              "surchargeProductTypeVersion": "8667F70E-9DDB-41FF-8822-A00FC43FCCAF",
             },
           },
         },

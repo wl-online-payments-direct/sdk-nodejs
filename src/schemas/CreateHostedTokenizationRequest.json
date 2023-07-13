@@ -10,6 +10,9 @@
     "locale" : {
       "type" : "string"
     },
+    "paymentProductFilters" : {
+      "$ref" : "#/definitions/PaymentProductFiltersHostedTokenization"
+    },
     "tokens" : {
       "type" : "string"
     },
@@ -17,5 +20,33 @@
       "type" : "string"
     }
   },
-  "additionalProperties" : false
+  "additionalProperties" : false,
+  "definitions" : {
+    "PaymentProductFilterHostedTokenization" : {
+      "type" : "object",
+      "properties" : {
+        "products" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer"
+          },
+          "minItems" : 0,
+          "uniqueItems" : true
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProductFiltersHostedTokenization" : {
+      "type" : "object",
+      "properties" : {
+        "exclude" : {
+          "$ref" : "#/definitions/PaymentProductFilterHostedTokenization"
+        },
+        "restrictTo" : {
+          "$ref" : "#/definitions/PaymentProductFilterHostedTokenization"
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
 }

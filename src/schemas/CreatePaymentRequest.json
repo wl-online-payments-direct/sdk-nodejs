@@ -1136,6 +1136,9 @@
       "properties" : {
         "addressSelectionAtPayPal" : {
           "type" : "boolean"
+        },
+        "custom" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
