@@ -434,6 +434,9 @@
         "browserData" : {
           "$ref" : "#/definitions/BrowserData"
         },
+        "deviceFingerprint" : {
+          "type" : "string"
+        },
         "ipAddress" : {
           "type" : "string"
         },

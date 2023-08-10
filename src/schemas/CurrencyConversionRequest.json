@@ -4,8 +4,8 @@
   "type" : "object",
   "description" : "This file was auto-generated.",
   "properties" : {
-    "card" : {
-      "$ref" : "#/definitions/CardInfo"
+    "cardSource" : {
+      "$ref" : "#/definitions/DccCardSource"
     },
     "transaction" : {
       "$ref" : "#/definitions/Transaction"
@@ -33,6 +33,24 @@
         },
         "paymentProductId" : {
           "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "DccCardSource" : {
+      "type" : "object",
+      "properties" : {
+        "card" : {
+          "$ref" : "#/definitions/CardInfo"
+        },
+        "encryptedCustomerInput" : {
+          "type" : "string"
+        },
+        "hostedTokenizationId" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

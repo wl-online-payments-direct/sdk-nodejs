@@ -560,6 +560,21 @@
       },
       "additionalProperties" : false
     },
+    "CustomerBankAccount" : {
+      "type" : "object",
+      "properties" : {
+        "accountHolderName" : {
+          "type" : "string"
+        },
+        "bic" : {
+          "type" : "string"
+        },
+        "iban" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "CustomerDevice" : {
       "type" : "object",
       "properties" : {
@@ -568,6 +583,9 @@
         },
         "browserData" : {
           "$ref" : "#/definitions/BrowserData"
+        },
+        "deviceFingerprint" : {
+          "type" : "string"
         },
         "ipAddress" : {
           "type" : "string"
@@ -1030,6 +1048,9 @@
         "paymentProduct3306SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct3306SpecificInput"
         },
+        "paymentProduct5406SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct5406SpecificInput"
+        },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct809SpecificInput"
         },
@@ -1059,6 +1080,15 @@
       "properties" : {
         "extraMerchantData" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct5406SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "customerBankAccount" : {
+          "$ref" : "#/definitions/CustomerBankAccount"
         }
       },
       "additionalProperties" : false

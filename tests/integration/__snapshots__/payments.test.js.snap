@@ -127,6 +127,11 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "customerBankAccount": Object {
+            "accountHolderName": "John Doe",
+            "bic": "BOHIUS77",
+            "iban": "BE01 0123 4567 8910",
+          },
           "fraudResults": Object {
             "fraudServiceResult": "string",
           },
@@ -350,6 +355,11 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "customerBankAccount": Object {
+          "accountHolderName": "John Doe",
+          "bic": "BOHIUS77",
+          "iban": "BE01 0123 4567 8910",
+        },
         "fraudResults": Object {
           "fraudServiceResult": "string",
         },
@@ -734,6 +744,11 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "customerBankAccount": Object {
+            "accountHolderName": "John Doe",
+            "bic": "BOHIUS77",
+            "iban": "BE01 0123 4567 8910",
+          },
           "fraudResults": Object {
             "fraudServiceResult": "string",
           },
@@ -967,6 +982,11 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "customerBankAccount": Object {
+          "accountHolderName": "John Doe",
+          "bic": "BOHIUS77",
+          "iban": "BE01 0123 4567 8910",
+        },
         "fraudResults": Object {
           "fraudServiceResult": "string",
         },
@@ -1283,6 +1303,11 @@ Object {
           },
           "paymentMethod": "string",
           "redirectPaymentMethodSpecificOutput": Object {
+            "customerBankAccount": Object {
+              "accountHolderName": "John Doe",
+              "bic": "BOHIUS77",
+              "iban": "BE01 0123 4567 8910",
+            },
             "fraudResults": Object {
               "fraudServiceResult": "string",
             },
@@ -1590,6 +1615,11 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "customerBankAccount": Object {
+            "accountHolderName": "John Doe",
+            "bic": "BOHIUS77",
+            "iban": "BE01 0123 4567 8910",
+          },
           "fraudResults": Object {
             "fraudServiceResult": "string",
           },
@@ -1813,6 +1843,11 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "customerBankAccount": Object {
+          "accountHolderName": "John Doe",
+          "bic": "BOHIUS77",
+          "iban": "BE01 0123 4567 8910",
+        },
         "fraudResults": Object {
           "fraudServiceResult": "string",
         },
@@ -2053,6 +2088,11 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "customerBankAccount": Object {
+            "accountHolderName": "John Doe",
+            "bic": "BOHIUS77",
+            "iban": "BE01 0123 4567 8910",
+          },
           "fraudResults": Object {
             "fraudServiceResult": "string",
           },
@@ -2286,6 +2326,11 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "customerBankAccount": Object {
+          "accountHolderName": "John Doe",
+          "bic": "BOHIUS77",
+          "iban": "BE01 0123 4567 8910",
+        },
         "fraudResults": Object {
           "fraudServiceResult": "string",
         },
@@ -2602,6 +2647,11 @@ Object {
           },
           "paymentMethod": "string",
           "redirectPaymentMethodSpecificOutput": Object {
+            "customerBankAccount": Object {
+              "accountHolderName": "John Doe",
+              "bic": "BOHIUS77",
+              "iban": "BE01 0123 4567 8910",
+            },
             "fraudResults": Object {
               "fraudServiceResult": "string",
             },
