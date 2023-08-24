@@ -636,6 +636,27 @@
       },
       "additionalProperties" : false
     },
+    "GPayThreeDSecure" : {
+      "type" : "object",
+      "properties" : {
+        "challengeCanvasSize" : {
+          "type" : "string"
+        },
+        "challengeIndicator" : {
+          "type" : "string"
+        },
+        "exemptionRequest" : {
+          "type" : "string"
+        },
+        "redirectionData" : {
+          "$ref" : "#/definitions/RedirectionData"
+        },
+        "skipAuthentication" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
     "GiftCardPurchase" : {
       "type" : "object",
       "properties" : {
@@ -819,8 +840,20 @@
         "authorizationMode" : {
           "type" : "string"
         },
+        "paymentProduct320SpecificInput" : {
+          "$ref" : "#/definitions/MobilePaymentProduct320SpecificInput"
+        },
         "paymentProductId" : {
           "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "MobilePaymentProduct320SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "threeDSecure" : {
+          "$ref" : "#/definitions/GPayThreeDSecure"
         }
       },
       "additionalProperties" : false

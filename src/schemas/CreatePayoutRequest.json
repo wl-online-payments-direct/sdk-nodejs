@@ -10,6 +10,9 @@
     "cardPayoutMethodSpecificInput" : {
       "$ref" : "#/definitions/CardPayoutMethodSpecificInput"
     },
+    "omnichannelPayoutSpecificInput" : {
+      "$ref" : "#/definitions/OmnichannelPayoutSpecificInput"
+    },
     "references" : {
       "$ref" : "#/definitions/PaymentReferences"
     }
@@ -59,6 +62,15 @@
           "type" : "string"
         },
         "token" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "OmnichannelPayoutSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "paymentId" : {
           "type" : "string"
         }
       },
