@@ -1084,6 +1084,9 @@
         "paymentProduct5406SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct5406SpecificInput"
         },
+        "paymentProduct5408SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct5408SpecificInput"
+        },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct809SpecificInput"
         },
@@ -1118,6 +1121,15 @@
       "additionalProperties" : false
     },
     "RedirectPaymentProduct5406SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "customerBankAccount" : {
+          "$ref" : "#/definitions/CustomerBankAccount"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct5408SpecificInput" : {
       "type" : "object",
       "properties" : {
         "customerBankAccount" : {

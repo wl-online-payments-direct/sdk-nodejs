@@ -127,6 +127,7 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
           "customerBankAccount": Object {
             "accountHolderName": "John Doe",
             "bic": "BOHIUS77",
@@ -355,6 +356,7 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
         "customerBankAccount": Object {
           "accountHolderName": "John Doe",
           "bic": "BOHIUS77",
@@ -744,6 +746,7 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
           "customerBankAccount": Object {
             "accountHolderName": "John Doe",
             "bic": "BOHIUS77",
@@ -982,6 +985,7 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
         "customerBankAccount": Object {
           "accountHolderName": "John Doe",
           "bic": "BOHIUS77",
@@ -1303,6 +1307,7 @@ Object {
           },
           "paymentMethod": "string",
           "redirectPaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
             "customerBankAccount": Object {
               "accountHolderName": "John Doe",
               "bic": "BOHIUS77",
@@ -1615,6 +1620,7 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
           "customerBankAccount": Object {
             "accountHolderName": "John Doe",
             "bic": "BOHIUS77",
@@ -1843,6 +1849,7 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
         "customerBankAccount": Object {
           "accountHolderName": "John Doe",
           "bic": "BOHIUS77",
@@ -2088,6 +2095,7 @@ Object {
         },
         "paymentMethod": "string",
         "redirectPaymentMethodSpecificOutput": Object {
+          "authorisationCode": "string",
           "customerBankAccount": Object {
             "accountHolderName": "John Doe",
             "bic": "BOHIUS77",
@@ -2326,6 +2334,7 @@ Object {
       },
       "paymentMethod": "string",
       "redirectPaymentMethodSpecificOutput": Object {
+        "authorisationCode": "string",
         "customerBankAccount": Object {
           "accountHolderName": "John Doe",
           "bic": "BOHIUS77",
@@ -2647,6 +2656,7 @@ Object {
           },
           "paymentMethod": "string",
           "redirectPaymentMethodSpecificOutput": Object {
+            "authorisationCode": "string",
             "customerBankAccount": Object {
               "accountHolderName": "John Doe",
               "bic": "BOHIUS77",
