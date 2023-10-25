@@ -1160,6 +1160,9 @@
       "properties" : {
         "customerBankAccount" : {
           "$ref" : "#/definitions/CustomerBankAccount"
+        },
+        "instantPaymentOnly" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false

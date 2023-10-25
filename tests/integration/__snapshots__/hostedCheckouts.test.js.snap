@@ -80,6 +80,7 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "paymentAccountReference": "string",
             "paymentOption": "string",
             "paymentProduct3208SpecificOutput": Object {
               "buyerCompliantBankMessage": "string",
@@ -339,6 +340,7 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "paymentAccountReference": "string",
             "paymentOption": "string",
             "paymentProduct3208SpecificOutput": Object {
               "buyerCompliantBankMessage": "string",
