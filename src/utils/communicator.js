@@ -1,6 +1,7 @@
 /* eslint-disable guard-for-in, no-restricted-syntax, no-param-reassign, no-plusplus */
 const _ = require('lodash');
 
+const uuid = require('uuid');
 const headers = require('./headers');
 const connection = require('./connection');
 
@@ -125,8 +126,18 @@ const json = function (o, sdkContext) {
   });
 };
 
+const multipart = function (o, sdkContext) {
+  const options = _.merge({}, sdkContext.getContext().httpOptions);
+  const boundary = uuid.v4();
+  prepareRequest(o, sdkContext, options, `multipart/form-data; boundary=${boundary}`);
+  connection.sendMultipart(options, o.body, sdkContext, function (error, response) {
+    handleResponse(error, response, o.cb, sdkContext);
+  });
+};
+
 const communicator = {
   json,
+  multipart,
 };
 
 module.exports = communicator;
