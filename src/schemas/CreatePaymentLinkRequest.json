@@ -11,7 +11,7 @@
       "type" : "string"
     },
     "paymentLinkOrder" : {
-      "$ref" : "#/definitions/PaymentLinkOrder"
+      "$ref" : "#/definitions/PaymentLinkOrderInput"
     },
     "recipientName" : {
       "type" : "string"
@@ -31,7 +31,7 @@
       },
       "additionalProperties" : false
     },
-    "PaymentLinkOrder" : {
+    "PaymentLinkOrderInput" : {
       "type" : "object",
       "properties" : {
         "amount" : {

@@ -37,6 +37,11 @@ Object {
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
             "acquirerInformation": Object {
+              "acquirerSelectionInformation": Object {
+                "fallbackLevel": -2147483648,
+                "result": "NO_MATCHING_RULESET",
+                "ruleName": "string",
+              },
               "name": "string",
             },
             "authenticatedAmount": -9223372036854776000,
@@ -297,6 +302,11 @@ Object {
           "amountPaid": -9223372036854776000,
           "cardPaymentMethodSpecificOutput": Object {
             "acquirerInformation": Object {
+              "acquirerSelectionInformation": Object {
+                "fallbackLevel": -2147483648,
+                "result": "NO_MATCHING_RULESET",
+                "ruleName": "string",
+              },
               "name": "string",
             },
             "authenticatedAmount": -9223372036854776000,

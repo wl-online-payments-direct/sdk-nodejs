@@ -7,6 +7,9 @@
     "askConsumerConsent" : {
       "type" : "boolean"
     },
+    "creditCardSpecificInput" : {
+      "$ref" : "#/definitions/CreditCardSpecificInputHostedTokenization"
+    },
     "locale" : {
       "type" : "string"
     },
@@ -22,6 +25,27 @@
   },
   "additionalProperties" : false,
   "definitions" : {
+    "CreditCardSpecificInputHostedTokenization" : {
+      "type" : "object",
+      "properties" : {
+        "ValidationRules" : {
+          "$ref" : "#/definitions/CreditCardValidationRulesHostedTokenization"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "CreditCardValidationRulesHostedTokenization" : {
+      "type" : "object",
+      "properties" : {
+        "cvvMandatoryForExistingToken" : {
+          "type" : "boolean"
+        },
+        "cvvMandatoryForNewToken" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
     "PaymentProductFilterHostedTokenization" : {
       "type" : "object",
       "properties" : {

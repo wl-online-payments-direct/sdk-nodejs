@@ -491,6 +491,15 @@
       },
       "additionalProperties" : false
     },
+    "Discount" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
     "GiftCardPurchase" : {
       "type" : "object",
       "properties" : {
@@ -568,6 +577,9 @@
         },
         "customer" : {
           "$ref" : "#/definitions/Customer"
+        },
+        "discount" : {
+          "$ref" : "#/definitions/Discount"
         },
         "references" : {
           "$ref" : "#/definitions/OrderReferences"
