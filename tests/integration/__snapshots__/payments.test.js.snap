@@ -624,6 +624,10 @@ Object {
         "redirectURL": "string",
       },
       "showFormData": Object {
+        "paymentProduct3012": Object {
+          "qrCode": "string",
+          "urlIntent": "string",
+        },
         "paymentProduct5404": Object {
           "appSwitchLink": "string",
           "qrCodeUrl": "string",
@@ -873,7 +877,7 @@ Object {
     },
   },
   "isSuccess": true,
-  "status": 200,
+  "status": 201,
 }
 `;
 
@@ -2003,6 +2007,10 @@ Object {
         "redirectURL": "string",
       },
       "showFormData": Object {
+        "paymentProduct3012": Object {
+          "qrCode": "string",
+          "urlIntent": "string",
+        },
         "paymentProduct5404": Object {
           "appSwitchLink": "string",
           "qrCodeUrl": "string",
@@ -2252,7 +2260,7 @@ Object {
     },
   },
   "isSuccess": true,
-  "status": 200,
+  "status": 201,
 }
 `;
 
