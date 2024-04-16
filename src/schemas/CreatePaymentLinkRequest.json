@@ -39,6 +39,18 @@
         },
         "merchantReference" : {
           "type" : "string"
+        },
+        "surchargeSpecificInput" : {
+          "$ref" : "#/definitions/SurchargeForPaymentLink"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SurchargeForPaymentLink" : {
+      "type" : "object",
+      "properties" : {
+        "surchargeMode" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

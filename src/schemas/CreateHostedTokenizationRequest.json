@@ -30,6 +30,13 @@
       "properties" : {
         "ValidationRules" : {
           "$ref" : "#/definitions/CreditCardValidationRulesHostedTokenization"
+        },
+        "paymentProductPreferredOrder" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer"
+          },
+          "uniqueItems" : false
         }
       },
       "additionalProperties" : false

@@ -397,6 +397,13 @@
       "properties" : {
         "groupCards" : {
           "type" : "boolean"
+        },
+        "paymentProductPreferredOrder" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer"
+          },
+          "uniqueItems" : false
         }
       },
       "additionalProperties" : false
