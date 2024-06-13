@@ -19,6 +19,9 @@
     "order" : {
       "$ref" : "#/definitions/Order"
     },
+    "pageCustomization" : {
+      "$ref" : "#/definitions/PageCustomization"
+    },
     "redirectPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/RedirectPaymentMethodSpecificInput"
     },
@@ -356,6 +359,9 @@
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
         },
+        "paymentProduct3012SpecificInput" : {
+          "$ref" : "#/definitions/PaymentProduct3012SpecificInput"
+        },
         "paymentProduct3208SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct3208SpecificInput"
         },
@@ -395,6 +401,9 @@
     "CardPaymentMethodSpecificInputForHostedCheckout" : {
       "type" : "object",
       "properties" : {
+        "clickToPay" : {
+          "type" : "boolean"
+        },
         "groupCards" : {
           "type" : "boolean"
         },
@@ -961,6 +970,15 @@
       },
       "additionalProperties" : false
     },
+    "PageCustomization" : {
+      "type" : "object",
+      "properties" : {
+        "template" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "PaymentAccountOnFile" : {
       "type" : "object",
       "properties" : {
@@ -995,6 +1013,24 @@
           "type" : "integer"
         },
         "usecase" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PaymentProduct3012SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "forceAuthentication" : {
+          "type" : "boolean"
+        },
+        "isDeferredPayment" : {
+          "type" : "boolean"
+        },
+        "isWipTransaction" : {
+          "type" : "boolean"
+        },
+        "wipMerchantAuthenticationMethod" : {
           "type" : "string"
         }
       },
@@ -1100,6 +1136,9 @@
         "paymentProduct3306SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct3306SpecificInput"
         },
+        "paymentProduct5001SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct5001SpecificInput"
+        },
         "paymentProduct5406SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct5406SpecificInput"
         },
@@ -1134,6 +1173,15 @@
       "type" : "object",
       "properties" : {
         "extraMerchantData" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct5001SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "subsequentType" : {
           "type" : "string"
         }
       },
@@ -1309,6 +1357,18 @@
       },
       "additionalProperties" : false
     },
+    "ThreeDSWhitelist" : {
+      "type" : "object",
+      "properties" : {
+        "source" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "ThreeDSecureBase" : {
       "type" : "object",
       "properties" : {
@@ -1318,11 +1378,20 @@
         "challengeIndicator" : {
           "type" : "string"
         },
+        "decoupledIndicator" : {
+          "type" : "boolean"
+        },
+        "decoupledMaxTime" : {
+          "type" : "string"
+        },
         "exemptionRequest" : {
           "type" : "string"
         },
         "merchantFraudRate" : {
           "type" : "integer"
+        },
+        "paymentTokenSource" : {
+          "type" : "string"
         },
         "priorThreeDSecureData" : {
           "$ref" : "#/definitions/ThreeDSecureData"
@@ -1335,6 +1404,12 @@
         },
         "skipSoftDecline" : {
           "type" : "boolean"
+        },
+        "threeRIIndicator" : {
+          "type" : "string"
+        },
+        "whitelist" : {
+          "$ref" : "#/definitions/ThreeDSWhitelist"
         }
       },
       "additionalProperties" : false

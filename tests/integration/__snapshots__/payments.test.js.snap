@@ -33,6 +33,7 @@ Object {
           "card": Object {
             "bin": "string",
             "cardNumber": "string",
+            "cardType": "Credit",
             "countryCode": "BE",
             "expiryDate": 529,
           },
@@ -69,6 +70,12 @@ Object {
             "fraudServiceResult": "string",
           },
           "initialSchemeTransactionId": "string",
+          "networkTokenData": Object {
+            "bin": "string",
+            "countryCode": "BE",
+            "networkToken": "string",
+            "tokenExpiryDate": 529,
+          },
           "paymentAccountReference": "string",
           "paymentOption": "string",
           "paymentProduct3208SpecificOutput": Object {
@@ -101,8 +108,19 @@ Object {
             "ipAddressCountryCode": "BE",
           },
         },
+        "discount": Object {
+          "amount": 1000,
+        },
         "merchantParameters": "SessionID=126548354&ShopperID=73541312",
         "mobilePaymentMethodSpecificOutput": Object {
+          "acquirerInformation": Object {
+            "acquirerSelectionInformation": Object {
+              "fallbackLevel": -2147483648,
+              "result": "NO_MATCHING_RULESET",
+              "ruleName": "string",
+            },
+            "name": "string",
+          },
           "authorisationCode": "string",
           "fraudResults": Object {
             "avsResult": "string",
@@ -273,6 +291,7 @@ Object {
         "card": Object {
           "bin": "string",
           "cardNumber": "string",
+          "cardType": "Credit",
           "countryCode": "BE",
           "expiryDate": 529,
         },
@@ -309,6 +328,12 @@ Object {
           "fraudServiceResult": "string",
         },
         "initialSchemeTransactionId": "string",
+        "networkTokenData": Object {
+          "bin": "string",
+          "countryCode": "BE",
+          "networkToken": "string",
+          "tokenExpiryDate": 529,
+        },
         "paymentAccountReference": "string",
         "paymentOption": "string",
         "paymentProduct3208SpecificOutput": Object {
@@ -338,6 +363,14 @@ Object {
       },
       "merchantParameters": "SessionID=126548354&ShopperID=73541312",
       "mobilePaymentMethodSpecificOutput": Object {
+        "acquirerInformation": Object {
+          "acquirerSelectionInformation": Object {
+            "fallbackLevel": -2147483648,
+            "result": "NO_MATCHING_RULESET",
+            "ruleName": "string",
+          },
+          "name": "string",
+        },
         "authorisationCode": "string",
         "fraudResults": Object {
           "avsResult": "string",
@@ -636,6 +669,9 @@ Object {
           "pairingToken": "string",
           "qrCode": "string",
         },
+        "paymentProduct840": Object {
+          "orderId": "string",
+        },
       },
     },
     "payment": Object {
@@ -668,6 +704,7 @@ Object {
           "card": Object {
             "bin": "string",
             "cardNumber": "string",
+            "cardType": "Credit",
             "countryCode": "BE",
             "expiryDate": 529,
           },
@@ -704,6 +741,12 @@ Object {
             "fraudServiceResult": "string",
           },
           "initialSchemeTransactionId": "string",
+          "networkTokenData": Object {
+            "bin": "string",
+            "countryCode": "BE",
+            "networkToken": "string",
+            "tokenExpiryDate": 529,
+          },
           "paymentAccountReference": "string",
           "paymentOption": "string",
           "paymentProduct3208SpecificOutput": Object {
@@ -736,8 +779,19 @@ Object {
             "ipAddressCountryCode": "BE",
           },
         },
+        "discount": Object {
+          "amount": 1000,
+        },
         "merchantParameters": "SessionID=126548354&ShopperID=73541312",
         "mobilePaymentMethodSpecificOutput": Object {
+          "acquirerInformation": Object {
+            "acquirerSelectionInformation": Object {
+              "fallbackLevel": -2147483648,
+              "result": "NO_MATCHING_RULESET",
+              "ruleName": "string",
+            },
+            "name": "string",
+          },
           "authorisationCode": "string",
           "fraudResults": Object {
             "avsResult": "string",
@@ -913,6 +967,7 @@ Object {
         "card": Object {
           "bin": "string",
           "cardNumber": "string",
+          "cardType": "Credit",
           "countryCode": "BE",
           "expiryDate": 529,
         },
@@ -949,6 +1004,12 @@ Object {
           "fraudServiceResult": "string",
         },
         "initialSchemeTransactionId": "string",
+        "networkTokenData": Object {
+          "bin": "string",
+          "countryCode": "BE",
+          "networkToken": "string",
+          "tokenExpiryDate": 529,
+        },
         "paymentAccountReference": "string",
         "paymentOption": "string",
         "paymentProduct3208SpecificOutput": Object {
@@ -981,8 +1042,19 @@ Object {
           "ipAddressCountryCode": "BE",
         },
       },
+      "discount": Object {
+        "amount": 1000,
+      },
       "merchantParameters": "SessionID=126548354&ShopperID=73541312",
       "mobilePaymentMethodSpecificOutput": Object {
+        "acquirerInformation": Object {
+          "acquirerSelectionInformation": Object {
+            "fallbackLevel": -2147483648,
+            "result": "NO_MATCHING_RULESET",
+            "ruleName": "string",
+          },
+          "name": "string",
+        },
         "authorisationCode": "string",
         "fraudResults": Object {
           "avsResult": "string",
@@ -1246,6 +1318,7 @@ Object {
             "card": Object {
               "bin": "string",
               "cardNumber": "string",
+              "cardType": "Credit",
               "countryCode": "BE",
               "expiryDate": 529,
             },
@@ -1282,6 +1355,12 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "networkTokenData": Object {
+              "bin": "string",
+              "countryCode": "BE",
+              "networkToken": "string",
+              "tokenExpiryDate": 529,
+            },
             "paymentAccountReference": "string",
             "paymentOption": "string",
             "paymentProduct3208SpecificOutput": Object {
@@ -1311,6 +1390,14 @@ Object {
           },
           "merchantParameters": "SessionID=126548354&ShopperID=73541312",
           "mobilePaymentMethodSpecificOutput": Object {
+            "acquirerInformation": Object {
+              "acquirerSelectionInformation": Object {
+                "fallbackLevel": -2147483648,
+                "result": "NO_MATCHING_RULESET",
+                "ruleName": "string",
+              },
+              "name": "string",
+            },
             "authorisationCode": "string",
             "fraudResults": Object {
               "avsResult": "string",
@@ -1560,6 +1647,7 @@ Object {
           "card": Object {
             "bin": "string",
             "cardNumber": "string",
+            "cardType": "Credit",
             "countryCode": "BE",
             "expiryDate": 529,
           },
@@ -1596,6 +1684,12 @@ Object {
             "fraudServiceResult": "string",
           },
           "initialSchemeTransactionId": "string",
+          "networkTokenData": Object {
+            "bin": "string",
+            "countryCode": "BE",
+            "networkToken": "string",
+            "tokenExpiryDate": 529,
+          },
           "paymentAccountReference": "string",
           "paymentOption": "string",
           "paymentProduct3208SpecificOutput": Object {
@@ -1628,8 +1722,19 @@ Object {
             "ipAddressCountryCode": "BE",
           },
         },
+        "discount": Object {
+          "amount": 1000,
+        },
         "merchantParameters": "SessionID=126548354&ShopperID=73541312",
         "mobilePaymentMethodSpecificOutput": Object {
+          "acquirerInformation": Object {
+            "acquirerSelectionInformation": Object {
+              "fallbackLevel": -2147483648,
+              "result": "NO_MATCHING_RULESET",
+              "ruleName": "string",
+            },
+            "name": "string",
+          },
           "authorisationCode": "string",
           "fraudResults": Object {
             "avsResult": "string",
@@ -1800,6 +1905,7 @@ Object {
         "card": Object {
           "bin": "string",
           "cardNumber": "string",
+          "cardType": "Credit",
           "countryCode": "BE",
           "expiryDate": 529,
         },
@@ -1836,6 +1942,12 @@ Object {
           "fraudServiceResult": "string",
         },
         "initialSchemeTransactionId": "string",
+        "networkTokenData": Object {
+          "bin": "string",
+          "countryCode": "BE",
+          "networkToken": "string",
+          "tokenExpiryDate": 529,
+        },
         "paymentAccountReference": "string",
         "paymentOption": "string",
         "paymentProduct3208SpecificOutput": Object {
@@ -1865,6 +1977,14 @@ Object {
       },
       "merchantParameters": "SessionID=126548354&ShopperID=73541312",
       "mobilePaymentMethodSpecificOutput": Object {
+        "acquirerInformation": Object {
+          "acquirerSelectionInformation": Object {
+            "fallbackLevel": -2147483648,
+            "result": "NO_MATCHING_RULESET",
+            "ruleName": "string",
+          },
+          "name": "string",
+        },
         "authorisationCode": "string",
         "fraudResults": Object {
           "avsResult": "string",
@@ -2019,6 +2139,9 @@ Object {
           "pairingToken": "string",
           "qrCode": "string",
         },
+        "paymentProduct840": Object {
+          "orderId": "string",
+        },
       },
     },
     "payment": Object {
@@ -2051,6 +2174,7 @@ Object {
           "card": Object {
             "bin": "string",
             "cardNumber": "string",
+            "cardType": "Credit",
             "countryCode": "BE",
             "expiryDate": 529,
           },
@@ -2087,6 +2211,12 @@ Object {
             "fraudServiceResult": "string",
           },
           "initialSchemeTransactionId": "string",
+          "networkTokenData": Object {
+            "bin": "string",
+            "countryCode": "BE",
+            "networkToken": "string",
+            "tokenExpiryDate": 529,
+          },
           "paymentAccountReference": "string",
           "paymentOption": "string",
           "paymentProduct3208SpecificOutput": Object {
@@ -2119,8 +2249,19 @@ Object {
             "ipAddressCountryCode": "BE",
           },
         },
+        "discount": Object {
+          "amount": 1000,
+        },
         "merchantParameters": "SessionID=126548354&ShopperID=73541312",
         "mobilePaymentMethodSpecificOutput": Object {
+          "acquirerInformation": Object {
+            "acquirerSelectionInformation": Object {
+              "fallbackLevel": -2147483648,
+              "result": "NO_MATCHING_RULESET",
+              "ruleName": "string",
+            },
+            "name": "string",
+          },
           "authorisationCode": "string",
           "fraudResults": Object {
             "avsResult": "string",
@@ -2296,6 +2437,7 @@ Object {
         "card": Object {
           "bin": "string",
           "cardNumber": "string",
+          "cardType": "Credit",
           "countryCode": "BE",
           "expiryDate": 529,
         },
@@ -2332,6 +2474,12 @@ Object {
           "fraudServiceResult": "string",
         },
         "initialSchemeTransactionId": "string",
+        "networkTokenData": Object {
+          "bin": "string",
+          "countryCode": "BE",
+          "networkToken": "string",
+          "tokenExpiryDate": 529,
+        },
         "paymentAccountReference": "string",
         "paymentOption": "string",
         "paymentProduct3208SpecificOutput": Object {
@@ -2364,8 +2512,19 @@ Object {
           "ipAddressCountryCode": "BE",
         },
       },
+      "discount": Object {
+        "amount": 1000,
+      },
       "merchantParameters": "SessionID=126548354&ShopperID=73541312",
       "mobilePaymentMethodSpecificOutput": Object {
+        "acquirerInformation": Object {
+          "acquirerSelectionInformation": Object {
+            "fallbackLevel": -2147483648,
+            "result": "NO_MATCHING_RULESET",
+            "ruleName": "string",
+          },
+          "name": "string",
+        },
         "authorisationCode": "string",
         "fraudResults": Object {
           "avsResult": "string",
@@ -2629,6 +2788,7 @@ Object {
             "card": Object {
               "bin": "string",
               "cardNumber": "string",
+              "cardType": "Credit",
               "countryCode": "BE",
               "expiryDate": 529,
             },
@@ -2665,6 +2825,12 @@ Object {
               "fraudServiceResult": "string",
             },
             "initialSchemeTransactionId": "string",
+            "networkTokenData": Object {
+              "bin": "string",
+              "countryCode": "BE",
+              "networkToken": "string",
+              "tokenExpiryDate": 529,
+            },
             "paymentAccountReference": "string",
             "paymentOption": "string",
             "paymentProduct3208SpecificOutput": Object {
@@ -2694,6 +2860,14 @@ Object {
           },
           "merchantParameters": "SessionID=126548354&ShopperID=73541312",
           "mobilePaymentMethodSpecificOutput": Object {
+            "acquirerInformation": Object {
+              "acquirerSelectionInformation": Object {
+                "fallbackLevel": -2147483648,
+                "result": "NO_MATCHING_RULESET",
+                "ruleName": "string",
+              },
+              "name": "string",
+            },
             "authorisationCode": "string",
             "fraudResults": Object {
               "avsResult": "string",

@@ -13,6 +13,9 @@
     "locale" : {
       "type" : "string"
     },
+    "pageCustomization" : {
+      "$ref" : "#/definitions/PageCustomization"
+    },
     "paymentProductFilters" : {
       "$ref" : "#/definitions/PaymentProductFiltersHostedTokenization"
     },
@@ -49,6 +52,15 @@
         },
         "cvvMandatoryForNewToken" : {
           "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "PageCustomization" : {
+      "type" : "object",
+      "properties" : {
+        "template" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

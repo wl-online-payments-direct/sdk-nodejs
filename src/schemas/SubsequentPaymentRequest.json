@@ -7,6 +7,9 @@
     "order" : {
       "$ref" : "#/definitions/Order"
     },
+    "subsequentPaymentProduct5001SpecificInput" : {
+      "$ref" : "#/definitions/SubsequentPaymentProduct5001SpecificInput"
+    },
     "subsequentcardPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/SubsequentCardPaymentMethodSpecificInput"
     }
@@ -770,6 +773,15 @@
           "type" : "string"
         },
         "transactionChannel" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "SubsequentPaymentProduct5001SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "subsequentType" : {
           "type" : "string"
         }
       },
