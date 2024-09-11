@@ -1,6 +1,6 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "4.22.0",
+  "version": "4.23.0",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "scripts": {
     "test": "jest --selectProjects unit integration",
@@ -14,7 +14,6 @@
     "jsonschema": "^1.1.0",
     "lodash": "^4.17.21",
     "secure-compare": "^3.0.1",
-    "traverse": "^0.6.6",
     "uuid": "^8.3.1"
   },
   "main": "src/index.js",

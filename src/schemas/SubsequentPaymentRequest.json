@@ -70,6 +70,9 @@
         "city" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "countryCode" : {
           "type" : "string"
         },
@@ -762,6 +765,9 @@
       "properties" : {
         "authorizationMode" : {
           "type" : "string"
+        },
+        "paymentNumber" : {
+          "type" : "integer"
         },
         "schemeReferenceData" : {
           "type" : "string"

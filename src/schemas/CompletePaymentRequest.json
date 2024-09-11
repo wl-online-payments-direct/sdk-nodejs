@@ -67,6 +67,9 @@
         "city" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "countryCode" : {
           "type" : "string"
         },

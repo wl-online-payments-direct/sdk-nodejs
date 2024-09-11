@@ -19,9 +19,6 @@
     "order" : {
       "$ref" : "#/definitions/Order"
     },
-    "pageCustomization" : {
-      "$ref" : "#/definitions/PageCustomization"
-    },
     "redirectPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/RedirectPaymentMethodSpecificInput"
     },
@@ -83,6 +80,9 @@
           "type" : "string"
         },
         "city" : {
+          "type" : "string"
+        },
+        "companyName" : {
           "type" : "string"
         },
         "countryCode" : {
@@ -356,11 +356,11 @@
         "initialSchemeTransactionId" : {
           "type" : "string"
         },
+        "multiplePaymentInformation" : {
+          "$ref" : "#/definitions/MultiplePaymentInformation"
+        },
         "paymentProduct130SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct130SpecificInput"
-        },
-        "paymentProduct3012SpecificInput" : {
-          "$ref" : "#/definitions/PaymentProduct3012SpecificInput"
         },
         "paymentProduct3208SpecificInput" : {
           "$ref" : "#/definitions/PaymentProduct3208SpecificInput"
@@ -883,6 +883,18 @@
       },
       "additionalProperties" : false
     },
+    "MultiplePaymentInformation" : {
+      "type" : "object",
+      "properties" : {
+        "paymentPattern" : {
+          "type" : "string"
+        },
+        "totalNumberOfPayments" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
     "Order" : {
       "type" : "object",
       "properties" : {
@@ -970,15 +982,6 @@
       },
       "additionalProperties" : false
     },
-    "PageCustomization" : {
-      "type" : "object",
-      "properties" : {
-        "template" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
     "PaymentAccountOnFile" : {
       "type" : "object",
       "properties" : {
@@ -1013,24 +1016,6 @@
           "type" : "integer"
         },
         "usecase" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
-    "PaymentProduct3012SpecificInput" : {
-      "type" : "object",
-      "properties" : {
-        "forceAuthentication" : {
-          "type" : "boolean"
-        },
-        "isDeferredPayment" : {
-          "type" : "boolean"
-        },
-        "isWipTransaction" : {
-          "type" : "boolean"
-        },
-        "wipMerchantAuthenticationMethod" : {
           "type" : "string"
         }
       },
@@ -1133,6 +1118,9 @@
         "paymentOption" : {
           "type" : "string"
         },
+        "paymentProduct3203SpecificInput" : {
+          "$ref" : "#/definitions/RedirectPaymentProduct3203SpecificInput"
+        },
         "paymentProduct3306SpecificInput" : {
           "$ref" : "#/definitions/RedirectPaymentProduct3306SpecificInput"
         },
@@ -1165,6 +1153,15 @@
         },
         "tokenize" : {
           "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "RedirectPaymentProduct3203SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "checkoutType" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -1357,31 +1354,16 @@
       },
       "additionalProperties" : false
     },
-    "ThreeDSWhitelist" : {
-      "type" : "object",
-      "properties" : {
-        "source" : {
-          "type" : "string"
-        },
-        "status" : {
-          "type" : "string"
-        }
-      },
-      "additionalProperties" : false
-    },
     "ThreeDSecureBase" : {
       "type" : "object",
       "properties" : {
+        "authenticationAmount" : {
+          "type" : "integer"
+        },
         "challengeCanvasSize" : {
           "type" : "string"
         },
         "challengeIndicator" : {
-          "type" : "string"
-        },
-        "decoupledIndicator" : {
-          "type" : "boolean"
-        },
-        "decoupledMaxTime" : {
           "type" : "string"
         },
         "exemptionRequest" : {
@@ -1389,9 +1371,6 @@
         },
         "merchantFraudRate" : {
           "type" : "integer"
-        },
-        "paymentTokenSource" : {
-          "type" : "string"
         },
         "priorThreeDSecureData" : {
           "$ref" : "#/definitions/ThreeDSecureData"
@@ -1404,12 +1383,6 @@
         },
         "skipSoftDecline" : {
           "type" : "boolean"
-        },
-        "threeRIIndicator" : {
-          "type" : "string"
-        },
-        "whitelist" : {
-          "$ref" : "#/definitions/ThreeDSWhitelist"
         }
       },
       "additionalProperties" : false
