@@ -1,0 +1,16 @@
+{
+  "merchantId": "MERCHANT_ID",
+  "apiEndpoint": {
+    "host": "API_ENDPOINT_HOST",
+    "scheme": "https",
+    "port": 443
+  },
+  "openApiUrl": "https://payment.preprod.direct.worldline-solutions.com/v1/public-contract-definition.yaml",
+  "v1hmac": {
+    "apiKey": "API_KEY",
+    "secretApiKey": "SECRET_API_KEY"
+  },
+  "integrator": "INTEGRATOR",
+  "enableLogging": false,
+  "httpBinUrl": "http://httpbin.org"
+}

@@ -1,7 +1,15 @@
 node_modules
+/coverage
+/lib
+/docs
 logfile.txt
 .vscode
 .idea
+*.js
+*.js.map
+*.d.ts
 
-# test reports
+# For testing
+__tests__/config.json
 junit*.xml
+*.snap

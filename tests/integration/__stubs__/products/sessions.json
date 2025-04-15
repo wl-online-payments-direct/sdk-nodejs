@@ -1,7 +1,0 @@
-{
-  "paymentProductSession302SpecificInput" : {
-    "domainName" : "pay1.secured-by-onlinepayments.com",
-    "displayName" : "OnlinePayments",
-    "validationUrl" : "<VALIDATION URL RECEIVED FROM APPLE>"
-  }
-}

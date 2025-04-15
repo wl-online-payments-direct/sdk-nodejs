@@ -1,0 +1,28 @@
+{
+  "customerReference": "idonthaveareference",
+  "customer": {
+    "personalInformation": {
+      "name": {
+        "firstName": "Wile",
+        "surname": "Coyote"
+      },
+      "title": "Miss"
+    },
+    "mandateAddress": {
+      "street": "Woestijnweg",
+      "city": "Monumentenvallei",
+      "zip": "1337XD",
+      "countryCode": "NL"
+    },
+    "bankAccountIban": {
+      "iban": "DE46720200700359736690"
+    },
+    "contactDetails": {
+      "emailAddress": "wile.e.coyote@acmelabs.com"
+    },
+    "companyName": "Acme labs"
+  },
+  "recurrenceType": "UNIQUE",
+  "signatureType": "UNSIGNED",
+  "language": "nl"
+}

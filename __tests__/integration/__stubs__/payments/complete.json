@@ -1,0 +1,15 @@
+{
+  "cardPaymentMethodSpecificInput": {
+    "card": {
+      "cardNumber": "67030000000000003",
+      "expiryDate": "1220",
+      "cardholderName": "Wile E. Coyote"
+    }
+  },
+  "order": {
+    "amountOfMoney": {
+      "currencyCode": "EUR",
+      "amount": 2980
+    }
+  }
+}

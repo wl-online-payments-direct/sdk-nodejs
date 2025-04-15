@@ -1,0 +1,9 @@
+{
+  "amountOfMoney": {
+    "currencyCode": "EUR",
+    "amount": 2345
+  },
+  "references": {
+    "merchantReference": "AcmeOrder001"
+  }
+}

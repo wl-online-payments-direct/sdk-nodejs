@@ -1,0 +1,10 @@
+{
+  "name": "Online Payments Node.js SDK",
+  "readme": "README.md",
+  "entryPointStrategy": "expand",
+  "entryPoints": ["src"],
+  "exclude": ["**/node_modules/**"],
+  "excludePrivate": true,
+  "disableSources": true,
+  "hideGenerator": true
+}

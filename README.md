@@ -10,16 +10,19 @@ The Node.js SDK helps you to communicate with the payment platform server API. I
 * validation of input and
 * a logfile obfuscater
 
+See the [Worldline Direct Payments Developer Hub](https://docs.direct.worldline-solutions.com/en/integration/how-to-integrate/server-sdks/nodejs/) for more information on how to use the API.
+
 ## Structure of this repository
 
-This repository consists out of two main components:
+This repository consists out of three main components:
 
-1. The source code of the SDK itself: `/src/`
-2. The source code of the example integration tests: `/tests/`
+1. The source code of the SDK itself: `/src`
+2. The JSON schemas used to validate requests: `/schemas`
+3. Unit and integration tests: `/__tests__`
 
 ## Requirements
 
-Node.js 8 or higher is required.
+Node.js 18 or higher is required.
 
 ## Installation
 
@@ -29,20 +32,28 @@ From the folder where your `package.json` is located, run the following command 
 
 ## Building the repository
 
-From the root of the project install all dependencies: 
+From the root of the project install all dependencies, then compile the code:
 
     npm install
+    npm run build
 
-## Running tests 
+## Testing
 
-The example integration tests run against a mock server set up with [Prism](https://stoplight.io/open-source/prism), which returns a mock response based
-on the current OpenAPI specification of Online Payments.
+There are two types of tests:
 
-The project must first be set up with the following commands:
+1. Unit tests. These will work out-of-the-box.  
+   Run these tests as follows:
 
-    npm install
-    npm ci
+    ```
+    npm run test:unit
+    ```
+2. Integration tests. Before you can run these, you first need to copy file `__tests__/config.json.dist` to `__tests__/config.json` and replace all values as needed. If needed, a `proxy` property can be added with nested properties `host`, `scheme` (defaults to `http`), `port` (defaults to 3128) and `credentials` (optional, in the format `<username>:<password>`).  
+   Run these tests as follows:
 
-After that the tests can be run with the following commands:
+    ```
+    npm run test:integration
+    ```
+
+You can also run both types of tests together as follows:
 
     npm run test

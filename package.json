@@ -1,50 +1,105 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "4.23.0",
+  "version": "5.0.0",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
-  "scripts": {
-    "test": "jest --selectProjects unit integration",
-    "test:unit": "jest --selectProjects unit",
-    "test:integration": "jest --selectProjects integration",
-    "lint": "eslint {src,tests}/**/*.js src/*.js --fix"
+  "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/wl-online-payments-direct/sdk-nodejs/issues"
   },
-  "dependencies": {
-    "dateformat": "^4.5.1",
-    "form-data": "^2.3.3",
-    "jsonschema": "^1.1.0",
-    "lodash": "^4.17.21",
-    "secure-compare": "^3.0.1",
-    "uuid": "^8.3.1"
-  },
-  "main": "src/index.js",
-  "devDependencies": {
-    "@stoplight/prism-cli": "^4.1.0",
-    "eslint": "^7.12.1",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "jest": "^26.6.1",
-    "jest-dev-server": "^4.4.0",
-    "jest-junit": "^12.3.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "2.1.2",
-    "rimraf": "^3.0.2",
-    "swagger2openapi": "^7.0.8",
-    "typescript": "^4.9.4"
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "author": "Online Payments",
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "main": "./lib/cjs/src/index.js",
+  "module": "./lib/esm/src/index.js",
+  "types": "./lib/esm/src/index.d.ts",
+  "exports": {
+    "import": "./lib/esm/src/index.js",
+    "require": "./lib/cjs/src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wl-online-payments-direct/sdk-nodejs.git"
   },
-  "author": "Online Payments",
-  "license": "SEE LICENSE IN LICENSE.txt",
-  "bugs": {
-    "url": "https://github.com/wl-online-payments-direct/sdk-nodejs/issues"
+  "scripts": {
+    "compile": "tsc",
+    "lint": "eslint ./src --ext .ts",
+    "format": "prettier --write \"**/*.+(json|ts|tsx)\"",
+    "format:check": "prettier --check \"**/*.+(json|ts|tsx)\"",
+    "typedoc": "typedoc",
+    "build": "npm run format:check && npm run lint && npm run compile && npm run build:cjs && npm run build:esm && echo {\"type\": \"commonjs\"} > lib/cjs/package.json && echo {\"type\": \"module\"} > lib/esm/package.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "prepare": "npm run build",
+    "test": "jest",
+    "test:unit": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration ",
+    "pretest:integration": "npm run clean-port",
+    "posttest:integration": "npm run clean-port",
+    "pretest": "npm run clean-port",
+    "posttest": "npm run clean-port",
+    "clean-port": "npx kill-port 4010"
   },
-  "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
-  "files": [
-    "src/*"
-  ]
+  "dependencies": {
+    "dateformat": "^4.6.3",
+    "form-data": "^4.0.0",
+    "jsonschema": "^1.4.1",
+    "lodash": "^4.17.21",
+    "secure-compare": "^3.0.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@stoplight/prism-cli": "^5.12.0",
+    "@types/body-parser": "^1.19.5",
+    "@types/dateformat": "^3.0.1",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/lodash": "^4.17.4",
+    "@types/node": "^18.19.33",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "body-parser": "1.20.3",
+    "eslint": "8.56",
+    "express": "^5.0.1",
+    "husky": "^4.3.8",
+    "jest": "^29.7.0",
+    "jest-dev-server": "^11.0.0",
+    "kill-port": "^2.0.1",
+    "nock": "^13.5.4",
+    "prettier": "^1.19.1",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.3.0",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.25.13",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 180
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:check && npm run lint"
+    }
+  }
 }
