@@ -76,6 +76,13 @@
       "properties" : {
         "webhookUrl" : {
           "type" : "string"
+        },
+        "webhooksUrls" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false
         }
       },
       "additionalProperties" : false

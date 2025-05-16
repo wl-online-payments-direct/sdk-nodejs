@@ -1,6 +1,6 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
   "bugs": {

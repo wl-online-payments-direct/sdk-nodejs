@@ -20,6 +20,9 @@
     "hostedCheckoutSpecificInput" : {
       "$ref" : "#/definitions/hostedCheckoutSpecificInput"
     },
+    "isReusableLink" : {
+      "type" : "boolean"
+    },
     "mobilePaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/mobilePaymentMethodHostedCheckoutSpecificInput"
     },
@@ -715,6 +718,13 @@
       "properties" : {
         "webhookUrl" : {
           "type" : "string"
+        },
+        "webhooksUrls" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false
         }
       },
       "additionalProperties" : false
@@ -1274,6 +1284,9 @@
         "paymentProduct3203SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct3203SpecificInput"
         },
+        "paymentProduct3204SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct3204SpecificInput"
+        },
         "paymentProduct3302SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct3302SpecificInput"
         },
@@ -1285,6 +1298,12 @@
         },
         "paymentProduct5300SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5300SpecificInput"
+        },
+        "paymentProduct5402SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5402SpecificInput"
+        },
+        "paymentProduct5403SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5403SpecificInput"
         },
         "paymentProduct5406SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5406SpecificInput"
@@ -1328,6 +1347,15 @@
       },
       "additionalProperties" : false
     },
+    "redirectPaymentProduct3204SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "blikCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "redirectPaymentProduct3302SpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -1355,6 +1383,9 @@
     "redirectPaymentProduct5001SpecificInput" : {
       "type" : "object",
       "properties" : {
+        "exemptionRequest" : {
+          "type" : "string"
+        },
         "subsequentType" : {
           "type" : "string"
         }
@@ -1384,6 +1415,24 @@
         },
         "sessionDuration" : {
           "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5402SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5403SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false

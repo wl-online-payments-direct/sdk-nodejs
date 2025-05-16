@@ -376,6 +376,7 @@ export interface CardPaymentMethodSpecificOutput {
   paymentProduct3208SpecificOutput?: PaymentProduct3208SpecificOutput | null;
   paymentProduct3209SpecificOutput?: PaymentProduct3209SpecificOutput | null;
   paymentProductId?: number | null;
+  reattemptInstructions?: ReattemptInstructions | null;
   schemeReferenceData?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
@@ -512,6 +513,7 @@ export interface CreatePaymentLinkRequest {
   feedbacks?: Feedbacks | null;
   fraudFields?: FraudFields | null;
   hostedCheckoutSpecificInput?: HostedCheckoutSpecificInput | null;
+  isReusableLink?: boolean | null;
   mobilePaymentMethodSpecificInput?: MobilePaymentMethodHostedCheckoutSpecificInput | null;
   order?: Order | null;
   paymentLinkOrder?: PaymentLinkOrderInput | null;
@@ -740,7 +742,11 @@ export interface ExternalTokenLinked {
 }
 
 export interface Feedbacks {
+  /**
+   * @deprecated The URL where the webhook will be dispatched for all status change events related to this payment.
+   */
   webhookUrl?: string | null;
+  webhooksUrls?: string[] | null;
 }
 
 export interface FixedListValidator {
@@ -950,6 +956,7 @@ export interface MerchantAction {
   mobileThreeDSecureChallengeParameters?: MobileThreeDSecureChallengeParameters | null;
   redirectData?: RedirectData | null;
   showFormData?: ShowFormData | null;
+  showInstructionsData?: ShowInstructionsData | null;
 }
 
 export interface MobilePaymentData {
@@ -1122,6 +1129,7 @@ export interface PaymentLinkOrderOutput {
 
 export interface PaymentLinkResponse {
   expirationDate?: string | null;
+  isReusableLink?: boolean | null;
   paymentId?: string | null;
   paymentLinkEvents?: PaymentLinkEvent[] | null;
   paymentLinkId?: string | null;
@@ -1476,6 +1484,17 @@ export interface RateDetails {
   source?: string | null;
 }
 
+export interface ReattemptInstructions {
+  conditions?: ReattemptInstructionsConditions | null;
+  frozenPeriod?: number | null;
+  indicator?: string | null;
+}
+
+export interface ReattemptInstructionsConditions {
+  maxAttempts?: number | null;
+  maxDelay?: number | null;
+}
+
 export interface RedirectData {
   RETURNMAC?: string | null;
   redirectURL?: string | null;
@@ -1484,10 +1503,13 @@ export interface RedirectData {
 export interface RedirectPaymentMethodSpecificInput {
   paymentOption?: string | null;
   paymentProduct3203SpecificInput?: RedirectPaymentProduct3203SpecificInput | null;
+  paymentProduct3204SpecificInput?: RedirectPaymentProduct3204SpecificInput | null;
   paymentProduct3302SpecificInput?: RedirectPaymentProduct3302SpecificInput | null;
   paymentProduct3306SpecificInput?: RedirectPaymentProduct3306SpecificInput | null;
   paymentProduct5001SpecificInput?: RedirectPaymentProduct5001SpecificInput | null;
   paymentProduct5300SpecificInput?: RedirectPaymentProduct5300SpecificInput | null;
+  paymentProduct5402SpecificInput?: RedirectPaymentProduct5402SpecificInput | null;
+  paymentProduct5403SpecificInput?: RedirectPaymentProduct5403SpecificInput | null;
   paymentProduct5406SpecificInput?: RedirectPaymentProduct5406SpecificInput | null;
   paymentProduct5408SpecificInput?: RedirectPaymentProduct5408SpecificInput | null;
   paymentProduct5410SpecificInput?: RedirectPaymentProduct5410SpecificInput | null;
@@ -1518,6 +1540,10 @@ export interface RedirectPaymentProduct3203SpecificInput {
   checkoutType?: string | null;
 }
 
+export interface RedirectPaymentProduct3204SpecificInput {
+  blikCode?: string | null;
+}
+
 export interface RedirectPaymentProduct3302SpecificInput {
   organizationEntityType?: string | null;
   organizationRegistrationId?: string | null;
@@ -1529,6 +1555,7 @@ export interface RedirectPaymentProduct3306SpecificInput {
 }
 
 export interface RedirectPaymentProduct5001SpecificInput {
+  exemptionRequest?: string | null;
   subsequentType?: string | null;
 }
 
@@ -1540,6 +1567,14 @@ export interface RedirectPaymentProduct5300SpecificInput {
   loyaltyCardNumber?: string | null;
   secondInstallmentPaymentDate?: string | null;
   sessionDuration?: number | null;
+}
+
+export interface RedirectPaymentProduct5402SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
+}
+
+export interface RedirectPaymentProduct5403SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
 }
 
 export interface RedirectPaymentProduct5406SpecificInput {
@@ -1721,6 +1756,10 @@ export interface ShowFormData {
   paymentProduct3012?: PaymentProduct3012 | null;
   paymentProduct5404?: PaymentProduct5404 | null;
   paymentProduct5407?: PaymentProduct5407 | null;
+}
+
+export interface ShowInstructionsData {
+  showData?: string | null;
 }
 
 export interface SubsequentCardPaymentMethodSpecificInput {
