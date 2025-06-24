@@ -1,10 +1,10 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, GetPrivacyPolicyResponse } from "../model/domain";
-import { GetPrivacyPolicyParams } from "../model/privacypolicy";
+import { json } from "../../utils/communicator.js";
+import { SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, GetPrivacyPolicyResponse } from "../model/domain/index.js";
+import { GetPrivacyPolicyParams } from "../model/privacypolicy/index.js";
 
 export function getPrivacyPolicy(sdkContext: SdkContext): (merchantId: string, params: GetPrivacyPolicyParams) => Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
   return function(merchantId, params): Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {

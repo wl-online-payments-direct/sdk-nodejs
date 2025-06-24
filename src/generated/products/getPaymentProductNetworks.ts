@@ -1,10 +1,10 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, PaymentProductNetworksResponse } from "../model/domain";
-import { GetPaymentProductNetworksParams } from "../model/products";
+import { json } from "../../utils/communicator.js";
+import { SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, PaymentProductNetworksResponse } from "../model/domain/index.js";
+import { GetPaymentProductNetworksParams } from "../model/products/index.js";
 
 export function getPaymentProductNetworks(
   sdkContext: SdkContext

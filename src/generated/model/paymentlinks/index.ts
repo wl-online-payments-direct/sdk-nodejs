@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CreatePaymentLinkRequest, ErrorResponse, PaymentLinkResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CreatePaymentLinkRequest, ErrorResponse, PaymentLinkResponse } from "../domain/index.js";
 
 export interface PaymentLinksClient {
   /**

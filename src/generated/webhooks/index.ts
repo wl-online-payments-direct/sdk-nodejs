@@ -1,10 +1,10 @@
 /*
  * This file was automatically generated.
  */
-import { validateWebhookCredentials } from "./validateWebhookCredentials";
-import { sendTestWebhook } from "./sendTestWebhook";
-import { SdkContext } from "../../model";
-import { WebhooksClient } from "../model/webhooks";
+import { validateWebhookCredentials } from "./validateWebhookCredentials.js";
+import { sendTestWebhook } from "./sendTestWebhook.js";
+import { SdkContext } from "../../model/index.js";
+import { WebhooksClient } from "../model/webhooks/index.js";
 
 export function newWebhooksClient(sdkContext: SdkContext): WebhooksClient {
   return {

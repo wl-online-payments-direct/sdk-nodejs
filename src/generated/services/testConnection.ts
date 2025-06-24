@@ -1,9 +1,9 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, TestConnection } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, TestConnection } from "../model/domain/index.js";
 
 export function testConnection(sdkContext: SdkContext): (merchantId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<TestConnection, ErrorResponse>> {
   return function(merchantId, paymentContext): Promise<SdkResponse<TestConnection, ErrorResponse>> {

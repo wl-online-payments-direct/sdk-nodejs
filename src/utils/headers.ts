@@ -1,7 +1,7 @@
 import dateformat from "dateformat";
 import { IncomingHttpHeaders } from "http";
-import { Header, SdkContext } from "../model";
-import { ShoppingCartExtension } from "../model/domain";
+import { Header, SdkContext } from "../model/index.js";
+import { ShoppingCartExtension } from "../model/domain/index.js";
 
 export function date(): string {
   return dateformat("GMT:ddd, dd mmm yyyy HH:MM:ss") + " GMT";
@@ -18,7 +18,7 @@ interface ServerMetaInfo {
 export function serverMetaInfo(sdkContext: SdkContext): Header {
   const info: ServerMetaInfo = {
     sdkCreator: "OnlinePayments",
-    sdkIdentifier: "NodejsServerSDK/v5.0.1",
+    sdkIdentifier: "NodejsServerSDK/v5.1.0",
     platformIdentifier: `${process.env["OS"]} Node.js/${process.versions.node}`,
     integrator: sdkContext.getIntegrator()
   };

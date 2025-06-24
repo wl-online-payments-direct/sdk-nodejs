@@ -1,10 +1,10 @@
 /*
  * This file was automatically generated.
  */
-import { createHostedCheckout } from "./createHostedCheckout";
-import { getHostedCheckout } from "./getHostedCheckout";
-import { SdkContext } from "../../model";
-import { HostedCheckoutClient } from "../model/hostedcheckout";
+import { createHostedCheckout } from "./createHostedCheckout.js";
+import { getHostedCheckout } from "./getHostedCheckout.js";
+import { SdkContext } from "../../model/index.js";
+import { HostedCheckoutClient } from "../model/hostedcheckout/index.js";
 
 export function newHostedCheckoutClient(sdkContext: SdkContext): HostedCheckoutClient {
   return {

@@ -2,9 +2,9 @@ import http from "http";
 import https from "https";
 import { v4 as newUUID } from "uuid";
 import FormData from "form-data";
-import obfuscate from "../utils/obfuscate";
-import headers from "../utils/headers";
-import { ConnectionOptions, Logger, MultipartFormDataObject, ProxyConfiguration, SdkContext } from "../model";
+import obfuscate from "../utils/obfuscate.js";
+import headers from "../utils/headers.js";
+import { ConnectionOptions, Logger, MultipartFormDataObject, ProxyConfiguration, SdkContext } from "../model/index.js";
 
 export type ConnectionCallback = (e: Error | null, res: http.IncomingMessage | null) => void;
 

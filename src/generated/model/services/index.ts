@@ -1,7 +1,7 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
 import {
   CalculateSurchargeRequest,
   CalculateSurchargeResponse,
@@ -11,7 +11,7 @@ import {
   GetIINDetailsRequest,
   GetIINDetailsResponse,
   TestConnection
-} from "../domain";
+} from "../domain/index.js";
 
 export interface ServicesClient {
   /**

@@ -1,4 +1,4 @@
-import { BaseConfiguration, Header } from "./types";
+import { BaseConfiguration, Header } from "./types.js";
 
 export interface Authenticator {
   getAuthorization(method: string, contentType: string, date: string, headers: Header[], path: string): Promise<string>;

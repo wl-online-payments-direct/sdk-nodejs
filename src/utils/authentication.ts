@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { Authenticator, Header, V1HmacConfiguration } from "../model";
+import { Authenticator, Header, V1HmacConfiguration } from "../model/index.js";
 import _ from "lodash";
 
 export class V1HmacAuthenticator implements Authenticator {

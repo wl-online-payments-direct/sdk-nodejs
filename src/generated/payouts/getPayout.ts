@@ -1,9 +1,9 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, PayoutResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, PayoutResponse } from "../model/domain/index.js";
 
 export function getPayout(
   sdkContext: SdkContext

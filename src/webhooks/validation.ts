@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import compare from "secure-compare";
-import { RequestHeaders, SecretKeyStore, SignatureValidator } from "../model/webhooks";
+import { RequestHeaders, SecretKeyStore, SignatureValidator } from "../model/webhooks/index.js";
 
 function getHeaderValue(requestHeaders: RequestHeaders, headerName: string): string {
   const lowerCaseHeaderName = headerName.toLowerCase();

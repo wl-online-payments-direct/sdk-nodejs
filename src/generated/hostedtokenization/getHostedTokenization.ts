@@ -1,9 +1,9 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, GetHostedTokenizationResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, GetHostedTokenizationResponse } from "../model/domain/index.js";
 
 export function getHostedTokenization(
   sdkContext: SdkContext

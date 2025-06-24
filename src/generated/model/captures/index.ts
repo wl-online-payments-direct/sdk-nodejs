@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CapturesResponse, ErrorResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CapturesResponse, ErrorResponse } from "../domain/index.js";
 
 export interface CapturesClient {
   /**

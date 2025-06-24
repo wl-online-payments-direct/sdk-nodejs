@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { RefundErrorResponse, RefundRequest, RefundResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { RefundErrorResponse, RefundRequest, RefundResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/RefundRequest.json";
+import requestSchema from "../../../schemas/RefundRequest.js";
 
 export function refundPayment(
   sdkContext: SdkContext

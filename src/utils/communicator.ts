@@ -4,9 +4,9 @@ import _ from "lodash";
 import { IncomingMessage } from "http";
 import { RequestOptions } from "https";
 import { v4 as newUUID } from "uuid";
-import headers from "../utils/headers";
-import { applyConnectionOptions, applyProxyConfiguration, sendJSON, sendMultipart } from "./connection";
-import { Header, JsonRequest, MultipartFormDataRequest, PaymentContext, SdkContext, SdkRequest, SdkResponse, SdkResponseError } from "../model";
+import headers from "../utils/headers.js";
+import { applyConnectionOptions, applyProxyConfiguration, sendJSON, sendMultipart } from "./connection.js";
+import { Header, JsonRequest, MultipartFormDataRequest, PaymentContext, SdkContext, SdkRequest, SdkResponse, SdkResponseError } from "../model/index.js";
 
 async function prepareRequest(request: SdkRequest, sdkContext: SdkContext, options: RequestOptions, contentType: string): Promise<void> {
   const date = headers.date();

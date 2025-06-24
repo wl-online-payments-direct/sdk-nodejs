@@ -1,2 +1,2 @@
-export * from "./shopping_cart_extension";
-export * from "./webhook_event";
+export * from "./shopping_cart_extension.js";
+export * from "./webhook_event.js";

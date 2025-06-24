@@ -1,6 +1,6 @@
-import { Authenticator, CommunicatorLogger, Configuration, ConnectionOptions, HttpEndpoint, Logger, ObfuscationRule, ProxyConfiguration, SdkContext } from "../model";
-import { ShoppingCartExtension } from "../model/domain";
-import { V1HmacAuthenticator } from "./authentication";
+import { Authenticator, CommunicatorLogger, Configuration, ConnectionOptions, HttpEndpoint, Logger, ObfuscationRule, ProxyConfiguration, SdkContext } from "../model/index.js";
+import { ShoppingCartExtension } from "../model/domain/index.js";
+import { V1HmacAuthenticator } from "./authentication.js";
 
 const consoleLogger: Logger = (level, message) => console[level](message);
 

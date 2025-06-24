@@ -1,24 +1,24 @@
 /*
  * This file was automatically generated.
  */
-import { SdkContext } from "./model";
-import { Client } from "./model/client";
-import { newHostedCheckoutClient } from "./generated/hostedcheckout";
-import { newHostedTokenizationClient } from "./generated/hostedtokenization";
-import { newPaymentsClient } from "./generated/payments";
-import { newCapturesClient } from "./generated/captures";
-import { newRefundsClient } from "./generated/refunds";
-import { newCompleteClient } from "./generated/complete";
-import { newProductGroupsClient } from "./generated/productgroups";
-import { newProductsClient } from "./generated/products";
-import { newServicesClient } from "./generated/services";
-import { newWebhooksClient } from "./generated/webhooks";
-import { newSessionsClient } from "./generated/sessions";
-import { newTokensClient } from "./generated/tokens";
-import { newPayoutsClient } from "./generated/payouts";
-import { newMandatesClient } from "./generated/mandates";
-import { newPrivacyPolicyClient } from "./generated/privacypolicy";
-import { newPaymentLinksClient } from "./generated/paymentlinks";
+import { SdkContext } from "./model/index.js";
+import { Client } from "./model/client.js";
+import { newHostedCheckoutClient } from "./generated/hostedcheckout/index.js";
+import { newHostedTokenizationClient } from "./generated/hostedtokenization/index.js";
+import { newPaymentsClient } from "./generated/payments/index.js";
+import { newCapturesClient } from "./generated/captures/index.js";
+import { newRefundsClient } from "./generated/refunds/index.js";
+import { newCompleteClient } from "./generated/complete/index.js";
+import { newProductGroupsClient } from "./generated/productgroups/index.js";
+import { newProductsClient } from "./generated/products/index.js";
+import { newServicesClient } from "./generated/services/index.js";
+import { newWebhooksClient } from "./generated/webhooks/index.js";
+import { newSessionsClient } from "./generated/sessions/index.js";
+import { newTokensClient } from "./generated/tokens/index.js";
+import { newPayoutsClient } from "./generated/payouts/index.js";
+import { newMandatesClient } from "./generated/mandates/index.js";
+import { newPrivacyPolicyClient } from "./generated/privacypolicy/index.js";
+import { newPaymentLinksClient } from "./generated/paymentlinks/index.js";
 
 export function newClient(sdkContext: SdkContext): Client {
   return {

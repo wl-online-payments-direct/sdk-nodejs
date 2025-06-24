@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CreateHostedTokenizationRequest, CreateHostedTokenizationResponse, ErrorResponse, GetHostedTokenizationResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CreateHostedTokenizationRequest, CreateHostedTokenizationResponse, ErrorResponse, GetHostedTokenizationResponse } from "../domain/index.js";
 
 export interface HostedTokenizationClient {
   /**

@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, SendTestRequest } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, SendTestRequest } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/SendTestRequest.json";
+import requestSchema from "../../../schemas/SendTestRequest.js";
 
 export function sendTestWebhook(
   sdkContext: SdkContext

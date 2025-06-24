@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CompletePaymentRequest, CompletePaymentResponse, PaymentErrorResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CompletePaymentRequest, CompletePaymentResponse, PaymentErrorResponse } from "../domain/index.js";
 
 export interface CompleteClient {
   /**

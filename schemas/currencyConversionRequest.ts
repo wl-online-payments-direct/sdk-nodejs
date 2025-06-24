@@ -1,12 +1,12 @@
-{
+const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : "object",
   "properties" : {
-    "amountOfMoney" : {
-      "$ref" : "#/definitions/amountOfMoney"
-    },
     "cardSource" : {
-      "$ref" : "#/definitions/cardSource"
+      "$ref" : "#/definitions/dccCardSource"
+    },
+    "transaction" : {
+      "$ref" : "#/definitions/transaction"
     }
   },
   "additionalProperties" : false,
@@ -23,11 +23,23 @@
       },
       "additionalProperties" : false
     },
-    "cardSource" : {
+    "cardInfo" : {
+      "type" : "object",
+      "properties" : {
+        "cardNumber" : {
+          "type" : "string"
+        },
+        "paymentProductId" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "dccCardSource" : {
       "type" : "object",
       "properties" : {
         "card" : {
-          "$ref" : "#/definitions/surchargeCalculationCard"
+          "$ref" : "#/definitions/cardInfo"
         },
         "encryptedCustomerInput" : {
           "type" : "string"
@@ -41,17 +53,16 @@
       },
       "additionalProperties" : false
     },
-    "surchargeCalculationCard" : {
+    "transaction" : {
       "type" : "object",
       "properties" : {
-        "cardNumber" : {
-          "type" : "string"
-        },
-        "paymentProductId" : {
-          "type" : "integer"
+        "amount" : {
+          "$ref" : "#/definitions/amountOfMoney"
         }
       },
       "additionalProperties" : false
     }
   }
 }
+
+export default schema;

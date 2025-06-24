@@ -1,13 +1,13 @@
 /*
  * This file was automatically generated.
  */
-import { createMandate } from "./createMandate";
-import { getMandate } from "./getMandate";
-import { blockMandate } from "./blockMandate";
-import { unblockMandate } from "./unblockMandate";
-import { revokeMandate } from "./revokeMandate";
-import { SdkContext } from "../../model";
-import { MandatesClient } from "../model/mandates";
+import { createMandate } from "./createMandate.js";
+import { getMandate } from "./getMandate.js";
+import { blockMandate } from "./blockMandate.js";
+import { unblockMandate } from "./unblockMandate.js";
+import { revokeMandate } from "./revokeMandate.js";
+import { SdkContext } from "../../model/index.js";
+import { MandatesClient } from "../model/mandates/index.js";
 
 export function newMandatesClient(sdkContext: SdkContext): MandatesClient {
   return {

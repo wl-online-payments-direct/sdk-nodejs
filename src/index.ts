@@ -1,9 +1,9 @@
-import { Client, Configuration, ObfuscationRules, SdkApiError, SdkBinaryResponse, SdkBinarySuccessResponse, SdkResponse, SdkSuccessResponse } from "./model";
-import { newSdkContext } from "./utils/context";
-import { all as obfuscateAll, allButFirst as obfuscateAllButFirst, allButLast as obfuscateAllButLast, withFixedLength as obfuscateWithFixedLength } from "./utils/obfuscate";
-import { newClient } from "./client";
-import wh from "./webhooks";
-import { Webhooks } from "./model/webhooks";
+import { Client, Configuration, ObfuscationRules, SdkApiError, SdkBinaryResponse, SdkBinarySuccessResponse, SdkResponse, SdkSuccessResponse } from "./model/index.js";
+import { newSdkContext } from "./utils/context.js";
+import { all as obfuscateAll, allButFirst as obfuscateAllButFirst, allButLast as obfuscateAllButLast, withFixedLength as obfuscateWithFixedLength } from "./utils/obfuscate.js";
+import { newClient } from "./client.js";
+import wh from "./webhooks/index.js";
+import { Webhooks } from "./model/webhooks/index.js";
 
 export function init(configuration: Configuration): Client {
   const sdkContext = newSdkContext(configuration);
@@ -37,3 +37,10 @@ export function assertSuccess<T, E>(response: SdkResponse<T, E> | SdkBinaryRespo
   }
   throw new SdkApiError("the Online Payments platform returned an error response", response.status, response.body);
 }
+
+export default {
+  init,
+  obfuscate,
+  webhooks,
+  assertSuccess
+};

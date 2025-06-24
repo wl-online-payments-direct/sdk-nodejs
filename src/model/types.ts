@@ -1,7 +1,7 @@
 import { Readable } from "stream";
 import { Agent } from "http";
-import { ShoppingCartExtension } from "./domain";
-import { Authenticator } from "./authTypes";
+import { ShoppingCartExtension } from "./domain/index.js";
+import { Authenticator } from "./authTypes.js";
 
 export type CommunicatorLogger = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

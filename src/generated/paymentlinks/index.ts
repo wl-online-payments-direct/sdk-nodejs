@@ -1,11 +1,11 @@
 /*
  * This file was automatically generated.
  */
-import { createPaymentLink } from "./createPaymentLink";
-import { getPaymentLinkById } from "./getPaymentLinkById";
-import { cancelPaymentLinkById } from "./cancelPaymentLinkById";
-import { SdkContext } from "../../model";
-import { PaymentLinksClient } from "../model/paymentlinks";
+import { createPaymentLink } from "./createPaymentLink.js";
+import { getPaymentLinkById } from "./getPaymentLinkById.js";
+import { cancelPaymentLinkById } from "./cancelPaymentLinkById.js";
+import { SdkContext } from "../../model/index.js";
+import { PaymentLinksClient } from "../model/paymentlinks/index.js";
 
 export function newPaymentLinksClient(sdkContext: SdkContext): PaymentLinksClient {
   return {

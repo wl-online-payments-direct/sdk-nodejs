@@ -1,23 +1,23 @@
 /*
  * This file was automatically generated.
  */
-import { SdkContext } from "./types";
-import { HostedCheckoutClient } from "../generated/model/hostedcheckout";
-import { HostedTokenizationClient } from "../generated/model/hostedtokenization";
-import { PaymentsClient } from "../generated/model/payments";
-import { CapturesClient } from "../generated/model/captures";
-import { RefundsClient } from "../generated/model/refunds";
-import { CompleteClient } from "../generated/model/complete";
-import { ProductGroupsClient } from "../generated/model/productgroups";
-import { ProductsClient } from "../generated/model/products";
-import { ServicesClient } from "../generated/model/services";
-import { WebhooksClient } from "../generated/model/webhooks";
-import { SessionsClient } from "../generated/model/sessions";
-import { TokensClient } from "../generated/model/tokens";
-import { PayoutsClient } from "../generated/model/payouts";
-import { MandatesClient } from "../generated/model/mandates";
-import { PrivacyPolicyClient } from "../generated/model/privacypolicy";
-import { PaymentLinksClient } from "../generated/model/paymentlinks";
+import { SdkContext } from "./types.js";
+import { HostedCheckoutClient } from "../generated/model/hostedcheckout/index.js";
+import { HostedTokenizationClient } from "../generated/model/hostedtokenization/index.js";
+import { PaymentsClient } from "../generated/model/payments/index.js";
+import { CapturesClient } from "../generated/model/captures/index.js";
+import { RefundsClient } from "../generated/model/refunds/index.js";
+import { CompleteClient } from "../generated/model/complete/index.js";
+import { ProductGroupsClient } from "../generated/model/productgroups/index.js";
+import { ProductsClient } from "../generated/model/products/index.js";
+import { ServicesClient } from "../generated/model/services/index.js";
+import { WebhooksClient } from "../generated/model/webhooks/index.js";
+import { SessionsClient } from "../generated/model/sessions/index.js";
+import { TokensClient } from "../generated/model/tokens/index.js";
+import { PayoutsClient } from "../generated/model/payouts/index.js";
+import { MandatesClient } from "../generated/model/mandates/index.js";
+import { PrivacyPolicyClient } from "../generated/model/privacypolicy/index.js";
+import { PaymentLinksClient } from "../generated/model/paymentlinks/index.js";
 
 export interface Client {
   readonly hostedCheckout: HostedCheckoutClient;

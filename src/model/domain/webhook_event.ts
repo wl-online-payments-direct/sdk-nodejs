@@ -1,4 +1,4 @@
-import { PaymentResponse, PayoutResponse, RefundResponse, TokenResponse } from "../../generated/model/domain";
+import { PaymentResponse, PayoutResponse, RefundResponse, TokenResponse } from "../../generated/model/domain/index.js";
 
 export interface WebhooksEvent {
   apiVersion?: string | null;

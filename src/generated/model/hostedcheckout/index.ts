@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse, GetHostedCheckoutResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse, GetHostedCheckoutResponse } from "../domain/index.js";
 
 export interface HostedCheckoutClient {
   /**

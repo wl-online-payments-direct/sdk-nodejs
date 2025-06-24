@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, GetIINDetailsRequest, GetIINDetailsResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, GetIINDetailsRequest, GetIINDetailsResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/GetIINDetailsRequest.json";
+import requestSchema from "../../../schemas/GetIINDetailsRequest.js";
 
 export function getIINDetails(
   sdkContext: SdkContext

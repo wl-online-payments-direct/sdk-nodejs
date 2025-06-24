@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { CreatePayoutRequest, PayoutErrorResponse, PayoutResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { CreatePayoutRequest, PayoutErrorResponse, PayoutResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreatePayoutRequest.json";
+import requestSchema from "../../../schemas/CreatePayoutRequest.js";
 
 export function createPayout(
   sdkContext: SdkContext

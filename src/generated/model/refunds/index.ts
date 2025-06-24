@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { ErrorResponse, RefundsResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { ErrorResponse, RefundsResponse } from "../domain/index.js";
 
 export interface RefundsClient {
   /**

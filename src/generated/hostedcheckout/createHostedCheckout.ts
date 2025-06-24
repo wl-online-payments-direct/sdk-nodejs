@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateHostedCheckoutRequest.json";
+import requestSchema from "../../../schemas/CreateHostedCheckoutRequest.js";
 
 export function createHostedCheckout(
   sdkContext: SdkContext

@@ -1,7 +1,7 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
 import {
   CancelPaymentRequest,
   CancelPaymentResponse,
@@ -18,7 +18,7 @@ import {
   RefundResponse,
   SubsequentPaymentRequest,
   SubsequentPaymentResponse
-} from "../domain";
+} from "../domain/index.js";
 
 export interface PaymentsClient {
   /**

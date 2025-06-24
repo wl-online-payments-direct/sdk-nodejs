@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { PaymentErrorResponse, SubsequentPaymentRequest, SubsequentPaymentResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { PaymentErrorResponse, SubsequentPaymentRequest, SubsequentPaymentResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/SubsequentPaymentRequest.json";
+import requestSchema from "../../../schemas/SubsequentPaymentRequest.js";
 
 export function subsequentPayment(
   sdkContext: SdkContext

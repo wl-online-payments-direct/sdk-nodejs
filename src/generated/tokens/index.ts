@@ -1,11 +1,11 @@
 /*
  * This file was automatically generated.
  */
-import { getToken } from "./getToken";
-import { deleteToken } from "./deleteToken";
-import { createToken } from "./createToken";
-import { SdkContext } from "../../model";
-import { TokensClient } from "../model/tokens";
+import { getToken } from "./getToken.js";
+import { deleteToken } from "./deleteToken.js";
+import { createToken } from "./createToken.js";
+import { SdkContext } from "../../model/index.js";
+import { TokensClient } from "../model/tokens/index.js";
 
 export function newTokensClient(sdkContext: SdkContext): TokensClient {
   return {

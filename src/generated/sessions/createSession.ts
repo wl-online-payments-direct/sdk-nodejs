@@ -2,11 +2,11 @@
  * This file was automatically generated.
  */
 import { validate } from "jsonschema";
-import { json } from "../../utils/communicator";
-import { PaymentContext, SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, SessionRequest, SessionResponse } from "../model/domain";
+import { json } from "../../utils/communicator.js";
+import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, SessionRequest, SessionResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/SessionRequest.json";
+import requestSchema from "../../../schemas/SessionRequest.js";
 
 export function createSession(
   sdkContext: SdkContext

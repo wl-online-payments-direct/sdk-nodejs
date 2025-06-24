@@ -7,9 +7,9 @@ import {
   SignatureValidator,
   WebhooksContext,
   WebhooksHelper
-} from "../model/webhooks";
-import { newSignatureValidator } from "./validation";
-import { WebhooksEvent } from "../model/domain";
+} from "../model/webhooks/index.js";
+import { newSignatureValidator } from "./validation.js";
+import { WebhooksEvent } from "../model/domain/index.js";
 
 function validateApiVersion(event: WebhooksEvent): void {
   if ("v1" !== event.apiVersion) {

@@ -1,12 +1,12 @@
 /*
  * This file was automatically generated.
  */
-import { testConnection } from "./testConnection";
-import { getIINDetails } from "./getIINDetails";
-import { getDccRateInquiry } from "./getDccRateInquiry";
-import { surchargeCalculation } from "./surchargeCalculation";
-import { SdkContext } from "../../model";
-import { ServicesClient } from "../model/services";
+import { testConnection } from "./testConnection.js";
+import { getIINDetails } from "./getIINDetails.js";
+import { getDccRateInquiry } from "./getDccRateInquiry.js";
+import { surchargeCalculation } from "./surchargeCalculation.js";
+import { SdkContext } from "../../model/index.js";
+import { ServicesClient } from "../model/services/index.js";
 
 export function newServicesClient(sdkContext: SdkContext): ServicesClient {
   return {

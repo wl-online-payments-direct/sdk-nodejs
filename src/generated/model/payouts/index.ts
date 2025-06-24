@@ -1,8 +1,8 @@
 /*
  * This file was automatically generated.
  */
-import { PaymentContext, SdkResponse } from "../../../model";
-import { CreatePayoutRequest, ErrorResponse, PayoutErrorResponse, PayoutResponse } from "../domain";
+import { PaymentContext, SdkResponse } from "../../../model/index.js";
+import { CreatePayoutRequest, ErrorResponse, PayoutErrorResponse, PayoutResponse } from "../domain/index.js";
 
 export interface PayoutsClient {
   /**

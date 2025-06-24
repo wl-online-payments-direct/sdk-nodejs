@@ -1,10 +1,10 @@
 /*
  * This file was automatically generated.
  */
-import { json } from "../../utils/communicator";
-import { SdkContext, SdkResponse } from "../../model";
-import { ErrorResponse, PaymentProductGroup } from "../model/domain";
-import { GetProductGroupParams } from "../model/productgroups";
+import { json } from "../../utils/communicator.js";
+import { SdkContext, SdkResponse } from "../../model/index.js";
+import { ErrorResponse, PaymentProductGroup } from "../model/domain/index.js";
+import { GetProductGroupParams } from "../model/productgroups/index.js";
 
 export function getProductGroup(
   sdkContext: SdkContext

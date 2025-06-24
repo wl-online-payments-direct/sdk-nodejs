@@ -1,5 +1,7 @@
-import { padEnd, padStart } from "lodash";
-import { ObfuscationRule, SdkContext } from "../model";
+import { ObfuscationRule, SdkContext } from "../model/index.js";
+import pkg from "lodash/index.js";
+
+const { padEnd, padStart } = pkg;
 
 const REPLACE_CHAR = "*";
 const INDENT = 2;
