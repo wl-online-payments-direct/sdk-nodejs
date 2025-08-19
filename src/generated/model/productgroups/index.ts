@@ -18,6 +18,9 @@ export interface ProductGroupsClient {
 export interface GetProductGroupsParams extends PaymentContext {
   countryCode?: string;
   currencyCode?: string;
+  /*
+   * @deprecated This field has no effect.
+   */
   locale?: string;
   amount?: number;
   isRecurring?: boolean;
@@ -27,6 +30,9 @@ export interface GetProductGroupsParams extends PaymentContext {
 export interface GetProductGroupParams extends PaymentContext {
   countryCode?: string;
   currencyCode?: string;
+  /*
+   * @deprecated This field has no effect.
+   */
   locale?: string;
   amount?: number;
   isRecurring?: boolean;

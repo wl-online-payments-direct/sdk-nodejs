@@ -1,6 +1,6 @@
 const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
-  "type" : "object",
+  "type" : [ "object", "null" ],
   "properties" : {
     "alias" : {
       "type" : "string"

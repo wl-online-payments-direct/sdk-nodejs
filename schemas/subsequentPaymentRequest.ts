@@ -1,6 +1,6 @@
 const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
-  "type" : "object",
+  "type" : [ "object", "null" ],
   "properties" : {
     "order" : {
       "$ref" : "#/definitions/order"
@@ -624,6 +624,9 @@ const schema = {
         },
         "merchantReference" : {
           "type" : "string"
+        },
+        "operationGroupReference" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -804,6 +807,9 @@ const schema = {
     "subsequentPaymentProduct5001SpecificInput" : {
       "type" : "object",
       "properties" : {
+        "authorizationMode" : {
+          "type" : "string"
+        },
         "subsequentType" : {
           "type" : "string"
         }

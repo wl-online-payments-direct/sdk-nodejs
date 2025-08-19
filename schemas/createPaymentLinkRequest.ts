@@ -1,6 +1,6 @@
 const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
-  "type" : "object",
+  "type" : [ "object", "null" ],
   "properties" : {
     "cardPaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/cardPaymentMethodSpecificInputBase"
@@ -979,8 +979,17 @@ const schema = {
     "mobilePaymentProduct320SpecificInput" : {
       "type" : "object",
       "properties" : {
+        "isRecurring" : {
+          "type" : "boolean"
+        },
+        "recurring" : {
+          "$ref" : "#/definitions/product320Recurring"
+        },
         "threeDSecure" : {
           "$ref" : "#/definitions/gPayThreeDSecure"
+        },
+        "tokenize" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
@@ -1070,6 +1079,9 @@ const schema = {
           "type" : "string"
         },
         "merchantReference" : {
+          "type" : "string"
+        },
+        "operationGroupReference" : {
           "type" : "string"
         }
       },
@@ -1275,6 +1287,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "product320Recurring" : {
+      "type" : "object",
+      "properties" : {
+        "recurringPaymentSequenceIndicator" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "redirectPaymentMethodSpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -1350,6 +1371,9 @@ const schema = {
     "redirectPaymentProduct3204SpecificInput" : {
       "type" : "object",
       "properties" : {
+        "aliasLabel" : {
+          "type" : "string"
+        },
         "blikCode" : {
           "type" : "string"
         }

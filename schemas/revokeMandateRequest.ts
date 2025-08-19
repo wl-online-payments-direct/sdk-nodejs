@@ -2,10 +2,7 @@ const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : [ "object", "null" ],
   "properties" : {
-    "key" : {
-      "type" : "string"
-    },
-    "secret" : {
+    "revocationReason" : {
       "type" : "string"
     }
   },

@@ -1,6 +1,6 @@
 const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
-  "type" : "object",
+  "type" : [ "object", "null" ],
   "properties" : {
     "amountOfMoney" : {
       "$ref" : "#/definitions/amountOfMoney"
@@ -10,6 +10,9 @@ const schema = {
     },
     "operationReferences" : {
       "$ref" : "#/definitions/operationPaymentReferences"
+    },
+    "reason" : {
+      "type" : "string"
     },
     "references" : {
       "$ref" : "#/definitions/paymentReferences"
@@ -34,6 +37,9 @@ const schema = {
       "properties" : {
         "merchantReference" : {
           "type" : "string"
+        },
+        "operationGroupReference" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -45,6 +51,9 @@ const schema = {
           "type" : "string"
         },
         "merchantReference" : {
+          "type" : "string"
+        },
+        "operationGroupReference" : {
           "type" : "string"
         }
       },

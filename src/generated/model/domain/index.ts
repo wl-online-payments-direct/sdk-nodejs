@@ -19,7 +19,7 @@ export interface APIError {
 export interface AccountOnFile {
   attributes?: AccountOnFileAttribute[] | null;
   displayHints?: AccountOnFileDisplayHints | null;
-  id?: number | null;
+  id?: string | null;
   paymentProductId?: number | null;
 }
 
@@ -226,6 +226,7 @@ export interface CalculateSurchargeResponse {
 export interface CancelPaymentRequest {
   amountOfMoney?: AmountOfMoney | null;
   isFinal?: boolean | null;
+  operationReferences?: OperationPaymentReferences | null;
 }
 
 export interface CancelPaymentResponse {
@@ -288,9 +289,23 @@ export interface Card {
 
 export interface CardEssentials {
   bin?: string | null;
+  cardCorporateIndicator?: boolean | null;
+  cardEffectiveDate?: string | null;
+  cardEffectiveDateIndicator?: boolean | null;
   cardNumber?: string | null;
+  cardPanType?: string | null;
+  cardProductCode?: string | null;
+  cardProductUsageLabel?: string | null;
+  cardScheme?: string | null;
+  cardType?: string | null;
   countryCode?: string | null;
   expiryDate?: string | null;
+  issuerCode?: string | null;
+  issuerName?: string | null;
+  issuingCountryCode?: string | null;
+  panLengthMax?: number | null;
+  panLengthMin?: number | null;
+  panLuhnCheck?: boolean | null;
 }
 
 export interface CardFraudResults {
@@ -315,6 +330,7 @@ export interface CardPaymentMethodSpecificInput {
   initialSchemeTransactionId?: string | null;
   isRecurring?: boolean | null;
   multiplePaymentInformation?: MultiplePaymentInformation | null;
+  networkTokenData?: NetworkTokenData | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
   paymentProduct3012SpecificInput?: PaymentProduct3012SpecificInput | null;
   paymentProduct3208SpecificInput?: PaymentProduct3208SpecificInput | null;
@@ -367,6 +383,7 @@ export interface CardPaymentMethodSpecificOutput {
   authenticatedAmount?: number | null;
   authorisationCode?: string | null;
   card?: CardEssentials | null;
+  clickToPay?: ClickToPay | null;
   currencyConversion?: CurrencyConversion | null;
   externalTokenLinked?: ExternalTokenLinked | null;
   fraudResults?: CardFraudResults | null;
@@ -404,6 +421,10 @@ export interface CardWithoutCvv {
   cardNumber?: string | null;
   cardholderName?: string | null;
   expiryDate?: string | null;
+}
+
+export interface ClickToPay {
+  IsClickToPayPayment?: boolean | null;
 }
 
 export interface CompanyInformation {
@@ -790,10 +811,23 @@ export interface GetIINDetailsRequest {
 }
 
 export interface GetIINDetailsResponse {
+  cardCorporateIndicator?: boolean | null;
+  cardEffectiveDate?: string | null;
+  cardEffectiveDateIndicator?: boolean | null;
+  cardPanType?: string | null;
+  cardProductCode?: string | null;
+  cardProductUsageLabel?: string | null;
+  cardScheme?: string | null;
   cardType?: string | null;
   coBrands?: IINDetail[] | null;
   countryCode?: string | null;
   isAllowedInContext?: boolean | null;
+  issuerCode?: string | null;
+  issuerName?: string | null;
+  issuingCountryCode?: string | null;
+  panLengthMax?: number | null;
+  panLengthMin?: number | null;
+  panLuhnCheck?: boolean | null;
   paymentProductId?: number | null;
 }
 
@@ -837,8 +871,22 @@ export interface HostedCheckoutSpecificOutput {
 }
 
 export interface IINDetail {
+  cardCorporateIndicator?: boolean | null;
+  cardEffectiveDate?: string | null;
+  cardEffectiveDateIndicator?: boolean | null;
+  cardPanType?: string | null;
+  cardProductCode?: string | null;
+  cardProductUsageLabel?: string | null;
+  cardScheme?: string | null;
   cardType?: string | null;
+  countryCode?: string | null;
   isAllowedInContext?: boolean | null;
+  issuerCode?: string | null;
+  issuerName?: string | null;
+  issuingCountryCode?: string | null;
+  panLengthMax?: number | null;
+  panLengthMin?: number | null;
+  panLuhnCheck?: boolean | null;
   paymentProductId?: number | null;
 }
 
@@ -996,7 +1044,10 @@ export interface MobilePaymentProduct302SpecificInput {
 }
 
 export interface MobilePaymentProduct320SpecificInput {
+  isRecurring?: boolean | null;
+  recurring?: Product320Recurring | null;
   threeDSecure?: GPayThreeDSecure | null;
+  tokenize?: boolean | null;
 }
 
 export interface MobileThreeDSecureChallengeParameters {
@@ -1009,6 +1060,15 @@ export interface MobileThreeDSecureChallengeParameters {
 export interface MultiplePaymentInformation {
   paymentPattern?: string | null;
   totalNumberOfPayments?: number | null;
+}
+
+export interface NetworkTokenData {
+  cardholderName?: string | null;
+  cryptogram?: string | null;
+  eci?: number | null;
+  networkToken?: string | null;
+  schemeTokenRequestorId?: string | null;
+  tokenExpiryDate?: string | null;
 }
 
 export interface OmnichannelPayoutSpecificInput {
@@ -1027,6 +1087,7 @@ export interface OperationOutput {
 
 export interface OperationPaymentReferences {
   merchantReference?: string | null;
+  operationGroupReference?: string | null;
 }
 
 export interface Order {
@@ -1056,6 +1117,7 @@ export interface OrderReferences {
   descriptor?: string | null;
   merchantParameters?: string | null;
   merchantReference?: string | null;
+  operationGroupReference?: string | null;
 }
 
 export interface OrderStatusOutput {
@@ -1115,6 +1177,9 @@ export interface PaymentLinkEvent {
   type?: string | null;
 }
 
+/**
+ * @deprecated An object containing the details of the related payment input.  All properties in paymentLinkOrder are deprecated. Use corresponding values as noted below: | Property | Replacement | | - | - | | merchantReference | references/merchantReference | | amount | order/amountOfMoney | | surchargeSpecificInput | order/surchargeSpecificInput |
+ */
 export interface PaymentLinkOrderInput {
   amount?: AmountOfMoney | null;
   merchantReference?: string | null;
@@ -1212,6 +1277,10 @@ export interface PaymentProduct3203SpecificOutput {
   shippingAddress?: AddressPersonal | null;
 }
 
+export interface PaymentProduct3204SpecificOutput {
+  bankingAppLabel?: string | null;
+}
+
 export interface PaymentProduct3208SpecificInput {
   merchantFinanceCode?: string | null;
 }
@@ -1231,6 +1300,11 @@ export interface PaymentProduct3209SpecificOutput {
 export interface PaymentProduct320SpecificData {
   gateway?: string | null;
   networks?: string[] | null;
+}
+
+export interface PaymentProduct5001 {
+  message?: string | null;
+  pollingUrl?: string | null;
 }
 
 export interface PaymentProduct5001SpecificOutput {
@@ -1283,6 +1357,7 @@ export interface PaymentProduct840CustomerAccount {
 
 export interface PaymentProduct840SpecificOutput {
   billingAddress?: Address | null;
+  billingPersonalAddress?: AddressPersonal | null;
   customerAccount?: PaymentProduct840CustomerAccount | null;
   customerAddress?: Address | null;
   protectionEligibility?: ProtectionEligibility | null;
@@ -1390,6 +1465,7 @@ export interface PaymentProductNetworksResponse {
 export interface PaymentReferences {
   merchantParameters?: string | null;
   merchantReference?: string | null;
+  operationGroupReference?: string | null;
 }
 
 export interface PaymentResponse {
@@ -1462,6 +1538,10 @@ export interface PersonalNameToken {
   surname?: string | null;
 }
 
+export interface Product320Recurring {
+  recurringPaymentSequenceIndicator?: string | null;
+}
+
 export interface ProductDirectory {
   entries?: DirectoryEntry[] | null;
 }
@@ -1526,6 +1606,7 @@ export interface RedirectPaymentMethodSpecificOutput {
   authorisationCode?: string | null;
   customerBankAccount?: CustomerBankAccount | null;
   fraudResults?: FraudResults | null;
+  paymentMethod3204SpecificOutput?: PaymentProduct3204SpecificOutput | null;
   paymentOption?: string | null;
   paymentProduct3203SpecificOutput?: PaymentProduct3203SpecificOutput | null;
   paymentProduct5001SpecificOutput?: PaymentProduct5001SpecificOutput | null;
@@ -1541,6 +1622,7 @@ export interface RedirectPaymentProduct3203SpecificInput {
 }
 
 export interface RedirectPaymentProduct3204SpecificInput {
+  aliasLabel?: string | null;
   blikCode?: string | null;
 }
 
@@ -1590,6 +1672,9 @@ export interface RedirectPaymentProduct5410SpecificInput {
   secondInstallmentPaymentDate?: string | null;
 }
 
+/**
+ * @deprecated Deprecated, this is no longer used.
+ */
 export interface RedirectPaymentProduct809SpecificInput {
   issuerId?: string | null;
 }
@@ -1661,6 +1746,7 @@ export interface RefundRequest {
   amountOfMoney?: AmountOfMoney | null;
   captureId?: string | null;
   operationReferences?: OperationPaymentReferences | null;
+  reason?: string | null;
   references?: PaymentReferences | null;
 }
 
@@ -1677,6 +1763,10 @@ export interface RefundsResponse {
 
 export interface RegularExpressionValidator {
   regularExpression?: string | null;
+}
+
+export interface RevokeMandateRequest {
+  revocationReason?: string | null;
 }
 
 export interface SendTestRequest {
@@ -1754,6 +1844,7 @@ export interface ShoppingCart {
 
 export interface ShowFormData {
   paymentProduct3012?: PaymentProduct3012 | null;
+  paymentProduct5001?: PaymentProduct5001 | null;
   paymentProduct5404?: PaymentProduct5404 | null;
   paymentProduct5407?: PaymentProduct5407 | null;
 }
@@ -1778,6 +1869,7 @@ export interface SubsequentCardPaymentMethodSpecificInput {
 }
 
 export interface SubsequentPaymentProduct5001SpecificInput {
+  authorizationMode?: string | null;
   subsequentType?: string | null;
 }
 
