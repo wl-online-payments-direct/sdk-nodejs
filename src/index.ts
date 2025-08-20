@@ -6,6 +6,8 @@ import wh from "./webhooks/index.js";
 import { Webhooks } from "./model/webhooks/index.js";
 
 export * from "./model/index.js";
+import * as Domain from "./generated/model/domain/index.js";
+export { Domain };
 
 export function init(configuration: Configuration): Client {
   const sdkContext = newSdkContext(configuration);
