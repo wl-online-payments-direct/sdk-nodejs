@@ -1,6 +1,6 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
   "bugs": {
@@ -29,10 +29,10 @@
     "format": "prettier --write \"**/*.+(json|ts|tsx)\"",
     "format:check": "prettier --check \"**/*.+(json|ts|tsx)\"",
     "typedoc": "typedoc",
-    "build": "npm run format && npm run format:check && npm run lint && npm run compile && npm run build:cjs && npm run build:esm && echo {\"type\": \"commonjs\"} > lib/cjs/package.json && echo {\"type\": \"module\"} > lib/esm/package.json",
+    "build": "npm run format:check && npm run lint && npm run compile && npm run build:cjs && npm run build:esm && echo {\"type\": \"commonjs\"} > lib/cjs/package.json && echo {\"type\": \"module\"} > lib/esm/package.json",
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build:esm": "tsc --project tsconfig.esm.json",
-    "prepare": "npm run build",
+    "prepare": "npm run format && npm run build",
     "test": "jest",
     "test:unit": "jest --selectProjects unit",
     "test:integration": "jest --selectProjects integration",

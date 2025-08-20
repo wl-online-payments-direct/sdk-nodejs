@@ -5,6 +5,8 @@ import { newClient } from "./client.js";
 import wh from "./webhooks/index.js";
 import { Webhooks } from "./model/webhooks/index.js";
 
+export * from "./model/index.js";
+
 export function init(configuration: Configuration): Client {
   const sdkContext = newSdkContext(configuration);
   return newClient(sdkContext);
