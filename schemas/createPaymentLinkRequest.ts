@@ -972,6 +972,15 @@ const schema = {
       "properties" : {
         "applePayRecurringPaymentRequest" : {
           "$ref" : "#/definitions/applePayRecurringPaymentRequest"
+        },
+        "isRecurring" : {
+          "type" : "boolean"
+        },
+        "recurring" : {
+          "$ref" : "#/definitions/product302Recurring"
+        },
+        "tokenize" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
@@ -1282,6 +1291,15 @@ const schema = {
           "type" : "string"
         },
         "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "product302Recurring" : {
+      "type" : "object",
+      "properties" : {
+        "recurringPaymentSequenceIndicator" : {
           "type" : "string"
         }
       },

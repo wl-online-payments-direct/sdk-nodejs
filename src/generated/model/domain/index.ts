@@ -287,6 +287,27 @@ export interface Card {
   expiryDate?: string | null;
 }
 
+export interface CardBinDetails {
+  cardCorporateIndicator?: boolean | null;
+  cardEffectiveDate?: string | null;
+  cardEffectiveDateIndicator?: boolean | null;
+  cardPanType?: string | null;
+  cardProductCode?: string | null;
+  cardProductName?: string | null;
+  cardProductUsageLabel?: string | null;
+  cardScheme?: string | null;
+  cardType?: string | null;
+  countryCode?: string | null;
+  issuerCode?: string | null;
+  issuerName?: string | null;
+  issuerRegionCode?: string | null;
+  issuingCountryCode?: string | null;
+  panLengthMax?: number | null;
+  panLengthMin?: number | null;
+  panLuhnCheck?: boolean | null;
+  virtualCardIndicator?: boolean | null;
+}
+
 export interface CardEssentials {
   bin?: string | null;
   cardCorporateIndicator?: boolean | null;
@@ -295,6 +316,7 @@ export interface CardEssentials {
   cardNumber?: string | null;
   cardPanType?: string | null;
   cardProductCode?: string | null;
+  cardProductName?: string | null;
   cardProductUsageLabel?: string | null;
   cardScheme?: string | null;
   cardType?: string | null;
@@ -302,10 +324,12 @@ export interface CardEssentials {
   expiryDate?: string | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
   panLengthMin?: number | null;
   panLuhnCheck?: boolean | null;
+  virtualCardIndicator?: boolean | null;
 }
 
 export interface CardFraudResults {
@@ -816,6 +840,7 @@ export interface GetIINDetailsResponse {
   cardEffectiveDateIndicator?: boolean | null;
   cardPanType?: string | null;
   cardProductCode?: string | null;
+  cardProductName?: string | null;
   cardProductUsageLabel?: string | null;
   cardScheme?: string | null;
   cardType?: string | null;
@@ -824,11 +849,13 @@ export interface GetIINDetailsResponse {
   isAllowedInContext?: boolean | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
   panLengthMin?: number | null;
   panLuhnCheck?: boolean | null;
   paymentProductId?: number | null;
+  virtualCardIndicator?: boolean | null;
 }
 
 export interface GetMandateResponse {
@@ -876,6 +903,7 @@ export interface IINDetail {
   cardEffectiveDateIndicator?: boolean | null;
   cardPanType?: string | null;
   cardProductCode?: string | null;
+  cardProductName?: string | null;
   cardProductUsageLabel?: string | null;
   cardScheme?: string | null;
   cardType?: string | null;
@@ -883,11 +911,13 @@ export interface IINDetail {
   isAllowedInContext?: boolean | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
   panLengthMin?: number | null;
   panLuhnCheck?: boolean | null;
   paymentProductId?: number | null;
+  virtualCardIndicator?: boolean | null;
 }
 
 export interface LabelTemplateElement {
@@ -1024,6 +1054,7 @@ export interface MobilePaymentMethodSpecificInput {
   decryptedPaymentData?: DecryptedPaymentData | null;
   encryptedPaymentData?: string | null;
   ephemeralKey?: string | null;
+  paymentProduct302SpecificInput?: MobilePaymentProduct302SpecificInput | null;
   paymentProduct320SpecificInput?: MobilePaymentProduct320SpecificInput | null;
   paymentProductId?: number | null;
   publicKeyHash?: string | null;
@@ -1041,6 +1072,9 @@ export interface MobilePaymentMethodSpecificOutput {
 
 export interface MobilePaymentProduct302SpecificInput {
   applePayRecurringPaymentRequest?: ApplePayRecurringPaymentRequest | null;
+  isRecurring?: boolean | null;
+  recurring?: Product302Recurring | null;
+  tokenize?: boolean | null;
 }
 
 export interface MobilePaymentProduct320SpecificInput {
@@ -1538,6 +1572,10 @@ export interface PersonalNameToken {
   surname?: string | null;
 }
 
+export interface Product302Recurring {
+  recurringPaymentSequenceIndicator?: string | null;
+}
+
 export interface Product320Recurring {
   recurringPaymentSequenceIndicator?: string | null;
 }
@@ -1978,6 +2016,7 @@ export interface TokenCard {
 }
 
 export interface TokenCardData {
+  cardBinDetails?: CardBinDetails | null;
   cardWithoutCvv?: CardWithoutCvv | null;
   cobrandSelectionIndicator?: string | null;
 }

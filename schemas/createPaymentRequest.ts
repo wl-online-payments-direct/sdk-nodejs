@@ -313,6 +313,54 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "applePayLineItem" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "string"
+        },
+        "label" : {
+          "type" : "string"
+        },
+        "paymentTiming" : {
+          "type" : "string"
+        },
+        "recurringPaymentEndDate" : {
+          "type" : "string"
+        },
+        "recurringPaymentIntervalCount" : {
+          "type" : "integer"
+        },
+        "recurringPaymentIntervalUnit" : {
+          "type" : "string"
+        },
+        "recurringPaymentStartDate" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "applePayRecurringPaymentRequest" : {
+      "type" : "object",
+      "properties" : {
+        "billingAgreement" : {
+          "type" : "string"
+        },
+        "managementUrl" : {
+          "type" : "string"
+        },
+        "paymentDescription" : {
+          "type" : "string"
+        },
+        "regularBilling" : {
+          "$ref" : "#/definitions/applePayLineItem"
+        },
+        "trialBilling" : {
+          "$ref" : "#/definitions/applePayLineItem"
+        }
+      },
+      "additionalProperties" : false
+    },
     "bankAccountIban" : {
       "type" : "object",
       "properties" : {
@@ -948,6 +996,9 @@ const schema = {
         "ephemeralKey" : {
           "type" : "string"
         },
+        "paymentProduct302SpecificInput" : {
+          "$ref" : "#/definitions/mobilePaymentProduct302SpecificInput"
+        },
         "paymentProduct320SpecificInput" : {
           "$ref" : "#/definitions/mobilePaymentProduct320SpecificInput"
         },
@@ -958,6 +1009,24 @@ const schema = {
           "type" : "string"
         },
         "requiresApproval" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "mobilePaymentProduct302SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "applePayRecurringPaymentRequest" : {
+          "$ref" : "#/definitions/applePayRecurringPaymentRequest"
+        },
+        "isRecurring" : {
+          "type" : "boolean"
+        },
+        "recurring" : {
+          "$ref" : "#/definitions/product302Recurring"
+        },
+        "tokenize" : {
           "type" : "boolean"
         }
       },
@@ -1222,6 +1291,15 @@ const schema = {
           "type" : "string"
         },
         "title" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "product302Recurring" : {
+      "type" : "object",
+      "properties" : {
+        "recurringPaymentSequenceIndicator" : {
           "type" : "string"
         }
       },
