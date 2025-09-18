@@ -1109,6 +1109,10 @@ export interface OmnichannelPayoutSpecificInput {
   paymentId?: string | null;
 }
 
+export interface OmnichannelRefundSpecificInput {
+  operatorId?: string | null;
+}
+
 export interface OperationOutput {
   amountOfMoney?: AmountOfMoney | null;
   id?: string | null;
@@ -1783,6 +1787,7 @@ export interface RefundRedirectMethodSpecificOutput {
 export interface RefundRequest {
   amountOfMoney?: AmountOfMoney | null;
   captureId?: string | null;
+  omnichannelRefundSpecificInput?: OmnichannelRefundSpecificInput | null;
   operationReferences?: OperationPaymentReferences | null;
   reason?: string | null;
   references?: PaymentReferences | null;

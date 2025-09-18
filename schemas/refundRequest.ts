@@ -8,6 +8,9 @@ const schema = {
     "captureId" : {
       "type" : "string"
     },
+    "omnichannelRefundSpecificInput" : {
+      "$ref" : "#/definitions/omnichannelRefundSpecificInput"
+    },
     "operationReferences" : {
       "$ref" : "#/definitions/operationPaymentReferences"
     },
@@ -27,6 +30,15 @@ const schema = {
           "type" : "integer"
         },
         "currencyCode" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "omnichannelRefundSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "operatorId" : {
           "type" : "string"
         }
       },
