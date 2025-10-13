@@ -15,9 +15,7 @@ import {
   PaymentResponse,
   RefundErrorResponse,
   RefundRequest,
-  RefundResponse,
-  SubsequentPaymentRequest,
-  SubsequentPaymentResponse
+  RefundResponse
 } from "../domain/index.js";
 
 export interface PaymentsClient {
@@ -50,13 +48,4 @@ export interface PaymentsClient {
    * Resource /v2/{merchantId}/payments/{paymentId}/refund - Refund payment
    */
   refundPayment(merchantId: string, paymentId: string, body: RefundRequest, paymentContext?: PaymentContext | null): Promise<SdkResponse<RefundResponse, RefundErrorResponse>>;
-  /**
-   * Resource /v2/{merchantId}/payments/{paymentId}/subsequent - Subsequent payment
-   */
-  subsequentPayment(
-    merchantId: string,
-    paymentId: string,
-    body: SubsequentPaymentRequest,
-    paymentContext?: PaymentContext | null
-  ): Promise<SdkResponse<SubsequentPaymentResponse, PaymentErrorResponse>>;
 }

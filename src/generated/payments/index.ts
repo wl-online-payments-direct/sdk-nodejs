@@ -7,7 +7,6 @@ import { getPaymentDetails } from "./getPaymentDetails.js";
 import { cancelPayment } from "./cancelPayment.js";
 import { capturePayment } from "./capturePayment.js";
 import { refundPayment } from "./refundPayment.js";
-import { subsequentPayment } from "./subsequentPayment.js";
 import { SdkContext } from "../../model/index.js";
 import { PaymentsClient } from "../model/payments/index.js";
 
@@ -18,7 +17,6 @@ export function newPaymentsClient(sdkContext: SdkContext): PaymentsClient {
     getPaymentDetails: getPaymentDetails(sdkContext),
     cancelPayment: cancelPayment(sdkContext),
     capturePayment: capturePayment(sdkContext),
-    refundPayment: refundPayment(sdkContext),
-    subsequentPayment: subsequentPayment(sdkContext)
+    refundPayment: refundPayment(sdkContext)
   };
 }

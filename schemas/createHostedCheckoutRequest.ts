@@ -412,6 +412,9 @@ const schema = {
         "paymentProduct3012SpecificInput" : {
           "$ref" : "#/definitions/paymentProduct3012SpecificInput"
         },
+        "paymentProduct3013SpecificInput" : {
+          "$ref" : "#/definitions/paymentProduct3013SpecificInput"
+        },
         "paymentProduct3208SpecificInput" : {
           "$ref" : "#/definitions/paymentProduct3208SpecificInput"
         },
@@ -1023,6 +1026,9 @@ const schema = {
         },
         "surchargeSpecificInput" : {
           "$ref" : "#/definitions/surchargeSpecificInput"
+        },
+        "totalTaxAmount" : {
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -1154,6 +1160,21 @@ const schema = {
           "type" : "boolean"
         },
         "wipMerchantAuthenticationMethod" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "paymentProduct3013SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "marketNumber" : {
+          "type" : "string"
+        },
+        "purchasingBuyerReference1" : {
+          "type" : "string"
+        },
+        "purchasingBuyerReference2" : {
           "type" : "string"
         }
       },
@@ -1304,6 +1325,9 @@ const schema = {
         },
         "paymentProduct5410SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5410SpecificInput"
+        },
+        "paymentProduct5412SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5412SpecificInput"
         },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct809SpecificInput"
@@ -1457,6 +1481,15 @@ const schema = {
       "properties" : {
         "secondInstallmentPaymentDate" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5412SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "adjustableAmount" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false

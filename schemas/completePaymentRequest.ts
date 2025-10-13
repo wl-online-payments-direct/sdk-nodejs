@@ -597,6 +597,9 @@ const schema = {
         },
         "surchargeSpecificInput" : {
           "$ref" : "#/definitions/surchargeSpecificInput"
+        },
+        "totalTaxAmount" : {
+          "type" : "integer"
         }
       },
       "additionalProperties" : false

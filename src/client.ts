@@ -9,6 +9,7 @@ import { newPaymentsClient } from "./generated/payments/index.js";
 import { newCapturesClient } from "./generated/captures/index.js";
 import { newRefundsClient } from "./generated/refunds/index.js";
 import { newCompleteClient } from "./generated/complete/index.js";
+import { newSubsequentClient } from "./generated/subsequent/index.js";
 import { newProductGroupsClient } from "./generated/productgroups/index.js";
 import { newProductsClient } from "./generated/products/index.js";
 import { newServicesClient } from "./generated/services/index.js";
@@ -28,6 +29,7 @@ export function newClient(sdkContext: SdkContext): Client {
     captures: newCapturesClient(sdkContext),
     refunds: newRefundsClient(sdkContext),
     complete: newCompleteClient(sdkContext),
+    subsequent: newSubsequentClient(sdkContext),
     productGroups: newProductGroupsClient(sdkContext),
     products: newProductsClient(sdkContext),
     services: newServicesClient(sdkContext),

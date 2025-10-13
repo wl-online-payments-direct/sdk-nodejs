@@ -5,6 +5,9 @@ const schema = {
     "card" : {
       "$ref" : "#/definitions/tokenCardSpecificInput"
     },
+    "encryptedCustomerInput" : {
+      "type" : "string"
+    },
     "paymentProductId" : {
       "type" : "integer"
     }

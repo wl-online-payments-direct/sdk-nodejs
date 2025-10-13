@@ -357,6 +357,7 @@ export interface CardPaymentMethodSpecificInput {
   networkTokenData?: NetworkTokenData | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
   paymentProduct3012SpecificInput?: PaymentProduct3012SpecificInput | null;
+  paymentProduct3013SpecificInput?: PaymentProduct3013SpecificInput | null;
   paymentProduct3208SpecificInput?: PaymentProduct3208SpecificInput | null;
   paymentProduct3209SpecificInput?: PaymentProduct3209SpecificInput | null;
   paymentProductId?: number | null;
@@ -383,6 +384,7 @@ export interface CardPaymentMethodSpecificInputBase {
   multiplePaymentInformation?: MultiplePaymentInformation | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
   paymentProduct3012SpecificInput?: PaymentProduct3012SpecificInput | null;
+  paymentProduct3013SpecificInput?: PaymentProduct3013SpecificInput | null;
   paymentProduct3208SpecificInput?: PaymentProduct3208SpecificInput | null;
   paymentProduct3209SpecificInput?: PaymentProduct3209SpecificInput | null;
   paymentProduct5100SpecificInput?: PaymentProduct5100SpecificInput | null;
@@ -600,6 +602,7 @@ export interface CreatePayoutRequest {
 
 export interface CreateTokenRequest {
   card?: TokenCardSpecificInput | null;
+  encryptedCustomerInput?: string | null;
   paymentProductId?: number | null;
 }
 
@@ -1137,6 +1140,7 @@ export interface Order {
   shipping?: Shipping | null;
   shoppingCart?: ShoppingCart | null;
   surchargeSpecificInput?: SurchargeSpecificInput | null;
+  totalTaxAmount?: number | null;
 }
 
 export interface OrderLineDetails {
@@ -1248,6 +1252,10 @@ export interface PaymentLinkSpecificInput {
   recipientName?: string | null;
 }
 
+export interface PaymentLinksResponse {
+  PaymentLinks?: PaymentLinkResponse[] | null;
+}
+
 export interface PaymentOutput {
   acquiredAmount?: AmountOfMoney | null;
   amountOfMoney?: AmountOfMoney | null;
@@ -1304,6 +1312,12 @@ export interface PaymentProduct3012SpecificInput {
   isDeferredPayment?: boolean | null;
   isWipTransaction?: boolean | null;
   wipMerchantAuthenticationMethod?: string | null;
+}
+
+export interface PaymentProduct3013SpecificInput {
+  marketNumber?: string | null;
+  purchasingBuyerReference1?: string | null;
+  purchasingBuyerReference2?: string | null;
 }
 
 export interface PaymentProduct302SpecificData {
@@ -1635,6 +1649,7 @@ export interface RedirectPaymentMethodSpecificInput {
   paymentProduct5406SpecificInput?: RedirectPaymentProduct5406SpecificInput | null;
   paymentProduct5408SpecificInput?: RedirectPaymentProduct5408SpecificInput | null;
   paymentProduct5410SpecificInput?: RedirectPaymentProduct5410SpecificInput | null;
+  paymentProduct5412SpecificInput?: RedirectPaymentProduct5412SpecificInput | null;
   paymentProduct809SpecificInput?: RedirectPaymentProduct809SpecificInput | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInput | null;
   paymentProductId?: number | null;
@@ -1712,6 +1727,10 @@ export interface RedirectPaymentProduct5408SpecificInput {
 
 export interface RedirectPaymentProduct5410SpecificInput {
   secondInstallmentPaymentDate?: string | null;
+}
+
+export interface RedirectPaymentProduct5412SpecificInput {
+  adjustableAmount?: boolean | null;
 }
 
 /**
