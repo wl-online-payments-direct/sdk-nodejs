@@ -6,7 +6,7 @@ export interface WebhooksEvent {
   id?: string | null;
   merchantId?: string | null;
   type?: string | null;
-  paymentlink?: PaymentLinkResponse | null;
+  paymentLink?: PaymentLinkResponse | null;
   payment?: PaymentResponse | null;
   payout?: PayoutResponse | null;
   refund?: RefundResponse | null;

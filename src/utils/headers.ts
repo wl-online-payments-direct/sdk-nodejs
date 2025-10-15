@@ -18,7 +18,7 @@ interface ServerMetaInfo {
 export function serverMetaInfo(sdkContext: SdkContext): Header {
   const info: ServerMetaInfo = {
     sdkCreator: "OnlinePayments",
-    sdkIdentifier: "NodejsServerSDK/v6.3.0",
+    sdkIdentifier: "NodejsServerSDK/v1.0.0",
     platformIdentifier: `${process.env["OS"]} Node.js/${process.versions.node}`,
     integrator: sdkContext.getIntegrator()
   };
