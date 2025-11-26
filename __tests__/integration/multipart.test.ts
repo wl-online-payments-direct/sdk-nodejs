@@ -1,18 +1,52 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { Readable } from "stream";
-import { URL } from "url";
+import express from "express";
+import multer from "multer";
+import { Server } from "http";
 import communicator from "../../src/utils/communicator";
 import { newSdkContext } from "../../src/utils/context";
 import { sdkConfig } from "../auth_config";
-
 import config from "../config.json";
+import { SdkContext, SdkResponse } from "../../src";
+import { findAvailablePort } from "./__setup__/portUtils";
 
-const httpBinUrl = new URL(config.httpBinUrl || "http://httpbin.org");
-const scheme = httpBinUrl.protocol === "http:" ? "http" : "https";
-const port = httpBinUrl.port ? parseInt(httpBinUrl.port) : httpBinUrl.protocol === "http:" ? 80 : 443;
+let server: Server;
+let sdkContext: SdkContext;
 
-const sdkContext = newSdkContext(sdkConfig(config, httpBinUrl.hostname, scheme, port, "Integration tests"));
+// Setup local mock server for multipart form handling
+beforeAll(async () => {
+  const port = await findAvailablePort([4011, 4012, 4013, 4014, 4015]);
+
+  const app = express();
+  const upload = multer();
+
+  app.post("/post", upload.single("file"), (req, res) => {
+    res.json({
+      form: req.body,
+      files: { file: req.file?.buffer.toString() }
+    });
+  });
+
+  app.put("/put", upload.single("file"), (req, res) => {
+    res.json({
+      form: req.body,
+      files: { file: req.file?.buffer.toString() }
+    });
+  });
+
+  await new Promise<void>(resolve => {
+    server = app.listen(port, resolve);
+  });
+
+  sdkContext = newSdkContext(sdkConfig(config, "localhost", "http", port, "Integration tests"));
+});
+
+afterAll(async () => {
+  await new Promise<void>(resolve => {
+    server?.close(() => resolve());
+  });
+});
 
 jest.setTimeout(60 * 1000);
 
@@ -51,14 +85,8 @@ describe("multipart", () => {
       },
       sdkContext
     );
-    expect(response.status).toBe(200);
-    expect(response.body).not.toBeNull();
 
-    const responseBody = response.body as HttpBinResponse;
-    expect(responseBody.files).not.toBeNull();
-    expect(responseBody.files.file).toBe("This is the contents of a file");
-    expect(responseBody.form).not.toBeNull();
-    expect(responseBody.form.value).toBe("Hello World");
+    validateResponse(response);
   });
 
   test("PUT", async () => {
@@ -80,13 +108,18 @@ describe("multipart", () => {
       },
       sdkContext
     );
-    expect(response.status).toBe(200);
-    expect(response.body).not.toBeNull();
 
-    const responseBody = response.body as HttpBinResponse;
-    expect(responseBody.files).not.toBeNull();
-    expect(responseBody.files.file).toBe("This is the contents of a file");
-    expect(responseBody.form).not.toBeNull();
-    expect(responseBody.form.value).toBe("Hello World");
+    validateResponse(response);
   });
 });
+
+const validateResponse = (response: SdkResponse<unknown, unknown>) => {
+  expect(response.status).toBe(200);
+  expect(response.body).not.toBeNull();
+
+  const responseBody = response.body as HttpBinResponse;
+  expect(responseBody.files).not.toBeNull();
+  expect(responseBody.files.file).toBe("This is the contents of a file");
+  expect(responseBody.form).not.toBeNull();
+  expect(responseBody.form.value).toBe("Hello World");
+};

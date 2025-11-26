@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, GetMandateResponse, RevokeMandateRequest } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/RevokeMandateRequest.js";
+import requestSchema from "../../../schemas/revokeMandateRequest";
 
 export function revokeMandate(
   sdkContext: SdkContext

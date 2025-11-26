@@ -410,10 +410,12 @@ export interface CardPaymentMethodSpecificOutput {
   authorisationCode?: string | null;
   card?: CardEssentials | null;
   clickToPay?: ClickToPay | null;
+  cobrandSelectionIndicator?: string | null;
   currencyConversion?: CurrencyConversion | null;
   externalTokenLinked?: ExternalTokenLinked | null;
   fraudResults?: CardFraudResults | null;
   initialSchemeTransactionId?: string | null;
+  networkTokenData?: NetworkTokenEssentials | null;
   paymentAccountReference?: string | null;
   paymentOption?: string | null;
   paymentProduct3208SpecificOutput?: PaymentProduct3208SpecificOutput | null;
@@ -578,6 +580,7 @@ export interface CreatePaymentRequest {
   encryptedCustomerInput?: string | null;
   feedbacks?: Feedbacks | null;
   fraudFields?: FraudFields | null;
+  hostedFieldsSessionId?: string | null;
   hostedTokenizationId?: string | null;
   mobilePaymentMethodSpecificInput?: MobilePaymentMethodSpecificInput | null;
   order?: Order | null;
@@ -885,6 +888,7 @@ export interface GiftCardPurchase {
 export interface HostedCheckoutSpecificInput {
   allowedNumberOfPaymentAttempts?: number | null;
   cardPaymentMethodSpecificInput?: CardPaymentMethodSpecificInputForHostedCheckout | null;
+  isNewUnscheduledCardOnFileSeries?: boolean | null;
   isRecurring?: boolean | null;
   locale?: string | null;
   paymentProductFilters?: PaymentProductFiltersHostedCheckout | null;
@@ -1106,6 +1110,21 @@ export interface NetworkTokenData {
   networkToken?: string | null;
   schemeTokenRequestorId?: string | null;
   tokenExpiryDate?: string | null;
+}
+
+export interface NetworkTokenEssentials {
+  bin?: string | null;
+  countryCode?: string | null;
+  networkToken?: string | null;
+  networkTokenState?: string | null;
+  networkTokenUsed?: boolean | null;
+  tokenExpiryDate?: string | null;
+}
+
+export interface NetworkTokenLinked {
+  expiryDate?: string | null;
+  maskedToken?: string | null;
+  tokenState?: string | null;
 }
 
 export interface OmnichannelPayoutSpecificInput {
@@ -1354,6 +1373,14 @@ export interface PaymentProduct320SpecificData {
   networks?: string[] | null;
 }
 
+export interface PaymentProduct350 {
+  appSwitchLink?: string | null;
+  paymentRequestToken?: string | null;
+}
+
+/**
+ * @deprecated Deprecated by pendingAuthentication. Contains the third party data for payment product 5001 (Bizum)
+ */
 export interface PaymentProduct5001 {
   message?: string | null;
   pollingUrl?: string | null;
@@ -1569,6 +1596,10 @@ export interface PayoutStatusOutput {
   statusCode?: number | null;
 }
 
+export interface PendingAuthentication {
+  pollingUrl?: string | null;
+}
+
 export interface PersonalInformation {
   dateOfBirth?: string | null;
   gender?: string | null;
@@ -1731,6 +1762,7 @@ export interface RedirectPaymentProduct5410SpecificInput {
 
 export interface RedirectPaymentProduct5412SpecificInput {
   adjustableAmount?: boolean | null;
+  beneficiaryId?: string | null;
 }
 
 /**
@@ -1906,9 +1938,11 @@ export interface ShoppingCart {
 
 export interface ShowFormData {
   paymentProduct3012?: PaymentProduct3012 | null;
+  paymentProduct350?: PaymentProduct350 | null;
   paymentProduct5001?: PaymentProduct5001 | null;
   paymentProduct5404?: PaymentProduct5404 | null;
   paymentProduct5407?: PaymentProduct5407 | null;
+  pendingAuthentication?: PendingAuthentication | null;
 }
 
 export interface ShowInstructionsData {
@@ -1931,7 +1965,6 @@ export interface SubsequentCardPaymentMethodSpecificInput {
 }
 
 export interface SubsequentPaymentProduct5001SpecificInput {
-  authorizationMode?: string | null;
   subsequentType?: string | null;
 }
 
@@ -2068,6 +2101,7 @@ export interface TokenResponse {
   externalTokenLinked?: ExternalTokenLinked | null;
   id?: string | null;
   isTemporary?: boolean | null;
+  networkTokenLinked?: NetworkTokenLinked | null;
   paymentProductId?: number | null;
 }
 

@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateHostedCheckoutRequest.js";
+import requestSchema from "../../../schemas/createHostedCheckoutRequest";
 
 export function createHostedCheckout(
   sdkContext: SdkContext

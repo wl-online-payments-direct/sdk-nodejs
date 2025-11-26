@@ -14,6 +14,9 @@ const schema = {
     "fraudFields" : {
       "$ref" : "#/definitions/fraudFields"
     },
+    "hostedFieldsSessionId" : {
+      "type" : "string"
+    },
     "hostedTokenizationId" : {
       "type" : "string"
     },
@@ -1538,6 +1541,9 @@ const schema = {
       "properties" : {
         "adjustableAmount" : {
           "type" : "boolean"
+        },
+        "beneficiaryId" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

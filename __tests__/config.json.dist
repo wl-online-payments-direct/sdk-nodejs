@@ -1,7 +1,7 @@
 {
   "merchantId": "MERCHANT_ID",
   "apiEndpoint": {
-    "host": "API_ENDPOINT_HOST",
+    "host": "payment.preprod.direct.worldline-solutions.com",
     "scheme": "https",
     "port": 443
   },
@@ -11,6 +11,5 @@
     "secretApiKey": "SECRET_API_KEY"
   },
   "integrator": "INTEGRATOR",
-  "enableLogging": false,
-  "httpBinUrl": "http://httpbin.org"
+  "enableLogging": false
 }

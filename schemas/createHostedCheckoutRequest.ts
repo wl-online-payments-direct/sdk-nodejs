@@ -775,6 +775,9 @@ const schema = {
         "cardPaymentMethodSpecificInput" : {
           "$ref" : "#/definitions/cardPaymentMethodSpecificInputForHostedCheckout"
         },
+        "isNewUnscheduledCardOnFileSeries" : {
+          "type" : "boolean"
+        },
         "isRecurring" : {
           "type" : "boolean"
         },
@@ -1490,6 +1493,9 @@ const schema = {
       "properties" : {
         "adjustableAmount" : {
           "type" : "boolean"
+        },
+        "beneficiaryId" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

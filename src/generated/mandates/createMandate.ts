@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateMandateRequest, CreateMandateResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateMandateRequest.js";
+import requestSchema from "../../../schemas/createMandateRequest";
 
 export function createMandate(
   sdkContext: SdkContext

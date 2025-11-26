@@ -810,9 +810,6 @@ const schema = {
     "subsequentPaymentProduct5001SpecificInput" : {
       "type" : "object",
       "properties" : {
-        "authorizationMode" : {
-          "type" : "string"
-        },
         "subsequentType" : {
           "type" : "string"
         }

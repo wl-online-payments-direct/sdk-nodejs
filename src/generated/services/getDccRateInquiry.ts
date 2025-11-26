@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CurrencyConversionRequest, CurrencyConversionResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CurrencyConversionRequest.js";
+import requestSchema from "../../../schemas/currencyConversionRequest";
 
 export function getDccRateInquiry(
   sdkContext: SdkContext
