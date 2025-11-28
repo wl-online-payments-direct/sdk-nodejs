@@ -81,7 +81,7 @@ describe("V1Hmac authentication", () => {
       ];
       const signature = authenticator.getSignature("DELETE", "application/json", "Fri, 06 Jun 2014 13:39:43 GMT", headers, "/v2/9991/tokens/123456789");
 
-      expect(signature).toBe("eyLWp/Fa20rXs8UHlhD/13ZuqZkAVMJh9Z71n9TrFxM=");
+      expect(signature).toBe("ZwEzZQwZxSOSSlUcXqcLWllnw2REyh8abdJBsVWsQ1k=");
     });
     test("test get", () => {
       const configuration: V1HmacConfiguration = {
@@ -134,7 +134,11 @@ describe("V1Hmac authentication", () => {
       ];
       const signature = await authenticator.getAuthorization("DELETE", "application/json", "Fri, 06 Jun 2014 13:39:43 GMT", headers, "/v2/1/tokens/123456789");
 
-      expect(signature).toBe("GCS v1HMAC:5e45c937b9db33ae:TbiTwCCsGsyFFnfWt5Rreg0cGYJeTiofxjuZNSLUuGo=");
+      expect(signature).toBe("GCS v1HMAC:5e45c937b9db33ae:grbqq87sHbkoDBhUKzhDOZV343XWHXHxUX7akPiXkVM=");
+
+      const signatureNoContentType = await authenticator.getAuthorization("DELETE", "", "Fri, 06 Jun 2014 13:39:43 GMT", headers, "/v2/1/tokens/123456789");
+
+      expect(signatureNoContentType).toBe("GCS v1HMAC:5e45c937b9db33ae:grbqq87sHbkoDBhUKzhDOZV343XWHXHxUX7akPiXkVM=");
     });
   });
 });

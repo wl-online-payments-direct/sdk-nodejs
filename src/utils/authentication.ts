@@ -20,7 +20,7 @@ export class V1HmacAuthenticator implements Authenticator {
     const headers = this.getSortedHeadersForContext(gcsHeaders);
 
     let contentTypeSignature = "";
-    if (method === "POST" || method === "PUT" || method === "DELETE") {
+    if (method === "POST" || method === "PUT") {
       contentTypeSignature = contentType;
     }
 

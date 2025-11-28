@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, ValidateCredentialsRequest, ValidateCredentialsResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/validateCredentialsRequest";
+import requestSchema from "../../../schemas/validateCredentialsRequest.js";
 
 export function validateWebhookCredentials(
   sdkContext: SdkContext

@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CalculateSurchargeRequest, CalculateSurchargeResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/calculateSurchargeRequest";
+import requestSchema from "../../../schemas/calculateSurchargeRequest.js";
 
 export function surchargeCalculation(
   sdkContext: SdkContext
