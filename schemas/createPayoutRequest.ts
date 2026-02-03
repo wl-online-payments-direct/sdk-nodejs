@@ -90,6 +90,9 @@ const schema = {
     "omnichannelPayoutSpecificInput" : {
       "type" : "object",
       "properties" : {
+        "operatorId" : {
+          "type" : "string"
+        },
         "paymentId" : {
           "type" : "string"
         }

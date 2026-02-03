@@ -19,6 +19,9 @@ const schema = {
     },
     "references" : {
       "$ref" : "#/definitions/paymentReferences"
+    },
+    "refundRedirectPaymentMethodSpecificInput" : {
+      "$ref" : "#/definitions/refundRedirectPaymentMethodSpecificInput"
     }
   },
   "additionalProperties" : false,
@@ -66,6 +69,24 @@ const schema = {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "refundRedirectPaymentMethodSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "refundRedirectPaymentProduct900SpecificInput" : {
+          "$ref" : "#/definitions/refundRedirectPaymentProduct900SpecificInput"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "refundRedirectPaymentProduct900SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "refundReason" : {
           "type" : "string"
         }
       },

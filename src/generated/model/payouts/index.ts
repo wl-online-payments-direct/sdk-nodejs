@@ -6,11 +6,11 @@ import { CreatePayoutRequest, ErrorResponse, PayoutErrorResponse, PayoutResponse
 
 export interface PayoutsClient {
   /**
-   * Resource /v2/{merchantId}/payouts/{payoutId} - Get payout
-   */
-  getPayout(merchantId: string, payoutId: string, paymentContext?: PaymentContext | null): Promise<SdkResponse<PayoutResponse, ErrorResponse>>;
-  /**
    * Resource /v2/{merchantId}/payouts - Create payout
    */
   createPayout(merchantId: string, body: CreatePayoutRequest, paymentContext?: PaymentContext | null): Promise<SdkResponse<PayoutResponse, PayoutErrorResponse>>;
+  /**
+   * Resource /v2/{merchantId}/payouts/{payoutId} - Get payout
+   */
+  getPayout(merchantId: string, payoutId: string, paymentContext?: PaymentContext | null): Promise<SdkResponse<PayoutResponse, ErrorResponse>>;
 }

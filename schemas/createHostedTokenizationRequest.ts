@@ -27,7 +27,7 @@ const schema = {
       "type" : "object",
       "properties" : {
         "ValidationRules" : {
-          "$ref" : "#/definitions/creditCardValidationRulesHostedTokenization"
+          "$ref" : "#/definitions/creditCardValidationRules"
         },
         "paymentProductPreferredOrder" : {
           "type" : "array",
@@ -39,7 +39,7 @@ const schema = {
       },
       "additionalProperties" : false
     },
-    "creditCardValidationRulesHostedTokenization" : {
+    "creditCardValidationRules" : {
       "type" : "object",
       "properties" : {
         "cvvMandatoryForExistingToken" : {

@@ -2,6 +2,9 @@ const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : [ "object", "null" ],
   "properties" : {
+    "omnichannelSubsequentSpecificInput" : {
+      "$ref" : "#/definitions/omnichannelSubsequentSpecificInput"
+    },
     "order" : {
       "$ref" : "#/definitions/order"
     },
@@ -550,6 +553,27 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "marketPlace" : {
+      "type" : "object",
+      "properties" : {
+        "retailerCountry" : {
+          "type" : "string"
+        },
+        "retailerName" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "omnichannelSubsequentSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "operatorId" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "order" : {
       "type" : "object",
       "properties" : {
@@ -788,6 +812,9 @@ const schema = {
       "properties" : {
         "authorizationMode" : {
           "type" : "string"
+        },
+        "marketPlace" : {
+          "$ref" : "#/definitions/marketPlace"
         },
         "paymentNumber" : {
           "type" : "integer"

@@ -10,7 +10,8 @@ The Node.js SDK helps you to communicate with the payment platform server API. I
 * validation of input and
 * a logfile obfuscater
 
-See the [Worldline Direct Payments Developer Hub](https://docs.direct.worldline-solutions.com/en/integration/how-to-integrate/server-sdks/nodejs/) for more information on how to use the API.
+See the [Online Payments Developer Hub](https://docs.direct.worldline-solutions.com/documentation/sdk/server/nodejs/)
+for more information on how to use the API.
 
 ## Structure of this repository
 
@@ -47,7 +48,10 @@ There are two types of tests:
     ```
     npm run test:unit
     ```
-2. Integration tests. Before you can run these, you first need to copy file `__tests__/config.json.dist` to `__tests__/config.json` and replace all values as needed. If needed, a `proxy` property can be added with nested properties `host`, `scheme` (defaults to `http`), `port` (defaults to 3128) and `credentials` (optional, in the format `<username>:<password>`).  
+2. Integration tests. Before you can run these, you first need to copy file `__tests__/config.json.dist` to
+   `__tests__/config.json` and replace all values as needed. If needed, a `proxy` property can be added with nested
+   properties `host`, `scheme` (defaults to `http`), `port` (defaults to 3128) and `credentials` (optional, in the
+   format `<username>:<password>`).  
    Run these tests as follows:
 
     ```

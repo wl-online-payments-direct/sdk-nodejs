@@ -353,6 +353,7 @@ export interface CardPaymentMethodSpecificInput {
   currencyConversion?: CurrencyConversionInput | null;
   initialSchemeTransactionId?: string | null;
   isRecurring?: boolean | null;
+  marketPlace?: MarketPlace | null;
   multiplePaymentInformation?: MultiplePaymentInformation | null;
   networkTokenData?: NetworkTokenData | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
@@ -381,6 +382,7 @@ export interface CardPaymentMethodSpecificInputBase {
   authorizationMode?: string | null;
   currencyConversionSpecificInput?: CurrencyConversionSpecificInput | null;
   initialSchemeTransactionId?: string | null;
+  marketPlace?: MarketPlace | null;
   multiplePaymentInformation?: MultiplePaymentInformation | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
   paymentProduct3012SpecificInput?: PaymentProduct3012SpecificInput | null;
@@ -402,6 +404,7 @@ export interface CardPaymentMethodSpecificInputForHostedCheckout {
   clickToPay?: boolean | null;
   groupCards?: boolean | null;
   paymentProductPreferredOrder?: number[] | null;
+  tokenizationMode?: string | null;
 }
 
 export interface CardPaymentMethodSpecificOutput {
@@ -555,6 +558,7 @@ export interface CreatePaymentLinkRequest {
    * @deprecated A note related to the created payment link.  Use paymentLinkSpecificInput/description instead.
    */
   description?: string | null;
+  displayQRCode?: boolean | null;
   /**
    * @deprecated The date after which the payment link will not be usable to complete the payment. The date sent cannot be more than 6 months in the future or a past date. It must also contain the UTC offset.  Use paymentLinkSpecificInput/expirationDate instead.
    */
@@ -616,6 +620,7 @@ export interface CreatedPaymentOutput {
 
 export interface CreatedTokenResponse {
   card?: CardWithoutCvv | null;
+  crmToken?: CrmToken | null;
   externalTokenLinked?: ExternalTokenLinked | null;
   isNewToken?: boolean | null;
   token?: string | null;
@@ -623,13 +628,18 @@ export interface CreatedTokenResponse {
 }
 
 export interface CreditCardSpecificInputHostedTokenization {
-  ValidationRules?: CreditCardValidationRulesHostedTokenization | null;
+  ValidationRules?: CreditCardValidationRules | null;
   paymentProductPreferredOrder?: number[] | null;
 }
 
-export interface CreditCardValidationRulesHostedTokenization {
+export interface CreditCardValidationRules {
   cvvMandatoryForExistingToken?: boolean | null;
   cvvMandatoryForNewToken?: boolean | null;
+}
+
+export interface CrmToken {
+  uniqueAccountIdentifier?: string | null;
+  uniqueCardIdentifier?: string | null;
 }
 
 export interface CurrencyConversion {
@@ -823,6 +833,7 @@ export interface GPayThreeDSecure {
   exemptionRequest?: string | null;
   redirectionData?: RedirectionData | null;
   skipAuthentication?: boolean | null;
+  skipSoftDecline?: boolean | null;
 }
 
 export interface GetHostedCheckoutResponse {
@@ -895,6 +906,7 @@ export interface HostedCheckoutSpecificInput {
   returnUrl?: string | null;
   sessionTimeout?: number | null;
   showResultPage?: boolean | null;
+  splitPaymentProductFilters?: SplitPaymentProductFiltersHostedCheckout | null;
   tokens?: string | null;
   variant?: string | null;
 }
@@ -1036,6 +1048,11 @@ export interface MandateResponse {
   uniqueMandateReference?: string | null;
 }
 
+export interface MarketPlace {
+  retailerCountry?: string | null;
+  retailerName?: string | null;
+}
+
 export interface MerchantAction {
   actionType?: string | null;
   mobileThreeDSecureChallengeParameters?: MobileThreeDSecureChallengeParameters | null;
@@ -1128,10 +1145,15 @@ export interface NetworkTokenLinked {
 }
 
 export interface OmnichannelPayoutSpecificInput {
+  operatorId?: string | null;
   paymentId?: string | null;
 }
 
 export interface OmnichannelRefundSpecificInput {
+  operatorId?: string | null;
+}
+
+export interface OmnichannelSubsequentSpecificInput {
   operatorId?: string | null;
 }
 
@@ -1260,6 +1282,7 @@ export interface PaymentLinkResponse {
   paymentLinkEvents?: PaymentLinkEvent[] | null;
   paymentLinkId?: string | null;
   paymentLinkOrder?: PaymentLinkOrderOutput | null;
+  qrCodeBase64?: string | null;
   recipientName?: string | null;
   redirectionUrl?: string | null;
   status?: string | null;
@@ -1269,10 +1292,6 @@ export interface PaymentLinkSpecificInput {
   description?: string | null;
   expirationDate?: string | null;
   recipientName?: string | null;
-}
-
-export interface PaymentLinksResponse {
-  PaymentLinks?: PaymentLinkResponse[] | null;
 }
 
 export interface PaymentOutput {
@@ -1439,7 +1458,9 @@ export interface PaymentProduct840SpecificOutput {
   billingPersonalAddress?: AddressPersonal | null;
   customerAccount?: PaymentProduct840CustomerAccount | null;
   customerAddress?: Address | null;
+  payPalTransactionId?: string | null;
   protectionEligibility?: ProtectionEligibility | null;
+  shippingAddress?: AddressPersonal | null;
 }
 
 export interface PaymentProductDisplayHints {
@@ -1551,6 +1572,7 @@ export interface PaymentResponse {
   hostedCheckoutSpecificOutput?: HostedCheckoutSpecificOutput | null;
   id?: string | null;
   paymentOutput?: PaymentOutput | null;
+  sessionDetails?: SessionDetails | null;
   status?: string | null;
   statusOutput?: PaymentStatusOutput | null;
 }
@@ -1669,10 +1691,12 @@ export interface RedirectData {
 
 export interface RedirectPaymentMethodSpecificInput {
   paymentOption?: string | null;
+  paymentProduct11SpecificInput?: RedirectPaymentProduct11SpecificInput | null;
   paymentProduct3203SpecificInput?: RedirectPaymentProduct3203SpecificInput | null;
   paymentProduct3204SpecificInput?: RedirectPaymentProduct3204SpecificInput | null;
   paymentProduct3302SpecificInput?: RedirectPaymentProduct3302SpecificInput | null;
   paymentProduct3306SpecificInput?: RedirectPaymentProduct3306SpecificInput | null;
+  paymentProduct3307SpecificInput?: RedirectPaymentProduct3307SpecificInput | null;
   paymentProduct5001SpecificInput?: RedirectPaymentProduct5001SpecificInput | null;
   paymentProduct5300SpecificInput?: RedirectPaymentProduct5300SpecificInput | null;
   paymentProduct5402SpecificInput?: RedirectPaymentProduct5402SpecificInput | null;
@@ -1705,6 +1729,10 @@ export interface RedirectPaymentMethodSpecificOutput {
   token?: string | null;
 }
 
+export interface RedirectPaymentProduct11SpecificInput {
+  firstInstallmentPaymentDate?: string | null;
+}
+
 export interface RedirectPaymentProduct3203SpecificInput {
   checkoutType?: string | null;
 }
@@ -1724,6 +1752,9 @@ export interface RedirectPaymentProduct3306SpecificInput {
   extraMerchantData?: string | null;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RedirectPaymentProduct3307SpecificInput {}
+
 export interface RedirectPaymentProduct5001SpecificInput {
   exemptionRequest?: string | null;
   subsequentType?: string | null;
@@ -1737,6 +1768,7 @@ export interface RedirectPaymentProduct5300SpecificInput {
   loyaltyCardNumber?: string | null;
   secondInstallmentPaymentDate?: string | null;
   sessionDuration?: number | null;
+  title?: string | null;
 }
 
 export interface RedirectPaymentProduct5402SpecificInput {
@@ -1835,6 +1867,14 @@ export interface RefundRedirectMethodSpecificOutput {
   totalAmountRefunded?: number | null;
 }
 
+export interface RefundRedirectPaymentMethodSpecificInput {
+  refundRedirectPaymentProduct900SpecificInput?: RefundRedirectPaymentProduct900SpecificInput | null;
+}
+
+export interface RefundRedirectPaymentProduct900SpecificInput {
+  refundReason?: string | null;
+}
+
 export interface RefundRequest {
   amountOfMoney?: AmountOfMoney | null;
   captureId?: string | null;
@@ -1842,6 +1882,7 @@ export interface RefundRequest {
   operationReferences?: OperationPaymentReferences | null;
   reason?: string | null;
   references?: PaymentReferences | null;
+  refundRedirectPaymentMethodSpecificInput?: RefundRedirectPaymentMethodSpecificInput | null;
 }
 
 export interface RefundResponse {
@@ -1891,6 +1932,11 @@ export interface SepaDirectDebitPaymentProduct771SpecificInput {
 export interface SepaDirectDebitPaymentProduct771SpecificInputBase {
   existingUniqueMandateReference?: string | null;
   mandate?: CreateMandateRequest | null;
+}
+
+export interface SessionDetails {
+  id?: string | null;
+  type?: string | null;
 }
 
 export interface SessionRequest {
@@ -1949,8 +1995,18 @@ export interface ShowInstructionsData {
   showData?: string | null;
 }
 
+export interface SplitPaymentProductFilter {
+  products?: number[] | null;
+}
+
+export interface SplitPaymentProductFiltersHostedCheckout {
+  exclude?: SplitPaymentProductFilter | null;
+  restrictTo?: SplitPaymentProductFilter | null;
+}
+
 export interface SubsequentCardPaymentMethodSpecificInput {
   authorizationMode?: string | null;
+  marketPlace?: MarketPlace | null;
   paymentNumber?: number | null;
   /**
    * @deprecated Deprecated
@@ -1969,6 +2025,7 @@ export interface SubsequentPaymentProduct5001SpecificInput {
 }
 
 export interface SubsequentPaymentRequest {
+  omnichannelSubsequentSpecificInput?: OmnichannelSubsequentSpecificInput | null;
   order?: Order | null;
   subsequentPaymentProduct5001SpecificInput?: SubsequentPaymentProduct5001SpecificInput | null;
   subsequentcardPaymentMethodSpecificInput?: SubsequentCardPaymentMethodSpecificInput | null;
@@ -2097,6 +2154,7 @@ export interface TokenEWallet {
 
 export interface TokenResponse {
   card?: TokenCard | null;
+  crmToken?: CrmToken | null;
   eWallet?: TokenEWallet | null;
   externalTokenLinked?: ExternalTokenLinked | null;
   id?: string | null;

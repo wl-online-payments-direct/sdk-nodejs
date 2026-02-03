@@ -442,6 +442,9 @@ const schema = {
         "isRecurring" : {
           "type" : "boolean"
         },
+        "marketPlace" : {
+          "$ref" : "#/definitions/marketPlace"
+        },
         "multiplePaymentInformation" : {
           "$ref" : "#/definitions/multiplePaymentInformation"
         },
@@ -839,6 +842,9 @@ const schema = {
         },
         "skipAuthentication" : {
           "type" : "boolean"
+        },
+        "skipSoftDecline" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
@@ -982,6 +988,18 @@ const schema = {
           "type" : "string"
         },
         "surname" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "marketPlace" : {
+      "type" : "object",
+      "properties" : {
+        "retailerCountry" : {
+          "type" : "string"
+        },
+        "retailerName" : {
           "type" : "string"
         }
       },
@@ -1344,6 +1362,9 @@ const schema = {
         "paymentOption" : {
           "type" : "string"
         },
+        "paymentProduct11SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct11SpecificInput"
+        },
         "paymentProduct3203SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct3203SpecificInput"
         },
@@ -1355,6 +1376,9 @@ const schema = {
         },
         "paymentProduct3306SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct3306SpecificInput"
+        },
+        "paymentProduct3307SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct3307SpecificInput"
         },
         "paymentProduct5001SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5001SpecificInput"
@@ -1404,6 +1428,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "redirectPaymentProduct11SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "firstInstallmentPaymentDate" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "redirectPaymentProduct3203SpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -1449,6 +1482,12 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "redirectPaymentProduct3307SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+      },
+      "additionalProperties" : false
+    },
     "redirectPaymentProduct5001SpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -1484,6 +1523,9 @@ const schema = {
         },
         "sessionDuration" : {
           "type" : "integer"
+        },
+        "title" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
