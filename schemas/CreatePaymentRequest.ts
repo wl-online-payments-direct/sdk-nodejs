@@ -23,6 +23,9 @@ const schema = {
     "mobilePaymentMethodSpecificInput" : {
       "$ref" : "#/definitions/mobilePaymentMethodSpecificInput"
     },
+    "omnichannelPaymentSpecificInput" : {
+      "$ref" : "#/definitions/omnichannelPaymentSpecificInput"
+    },
     "order" : {
       "$ref" : "#/definitions/order"
     },
@@ -1105,6 +1108,15 @@ const schema = {
           "type" : "string"
         },
         "tokenExpiryDate" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "omnichannelPaymentSpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "operatorId" : {
           "type" : "string"
         }
       },

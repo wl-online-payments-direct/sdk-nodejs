@@ -4,14 +4,14 @@
 import { validate } from "jsonschema";
 import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
-import { CapturePaymentRequest, CaptureResponse, ErrorResponse } from "../model/domain/index.js";
+import { CreateCertificateResponse, CsrRequest, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CapturePaymentRequest.js";
+import requestSchema from "../../../schemas/CsrRequest.js";
 
-export function capturePayment(
+export function createCertificate(
   sdkContext: SdkContext
-): (merchantId: string, paymentId: string, body: CapturePaymentRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
-  return function(merchantId, paymentId, body, paymentContext): Promise<SdkResponse<CaptureResponse, ErrorResponse>> {
+): (merchantId: string, body: CsrRequest, paymentContext?: PaymentContext | null) => Promise<SdkResponse<CreateCertificateResponse, ErrorResponse>> {
+  return function(merchantId, body, paymentContext): Promise<SdkResponse<CreateCertificateResponse, ErrorResponse>> {
     // validate body
     const isValidRequest = validate(body, requestSchema);
     if (!isValidRequest.valid) {
@@ -24,11 +24,11 @@ export function capturePayment(
     return json(
       {
         method: "POST",
-        modulePath: `/v2/${merchantId}/payments/${paymentId}/capture`,
+        modulePath: `/v2/${merchantId}/detokenize/csr`,
         body,
         paymentContext: paymentContext
       },
       sdkContext
-    ) as Promise<SdkResponse<CaptureResponse, ErrorResponse>>;
+    ) as Promise<SdkResponse<CreateCertificateResponse, ErrorResponse>>;
   };
 }

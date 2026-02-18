@@ -226,6 +226,7 @@ export interface CalculateSurchargeResponse {
 export interface CancelPaymentRequest {
   amountOfMoney?: AmountOfMoney | null;
   isFinal?: boolean | null;
+  lineItemDetails?: LineItemDetail[] | null;
   operationReferences?: OperationPaymentReferences | null;
 }
 
@@ -261,6 +262,7 @@ export interface CaptureOutput {
 export interface CapturePaymentRequest {
   amount?: number | null;
   isFinal?: boolean | null;
+  lineItemDetails?: LineItemDetail[] | null;
   operationReferences?: OperationPaymentReferences | null;
   references?: PaymentReferences | null;
 }
@@ -306,6 +308,12 @@ export interface CardBinDetails {
   panLengthMin?: number | null;
   panLuhnCheck?: boolean | null;
   virtualCardIndicator?: boolean | null;
+}
+
+export interface CardDataWithoutCvv {
+  cardNumber?: string | null;
+  cardholderName?: string | null;
+  expiryDate?: string | null;
 }
 
 export interface CardEssentials {
@@ -485,6 +493,11 @@ export interface ContactDetails {
   workPhoneNumber?: string | null;
 }
 
+export interface CreateCertificateResponse {
+  certificateId?: string | null;
+  signedCertificate?: string | null;
+}
+
 export interface CreateHostedCheckoutRequest {
   cardPaymentMethodSpecificInput?: CardPaymentMethodSpecificInputBase | null;
   feedbacks?: Feedbacks | null;
@@ -503,6 +516,16 @@ export interface CreateHostedCheckoutResponse {
   merchantReference?: string | null;
   partialRedirectUrl?: string | null;
   redirectUrl?: string | null;
+}
+
+export interface CreateHostedFieldsSessionRequest {
+  locale?: string | null;
+}
+
+export interface CreateHostedFieldsSessionResponse {
+  sdkSri?: string | null;
+  sdkUrl?: string | null;
+  sessionData?: SessionData | null;
 }
 
 export interface CreateHostedTokenizationRequest {
@@ -587,6 +610,7 @@ export interface CreatePaymentRequest {
   hostedFieldsSessionId?: string | null;
   hostedTokenizationId?: string | null;
   mobilePaymentMethodSpecificInput?: MobilePaymentMethodSpecificInput | null;
+  omnichannelPaymentSpecificInput?: OmnichannelPaymentSpecificInput | null;
   order?: Order | null;
   redirectPaymentMethodSpecificInput?: RedirectPaymentMethodSpecificInput | null;
   sepaDirectDebitPaymentMethodSpecificInput?: SepaDirectDebitPaymentMethodSpecificInput | null;
@@ -640,6 +664,10 @@ export interface CreditCardValidationRules {
 export interface CrmToken {
   uniqueAccountIdentifier?: string | null;
   uniqueCardIdentifier?: string | null;
+}
+
+export interface CsrRequest {
+  csr?: string | null;
 }
 
 export interface CurrencyConversion {
@@ -760,6 +788,20 @@ export interface DecryptedPaymentData {
   dpan?: string | null;
   eci?: number | null;
   expiryDate?: string | null;
+}
+
+export interface DetokenizationResponse {
+  tokens?: DetokenizedTokenResponse[] | null;
+}
+
+export interface DetokenizedTokenResponse {
+  cardBrand?: string | null;
+  cardExpiryDate?: string | null;
+  cardHolderName?: string | null;
+  encryptedCardNumber?: string | null;
+  paymentId?: string | null;
+  schemeReferenceData?: string | null;
+  token?: string | null;
 }
 
 export interface DirectoryEntry {
@@ -939,6 +981,18 @@ export interface IINDetail {
   virtualCardIndicator?: boolean | null;
 }
 
+export interface ImportCofSeriesRequest {
+  card?: CardDataWithoutCvv | null;
+  currencyCode?: string | null;
+  paymentProductId?: number | null;
+  schemeReferenceData?: string | null;
+  tokenId?: string | null;
+}
+
+export interface ImportCofSeriesResponse {
+  paymentId?: string | null;
+}
+
 export interface LabelTemplateElement {
   attributeKey?: string | null;
   mask?: string | null;
@@ -954,6 +1008,11 @@ export interface LineItem {
   invoiceData?: LineItemInvoiceData | null;
   orderLineDetails?: OrderLineDetails | null;
   otherDetails?: OtherDetails | null;
+}
+
+export interface LineItemDetail {
+  lineItemId?: string | null;
+  quantity?: number | null;
 }
 
 export interface LineItemInvoiceData {
@@ -1144,6 +1203,10 @@ export interface NetworkTokenLinked {
   tokenState?: string | null;
 }
 
+export interface OmnichannelPaymentSpecificInput {
+  operatorId?: string | null;
+}
+
 export interface OmnichannelPayoutSpecificInput {
   operatorId?: string | null;
   paymentId?: string | null;
@@ -1310,6 +1373,7 @@ export interface PaymentOutput {
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   references?: PaymentReferences | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
+  shoppingCartOutput?: ShoppingCartOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
 }
 
@@ -1440,6 +1504,10 @@ export interface PaymentProduct5500SpecificOutput {
 
 export interface PaymentProduct771SpecificOutput {
   mandateReference?: string | null;
+}
+
+export interface PaymentProduct840 {
+  orderId?: string | null;
 }
 
 export interface PaymentProduct840CustomerAccount {
@@ -1878,6 +1946,7 @@ export interface RefundRedirectPaymentProduct900SpecificInput {
 export interface RefundRequest {
   amountOfMoney?: AmountOfMoney | null;
   captureId?: string | null;
+  lineItemDetails?: LineItemDetail[] | null;
   omnichannelRefundSpecificInput?: OmnichannelRefundSpecificInput | null;
   operationReferences?: OperationPaymentReferences | null;
   reason?: string | null;
@@ -1934,6 +2003,14 @@ export interface SepaDirectDebitPaymentProduct771SpecificInputBase {
   mandate?: CreateMandateRequest | null;
 }
 
+export interface SessionData {
+  hostedFieldsSessionId?: string | null;
+  locale?: string | null;
+  platformUrl?: string | null;
+  sessionToken?: string | null;
+  tokens?: string[] | null;
+}
+
 export interface SessionDetails {
   id?: string | null;
   type?: string | null;
@@ -1982,12 +2059,17 @@ export interface ShoppingCart {
   reOrderIndicator?: boolean | null;
 }
 
+export interface ShoppingCartOutput {
+  lineItemDetails?: LineItemDetail[] | null;
+}
+
 export interface ShowFormData {
   paymentProduct3012?: PaymentProduct3012 | null;
   paymentProduct350?: PaymentProduct350 | null;
   paymentProduct5001?: PaymentProduct5001 | null;
   paymentProduct5404?: PaymentProduct5404 | null;
   paymentProduct5407?: PaymentProduct5407 | null;
+  paymentProduct840?: PaymentProduct840 | null;
   pendingAuthentication?: PendingAuthentication | null;
 }
 

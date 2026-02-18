@@ -8,6 +8,13 @@ const schema = {
     "captureId" : {
       "type" : "string"
     },
+    "lineItemDetails" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/lineItemDetail"
+      },
+      "uniqueItems" : false
+    },
     "omnichannelRefundSpecificInput" : {
       "$ref" : "#/definitions/omnichannelRefundSpecificInput"
     },
@@ -34,6 +41,18 @@ const schema = {
         },
         "currencyCode" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "lineItemDetail" : {
+      "type" : "object",
+      "properties" : {
+        "lineItemId" : {
+          "type" : "string"
+        },
+        "quantity" : {
+          "type" : "integer"
         }
       },
       "additionalProperties" : false

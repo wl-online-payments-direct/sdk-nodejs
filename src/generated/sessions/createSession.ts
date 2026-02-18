@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, SessionRequest, SessionResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/sessionRequest.js";
+import requestSchema from "../../../schemas/SessionRequest.js";
 
 export function createSession(
   sdkContext: SdkContext

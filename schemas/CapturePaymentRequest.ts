@@ -8,6 +8,13 @@ const schema = {
     "isFinal" : {
       "type" : "boolean"
     },
+    "lineItemDetails" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/lineItemDetail"
+      },
+      "uniqueItems" : false
+    },
     "operationReferences" : {
       "$ref" : "#/definitions/operationPaymentReferences"
     },
@@ -17,6 +24,18 @@ const schema = {
   },
   "additionalProperties" : false,
   "definitions" : {
+    "lineItemDetail" : {
+      "type" : "object",
+      "properties" : {
+        "lineItemId" : {
+          "type" : "string"
+        },
+        "quantity" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
     "operationPaymentReferences" : {
       "type" : "object",
       "properties" : {

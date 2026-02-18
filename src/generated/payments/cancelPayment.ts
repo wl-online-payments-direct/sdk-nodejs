@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CancelPaymentRequest, CancelPaymentResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/cancelPaymentRequest.js";
+import requestSchema from "../../../schemas/CancelPaymentRequest.js";
 
 export function cancelPayment(
   sdkContext: SdkContext

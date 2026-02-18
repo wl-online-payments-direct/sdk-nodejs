@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreatePaymentLinkRequest, ErrorResponse, PaymentLinkResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/createPaymentLinkRequest.js";
+import requestSchema from "../../../schemas/CreatePaymentLinkRequest.js";
 
 export function createPaymentLink(
   sdkContext: SdkContext
