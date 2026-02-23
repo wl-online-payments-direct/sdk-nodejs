@@ -5,6 +5,7 @@ import FormData from "form-data";
 import obfuscate from "../utils/obfuscate.js";
 import headers from "../utils/headers.js";
 import { ConnectionOptions, Logger, MultipartFormDataObject, ProxyConfiguration, SdkContext } from "../model/index.js";
+import * as zlib from "node:zlib";
 
 export type ConnectionCallback = (e: Error | null, res: http.IncomingMessage | null) => void;
 
@@ -38,6 +39,11 @@ function handleError(error: Error, context: SdkContext, logger: Logger, uuidStri
   }
 }
 
+function isGzipRequested(headers: https.RequestOptions["headers"]): boolean {
+  const value = (headers && (headers["Content-Encoding"] as string | undefined)) ?? "";
+  return value.toLowerCase() === "gzip";
+}
+
 // Cannot use Promises for these two functions.
 // Doing so will cause logging to consume the body, making it unavailable for processing later on.
 // By using callbacks the two event listeners (logging + processing) will be added in the same flow and therefore will
@@ -52,18 +58,33 @@ export function sendJSON(options: https.RequestOptions, postData: object | undef
     const obfuscatedBody = obfuscate.getObfuscated(postData, context, false);
     logger("info", `Request with Message ID: ${uuidString}, ${options.method} to ${options.path}, headers: ${obfuscatedHeaders}, body: ${obfuscatedBody}`);
   }
+
+  options.headers = options.headers ?? {};
+  const headersRef = options.headers as Record<string, unknown>;
+  let payload: Buffer | undefined;
+
+  if (postData != null) {
+    const raw = Buffer.from(JSON.stringify(postData), "utf-8");
+
+    const gzipRequested = isGzipRequested(options.headers);
+    payload = gzipRequested ? zlib.gzipSync(raw) : raw;
+
+    headersRef["Content-Length"] = String(payload.length);
+  }
+
   const h = options.protocol === "https:" ? https : http;
   const req = h.request(options, res => {
     handleResponse(res, context, logger, uuidString);
     cb(null, res);
   });
+
   req.on("error", e => {
     handleError(e, context, logger, uuidString);
     cb(e, null);
   });
 
-  if (postData) {
-    req.write(JSON.stringify(postData));
+  if (payload) {
+    req.write(payload);
   }
   req.end();
 }

@@ -89,6 +89,7 @@ export interface ObfuscationRules {
 export interface PaymentContext {
   extraHeaders?: Header[];
   idempotence?: Idempotence;
+  gzip?: boolean;
 }
 
 export interface ProxyConfiguration {

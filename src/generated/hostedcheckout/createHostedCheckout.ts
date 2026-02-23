@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateHostedCheckoutRequest, CreateHostedCheckoutResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateHostedCheckoutRequest.js";
+import requestSchema from "../../../schemas/createHostedCheckoutRequest.js";
 
 export function createHostedCheckout(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createHostedCheckout(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

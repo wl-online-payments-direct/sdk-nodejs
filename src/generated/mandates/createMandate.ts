@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateMandateRequest, CreateMandateResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateMandateRequest.js";
+import requestSchema from "../../../schemas/createMandateRequest.js";
 
 export function createMandate(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createMandate(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

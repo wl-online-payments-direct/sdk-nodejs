@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, ImportCofSeriesRequest, ImportCofSeriesResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/ImportCofSeriesRequest.js";
+import requestSchema from "../../../schemas/importCofSeriesRequest.js";
 
 export function importCofSeries(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function importCofSeries(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

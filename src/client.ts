@@ -23,6 +23,7 @@ import { newPayoutsClient } from "./generated/payouts/index.js";
 import { newMandatesClient } from "./generated/mandates/index.js";
 import { newPrivacyPolicyClient } from "./generated/privacypolicy/index.js";
 import { newPaymentLinksClient } from "./generated/paymentlinks/index.js";
+import { newMerchantBatchClient } from "./generated/merchantbatch/index.js";
 
 export function newClient(sdkContext: SdkContext): Client {
   return {
@@ -46,6 +47,7 @@ export function newClient(sdkContext: SdkContext): Client {
     mandates: newMandatesClient(sdkContext),
     privacyPolicy: newPrivacyPolicyClient(sdkContext),
     paymentLinks: newPaymentLinksClient(sdkContext),
+    merchantBatch: newMerchantBatchClient(sdkContext),
     context: sdkContext
   };
 }

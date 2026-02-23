@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreatePaymentLinkRequest, ErrorResponse, PaymentLinkResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreatePaymentLinkRequest.js";
+import requestSchema from "../../../schemas/createPaymentLinkRequest.js";
 
 export function createPaymentLink(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createPaymentLink(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateHostedTokenizationRequest, CreateHostedTokenizationResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateHostedTokenizationRequest.js";
+import requestSchema from "../../../schemas/createHostedTokenizationRequest.js";
 
 export function createHostedTokenization(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createHostedTokenization(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

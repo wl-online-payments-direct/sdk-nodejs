@@ -3,10 +3,14 @@
 import each from "jest-each";
 import nock from "nock";
 import { Readable } from "stream";
-import { SdkBinaryErrorResponse, SdkBinarySuccessResponse, SdkContext } from "../../../src/model";
+import { SdkBinaryErrorResponse, SdkBinarySuccessResponse, SdkContext } from "../../../src";
 import communicator from "../../../src/utils/communicator";
 import { newSdkContext } from "../../../src/utils/context";
 import { dummySdkConfig } from "../../auth_config";
+import http from "http";
+import * as zlib from "node:zlib";
+import https from "https";
+import connection from "../../../src/utils/connection";
 
 /**
  * @group unit:communicator
@@ -233,5 +237,88 @@ describe("communicator", () => {
     expect(error.status).toBeUndefined();
     expect(error.body).toBeUndefined();
     expect(error.message).toBe(errorMessage);
+  });
+
+  test("sendJSON compresses JSON body when Content-Encoding: gzip is set", done => {
+    const httpServer = http.createServer((request, response) => {
+      const requestChunks: Buffer[] = [];
+
+      request.on("data", chunk => {
+        requestChunks.push(chunk as Buffer);
+      });
+
+      request.on("end", () => {
+        try {
+          const contentEncodingHeader = String(request.headers["content-encoding"] || "");
+          expect(contentEncodingHeader.toLowerCase()).toBe("gzip");
+
+          const requestBuffer = Buffer.concat(requestChunks);
+          expect(requestBuffer.length).toBeGreaterThan(0);
+
+          const decompressedBuffer = zlib.gunzipSync(requestBuffer);
+          const decodedJson = JSON.parse(decompressedBuffer.toString("utf-8"));
+
+          expect(decodedJson.header?.operationType).toBe("CreatePayment");
+          expect(decodedJson.header?.itemCount).toBe(2);
+
+          response.statusCode = 200;
+          response.setHeader("Content-Type", "application/json");
+          response.end(JSON.stringify({ ok: true }));
+        } catch (error) {
+          response.statusCode = 500;
+          response.end();
+          done(error as Error);
+        }
+      });
+    });
+
+    httpServer.listen(0, () => {
+      const serverAddress = httpServer.address();
+      if (!serverAddress || typeof serverAddress === "string") {
+        httpServer.close();
+        return done(new Error("Failed to get server address"));
+      }
+
+      const configuration = dummySdkConfig();
+      configuration.host = "127.0.0.1";
+      configuration.port = serverAddress.port;
+      configuration.scheme = "http";
+
+      const gzipContext = newSdkContext(configuration);
+
+      const requestBody = {
+        header: {
+          operationType: "CreatePayment",
+          itemCount: 2
+        },
+        items: [
+          { amount: 10000, currencyCode: "EUR" },
+          { amount: 20000, currencyCode: "EUR" }
+        ]
+      };
+
+      const requestOptions: https.RequestOptions = {
+        protocol: "http:",
+        host: "127.0.0.1",
+        port: serverAddress.port,
+        path: "/gzip-request",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Encoding": "gzip"
+        }
+      };
+
+      connection.sendJSON(requestOptions, requestBody, gzipContext, (error, incomingResponse) => {
+        try {
+          expect(error).toBeNull();
+          expect(incomingResponse).not.toBeNull();
+          expect(incomingResponse!.statusCode).toBe(200);
+        } finally {
+          httpServer.close();
+          done(error ?? undefined);
+        }
+      });
+    });
   });
 });

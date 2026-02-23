@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CompletePaymentRequest, CompletePaymentResponse, PaymentErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CompletePaymentRequest.js";
+import requestSchema from "../../../schemas/completePaymentRequest.js";
 
 export function completePayment(
   sdkContext: SdkContext
@@ -26,6 +26,7 @@ export function completePayment(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

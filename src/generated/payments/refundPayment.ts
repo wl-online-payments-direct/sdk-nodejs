@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { RefundErrorResponse, RefundRequest, RefundResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/RefundRequest.js";
+import requestSchema from "../../../schemas/refundRequest.js";
 
 export function refundPayment(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function refundPayment(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

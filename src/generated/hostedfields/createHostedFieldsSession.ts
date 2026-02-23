@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateHostedFieldsSessionRequest, CreateHostedFieldsSessionResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateHostedFieldsSessionRequest.js";
+import requestSchema from "../../../schemas/createHostedFieldsSessionRequest.js";
 
 export function createHostedFieldsSession(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createHostedFieldsSession(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

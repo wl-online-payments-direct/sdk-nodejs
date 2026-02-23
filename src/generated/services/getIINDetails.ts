@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, GetIINDetailsRequest, GetIINDetailsResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/GetIINDetailsRequest.js";
+import requestSchema from "../../../schemas/getIINDetailsRequest.js";
 
 export function getIINDetails(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function getIINDetails(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { ErrorResponse, SendTestRequest } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/SendTestRequest.js";
+import requestSchema from "../../../schemas/sendTestRequest.js";
 
 export function sendTestWebhook(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function sendTestWebhook(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

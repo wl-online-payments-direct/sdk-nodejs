@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateCertificateResponse, CsrRequest, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CsrRequest.js";
+import requestSchema from "../../../schemas/csrRequest.js";
 
 export function createCertificate(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createCertificate(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

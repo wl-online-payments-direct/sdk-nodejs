@@ -16,6 +16,11 @@ export interface APIError {
   retriable?: boolean | null;
 }
 
+export interface Acceptance {
+  acceptanceSystemApplicationId?: string | null;
+  authorizationDate?: string | null;
+}
+
 export interface AccountOnFile {
   attributes?: AccountOnFileAttribute[] | null;
   displayHints?: AccountOnFileDisplayHints | null;
@@ -206,6 +211,12 @@ export interface BankAccountIban {
   iban?: string | null;
 }
 
+export interface BatchMetadata {
+  itemCount?: number | null;
+  merchantBatchReference?: string | null;
+  operationType?: string | null;
+}
+
 export interface BrowserData {
   colorDepth?: number | null;
   javaEnabled?: boolean | null;
@@ -221,6 +232,11 @@ export interface CalculateSurchargeRequest {
 
 export interface CalculateSurchargeResponse {
   surcharges?: Surcharge[] | null;
+}
+
+export interface CancelPaymentBatchRequest {
+  cancel?: CancelPaymentRequest | null;
+  paymentId?: string | null;
 }
 
 export interface CancelPaymentRequest {
@@ -257,6 +273,11 @@ export interface CaptureOutput {
   references?: PaymentReferences | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
+}
+
+export interface CapturePaymentBatchRequest {
+  capture?: CapturePaymentRequest | null;
+  paymentId?: string | null;
 }
 
 export interface CapturePaymentRequest {
@@ -416,6 +437,7 @@ export interface CardPaymentMethodSpecificInputForHostedCheckout {
 }
 
 export interface CardPaymentMethodSpecificOutput {
+  acceptance?: Acceptance | null;
   acquirerInformation?: AcquirerInformation | null;
   authenticatedAmount?: number | null;
   authorisationCode?: string | null;
@@ -876,6 +898,13 @@ export interface GPayThreeDSecure {
   redirectionData?: RedirectionData | null;
   skipAuthentication?: boolean | null;
   skipSoftDecline?: boolean | null;
+}
+
+export interface GetBatchStatusResponse {
+  itemCount?: number | null;
+  merchantBatchReference?: string | null;
+  operationType?: string | null;
+  status?: string | null;
 }
 
 export interface GetHostedCheckoutResponse {
@@ -1375,6 +1404,7 @@ export interface PaymentOutput {
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
   shoppingCartOutput?: ShoppingCartOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
+  transactionDate?: string | null;
 }
 
 export interface PaymentProduct {
@@ -1920,6 +1950,11 @@ export interface RefundOutput {
   references?: PaymentReferences | null;
 }
 
+export interface RefundPaymentBatchRequest {
+  paymentId?: string | null;
+  refund?: RefundRequest | null;
+}
+
 export interface RefundPaymentProduct840CustomerAccount {
   customerAccountStatus?: string | null;
   customerAddressStatus?: string | null;
@@ -2086,6 +2121,22 @@ export interface SplitPaymentProductFiltersHostedCheckout {
   restrictTo?: SplitPaymentProductFilter | null;
 }
 
+export interface SubmitBatchRequestBody {
+  cancelPayments?: CancelPaymentBatchRequest[] | null;
+  capturePayments?: CapturePaymentBatchRequest[] | null;
+  createPaymentLinks?: CreatePaymentLinkRequest[] | null;
+  createPayments?: CreatePaymentRequest[] | null;
+  createPayouts?: CreatePayoutRequest[] | null;
+  header?: BatchMetadata | null;
+  refundPayments?: RefundPaymentBatchRequest[] | null;
+  subsequentPayments?: SubsequentPaymentBatchRequest[] | null;
+}
+
+export interface SubmitBatchResponse {
+  merchantBatchReference?: string | null;
+  totalCount?: number | null;
+}
+
 export interface SubsequentCardPaymentMethodSpecificInput {
   authorizationMode?: string | null;
   marketPlace?: MarketPlace | null;
@@ -2100,6 +2151,11 @@ export interface SubsequentCardPaymentMethodSpecificInput {
    */
   token?: string | null;
   transactionChannel?: string | null;
+}
+
+export interface SubsequentPaymentBatchRequest {
+  paymentId?: string | null;
+  subsequent?: SubsequentPaymentRequest | null;
 }
 
 export interface SubsequentPaymentProduct5001SpecificInput {

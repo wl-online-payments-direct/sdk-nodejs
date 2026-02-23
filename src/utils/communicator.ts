@@ -14,7 +14,7 @@ async function prepareRequest(request: SdkRequest, sdkContext: SdkContext, optio
   if (request.paymentContext) {
     let separator = "?";
     for (const key in request.paymentContext) {
-      if (key !== "extraHeaders" && key !== "idempotence") {
+      if (key !== "extraHeaders" && key !== "idempotence" && key !== "gzip") {
         if (Array.isArray(request.paymentContext[key])) {
           for (const value in request.paymentContext[key]) {
             path += `${separator + key}=${request.paymentContext[key][value]}`;
@@ -33,9 +33,13 @@ async function prepareRequest(request: SdkRequest, sdkContext: SdkContext, optio
   options.headers = options.headers || {};
   options.headers["Date"] = date;
   options.headers["Content-Type"] = contentType;
+  if (contentType.startsWith("application/json") && request.paymentContext?.gzip === true) {
+    options.headers["Content-Encoding"] = "gzip";
+  }
+
   if (request.paymentContext?.extraHeaders) {
     for (const header of request.paymentContext.extraHeaders) {
-      options.headers[header.key] = _.trim(header.value.replace(/\r?\n[\\s&&[^\r\n]]*/g, " "));
+      options.headers[header.key] = _.trim(header.value.replace(/\r?\n[\\s&[^\r\n]]*/g, " "));
       extraHeaders.push(header);
     }
   }

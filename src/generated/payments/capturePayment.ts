@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CapturePaymentRequest, CaptureResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CapturePaymentRequest.js";
+import requestSchema from "../../../schemas/capturePaymentRequest.js";
 
 export function capturePayment(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function capturePayment(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",

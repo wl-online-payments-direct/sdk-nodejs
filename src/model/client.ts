@@ -22,6 +22,7 @@ import { PayoutsClient } from "../generated/model/payouts/index.js";
 import { MandatesClient } from "../generated/model/mandates/index.js";
 import { PrivacyPolicyClient } from "../generated/model/privacypolicy/index.js";
 import { PaymentLinksClient } from "../generated/model/paymentlinks/index.js";
+import { MerchantBatchClient } from "../generated/model/merchantbatch/index.js";
 
 export interface Client {
   readonly hostedCheckout: HostedCheckoutClient;
@@ -44,5 +45,6 @@ export interface Client {
   readonly mandates: MandatesClient;
   readonly privacyPolicy: PrivacyPolicyClient;
   readonly paymentLinks: PaymentLinksClient;
+  readonly merchantBatch: MerchantBatchClient;
   readonly context: SdkContext;
 }

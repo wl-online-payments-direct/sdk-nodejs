@@ -6,7 +6,7 @@ import { json } from "../../utils/communicator.js";
 import { PaymentContext, SdkContext, SdkResponse } from "../../model/index.js";
 import { CreateTokenRequest, CreatedTokenResponse, ErrorResponse } from "../model/domain/index.js";
 
-import requestSchema from "../../../schemas/CreateTokenRequest.js";
+import requestSchema from "../../../schemas/createTokenRequest.js";
 
 export function createToken(
   sdkContext: SdkContext
@@ -21,6 +21,7 @@ export function createToken(
       }
       throw new Error(isValidRequest.errors.toString());
     }
+
     return json(
       {
         method: "POST",
