@@ -1374,6 +1374,15 @@ const schema = {
         "paymentProduct11SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct11SpecificInput"
         },
+        "paymentProduct3103SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct3103SpecificInput"
+        },
+        "paymentProduct3112SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct3112SpecificInput"
+        },
+        "paymentProduct3116SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct3116SpecificInput"
+        },
         "paymentProduct3203SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct3203SpecificInput"
         },
@@ -1413,6 +1422,9 @@ const schema = {
         "paymentProduct5412SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5412SpecificInput"
         },
+        "paymentProduct5601SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5601SpecificInput"
+        },
         "paymentProduct809SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct809SpecificInput"
         },
@@ -1442,6 +1454,33 @@ const schema = {
       "properties" : {
         "firstInstallmentPaymentDate" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct3103SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct3112SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct3116SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false
@@ -1595,6 +1634,15 @@ const schema = {
         },
         "beneficiaryId" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5601SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "completeRemainingPaymentAmount" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false

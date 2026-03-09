@@ -545,6 +545,7 @@ export interface CreateHostedFieldsSessionRequest {
 }
 
 export interface CreateHostedFieldsSessionResponse {
+  invalidTokens?: string[] | null;
   sdkSri?: string | null;
   sdkUrl?: string | null;
   sessionData?: SessionData | null;
@@ -1790,6 +1791,9 @@ export interface RedirectData {
 export interface RedirectPaymentMethodSpecificInput {
   paymentOption?: string | null;
   paymentProduct11SpecificInput?: RedirectPaymentProduct11SpecificInput | null;
+  paymentProduct3103SpecificInput?: RedirectPaymentProduct3103SpecificInput | null;
+  paymentProduct3112SpecificInput?: RedirectPaymentProduct3112SpecificInput | null;
+  paymentProduct3116SpecificInput?: RedirectPaymentProduct3116SpecificInput | null;
   paymentProduct3203SpecificInput?: RedirectPaymentProduct3203SpecificInput | null;
   paymentProduct3204SpecificInput?: RedirectPaymentProduct3204SpecificInput | null;
   paymentProduct3302SpecificInput?: RedirectPaymentProduct3302SpecificInput | null;
@@ -1803,6 +1807,7 @@ export interface RedirectPaymentMethodSpecificInput {
   paymentProduct5408SpecificInput?: RedirectPaymentProduct5408SpecificInput | null;
   paymentProduct5410SpecificInput?: RedirectPaymentProduct5410SpecificInput | null;
   paymentProduct5412SpecificInput?: RedirectPaymentProduct5412SpecificInput | null;
+  paymentProduct5601SpecificInput?: RedirectPaymentProduct5601SpecificInput | null;
   paymentProduct809SpecificInput?: RedirectPaymentProduct809SpecificInput | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInput | null;
   paymentProductId?: number | null;
@@ -1829,6 +1834,18 @@ export interface RedirectPaymentMethodSpecificOutput {
 
 export interface RedirectPaymentProduct11SpecificInput {
   firstInstallmentPaymentDate?: string | null;
+}
+
+export interface RedirectPaymentProduct3103SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
+}
+
+export interface RedirectPaymentProduct3112SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
+}
+
+export interface RedirectPaymentProduct3116SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
 }
 
 export interface RedirectPaymentProduct3203SpecificInput {
@@ -1893,6 +1910,10 @@ export interface RedirectPaymentProduct5410SpecificInput {
 export interface RedirectPaymentProduct5412SpecificInput {
   adjustableAmount?: boolean | null;
   beneficiaryId?: string | null;
+}
+
+export interface RedirectPaymentProduct5601SpecificInput {
+  completeRemainingPaymentAmount?: boolean | null;
 }
 
 /**
