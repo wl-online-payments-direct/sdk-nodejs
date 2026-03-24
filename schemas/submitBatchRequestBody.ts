@@ -461,6 +461,9 @@ const schema = {
         },
         "operationReferences" : {
           "$ref" : "#/definitions/operationPaymentReferences"
+        },
+        "shipping" : {
+          "$ref" : "#/definitions/shippingDetail"
         }
       },
       "additionalProperties" : false
@@ -498,6 +501,9 @@ const schema = {
         },
         "references" : {
           "$ref" : "#/definitions/paymentReferences"
+        },
+        "shipping" : {
+          "$ref" : "#/definitions/shippingDetail"
         }
       },
       "additionalProperties" : false
@@ -1291,10 +1297,16 @@ const schema = {
     "lineItemDetail" : {
       "type" : "object",
       "properties" : {
+        "discountAmount" : {
+          "type" : "integer"
+        },
         "lineItemId" : {
           "type" : "string"
         },
         "quantity" : {
+          "type" : "integer"
+        },
+        "taxAmount" : {
           "type" : "integer"
         }
       },
@@ -2289,6 +2301,9 @@ const schema = {
         "captureId" : {
           "type" : "string"
         },
+        "isFinal" : {
+          "type" : "boolean"
+        },
         "lineItemDetails" : {
           "type" : "array",
           "items" : {
@@ -2391,6 +2406,18 @@ const schema = {
         },
         "type" : {
           "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "shippingDetail" : {
+      "type" : "object",
+      "properties" : {
+        "shippingCost" : {
+          "type" : "integer"
+        },
+        "shippingCostTax" : {
+          "type" : "integer"
         }
       },
       "additionalProperties" : false

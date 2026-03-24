@@ -244,6 +244,7 @@ export interface CancelPaymentRequest {
   isFinal?: boolean | null;
   lineItemDetails?: LineItemDetail[] | null;
   operationReferences?: OperationPaymentReferences | null;
+  shipping?: ShippingDetail | null;
 }
 
 export interface CancelPaymentResponse {
@@ -286,6 +287,7 @@ export interface CapturePaymentRequest {
   lineItemDetails?: LineItemDetail[] | null;
   operationReferences?: OperationPaymentReferences | null;
   references?: PaymentReferences | null;
+  shipping?: ShippingDetail | null;
 }
 
 export interface CaptureResponse {
@@ -444,6 +446,7 @@ export interface CardPaymentMethodSpecificOutput {
   card?: CardEssentials | null;
   clickToPay?: ClickToPay | null;
   cobrandSelectionIndicator?: string | null;
+  crmToken?: CrmToken | null;
   currencyConversion?: CurrencyConversion | null;
   externalTokenLinked?: ExternalTokenLinked | null;
   fraudResults?: CardFraudResults | null;
@@ -1041,8 +1044,10 @@ export interface LineItem {
 }
 
 export interface LineItemDetail {
+  discountAmount?: number | null;
   lineItemId?: string | null;
   quantity?: number | null;
+  taxAmount?: number | null;
 }
 
 export interface LineItemInvoiceData {
@@ -2002,6 +2007,7 @@ export interface RefundRedirectPaymentProduct900SpecificInput {
 export interface RefundRequest {
   amountOfMoney?: AmountOfMoney | null;
   captureId?: string | null;
+  isFinal?: boolean | null;
   lineItemDetails?: LineItemDetail[] | null;
   omnichannelRefundSpecificInput?: OmnichannelRefundSpecificInput | null;
   operationReferences?: OperationPaymentReferences | null;
@@ -2094,6 +2100,11 @@ export interface Shipping {
   shippingCost?: number | null;
   shippingCostTax?: number | null;
   type?: string | null;
+}
+
+export interface ShippingDetail {
+  shippingCost?: number | null;
+  shippingCostTax?: number | null;
 }
 
 export interface ShippingMethod {

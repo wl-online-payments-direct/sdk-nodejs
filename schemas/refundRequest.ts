@@ -8,6 +8,9 @@ const schema = {
     "captureId" : {
       "type" : "string"
     },
+    "isFinal" : {
+      "type" : "boolean"
+    },
     "lineItemDetails" : {
       "type" : "array",
       "items" : {
@@ -48,10 +51,16 @@ const schema = {
     "lineItemDetail" : {
       "type" : "object",
       "properties" : {
+        "discountAmount" : {
+          "type" : "integer"
+        },
         "lineItemId" : {
           "type" : "string"
         },
         "quantity" : {
+          "type" : "integer"
+        },
+        "taxAmount" : {
           "type" : "integer"
         }
       },
