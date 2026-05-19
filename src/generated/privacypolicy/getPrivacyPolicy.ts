@@ -8,6 +8,7 @@ import { GetPrivacyPolicyParams } from "../model/privacypolicy/index.js";
 
 export function getPrivacyPolicy(sdkContext: SdkContext): (merchantId: string, params: GetPrivacyPolicyParams) => Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
   return function(merchantId, params): Promise<SdkResponse<GetPrivacyPolicyResponse, ErrorResponse>> {
+
     return json(
       {
         method: "GET",

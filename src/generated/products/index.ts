@@ -13,6 +13,6 @@ export function newProductsClient(sdkContext: SdkContext): ProductsClient {
     getPaymentProducts: getPaymentProducts(sdkContext),
     getPaymentProduct: getPaymentProduct(sdkContext),
     getPaymentProductNetworks: getPaymentProductNetworks(sdkContext),
-    getProductDirectory: getProductDirectory(sdkContext)
+    getProductDirectory: getProductDirectory(sdkContext),
   };
 }

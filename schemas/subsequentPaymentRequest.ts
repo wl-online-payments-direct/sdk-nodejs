@@ -226,6 +226,9 @@ const schema = {
         "fee" : {
           "type" : "integer"
         },
+        "flightCode" : {
+          "type" : "string"
+        },
         "flightNumber" : {
           "type" : "string"
         },
@@ -254,6 +257,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineLoyaltyStatus" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "dateOfBirth" : {
           "type" : "string"
         },
         "firstName" : {
@@ -601,6 +610,9 @@ const schema = {
         "surchargeSpecificInput" : {
           "$ref" : "#/definitions/surchargeSpecificInput"
         },
+        "taxPercentage" : {
+          "type" : "number"
+        },
         "totalTaxAmount" : {
           "type" : "integer"
         }
@@ -634,6 +646,9 @@ const schema = {
         "taxAmount" : {
           "type" : "integer"
         },
+        "taxPercentage" : {
+          "type" : "number"
+        },
         "unit" : {
           "type" : "string"
         }
@@ -653,6 +668,9 @@ const schema = {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "structuredCreditorReference" : {
           "type" : "string"
         }
       },

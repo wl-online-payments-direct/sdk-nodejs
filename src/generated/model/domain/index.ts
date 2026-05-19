@@ -155,6 +155,7 @@ export interface AirlineFlightLeg {
   fare?: string | null;
   fareBasis?: string | null;
   fee?: number | null;
+  flightCode?: string | null;
   flightNumber?: string | null;
   legFare?: number | null;
   /**
@@ -169,6 +170,8 @@ export interface AirlineFlightLeg {
 
 export interface AirlinePassenger {
   airlineLoyaltyStatus?: string | null;
+  countryCode?: string | null;
+  dateOfBirth?: string | null;
   firstName?: string | null;
   passengerType?: string | null;
   surname?: string | null;
@@ -205,6 +208,10 @@ export interface ApplePayRecurringPaymentRequest {
   paymentDescription?: string | null;
   regularBilling?: ApplePayLineItem | null;
   trialBilling?: ApplePayLineItem | null;
+}
+
+export interface AutoCapture {
+  delayInMinutes?: number | null;
 }
 
 export interface BankAccountIban {
@@ -325,6 +332,8 @@ export interface CardBinDetails {
   countryCode?: string | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerPrincipalMemberCode?: string | null;
+  issuerPrincipalMemberName?: string | null;
   issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
@@ -355,6 +364,8 @@ export interface CardEssentials {
   expiryDate?: string | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerPrincipalMemberCode?: string | null;
+  issuerPrincipalMemberName?: string | null;
   issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
@@ -377,6 +388,7 @@ export interface CardInfo {
 export interface CardPaymentMethodSpecificInput {
   allowDynamicLinking?: boolean | null;
   authorizationMode?: string | null;
+  autoCapture?: AutoCapture | null;
   card?: Card | null;
   cardOnFileRecurringExpiration?: string | null;
   cardOnFileRecurringFrequency?: string | null;
@@ -411,6 +423,7 @@ export interface CardPaymentMethodSpecificInput {
 export interface CardPaymentMethodSpecificInputBase {
   allowDynamicLinking?: boolean | null;
   authorizationMode?: string | null;
+  autoCapture?: AutoCapture | null;
   currencyConversionSpecificInput?: CurrencyConversionSpecificInput | null;
   initialSchemeTransactionId?: string | null;
   marketPlace?: MarketPlace | null;
@@ -545,6 +558,7 @@ export interface CreateHostedCheckoutResponse {
 
 export interface CreateHostedFieldsSessionRequest {
   locale?: string | null;
+  tokens?: string[] | null;
 }
 
 export interface CreateHostedFieldsSessionResponse {
@@ -941,6 +955,8 @@ export interface GetIINDetailsResponse {
   isAllowedInContext?: boolean | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerPrincipalMemberCode?: string | null;
+  issuerPrincipalMemberName?: string | null;
   issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
@@ -1005,6 +1021,8 @@ export interface IINDetail {
   isAllowedInContext?: boolean | null;
   issuerCode?: string | null;
   issuerName?: string | null;
+  issuerPrincipalMemberCode?: string | null;
+  issuerPrincipalMemberName?: string | null;
   issuerRegionCode?: string | null;
   issuingCountryCode?: string | null;
   panLengthMax?: number | null;
@@ -1047,7 +1065,6 @@ export interface LineItemDetail {
   discountAmount?: number | null;
   lineItemId?: string | null;
   quantity?: number | null;
-  taxAmount?: number | null;
 }
 
 export interface LineItemInvoiceData {
@@ -1268,6 +1285,7 @@ export interface OperationOutput {
 export interface OperationPaymentReferences {
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  structuredCreditorReference?: string | null;
 }
 
 export interface Order {
@@ -1279,6 +1297,7 @@ export interface Order {
   shipping?: Shipping | null;
   shoppingCart?: ShoppingCart | null;
   surchargeSpecificInput?: SurchargeSpecificInput | null;
+  taxPercentage?: number | null;
   totalTaxAmount?: number | null;
 }
 
@@ -1291,6 +1310,7 @@ export interface OrderLineDetails {
   productType?: string | null;
   quantity?: number | null;
   taxAmount?: number | null;
+  taxPercentage?: number | null;
   unit?: string | null;
 }
 
@@ -1299,6 +1319,7 @@ export interface OrderReferences {
   merchantParameters?: string | null;
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  structuredCreditorReference?: string | null;
 }
 
 export interface OrderStatusOutput {
@@ -1408,7 +1429,6 @@ export interface PaymentOutput {
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   references?: PaymentReferences | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
-  shoppingCartOutput?: ShoppingCartOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
   transactionDate?: string | null;
 }
@@ -1531,11 +1551,21 @@ export interface PaymentProduct5407 {
   qrCode?: string | null;
 }
 
+export interface PaymentProduct5412 {
+  appUrl?: string | null;
+  pollingUrl?: string | null;
+  qrCode?: string | null;
+}
+
 export interface PaymentProduct5500SpecificOutput {
   entityId?: string | null;
   paymentEndDate?: string | null;
   paymentReference?: string | null;
   paymentStartDate?: string | null;
+}
+
+export interface PaymentProduct5704AutoCapture {
+  delayInMinutes?: number | null;
 }
 
 export interface PaymentProduct771SpecificOutput {
@@ -1670,6 +1700,7 @@ export interface PaymentReferences {
   merchantParameters?: string | null;
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  structuredCreditorReference?: string | null;
 }
 
 export interface PaymentResponse {
@@ -1691,6 +1722,13 @@ export interface PaymentStatusOutput {
   statusCodeChangeDateTime?: string | null;
 }
 
+export interface PayoutCardPaymentMethodSpecificOutput {
+  acceptance?: Acceptance | null;
+  authorisationCode?: string | null;
+  card?: CardEssentials | null;
+  paymentProductId?: number | null;
+}
+
 export interface PayoutErrorResponse {
   errorId?: string | null;
   errors?: APIError[] | null;
@@ -1699,7 +1737,10 @@ export interface PayoutErrorResponse {
 
 export interface PayoutOutput {
   amountOfMoney?: AmountOfMoney | null;
+  payoutCardPaymentMethodSpecificOutput?: PayoutCardPaymentMethodSpecificOutput | null;
   payoutReason?: string | null;
+  references?: PaymentReferences | null;
+  transactionDate?: string | null;
 }
 
 export interface PayoutResponse {
@@ -1806,9 +1847,11 @@ export interface RedirectPaymentMethodSpecificInput {
   paymentProduct3307SpecificInput?: RedirectPaymentProduct3307SpecificInput | null;
   paymentProduct5001SpecificInput?: RedirectPaymentProduct5001SpecificInput | null;
   paymentProduct5300SpecificInput?: RedirectPaymentProduct5300SpecificInput | null;
+  paymentProduct5301SpecificInput?: RedirectPaymentProduct5301SpecificInput | null;
   paymentProduct5402SpecificInput?: RedirectPaymentProduct5402SpecificInput | null;
   paymentProduct5403SpecificInput?: RedirectPaymentProduct5403SpecificInput | null;
   paymentProduct5406SpecificInput?: RedirectPaymentProduct5406SpecificInput | null;
+  paymentProduct5407SpecificInput?: RedirectPaymentProduct5407SpecificInput | null;
   paymentProduct5408SpecificInput?: RedirectPaymentProduct5408SpecificInput | null;
   paymentProduct5410SpecificInput?: RedirectPaymentProduct5410SpecificInput | null;
   paymentProduct5412SpecificInput?: RedirectPaymentProduct5412SpecificInput | null;
@@ -1889,6 +1932,11 @@ export interface RedirectPaymentProduct5300SpecificInput {
   secondInstallmentPaymentDate?: string | null;
   sessionDuration?: number | null;
   title?: string | null;
+  transactionExpirationDateTime?: string | null;
+}
+
+export interface RedirectPaymentProduct5301SpecificInput {
+  paymentMethodType?: string | null;
 }
 
 export interface RedirectPaymentProduct5402SpecificInput {
@@ -1901,6 +1949,10 @@ export interface RedirectPaymentProduct5403SpecificInput {
 
 export interface RedirectPaymentProduct5406SpecificInput {
   customerBankAccount?: CustomerBankAccount | null;
+}
+
+export interface RedirectPaymentProduct5407SpecificInput {
+  paymentProduct5704AutoCapture?: PaymentProduct5704AutoCapture | null;
 }
 
 export interface RedirectPaymentProduct5408SpecificInput {
@@ -2126,16 +2178,13 @@ export interface ShoppingCart {
   reOrderIndicator?: boolean | null;
 }
 
-export interface ShoppingCartOutput {
-  lineItemDetails?: LineItemDetail[] | null;
-}
-
 export interface ShowFormData {
   paymentProduct3012?: PaymentProduct3012 | null;
   paymentProduct350?: PaymentProduct350 | null;
   paymentProduct5001?: PaymentProduct5001 | null;
   paymentProduct5404?: PaymentProduct5404 | null;
   paymentProduct5407?: PaymentProduct5407 | null;
+  paymentProduct5412?: PaymentProduct5412 | null;
   paymentProduct840?: PaymentProduct840 | null;
   pendingAuthentication?: PendingAuthentication | null;
 }

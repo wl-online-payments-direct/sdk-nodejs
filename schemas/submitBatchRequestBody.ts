@@ -266,6 +266,9 @@ const schema = {
         "fee" : {
           "type" : "integer"
         },
+        "flightCode" : {
+          "type" : "string"
+        },
         "flightNumber" : {
           "type" : "string"
         },
@@ -294,6 +297,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineLoyaltyStatus" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "dateOfBirth" : {
           "type" : "string"
         },
         "firstName" : {
@@ -382,6 +391,15 @@ const schema = {
         },
         "trialBilling" : {
           "$ref" : "#/definitions/applePayLineItem"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "autoCapture" : {
+      "type" : "object",
+      "properties" : {
+        "delayInMinutes" : {
+          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -535,6 +553,9 @@ const schema = {
         "authorizationMode" : {
           "type" : "string"
         },
+        "autoCapture" : {
+          "$ref" : "#/definitions/autoCapture"
+        },
         "card" : {
           "$ref" : "#/definitions/card"
         },
@@ -624,6 +645,9 @@ const schema = {
         },
         "authorizationMode" : {
           "type" : "string"
+        },
+        "autoCapture" : {
+          "$ref" : "#/definitions/autoCapture"
         },
         "currencyConversionSpecificInput" : {
           "$ref" : "#/definitions/currencyConversionSpecificInput"
@@ -1305,9 +1329,6 @@ const schema = {
         },
         "quantity" : {
           "type" : "integer"
-        },
-        "taxAmount" : {
-          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -1608,6 +1629,9 @@ const schema = {
         },
         "operationGroupReference" : {
           "type" : "string"
+        },
+        "structuredCreditorReference" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -1638,6 +1662,9 @@ const schema = {
         },
         "surchargeSpecificInput" : {
           "$ref" : "#/definitions/surchargeSpecificInput"
+        },
+        "taxPercentage" : {
+          "type" : "number"
         },
         "totalTaxAmount" : {
           "type" : "integer"
@@ -1672,6 +1699,9 @@ const schema = {
         "taxAmount" : {
           "type" : "integer"
         },
+        "taxPercentage" : {
+          "type" : "number"
+        },
         "unit" : {
           "type" : "string"
         }
@@ -1691,6 +1721,9 @@ const schema = {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "structuredCreditorReference" : {
           "type" : "string"
         }
       },
@@ -1849,6 +1882,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "paymentProduct5704AutoCapture" : {
+      "type" : "object",
+      "properties" : {
+        "delayInMinutes" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
     "paymentProductFilter" : {
       "type" : "object",
       "properties" : {
@@ -1891,6 +1933,9 @@ const schema = {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "structuredCreditorReference" : {
           "type" : "string"
         }
       },
@@ -1983,6 +2028,9 @@ const schema = {
         "paymentProduct5300SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5300SpecificInput"
         },
+        "paymentProduct5301SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5301SpecificInput"
+        },
         "paymentProduct5402SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5402SpecificInput"
         },
@@ -1991,6 +2039,9 @@ const schema = {
         },
         "paymentProduct5406SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5406SpecificInput"
+        },
+        "paymentProduct5407SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct5407SpecificInput"
         },
         "paymentProduct5408SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct5408SpecificInput"
@@ -2153,6 +2204,18 @@ const schema = {
         },
         "title" : {
           "type" : "string"
+        },
+        "transactionExpirationDateTime" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5301SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "paymentMethodType" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -2180,6 +2243,15 @@ const schema = {
       "properties" : {
         "customerBankAccount" : {
           "$ref" : "#/definitions/customerBankAccount"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "redirectPaymentProduct5407SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "paymentProduct5704AutoCapture" : {
+          "$ref" : "#/definitions/paymentProduct5704AutoCapture"
         }
       },
       "additionalProperties" : false

@@ -110,6 +110,9 @@ const schema = {
         },
         "operationGroupReference" : {
           "type" : "string"
+        },
+        "structuredCreditorReference" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

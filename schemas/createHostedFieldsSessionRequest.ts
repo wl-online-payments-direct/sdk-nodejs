@@ -4,6 +4,13 @@ const schema = {
   "properties" : {
     "locale" : {
       "type" : "string"
+    },
+    "tokens" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      },
+      "uniqueItems" : false
     }
   },
   "additionalProperties" : false

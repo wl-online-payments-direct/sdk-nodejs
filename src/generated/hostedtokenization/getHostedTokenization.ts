@@ -9,6 +9,7 @@ export function getHostedTokenization(
   sdkContext: SdkContext
 ): (merchantId: string, hostedTokenizationId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetHostedTokenizationResponse, ErrorResponse>> {
   return function(merchantId, hostedTokenizationId, paymentContext): Promise<SdkResponse<GetHostedTokenizationResponse, ErrorResponse>> {
+
     return json(
       {
         method: "GET",

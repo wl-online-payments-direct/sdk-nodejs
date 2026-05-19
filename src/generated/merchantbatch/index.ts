@@ -11,6 +11,6 @@ export function newMerchantBatchClient(sdkContext: SdkContext): MerchantBatchCli
   return {
     submitBatch: submitBatch(sdkContext),
     processBatch: processBatch(sdkContext),
-    getBatchStatus: getBatchStatus(sdkContext)
+    getBatchStatus: getBatchStatus(sdkContext),
   };
 }

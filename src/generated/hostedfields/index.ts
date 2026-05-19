@@ -7,6 +7,6 @@ import { HostedFieldsClient } from "../model/hostedfields/index.js";
 
 export function newHostedFieldsClient(sdkContext: SdkContext): HostedFieldsClient {
   return {
-    createHostedFieldsSession: createHostedFieldsSession(sdkContext)
+    createHostedFieldsSession: createHostedFieldsSession(sdkContext),
   };
 }

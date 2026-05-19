@@ -9,6 +9,7 @@ export function unblockMandate(
   sdkContext: SdkContext
 ): (merchantId: string, uniqueMandateReference: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetMandateResponse, ErrorResponse>> {
   return function(merchantId, uniqueMandateReference, paymentContext): Promise<SdkResponse<GetMandateResponse, ErrorResponse>> {
+
     return json(
       {
         method: "POST",

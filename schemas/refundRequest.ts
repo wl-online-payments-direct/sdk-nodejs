@@ -59,9 +59,6 @@ const schema = {
         },
         "quantity" : {
           "type" : "integer"
-        },
-        "taxAmount" : {
-          "type" : "integer"
         }
       },
       "additionalProperties" : false
@@ -83,6 +80,9 @@ const schema = {
         },
         "operationGroupReference" : {
           "type" : "string"
+        },
+        "structuredCreditorReference" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
@@ -97,6 +97,9 @@ const schema = {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "structuredCreditorReference" : {
           "type" : "string"
         }
       },

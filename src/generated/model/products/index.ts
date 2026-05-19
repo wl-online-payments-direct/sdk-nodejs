@@ -34,6 +34,7 @@ export interface GetPaymentProductsParams extends PaymentContext {
   amount?: number;
   isRecurring?: boolean;
   hide?: string[];
+  operationType?: string;
 }
 
 export interface GetPaymentProductParams extends PaymentContext {
@@ -43,6 +44,7 @@ export interface GetPaymentProductParams extends PaymentContext {
   amount?: number;
   isRecurring?: boolean;
   hide?: string[];
+  operationType?: string;
 }
 
 export interface GetPaymentProductNetworksParams extends PaymentContext {

@@ -11,6 +11,6 @@ export function newPaymentLinksClient(sdkContext: SdkContext): PaymentLinksClien
   return {
     createPaymentLink: createPaymentLink(sdkContext),
     getPaymentLinkById: getPaymentLinkById(sdkContext),
-    cancelPaymentLinkById: cancelPaymentLinkById(sdkContext)
+    cancelPaymentLinkById: cancelPaymentLinkById(sdkContext),
   };
 }

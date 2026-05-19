@@ -11,7 +11,12 @@ export default async () => {
   try {
     // Read server metadata
     const rawData = fs.readFileSync(metadataPath, "utf-8");
-    const metadata = JSON.parse(rawData) as { port: number; servers: { pid: number }[] };
+    const metadata = JSON.parse(rawData) as {
+      port: number;
+      tempDir?: string;
+      tempSpecPath?: string;
+      servers: { pid: number }[];
+    };
 
     // Kill each server process directly
     for (const server of metadata.servers) {
@@ -31,6 +36,14 @@ export default async () => {
           console.error(`Failed to kill process ${server.pid}:`, error);
         }
       }
+    }
+
+    if (metadata.tempSpecPath && fs.existsSync(metadata.tempSpecPath)) {
+      fs.unlinkSync(metadata.tempSpecPath);
+    }
+
+    if (metadata.tempDir && fs.existsSync(metadata.tempDir)) {
+      fs.rmSync(metadata.tempDir, { recursive: true, force: true });
     }
   } catch (error) {
     console.error("Teardown error:", error);
