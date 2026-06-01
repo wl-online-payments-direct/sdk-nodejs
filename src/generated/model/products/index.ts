@@ -2,7 +2,15 @@
  * This file was automatically generated.
  */
 import { PaymentContext, SdkResponse } from "../../../model/index.js";
-import { ErrorResponse, GetPaymentProductsResponse, PaymentProduct, PaymentProductNetworksResponse, ProductDirectory } from "../domain/index.js";
+import {
+  ErrorResponse,
+  GetPaymentProductsResponse,
+  PaymentProduct,
+  PaymentProductNetworksResponse,
+  PaymentProductSessionRequest,
+  PaymentProductSessionResponse,
+  ProductDirectory
+} from "../domain/index.js";
 
 export interface ProductsClient {
   /**
@@ -25,6 +33,15 @@ export interface ProductsClient {
    * Resource /v2/{merchantId}/products/{paymentProductId}/directory - Get payment product directory
    */
   getProductDirectory(merchantId: string, paymentProductId: number, params: GetProductDirectoryParams): Promise<SdkResponse<ProductDirectory, ErrorResponse>>;
+  /**
+   * Resource /v2/{merchantId}/products/{paymentProductId}/sessions - Create a session for a payment product
+   */
+  createPaymentProductSession(
+    merchantId: string,
+    paymentProductId: number,
+    body: PaymentProductSessionRequest,
+    paymentContext?: PaymentContext | null
+  ): Promise<SdkResponse<PaymentProductSessionResponse, ErrorResponse>>;
 }
 
 export interface GetPaymentProductsParams extends PaymentContext {

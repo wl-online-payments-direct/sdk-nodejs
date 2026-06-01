@@ -16,6 +16,9 @@ const schema = {
     },
     "tokenId" : {
       "type" : "string"
+    },
+    "transactionLinkIdentifier" : {
+      "type" : "string"
     }
   },
   "additionalProperties" : false,

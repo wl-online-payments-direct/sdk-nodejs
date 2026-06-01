@@ -930,6 +930,11 @@ export interface GetHostedCheckoutResponse {
   status?: string | null;
 }
 
+export interface GetHostedFieldsSessionResponse {
+  sessionId?: string | null;
+  token?: TokenInfo | null;
+}
+
 export interface GetHostedTokenizationResponse {
   token?: TokenResponse | null;
   tokenStatus?: string | null;
@@ -1038,6 +1043,7 @@ export interface ImportCofSeriesRequest {
   paymentProductId?: number | null;
   schemeReferenceData?: string | null;
   tokenId?: string | null;
+  transactionLinkIdentifier?: string | null;
 }
 
 export interface ImportCofSeriesResponse {
@@ -1696,6 +1702,23 @@ export interface PaymentProductNetworksResponse {
   networks?: string[] | null;
 }
 
+export interface PaymentProductSession302SpecificInput {
+  displayName?: string | null;
+  domainName?: string | null;
+}
+
+export interface PaymentProductSession302SpecificOutput {
+  session?: string | null;
+}
+
+export interface PaymentProductSessionRequest {
+  paymentProductSession302SpecificInput?: PaymentProductSession302SpecificInput | null;
+}
+
+export interface PaymentProductSessionResponse {
+  paymentProductSession302SpecificOutput?: PaymentProductSession302SpecificOutput | null;
+}
+
 export interface PaymentReferences {
   merchantParameters?: string | null;
   merchantReference?: string | null;
@@ -1706,6 +1729,7 @@ export interface PaymentReferences {
 export interface PaymentResponse {
   hostedCheckoutSpecificOutput?: HostedCheckoutSpecificOutput | null;
   id?: string | null;
+  operationOutput?: OperationOutput | null;
   paymentOutput?: PaymentOutput | null;
   sessionDetails?: SessionDetails | null;
   status?: string | null;
@@ -1786,6 +1810,14 @@ export interface PersonalName {
 export interface PersonalNameToken {
   firstName?: string | null;
   surname?: string | null;
+}
+
+export interface ProblemDetailsResponse {
+  detail?: string | null;
+  instance?: string | null;
+  status?: number | null;
+  title?: string | null;
+  type?: string | null;
 }
 
 export interface Product302Recurring {
@@ -2369,6 +2401,13 @@ export interface TokenEWallet {
    */
   alias?: string | null;
   customer?: CustomerToken | null;
+}
+
+export interface TokenInfo {
+  expiryDate?: string | null;
+  isTemporary?: boolean | null;
+  maskedPan?: string | null;
+  tokenId?: string | null;
 }
 
 export interface TokenResponse {
