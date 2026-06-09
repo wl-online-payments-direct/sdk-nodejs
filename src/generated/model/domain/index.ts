@@ -2252,6 +2252,7 @@ export interface SubmitBatchResponse {
 
 export interface SubsequentCardPaymentMethodSpecificInput {
   authorizationMode?: string | null;
+  autoCapture?: AutoCapture | null;
   marketPlace?: MarketPlace | null;
   paymentNumber?: number | null;
   /**

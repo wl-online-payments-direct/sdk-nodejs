@@ -2575,6 +2575,9 @@ const schema = {
         "authorizationMode" : {
           "type" : "string"
         },
+        "autoCapture" : {
+          "$ref" : "#/definitions/autoCapture"
+        },
         "marketPlace" : {
           "$ref" : "#/definitions/marketPlace"
         },

@@ -307,6 +307,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "autoCapture" : {
+      "type" : "object",
+      "properties" : {
+        "delayInMinutes" : {
+          "type" : "integer"
+        }
+      },
+      "additionalProperties" : false
+    },
     "browserData" : {
       "type" : "object",
       "properties" : {
@@ -830,6 +839,9 @@ const schema = {
       "properties" : {
         "authorizationMode" : {
           "type" : "string"
+        },
+        "autoCapture" : {
+          "$ref" : "#/definitions/autoCapture"
         },
         "marketPlace" : {
           "$ref" : "#/definitions/marketPlace"
