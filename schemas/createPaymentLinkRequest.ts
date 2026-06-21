@@ -475,6 +475,9 @@ const schema = {
         "recurring" : {
           "$ref" : "#/definitions/cardRecurrenceDetails"
         },
+        "subMerchant" : {
+          "$ref" : "#/definitions/subMerchant"
+        },
         "threeDSecure" : {
           "$ref" : "#/definitions/threeDSecureBase"
         },
@@ -822,6 +825,9 @@ const schema = {
       "properties" : {
         "allowedNumberOfPaymentAttempts" : {
           "type" : "integer"
+        },
+        "autoRefundSplitPayments" : {
+          "type" : "boolean"
         },
         "cardPaymentMethodSpecificInput" : {
           "$ref" : "#/definitions/cardPaymentMethodSpecificInputForHostedCheckout"
@@ -1476,6 +1482,9 @@ const schema = {
         "paymentProduct840SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct840SpecificInput"
         },
+        "paymentProduct900SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct900SpecificInput"
+        },
         "paymentProductId" : {
           "type" : "integer"
         },
@@ -1740,6 +1749,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "redirectPaymentProduct900SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "captureTrigger" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "redirectionData" : {
       "type" : "object",
       "properties" : {
@@ -1877,6 +1895,27 @@ const schema = {
         },
         "restrictTo" : {
           "$ref" : "#/definitions/splitPaymentProductFilter"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "subMerchant" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/address"
+        },
+        "companyIdentificationNumber" : {
+          "type" : "string"
+        },
+        "companyName" : {
+          "type" : "string"
+        },
+        "merchantCategoryCode" : {
+          "type" : "string"
+        },
+        "merchantId" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

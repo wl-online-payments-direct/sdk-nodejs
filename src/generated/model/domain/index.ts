@@ -412,6 +412,7 @@ export interface CardPaymentMethodSpecificInput {
    * @deprecated Use threeDSecure.skipAuthentication instead.  * true = 3D Secure authentication will be skipped for this transaction. This setting should be used when isRecurring is set to true and recurringPaymentSequenceIndicator is set to recurring.  * false = 3D Secure authentication will not be skipped for this transaction.    Note: This is only possible if your account in our system is setup for 3D Secure authentication and if your configuration in our system allows you to override it per transaction.
    */
   skipAuthentication?: boolean | null;
+  subMerchant?: SubMerchant | null;
   threeDSecure?: ThreeDSecure | null;
   token?: string | null;
   tokenize?: boolean | null;
@@ -436,6 +437,7 @@ export interface CardPaymentMethodSpecificInputBase {
   paymentProduct5100SpecificInput?: PaymentProduct5100SpecificInput | null;
   paymentProductId?: number | null;
   recurring?: CardRecurrenceDetails | null;
+  subMerchant?: SubMerchant | null;
   threeDSecure?: ThreeDSecureBase | null;
   token?: string | null;
   tokenize?: boolean | null;
@@ -586,6 +588,7 @@ export interface CreateHostedTokenizationResponse {
    * @deprecated Deprecated
    */
   partialRedirectUrl?: string | null;
+  sri?: string | null;
 }
 
 export interface CreateMandateRequest {
@@ -994,6 +997,7 @@ export interface GiftCardPurchase {
 
 export interface HostedCheckoutSpecificInput {
   allowedNumberOfPaymentAttempts?: number | null;
+  autoRefundSplitPayments?: boolean | null;
   cardPaymentMethodSpecificInput?: CardPaymentMethodSpecificInputForHostedCheckout | null;
   isNewUnscheduledCardOnFileSeries?: boolean | null;
   isRecurring?: boolean | null;
@@ -1890,6 +1894,7 @@ export interface RedirectPaymentMethodSpecificInput {
   paymentProduct5601SpecificInput?: RedirectPaymentProduct5601SpecificInput | null;
   paymentProduct809SpecificInput?: RedirectPaymentProduct809SpecificInput | null;
   paymentProduct840SpecificInput?: RedirectPaymentProduct840SpecificInput | null;
+  paymentProduct900SpecificInput?: RedirectPaymentProduct900SpecificInput | null;
   paymentProductId?: number | null;
   redirectionData?: RedirectionData | null;
   requiresApproval?: boolean | null;
@@ -2017,6 +2022,10 @@ export interface RedirectPaymentProduct840SpecificInput {
   addressSelectionAtPayPal?: boolean | null;
   custom?: string | null;
   payLater?: boolean | null;
+}
+
+export interface RedirectPaymentProduct900SpecificInput {
+  captureTrigger?: string | null;
 }
 
 export interface RedirectionData {
@@ -2232,6 +2241,14 @@ export interface SplitPaymentProductFilter {
 export interface SplitPaymentProductFiltersHostedCheckout {
   exclude?: SplitPaymentProductFilter | null;
   restrictTo?: SplitPaymentProductFilter | null;
+}
+
+export interface SubMerchant {
+  address?: Address | null;
+  companyIdentificationNumber?: string | null;
+  companyName?: string | null;
+  merchantCategoryCode?: string | null;
+  merchantId?: string | null;
 }
 
 export interface SubmitBatchRequestBody {

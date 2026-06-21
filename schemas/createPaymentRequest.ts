@@ -505,6 +505,9 @@ const schema = {
         "skipAuthentication" : {
           "type" : "boolean"
         },
+        "subMerchant" : {
+          "$ref" : "#/definitions/subMerchant"
+        },
         "threeDSecure" : {
           "$ref" : "#/definitions/threeDSecure"
         },
@@ -1479,6 +1482,9 @@ const schema = {
         "paymentProduct840SpecificInput" : {
           "$ref" : "#/definitions/redirectPaymentProduct840SpecificInput"
         },
+        "paymentProduct900SpecificInput" : {
+          "$ref" : "#/definitions/redirectPaymentProduct900SpecificInput"
+        },
         "paymentProductId" : {
           "type" : "integer"
         },
@@ -1743,6 +1749,15 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "redirectPaymentProduct900SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "captureTrigger" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : false
+    },
     "redirectionData" : {
       "type" : "object",
       "properties" : {
@@ -1855,6 +1870,27 @@ const schema = {
         },
         "reOrderIndicator" : {
           "type" : "boolean"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "subMerchant" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "$ref" : "#/definitions/address"
+        },
+        "companyIdentificationNumber" : {
+          "type" : "string"
+        },
+        "companyName" : {
+          "type" : "string"
+        },
+        "merchantCategoryCode" : {
+          "type" : "string"
+        },
+        "merchantId" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false
