@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-
 const validBody = `{
   "apiVersion": "v1",
   "id": "8ee793f6-4553-4749-85dc-f2ef095c5ab0",
@@ -68,11 +66,12 @@ const validSignature = "2S7doBj/GnJnacIjSJzr5fxGM5xmfQyFAwxv1I53ZEk=";
 const keyId = "dummy-key-id";
 const secretKey = "hello+world";
 
+import crypto from "crypto";
 import { webhooks } from "../../../src";
-import { WebhooksHelper } from "../../../src/model/webhooks";
+import { ApiVersionMismatchError, WebhooksHelper } from "../../../src/model/webhooks";
 
 /**
- * @group unit:webhooks
+ * @group webhooks
  */
 describe("webhooks.unmarshal", () => {
   let webhooksHelper: WebhooksHelper;
@@ -87,21 +86,23 @@ describe("webhooks.unmarshal", () => {
     webhooks.inMemorySecretKeyStore.clear();
   });
 
-  test("with no secret key available", async () => {
+  test("shouldThrowSecretKeyNotAvailableExceptionWhenUnmarshallingWithoutAvailableSecretKey", async () => {
     const headers = {
       "x-gcs-signature": validSignature,
       "x-gcs-keyid": keyId
     };
+
     const error = await webhooksHelper
       .unmarshal(validBody, headers)
       .then(() => undefined)
       .catch(e => e);
+
     expect(error).not.toBeUndefined();
     expect(error.message).toBe(`could not find secret key for key id ${keyId}`);
     expect(error).toHaveProperty("keyId", keyId);
   });
 
-  test("with missing headers", async () => {
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingWithMissingHeaders", async () => {
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
 
     const headers = {};
@@ -109,17 +110,19 @@ describe("webhooks.unmarshal", () => {
       .unmarshal(validBody, headers)
       .then(() => undefined)
       .catch(e => e);
+
     expect(error).not.toBeUndefined();
     expect(error.message).toBe("could not find header 'X-GCS-Signature'");
   });
 
-  test("from string", async () => {
+  test("shouldReturnValidEventWhenUnmarshallingValidRequestFromString", async () => {
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
 
     const headers = {
       "x-gcs-signature": validSignature,
       "x-gcs-keyid": keyId
     };
+
     const event = await webhooksHelper.unmarshal(validBody, headers);
     expect(event.apiVersion).toBe("v1");
     expect(event.id).toBe("8ee793f6-4553-4749-85dc-f2ef095c5ab0");
@@ -128,13 +131,14 @@ describe("webhooks.unmarshal", () => {
     expect(event.type).toBe("payment.paid");
   });
 
-  test("from Buffer", async () => {
+  test("shouldReturnValidEventWhenUnmarshallingValidRequestFromByteArray", async () => {
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
 
     const headers = {
       "x-gcs-signature": validSignature,
       "x-gcs-keyid": keyId
     };
+
     const event = await webhooksHelper.unmarshal(Buffer.from(validBody), headers);
     expect(event.apiVersion).toBe("v1");
     expect(event.id).toBe("8ee793f6-4553-4749-85dc-f2ef095c5ab0");
@@ -143,22 +147,24 @@ describe("webhooks.unmarshal", () => {
     expect(event.type).toBe("payment.paid");
   });
 
-  test("from invalid body", async () => {
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingInvalidBody", async () => {
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
 
     const headers = {
       "x-gcs-signature": validSignature,
       "x-gcs-keyid": keyId
     };
+
     const error = await webhooksHelper
       .unmarshal(invalidBody, headers)
       .then(() => undefined)
       .catch(e => e);
+
     expect(error).not.toBeUndefined();
     expect(error.message).toBe(`failed to validate signature '${validSignature}'`);
   });
 
-  test("with invalid secret key", async () => {
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingWithInvalidSecretKey", async () => {
     const invalidSecretKey = "1" + secretKey;
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, invalidSecretKey);
 
@@ -166,15 +172,17 @@ describe("webhooks.unmarshal", () => {
       "x-gcs-signature": validSignature,
       "x-gcs-keyid": keyId
     };
+
     const error = await webhooksHelper
       .unmarshal(validBody, headers)
       .then(() => undefined)
       .catch(e => e);
+
     expect(error).not.toBeUndefined();
     expect(error.message).toBe(`failed to validate signature '${validSignature}'`);
   });
 
-  test("with invalid signature", async () => {
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingWithInvalidSignature", async () => {
     webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
 
     const invalidSignature = "1" + validSignature;
@@ -182,10 +190,151 @@ describe("webhooks.unmarshal", () => {
       "x-gcs-signature": invalidSignature,
       "x-gcs-keyid": keyId
     };
+
     const error = await webhooksHelper
       .unmarshal(validBody, headers)
       .then(() => undefined)
       .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe(`failed to validate signature '${invalidSignature}'`);
+  });
+
+  test("shouldThrowApiVersionMismatchExceptionWhenUnmarshallingApiVersionMismatch", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const mismatchBody = validBody.replace('"apiVersion": "v1"', '"apiVersion": "v2"');
+    const mismatchSignature = crypto
+      .createHmac("sha256", secretKey)
+      .update(mismatchBody)
+      .digest("base64");
+    const headers = {
+      "x-gcs-signature": mismatchSignature,
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(mismatchBody, headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error).toBeInstanceOf(ApiVersionMismatchError);
+    expect(error.eventApiVersion).toBe("v2");
+    expect(error.sdkApiVersion).toBe("v1");
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingWithDuplicateHeaders", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const headers = {
+      "x-gcs-signature": [validSignature, validSignature],
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(validBody, headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe("found multiple values for header 'X-GCS-Signature'");
+  });
+
+  test("shouldThrowSecretKeyNotAvailableExceptionWhenUnmarshallingBufferWithoutAvailableSecretKey", async () => {
+    const headers = {
+      "x-gcs-signature": validSignature,
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(validBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe(`could not find secret key for key id ${keyId}`);
+    expect(error).toHaveProperty("keyId", keyId);
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingBufferWithMissingHeaders", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const headers = {};
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(validBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe("could not find header 'X-GCS-Signature'");
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingBufferWithDuplicateHeaders", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const headers = {
+      "x-gcs-signature": [validSignature, validSignature],
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(validBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe("found multiple values for header 'X-GCS-Signature'");
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingInvalidBufferBody", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const headers = {
+      "x-gcs-signature": validSignature,
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(invalidBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe(`failed to validate signature '${validSignature}'`);
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingBufferWithInvalidSecretKey", async () => {
+    const invalidSecretKey = "1" + secretKey;
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, invalidSecretKey);
+
+    const headers = {
+      "x-gcs-signature": validSignature,
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(validBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+
+    expect(error).not.toBeUndefined();
+    expect(error.message).toBe(`failed to validate signature '${validSignature}'`);
+  });
+
+  test("shouldThrowSignatureValidationExceptionWhenUnmarshallingBufferWithInvalidSignature", async () => {
+    webhooks.inMemorySecretKeyStore.storeSecretKey(keyId, secretKey);
+
+    const invalidSignature = "1" + validSignature;
+    const headers = {
+      "x-gcs-signature": invalidSignature,
+      "x-gcs-keyid": keyId
+    };
+
+    const error = await webhooksHelper
+      .unmarshal(Buffer.from(validBody), headers)
+      .then(() => undefined)
+      .catch(e => e);
+
     expect(error).not.toBeUndefined();
     expect(error.message).toBe(`failed to validate signature '${invalidSignature}'`);
   });

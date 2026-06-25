@@ -1,4 +1,4 @@
-import { Configuration } from "../../../src/model";
+import { Configuration } from "../../../src";
 import { newSdkContext } from "../../../src/utils/context";
 import { dummySdkConfig } from "../../auth_config";
 
@@ -39,6 +39,27 @@ describe("context.shoppingCartExtension", () => {
     expect(() => newSdkContext(configuration)).toThrowError(
       "shoppingCartExtension is missing a required property (creator / name / version). Your shoppingCartExtension: " + JSON.stringify(configuration.shoppingCartExtension)
     );
+  });
+
+  test("shouldThrowWhenCreatorIsNull", () => {
+    const configuration: Configuration = dummySdkConfig();
+    configuration.shoppingCartExtension = { creator: null as any, name: "name", version: "1.0" };
+
+    expect(() => newSdkContext(configuration)).toThrow();
+  });
+
+  test("shouldThrowWhenNameIsNull", () => {
+    const configuration: Configuration = dummySdkConfig();
+    configuration.shoppingCartExtension = { creator: "creator", name: null as any, version: "1.0" };
+
+    expect(() => newSdkContext(configuration)).toThrow();
+  });
+
+  test("shouldThrowWhenVersionIsNull", () => {
+    const configuration: Configuration = dummySdkConfig();
+    configuration.shoppingCartExtension = { creator: "creator", name: "name", version: null as any };
+
+    expect(() => newSdkContext(configuration)).toThrow();
   });
 
   test("can be set", () => {

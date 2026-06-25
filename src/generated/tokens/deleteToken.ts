@@ -7,7 +7,6 @@ import { ErrorResponse } from "../model/domain/index.js";
 
 export function deleteToken(sdkContext: SdkContext): (merchantId: string, tokenId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
   return function(merchantId, tokenId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
-
     return json(
       {
         method: "DELETE",

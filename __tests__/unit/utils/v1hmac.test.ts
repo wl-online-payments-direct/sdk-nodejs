@@ -1,5 +1,5 @@
 import { V1HmacAuthenticator } from "../../../src/utils/authentication";
-import { Header, V1HmacConfiguration } from "../../../src/model";
+import { Header, V1HmacConfiguration } from "../../../src";
 
 /**
  * @group unit

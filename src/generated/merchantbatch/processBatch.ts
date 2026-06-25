@@ -9,7 +9,6 @@ export function processBatch(
   sdkContext: SdkContext
 ): (merchantId: string, merchantBatchReference: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
   return function(merchantId, merchantBatchReference, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
-
     return json(
       {
         method: "POST",

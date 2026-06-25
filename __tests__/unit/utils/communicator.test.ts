@@ -239,6 +239,25 @@ describe("communicator", () => {
     expect(error.message).toBe(errorMessage);
   });
 
+  test("shouldNotSendContentEncodingGzipHeaderWhenGzipIsDisabled", async () => {
+    nock("http://test", { badheaders: ["Content-Encoding"] })
+      .post("/api/batch")
+      .reply(200, { ok: true });
+
+    const response = await communicator.json(
+      {
+        method: "POST",
+        modulePath: "/api/batch",
+        body: { header: { operationType: "CreatePayment", itemCount: 2 } },
+        paymentContext: { gzip: false }
+      },
+      sdkContext
+    );
+
+    expect(response.isSuccess).toBe(true);
+    expect(response.status).toBe(200);
+  });
+
   test("sendJSON compresses JSON body when Content-Encoding: gzip is set", done => {
     const httpServer = http.createServer((request, response) => {
       const requestChunks: Buffer[] = [];

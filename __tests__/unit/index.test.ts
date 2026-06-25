@@ -1,6 +1,6 @@
 import { v4 as newUUID } from "uuid";
 import { assertSuccess } from "../../src";
-import { SdkApiError, SdkBinaryResponse, SdkResponse } from "../../src/model";
+import { SdkApiError, SdkBinaryResponse, SdkResponse } from "../../src";
 import { Readable } from "stream";
 
 interface TestResponse {

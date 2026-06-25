@@ -1,102 +1,88 @@
-import express from "express";
-import request from "supertest";
-import bodyParser from "body-parser";
-import { webhooks } from "../../src";
+import { randomUUID } from "crypto";
+import client, { config } from "./init";
+import { ValidateCredentialsRequestBuilder } from "./builders/webhooks/ValidateCredentialsRequestBuilder";
+import { SendTestRequestBuilder } from "./builders/webhooks/SendTestRequestBuilder";
+import { ValidateCredentialsResponse } from "../../src/generated/model/domain/index.js";
 
-const app = express();
+const VALID_WEBHOOK_KEY = "test-key";
+const VALID_WEBHOOK_SECRET = "test-secret";
+const INVALID_WEBHOOK_URL = "invalid-url";
+const VALID_WEBHOOK_URL = "https://example.com/webhook";
 
-const secretKeyStore = webhooks.inMemorySecretKeyStore;
-const webhooksHelper = webhooks.init(secretKeyStore);
+describe("validateWebhookCredentials", () => {
+  describe("with valid credentials", () => {
+    test("shouldReturnResultWhenCredentialsAreValid", async () => {
+      const response = await client.webhooks.validateWebhookCredentials(
+        config.merchantId,
+        new ValidateCredentialsRequestBuilder()
+          .withKey(VALID_WEBHOOK_KEY)
+          .withSecret(VALID_WEBHOOK_SECRET)
+          .build()
+      );
 
-const keyId = "dummy-key-id";
-secretKeyStore.storeSecretKey(keyId, "hello+world");
+      expect(response.isSuccess).toBe(true);
 
-app.use(
-  bodyParser.raw({
-    type: "*/*"
-  })
-);
-app.post("/webhooks/event", (req, res) => {
-  webhooksHelper
-    .unmarshal(req.body, req.headers)
-    .then(event => {
-      if (event) {
-        res.status(200).json(event);
-      } else {
-        res.status(204).send("");
-      }
-    })
-    .catch(e => res.status(500).json(e));
+      const body = response.body as ValidateCredentialsResponse;
+      expect(body.result).toBeDefined();
+    });
+
+    test("shouldReturnResultWhenCallContextIsProvided", async () => {
+      const response = await client.webhooks.validateWebhookCredentials(
+        config.merchantId,
+        new ValidateCredentialsRequestBuilder()
+          .withKey(VALID_WEBHOOK_KEY)
+          .withSecret(VALID_WEBHOOK_SECRET)
+          .build(),
+        { idempotence: { key: `test-webhooks-${randomUUID()}` } }
+      );
+
+      expect(response.isSuccess).toBe(true);
+
+      const body = response.body as ValidateCredentialsResponse;
+      expect(body.result).toBeDefined();
+    });
+
+    test("shouldReturnInvalidResultWhenSecretIsIncorrect", async () => {
+      const response = await client.webhooks.validateWebhookCredentials(
+        config.merchantId,
+        new ValidateCredentialsRequestBuilder()
+          .withKey(VALID_WEBHOOK_KEY)
+          .withSecret("incorrect-secret")
+          .build()
+      );
+
+      expect(response.isSuccess).toBe(true);
+
+      const body = response.body as ValidateCredentialsResponse;
+      expect(body.result).toBeDefined();
+      expect(body.result).toBe("Invalid");
+    });
+  });
 });
 
-const validBody = `{
-  "apiVersion": "v1",
-  "id": "8ee793f6-4553-4749-85dc-f2ef095c5ab0",
-  "created": "2017-02-02T11:24:14.040+0100",
-  "merchantId": "20000",
-  "type": "payment.paid",
-  "payment": {
-    "id": "00000200000143570012",
-    "paymentOutput": {
-      "amountOfMoney": {
-        "amount": 1000,
-        "currencyCode": "EUR"
-      },
-      "references": {
-        "paymentReference": "200001681810"
-      },
-      "paymentMethod": "bankTransfer",
-      "bankTransferPaymentMethodSpecificOutput": {
-        "paymentProductId": 11
-      }
-    },
-    "status": "PAID",
-    "statusOutput": {
-      "isCancellable": false,
-      "statusCategory": "COMPLETED",
-      "statusCode": 1000,
-      "statusCodeChangeDateTime": "20170202112414",
-      "isAuthorized": true
-    }
-  }
-}`.replace(/\r\n/, "\n");
+describe("sendTestWebhook", () => {
+  describe("without webhook configuration", () => {
+    test("shouldReturn400WhenWebhookIsNotConfigured", async () => {
+      const response = await client.webhooks.sendTestWebhook(config.merchantId, new SendTestRequestBuilder().withUrl(VALID_WEBHOOK_URL).build());
 
-const validSignature = "2S7doBj/GnJnacIjSJzr5fxGM5xmfQyFAwxv1I53ZEk=";
+      expect(response.isSuccess).toBe(false);
+      expect(response.status).toBe(400);
+    });
 
-/**
- * @group integration
- */
-describe("webhooks", () => {
-  test("when received event from express", done => {
-    request(app)
-      .post("/webhooks/event")
-      .send(validBody)
-      .set({
-        "Content-Type": "application/json",
-        "X-GCS-Signature": validSignature,
-        "X-GCS-KeyId": keyId
-      })
-      .expect(200)
-      .expect("Content-Type", /application\/json(;.*)?/)
-      .expect(response => {
-        const event = response.body;
-        expect(event).not.toBeNull();
-        expect(event.apiVersion).toBe("v1");
-        expect(event.id).toBe("8ee793f6-4553-4749-85dc-f2ef095c5ab0");
-        expect(event.created).toBe("2017-02-02T11:24:14.040+0100");
-        expect(event.merchantId).toBe("20000");
-        expect(event.type).toBe("payment.paid");
+    test("shouldReturn400WhenWebhookIsNotConfiguredAndNoUrlIsProvided", async () => {
+      const response = await client.webhooks.sendTestWebhook(config.merchantId, new SendTestRequestBuilder().build());
 
-        expect(event.refund).toBeUndefined();
-        expect(event.payout).toBeUndefined();
-        expect(event.token).toBeUndefined();
+      expect(response.isSuccess).toBe(false);
+      expect(response.status).toBe(400);
+    });
+  });
 
-        expect(event.payment).not.toBeUndefined();
-        expect(event.payment).not.toBeNull();
-        expect(event.payment.id).toBe("00000200000143570012");
-      })
-      .end(error => {
-        done(error);
-      });
+  describe("with invalid url", () => {
+    test("shouldReturn400WhenUrlIsInvalid", async () => {
+      const response = await client.webhooks.sendTestWebhook(config.merchantId, new SendTestRequestBuilder().withUrl(INVALID_WEBHOOK_URL).build());
+
+      expect(response.isSuccess).toBe(false);
+      expect(response.status).toBe(400);
+    });
   });
 });

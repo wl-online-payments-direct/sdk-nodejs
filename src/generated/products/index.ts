@@ -15,6 +15,6 @@ export function newProductsClient(sdkContext: SdkContext): ProductsClient {
     getPaymentProduct: getPaymentProduct(sdkContext),
     getPaymentProductNetworks: getPaymentProductNetworks(sdkContext),
     getProductDirectory: getProductDirectory(sdkContext),
-    createPaymentProductSession: createPaymentProductSession(sdkContext),
+    createPaymentProductSession: createPaymentProductSession(sdkContext)
   };
 }

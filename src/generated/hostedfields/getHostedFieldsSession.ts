@@ -9,7 +9,6 @@ export function getHostedFieldsSession(
   sdkContext: SdkContext
 ): (merchantId: string, sessionId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetHostedFieldsSessionResponse, ProblemDetailsResponse>> {
   return function(merchantId, sessionId, paymentContext): Promise<SdkResponse<GetHostedFieldsSessionResponse, ProblemDetailsResponse>> {
-
     return json(
       {
         method: "GET",

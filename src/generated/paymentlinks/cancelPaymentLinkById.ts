@@ -9,7 +9,6 @@ export function cancelPaymentLinkById(
   sdkContext: SdkContext
 ): (merchantId: string, paymentLinkId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<void, ErrorResponse>> {
   return function(merchantId, paymentLinkId, paymentContext): Promise<SdkResponse<void, ErrorResponse>> {
-
     return json(
       {
         method: "POST",

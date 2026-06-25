@@ -9,7 +9,6 @@ export function getPaymentDetails(
   sdkContext: SdkContext
 ): (merchantId: string, paymentId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<PaymentDetailsResponse, ErrorResponse>> {
   return function(merchantId, paymentId, paymentContext): Promise<SdkResponse<PaymentDetailsResponse, ErrorResponse>> {
-
     return json(
       {
         method: "GET",
