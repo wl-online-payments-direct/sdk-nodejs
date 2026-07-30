@@ -478,6 +478,15 @@ export interface CardPaymentMethodSpecificOutput {
   token?: string | null;
 }
 
+export interface CardPaymentMethodSpecificOutputSummary {
+  card?: CardPaymentMethodSpecificOutputSummaryCard | null;
+  token?: string | null;
+}
+
+export interface CardPaymentMethodSpecificOutputSummaryCard {
+  cardNumber?: string | null;
+}
+
 export interface CardPayoutMethodSpecificInput {
   card?: Card | null;
   paymentProductId?: number | null;
@@ -560,10 +569,12 @@ export interface CreateHostedCheckoutResponse {
 
 export interface CreateHostedFieldsSessionRequest {
   locale?: string | null;
+  origin?: string | null;
   tokens?: string[] | null;
 }
 
 export interface CreateHostedFieldsSessionResponse {
+  hostedFieldsSessionId?: string | null;
   invalidTokens?: string[] | null;
   sdkSri?: string | null;
   sdkUrl?: string | null;
@@ -741,6 +752,11 @@ export interface CurrencyConversionResult {
 
 export interface CurrencyConversionSpecificInput {
   dccEnabled?: boolean | null;
+}
+
+export interface CursorPaginationInfo {
+  hasMore?: boolean | null;
+  nextCursor?: string | null;
 }
 
 export interface Customer {
@@ -1111,6 +1127,7 @@ export interface MandateAddressResponse {
 
 export interface MandateContactDetails {
   emailAddress?: string | null;
+  phoneNumber?: string | null;
 }
 
 export interface MandateCustomer {
@@ -1293,8 +1310,11 @@ export interface OperationOutput {
 }
 
 export interface OperationPaymentReferences {
+  merchantComment?: string | null;
+  merchantReconciliationReference?: string | null;
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  softDescriptor?: string | null;
   structuredCreditorReference?: string | null;
 }
 
@@ -1326,9 +1346,12 @@ export interface OrderLineDetails {
 
 export interface OrderReferences {
   descriptor?: string | null;
+  merchantComment?: string | null;
   merchantParameters?: string | null;
+  merchantReconciliationReference?: string | null;
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  softDescriptor?: string | null;
   structuredCreditorReference?: string | null;
 }
 
@@ -1440,6 +1463,13 @@ export interface PaymentOutput {
   references?: PaymentReferences | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
+  transactionDate?: string | null;
+}
+
+export interface PaymentOutputSummary {
+  amountOfMoney?: AmountOfMoney | null;
+  cardPaymentMethodSpecificOutput?: CardPaymentMethodSpecificOutputSummary | null;
+  references?: PaymentReferences | null;
   transactionDate?: string | null;
 }
 
@@ -1724,9 +1754,12 @@ export interface PaymentProductSessionResponse {
 }
 
 export interface PaymentReferences {
+  merchantComment?: string | null;
   merchantParameters?: string | null;
+  merchantReconciliationReference?: string | null;
   merchantReference?: string | null;
   operationGroupReference?: string | null;
+  softDescriptor?: string | null;
   structuredCreditorReference?: string | null;
 }
 
@@ -1748,6 +1781,25 @@ export interface PaymentStatusOutput {
   statusCategory?: string | null;
   statusCode?: number | null;
   statusCodeChangeDateTime?: string | null;
+}
+
+export interface PaymentStatusOutputSummary {
+  errors?: APIError[] | null;
+  statusCategory?: string | null;
+  statusCode?: number | null;
+  statusCodeChangeDateTime?: string | null;
+}
+
+export interface PaymentSummary {
+  id?: string | null;
+  paymentOutput?: PaymentOutputSummary | null;
+  status?: string | null;
+  statusOutput?: PaymentStatusOutputSummary | null;
+}
+
+export interface PaymentsReportResponse {
+  pagination?: CursorPaginationInfo | null;
+  payments?: PaymentSummary[] | null;
 }
 
 export interface PayoutCardPaymentMethodSpecificOutput {

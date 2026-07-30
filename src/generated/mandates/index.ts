@@ -15,6 +15,6 @@ export function newMandatesClient(sdkContext: SdkContext): MandatesClient {
     getMandate: getMandate(sdkContext),
     blockMandate: blockMandate(sdkContext),
     unblockMandate: unblockMandate(sdkContext),
-    revokeMandate: revokeMandate(sdkContext)
+    revokeMandate: revokeMandate(sdkContext),
   };
 }

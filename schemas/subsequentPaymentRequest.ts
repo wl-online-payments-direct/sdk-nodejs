@@ -670,13 +670,22 @@ const schema = {
         "descriptor" : {
           "type" : "string"
         },
+        "merchantComment" : {
+          "type" : "string"
+        },
         "merchantParameters" : {
+          "type" : "string"
+        },
+        "merchantReconciliationReference" : {
           "type" : "string"
         },
         "merchantReference" : {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "softDescriptor" : {
           "type" : "string"
         },
         "structuredCreditorReference" : {

@@ -10,6 +10,7 @@ export function getPaymentProducts(
   sdkContext: SdkContext
 ): (merchantId: string, params: GetPaymentProductsParams) => Promise<SdkResponse<GetPaymentProductsResponse, ErrorResponse>> {
   return function(merchantId, params): Promise<SdkResponse<GetPaymentProductsResponse, ErrorResponse>> {
+
     return json(
       {
         method: "GET",

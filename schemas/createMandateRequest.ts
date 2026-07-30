@@ -64,6 +64,9 @@ const schema = {
       "properties" : {
         "emailAddress" : {
           "type" : "string"
+        },
+        "phoneNumber" : {
+          "type" : "string"
         }
       },
       "additionalProperties" : false

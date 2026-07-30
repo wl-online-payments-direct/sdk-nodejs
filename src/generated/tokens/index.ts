@@ -11,6 +11,6 @@ export function newTokensClient(sdkContext: SdkContext): TokensClient {
   return {
     createToken: createToken(sdkContext),
     getToken: getToken(sdkContext),
-    deleteToken: deleteToken(sdkContext)
+    deleteToken: deleteToken(sdkContext),
   };
 }

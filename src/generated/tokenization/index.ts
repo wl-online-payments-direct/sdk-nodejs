@@ -11,6 +11,6 @@ export function newTokenizationClient(sdkContext: SdkContext): TokenizationClien
   return {
     createCertificate: createCertificate(sdkContext),
     getCardDataByTokens: getCardDataByTokens(sdkContext),
-    getCardDataByPayments: getCardDataByPayments(sdkContext)
+    getCardDataByPayments: getCardDataByPayments(sdkContext),
   };
 }

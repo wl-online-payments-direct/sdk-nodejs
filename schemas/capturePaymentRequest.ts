@@ -45,10 +45,19 @@ const schema = {
     "operationPaymentReferences" : {
       "type" : "object",
       "properties" : {
+        "merchantComment" : {
+          "type" : "string"
+        },
+        "merchantReconciliationReference" : {
+          "type" : "string"
+        },
         "merchantReference" : {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "softDescriptor" : {
           "type" : "string"
         },
         "structuredCreditorReference" : {
@@ -60,13 +69,22 @@ const schema = {
     "paymentReferences" : {
       "type" : "object",
       "properties" : {
+        "merchantComment" : {
+          "type" : "string"
+        },
         "merchantParameters" : {
+          "type" : "string"
+        },
+        "merchantReconciliationReference" : {
           "type" : "string"
         },
         "merchantReference" : {
           "type" : "string"
         },
         "operationGroupReference" : {
+          "type" : "string"
+        },
+        "softDescriptor" : {
           "type" : "string"
         },
         "structuredCreditorReference" : {

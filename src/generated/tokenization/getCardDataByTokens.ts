@@ -10,6 +10,7 @@ export function getCardDataByTokens(
   sdkContext: SdkContext
 ): (merchantId: string, params: GetCardDataByTokensParams) => Promise<SdkResponse<DetokenizationResponse, ErrorResponse>> {
   return function(merchantId, params): Promise<SdkResponse<DetokenizationResponse, ErrorResponse>> {
+
     return json(
       {
         method: "GET",

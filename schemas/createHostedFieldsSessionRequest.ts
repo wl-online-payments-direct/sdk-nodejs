@@ -5,6 +5,9 @@ const schema = {
     "locale" : {
       "type" : "string"
     },
+    "origin" : {
+      "type" : "string"
+    },
     "tokens" : {
       "type" : "array",
       "items" : {

@@ -4,6 +4,7 @@
 import { submitBatch } from "./submitBatch.js";
 import { processBatch } from "./processBatch.js";
 import { getBatchStatus } from "./getBatchStatus.js";
+import { getPaymentsReport } from "./getPaymentsReport.js";
 import { SdkContext } from "../../model/index.js";
 import { MerchantBatchClient } from "../model/merchantbatch/index.js";
 
@@ -11,6 +12,7 @@ export function newMerchantBatchClient(sdkContext: SdkContext): MerchantBatchCli
   return {
     submitBatch: submitBatch(sdkContext),
     processBatch: processBatch(sdkContext),
-    getBatchStatus: getBatchStatus(sdkContext)
+    getBatchStatus: getBatchStatus(sdkContext),
+    getPaymentsReport: getPaymentsReport(sdkContext),
   };
 }

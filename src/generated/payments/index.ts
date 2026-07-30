@@ -17,6 +17,6 @@ export function newPaymentsClient(sdkContext: SdkContext): PaymentsClient {
     getPaymentDetails: getPaymentDetails(sdkContext),
     cancelPayment: cancelPayment(sdkContext),
     capturePayment: capturePayment(sdkContext),
-    refundPayment: refundPayment(sdkContext)
+    refundPayment: refundPayment(sdkContext),
   };
 }
