@@ -1213,6 +1213,7 @@ export interface MobilePaymentMethodHostedCheckoutSpecificInput {
 
 export interface MobilePaymentMethodSpecificInput {
   authorizationMode?: string | null;
+  autoCapture?: AutoCapture | null;
   decryptedPaymentData?: DecryptedPaymentData | null;
   encryptedPaymentData?: string | null;
   ephemeralKey?: string | null;

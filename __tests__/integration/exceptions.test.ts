@@ -5,7 +5,7 @@ import { CreatePaymentRequestBuilder } from "./builders/common/CreatePaymentRequ
 import { CreatePayoutRequestBuilder } from "./builders/payouts/CreatePayoutRequestBuilder";
 import { CapturePaymentRequestBuilder } from "./builders/payments/CapturePaymentRequestBuilder";
 import { RefundRequestBuilder } from "./builders/payments/RefundRequestBuilder";
-import { ErrorResponse, PaymentErrorResponse, PayoutErrorResponse, RefundErrorResponse } from "../../src/generated/model/domain/index.js";
+import { ErrorResponse, PaymentErrorResponse, RefundErrorResponse } from "../../src/generated/model/domain/index.js";
 
 const NON_EXISTING_PAYMENT_ID = "9999999999_0";
 const INVALID_MERCHANT_ID = "000000";
@@ -77,6 +77,20 @@ describe("Exceptions", () => {
         expect(error.httpStatusCode).toBe(400);
       }
     });
+
+    test("shouldReturnValidationExceptionForDeclinedCard", async () => {
+      const request = new CreatePayoutRequestBuilder().withCardNumber("4321456998744563").build();
+      const response = await client.payouts.createPayout(config.merchantId, request);
+
+      expect(response.isSuccess).toBe(false);
+      expect(response.status).toBeGreaterThanOrEqual(400);
+
+      const body = response.body as ErrorResponse;
+      for (const error of body.errors!) {
+        expect(error.id).toBeTruthy();
+        expect(error.id).toBe("INVALID_CARD");
+      }
+    });
   });
 
   describe("WhenTestingAuthorizationException", () => {
@@ -108,21 +122,6 @@ describe("Exceptions", () => {
       expect(body.paymentResult!.payment).toBeDefined();
       expect(body.paymentResult!.payment!.id).toBeTruthy();
       expect(body.paymentResult!.payment!.status).toBe("REJECTED");
-    });
-  });
-
-  describe("WhenTestingDeclinedPayoutException", () => {
-    test("shouldReturnDeclinedPayoutForDeclinedCard", async () => {
-      const request = new CreatePayoutRequestBuilder().withCardNumber("4321456998744563").build();
-      const response = await client.payouts.createPayout(config.merchantId, request);
-
-      expect(response.isSuccess).toBe(false);
-      expect(response.status).toBeGreaterThanOrEqual(400);
-
-      const body = response.body as PayoutErrorResponse;
-      expect(body.payoutResult).toBeDefined();
-      expect(body.payoutResult!.id).toBeTruthy();
-      expect(body.payoutResult!.status).toBe("REJECTED_CREDIT");
     });
   });
 

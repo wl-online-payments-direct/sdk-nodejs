@@ -1495,6 +1495,9 @@ const schema = {
         "authorizationMode" : {
           "type" : "string"
         },
+        "autoCapture" : {
+          "$ref" : "#/definitions/autoCapture"
+        },
         "decryptedPaymentData" : {
           "$ref" : "#/definitions/decryptedPaymentData"
         },
