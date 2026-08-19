@@ -1521,8 +1521,8 @@ const schema = {
     "redirectPaymentProduct11SpecificInput" : {
       "type" : "object",
       "properties" : {
-        "firstInstallmentPaymentDate" : {
-          "type" : "string"
+        "skipEmailValidation" : {
+          "type" : "boolean"
         }
       },
       "additionalProperties" : false

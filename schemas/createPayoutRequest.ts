@@ -59,6 +59,9 @@ const schema = {
         "card" : {
           "$ref" : "#/definitions/card"
         },
+        "hostedFieldsSessionId" : {
+          "type" : "string"
+        },
         "paymentProductId" : {
           "type" : "integer"
         },

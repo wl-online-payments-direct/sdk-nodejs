@@ -489,6 +489,7 @@ export interface CardPaymentMethodSpecificOutputSummaryCard {
 
 export interface CardPayoutMethodSpecificInput {
   card?: Card | null;
+  hostedFieldsSessionId?: string | null;
   paymentProductId?: number | null;
   payoutReason?: string | null;
   token?: string | null;
@@ -502,6 +503,16 @@ export interface CardSource {
   card?: SurchargeCalculationCard | null;
   encryptedCustomerInput?: string | null;
   hostedTokenizationId?: string | null;
+  token?: string | null;
+}
+
+export interface CardToken {
+  cardholderName?: string | null;
+  expiryDate?: string | null;
+  logoUrl?: string | null;
+  maskedPan?: string | null;
+  paymentProductId?: number | null;
+  productName?: string | null;
   token?: string | null;
 }
 
@@ -1490,6 +1501,14 @@ export interface PaymentProduct {
   usesRedirectionTo3rdParty?: boolean | null;
 }
 
+export interface PaymentProduct11 {
+  paymentBIC?: string | null;
+  paymentBeneficiary?: string | null;
+  paymentIBAN?: string | null;
+  paymentReference?: string | null;
+  qrCode?: string | null;
+}
+
 export interface PaymentProduct130SpecificInput {
   threeDSecure?: PaymentProduct130SpecificThreeDSecure | null;
 }
@@ -1971,7 +1990,7 @@ export interface RedirectPaymentMethodSpecificOutput {
 }
 
 export interface RedirectPaymentProduct11SpecificInput {
-  firstInstallmentPaymentDate?: string | null;
+  skipEmailValidation?: boolean | null;
 }
 
 export interface RedirectPaymentProduct3103SpecificInput {
@@ -2216,7 +2235,7 @@ export interface SessionData {
   locale?: string | null;
   platformUrl?: string | null;
   sessionToken?: string | null;
-  tokens?: string[] | null;
+  tokens?: CardToken[] | null;
 }
 
 export interface SessionDetails {
@@ -2273,6 +2292,7 @@ export interface ShoppingCart {
 }
 
 export interface ShowFormData {
+  paymentProduct11?: PaymentProduct11 | null;
   paymentProduct3012?: PaymentProduct3012 | null;
   paymentProduct350?: PaymentProduct350 | null;
   paymentProduct5001?: PaymentProduct5001 | null;
