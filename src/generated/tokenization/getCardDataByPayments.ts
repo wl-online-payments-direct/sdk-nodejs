@@ -10,7 +10,6 @@ export function getCardDataByPayments(
   sdkContext: SdkContext
 ): (merchantId: string, params: GetCardDataByPaymentsParams) => Promise<SdkResponse<DetokenizationResponse, ErrorResponse>> {
   return function(merchantId, params): Promise<SdkResponse<DetokenizationResponse, ErrorResponse>> {
-
     return json(
       {
         method: "GET",

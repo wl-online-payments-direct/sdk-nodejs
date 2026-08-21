@@ -9,7 +9,6 @@ export function getBatchStatus(
   sdkContext: SdkContext
 ): (merchantId: string, merchantBatchReference: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetBatchStatusResponse, ErrorResponse>> {
   return function(merchantId, merchantBatchReference, paymentContext): Promise<SdkResponse<GetBatchStatusResponse, ErrorResponse>> {
-
     return json(
       {
         method: "GET",

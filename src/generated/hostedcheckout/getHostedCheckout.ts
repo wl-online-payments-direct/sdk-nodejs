@@ -9,7 +9,6 @@ export function getHostedCheckout(
   sdkContext: SdkContext
 ): (merchantId: string, hostedCheckoutId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<GetHostedCheckoutResponse, ErrorResponse>> {
   return function(merchantId, hostedCheckoutId, paymentContext): Promise<SdkResponse<GetHostedCheckoutResponse, ErrorResponse>> {
-
     return json(
       {
         method: "GET",

@@ -10,7 +10,6 @@ export function getPaymentsReport(
   sdkContext: SdkContext
 ): (merchantId: string, merchantBatchReference: string, params: GetPaymentsReportParams) => Promise<SdkResponse<PaymentsReportResponse, ErrorResponse>> {
   return function(merchantId, merchantBatchReference, params): Promise<SdkResponse<PaymentsReportResponse, ErrorResponse>> {
-
     return json(
       {
         method: "GET",

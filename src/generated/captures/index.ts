@@ -7,6 +7,6 @@ import { CapturesClient } from "../model/captures/index.js";
 
 export function newCapturesClient(sdkContext: SdkContext): CapturesClient {
   return {
-    getCaptures: getCaptures(sdkContext),
+    getCaptures: getCaptures(sdkContext)
   };
 }

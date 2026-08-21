@@ -7,7 +7,6 @@ import { ErrorResponse, TestConnection } from "../model/domain/index.js";
 
 export function testConnection(sdkContext: SdkContext): (merchantId: string, paymentContext?: PaymentContext | null) => Promise<SdkResponse<TestConnection, ErrorResponse>> {
   return function(merchantId, paymentContext): Promise<SdkResponse<TestConnection, ErrorResponse>> {
-
     return json(
       {
         method: "GET",

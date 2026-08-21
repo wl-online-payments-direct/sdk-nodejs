@@ -13,6 +13,6 @@ export function newMerchantBatchClient(sdkContext: SdkContext): MerchantBatchCli
     submitBatch: submitBatch(sdkContext),
     processBatch: processBatch(sdkContext),
     getBatchStatus: getBatchStatus(sdkContext),
-    getPaymentsReport: getPaymentsReport(sdkContext),
+    getPaymentsReport: getPaymentsReport(sdkContext)
   };
 }
