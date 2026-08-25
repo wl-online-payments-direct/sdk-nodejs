@@ -506,6 +506,16 @@ export interface CardSource {
   token?: string | null;
 }
 
+export interface CardToken {
+  cardholderName?: string | null;
+  expiryDate?: string | null;
+  logoUrl?: string | null;
+  maskedPan?: string | null;
+  paymentProductId?: number | null;
+  productName?: string | null;
+  token?: string | null;
+}
+
 export interface CardWithoutCvv {
   cardNumber?: string | null;
   cardholderName?: string | null;
@@ -575,6 +585,7 @@ export interface CreateHostedFieldsSessionRequest {
 }
 
 export interface CreateHostedFieldsSessionResponse {
+  cardTokens?: CardToken[] | null;
   hostedFieldsSessionId?: string | null;
   invalidTokens?: string[] | null;
   sdkSri?: string | null;
