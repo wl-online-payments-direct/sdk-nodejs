@@ -3,35 +3,80 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "amountOfMoney" : {
-      "$ref" : "#/definitions/amountOfMoney"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/amountOfMoney"
+        },
+        { "type" : "null" }
+      ]
     },
     "captureId" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "isFinal" : {
-      "type" : "boolean"
+      "anyOf" : [
+        {
+          "type" : "boolean"
+        },
+        { "type" : "null" }
+      ]
     },
     "lineItemDetails" : {
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/definitions/lineItemDetail"
-      },
-      "uniqueItems" : false
+      "anyOf" : [
+        {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/lineItemDetail"
+          },
+          "uniqueItems" : false
+        },
+        { "type" : "null" }
+      ]
     },
     "omnichannelRefundSpecificInput" : {
-      "$ref" : "#/definitions/omnichannelRefundSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/omnichannelRefundSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "operationReferences" : {
-      "$ref" : "#/definitions/operationPaymentReferences"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/operationPaymentReferences"
+        },
+        { "type" : "null" }
+      ]
     },
     "reason" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "references" : {
-      "$ref" : "#/definitions/paymentReferences"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/paymentReferences"
+        },
+        { "type" : "null" }
+      ]
     },
     "refundRedirectPaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/refundRedirectPaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/refundRedirectPaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -40,10 +85,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -52,13 +107,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "discountAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "lineItemId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "quantity" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -67,7 +137,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "operatorId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -76,22 +151,52 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -100,25 +205,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantParameters" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -127,7 +267,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "refundRedirectPaymentProduct900SpecificInput" : {
-          "$ref" : "#/definitions/refundRedirectPaymentProduct900SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/refundRedirectPaymentProduct900SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -136,7 +281,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "refundReason" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

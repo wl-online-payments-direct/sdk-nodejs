@@ -48,10 +48,12 @@ describe("CofSeries", () => {
     });
 
     describe("with invalid input", () => {
-      test("shouldThrowValidationException", () => {
+      test("shouldThrowValidationException", async () => {
         const request = new ImportCofSeriesRequestBuilder().withSchemeReferenceData(null).build();
+        const response = await client.cofSeries.importCofSeries(config.merchantId, request);
 
-        expect(() => client.cofSeries.importCofSeries(config.merchantId, request)).toThrow();
+        expect(response.isSuccess).toBe(false);
+        expect(response.status).toBe(400);
       });
     });
 

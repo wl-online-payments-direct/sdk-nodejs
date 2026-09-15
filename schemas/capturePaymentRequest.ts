@@ -3,26 +3,56 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "amount" : {
-      "type" : "integer"
+      "anyOf" : [
+        {
+          "type" : "integer"
+        },
+        { "type" : "null" }
+      ]
     },
     "isFinal" : {
-      "type" : "boolean"
+      "anyOf" : [
+        {
+          "type" : "boolean"
+        },
+        { "type" : "null" }
+      ]
     },
     "lineItemDetails" : {
-      "type" : "array",
-      "items" : {
-        "$ref" : "#/definitions/lineItemDetail"
-      },
-      "uniqueItems" : false
+      "anyOf" : [
+        {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/lineItemDetail"
+          },
+          "uniqueItems" : false
+        },
+        { "type" : "null" }
+      ]
     },
     "operationReferences" : {
-      "$ref" : "#/definitions/operationPaymentReferences"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/operationPaymentReferences"
+        },
+        { "type" : "null" }
+      ]
     },
     "references" : {
-      "$ref" : "#/definitions/paymentReferences"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/paymentReferences"
+        },
+        { "type" : "null" }
+      ]
     },
     "shipping" : {
-      "$ref" : "#/definitions/shippingDetail"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/shippingDetail"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -31,13 +61,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "discountAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "lineItemId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "quantity" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -46,22 +91,52 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -70,25 +145,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantParameters" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -97,10 +207,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "shippingCost" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "shippingCostTax" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

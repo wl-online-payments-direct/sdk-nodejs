@@ -3,10 +3,20 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "cardSource" : {
-      "$ref" : "#/definitions/dccCardSource"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/dccCardSource"
+        },
+        { "type" : "null" }
+      ]
     },
     "transaction" : {
-      "$ref" : "#/definitions/transaction"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/transaction"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -15,10 +25,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -27,10 +47,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -39,16 +69,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "card" : {
-          "$ref" : "#/definitions/cardInfo"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/cardInfo"
+            },
+            { "type" : "null" }
+          ]
         },
         "encryptedCustomerInput" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "hostedTokenizationId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "token" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -57,7 +107,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

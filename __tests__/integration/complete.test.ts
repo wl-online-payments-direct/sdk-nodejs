@@ -51,7 +51,10 @@ describe("Complete", () => {
 
         const request = new CompletePaymentRequestBuilder().withOrder(null).build();
 
-        expect(() => client.complete.completePayment(config.merchantId, paymentId, request)).toThrow();
+        const response = await client.complete.completePayment(config.merchantId, paymentId, request);
+
+        expect(response.isSuccess).toBe(false);
+        expect(response.status).toBe(400);
       });
     });
   });

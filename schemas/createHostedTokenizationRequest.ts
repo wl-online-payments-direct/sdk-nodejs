@@ -3,22 +3,52 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "askConsumerConsent" : {
-      "type" : "boolean"
+      "anyOf" : [
+        {
+          "type" : "boolean"
+        },
+        { "type" : "null" }
+      ]
     },
     "creditCardSpecificInput" : {
-      "$ref" : "#/definitions/creditCardSpecificInputHostedTokenization"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/creditCardSpecificInputHostedTokenization"
+        },
+        { "type" : "null" }
+      ]
     },
     "locale" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "paymentProductFilters" : {
-      "$ref" : "#/definitions/paymentProductFiltersHostedTokenization"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/paymentProductFiltersHostedTokenization"
+        },
+        { "type" : "null" }
+      ]
     },
     "tokens" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "variant" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -27,14 +57,24 @@ const schema = {
       "type" : "object",
       "properties" : {
         "ValidationRules" : {
-          "$ref" : "#/definitions/creditCardValidationRules"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/creditCardValidationRules"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductPreferredOrder" : {
-          "type" : "array",
-          "items" : {
-            "type" : "integer"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "integer"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -43,10 +83,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cvvMandatoryForExistingToken" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "cvvMandatoryForNewToken" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -55,11 +105,16 @@ const schema = {
       "type" : "object",
       "properties" : {
         "products" : {
-          "type" : "array",
-          "items" : {
-            "type" : "integer"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "integer"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -68,10 +123,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "exclude" : {
-          "$ref" : "#/definitions/paymentProductFilterHostedTokenization"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProductFilterHostedTokenization"
+            },
+            { "type" : "null" }
+          ]
         },
         "restrictTo" : {
-          "$ref" : "#/definitions/paymentProductFilterHostedTokenization"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProductFilterHostedTokenization"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

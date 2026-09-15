@@ -3,13 +3,28 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "card" : {
-      "$ref" : "#/definitions/tokenCardSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/tokenCardSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "encryptedCustomerInput" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "paymentProductId" : {
-      "type" : "integer"
+      "anyOf" : [
+        {
+          "type" : "integer"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -18,16 +33,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cardholderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cvv" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "expiryDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -36,7 +71,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "data" : {
-          "$ref" : "#/definitions/tokenData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/tokenData"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -45,10 +85,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "card" : {
-          "$ref" : "#/definitions/card"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/card"
+            },
+            { "type" : "null" }
+          ]
         },
         "cobrandSelectionIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

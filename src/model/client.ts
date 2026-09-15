@@ -10,6 +10,7 @@ import { CapturesClient } from "../generated/model/captures/index.js";
 import { RefundsClient } from "../generated/model/refunds/index.js";
 import { CompleteClient } from "../generated/model/complete/index.js";
 import { SubsequentClient } from "../generated/model/subsequent/index.js";
+import { PreAuthorizationClient } from "../generated/model/preauthorization/index.js";
 import { ProductGroupsClient } from "../generated/model/productgroups/index.js";
 import { ProductsClient } from "../generated/model/products/index.js";
 import { ServicesClient } from "../generated/model/services/index.js";
@@ -33,6 +34,7 @@ export interface Client {
   readonly refunds: RefundsClient;
   readonly complete: CompleteClient;
   readonly subsequent: SubsequentClient;
+  readonly preAuthorization: PreAuthorizationClient;
   readonly productGroups: ProductGroupsClient;
   readonly products: ProductsClient;
   readonly services: ServicesClient;

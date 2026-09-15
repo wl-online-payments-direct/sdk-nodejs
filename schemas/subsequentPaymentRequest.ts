@@ -3,16 +3,36 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "omnichannelSubsequentSpecificInput" : {
-      "$ref" : "#/definitions/omnichannelSubsequentSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/omnichannelSubsequentSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "order" : {
-      "$ref" : "#/definitions/order"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/order"
+        },
+        { "type" : "null" }
+      ]
     },
     "subsequentPaymentProduct5001SpecificInput" : {
-      "$ref" : "#/definitions/subsequentPaymentProduct5001SpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/subsequentPaymentProduct5001SpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "subsequentcardPaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/subsequentCardPaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/subsequentCardPaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -21,16 +41,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineData" : {
-          "$ref" : "#/definitions/airlineData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/airlineData"
+            },
+            { "type" : "null" }
+          ]
         },
         "loanRecipient" : {
-          "$ref" : "#/definitions/loanRecipient"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/loanRecipient"
+            },
+            { "type" : "null" }
+          ]
         },
         "lodgingData" : {
-          "$ref" : "#/definitions/lodgingData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/lodgingData"
+            },
+            { "type" : "null" }
+          ]
         },
         "typeInformation" : {
-          "$ref" : "#/definitions/orderTypeInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderTypeInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -39,25 +79,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInfo" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "state" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -66,31 +141,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInfo" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "$ref" : "#/definitions/personalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalName"
+            },
+            { "type" : "null" }
+          ]
         },
         "state" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -99,87 +219,212 @@ const schema = {
       "type" : "object",
       "properties" : {
         "agentNumericCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "code" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightLegs" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/airlineFlightLeg"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/airlineFlightLeg"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "invoiceNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isETicket" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isRestrictedTicket" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isThirdParty" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "issueDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantCustomerId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengers" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/airlinePassenger"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/airlinePassenger"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "placeOfIssue" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "pnr" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "pointOfSale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "posCityCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketCurrency" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketDeliveryMethod" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalFare" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalFee" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalTaxes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "travelAgencyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -188,67 +433,172 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineClass" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "arrivalAirport" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "arrivalTime" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "carrierCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "conjunctionTicket" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "couponNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "date" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "departureTime" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "endorsementOrRestriction" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "exchangeTicket" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fare" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fareBasis" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fee" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "legFare" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "number" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "originAirport" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerClass" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "stopoverCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -257,28 +607,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineLoyaltyStatus" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surnamePrefix" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -287,10 +677,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -299,10 +699,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -311,7 +721,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "delayInMinutes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -320,19 +735,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "colorDepth" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "javaEnabled" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "javaScriptEnabled" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "screenHeight" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "screenWidth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -341,7 +781,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -350,19 +795,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "faxNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "mobilePhoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "phoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "workPhoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -371,34 +841,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "account" : {
-          "$ref" : "#/definitions/customerAccount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerAccount"
+            },
+            { "type" : "null" }
+          ]
         },
         "accountType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "billingAddress" : {
-          "$ref" : "#/definitions/address"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/address"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyInformation" : {
-          "$ref" : "#/definitions/companyInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/companyInformation"
+            },
+            { "type" : "null" }
+          ]
         },
         "contactDetails" : {
-          "$ref" : "#/definitions/contactDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/contactDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "device" : {
-          "$ref" : "#/definitions/customerDevice"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerDevice"
+            },
+            { "type" : "null" }
+          ]
         },
         "fiscalNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "locale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantCustomerId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "personalInformation" : {
-          "$ref" : "#/definitions/personalInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -407,31 +927,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "authentication" : {
-          "$ref" : "#/definitions/customerAccountAuthentication"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerAccountAuthentication"
+            },
+            { "type" : "null" }
+          ]
         },
         "changeDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "changedDuringCheckout" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "createDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "hadSuspiciousActivity" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "passwordChangeDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passwordChangedDuringCheckout" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentAccountOnFile" : {
-          "$ref" : "#/definitions/paymentAccountOnFile"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentAccountOnFile"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentActivity" : {
-          "$ref" : "#/definitions/customerPaymentActivity"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerPaymentActivity"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -440,13 +1005,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "data" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "method" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "utcTimestamp" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -455,25 +1035,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acceptHeader" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "browserData" : {
-          "$ref" : "#/definitions/browserData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/browserData"
+            },
+            { "type" : "null" }
+          ]
         },
         "deviceFingerprint" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ipAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "locale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "timezoneOffsetUtcMinutes" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "userAgent" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -482,13 +1097,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "numberOfPaymentAttemptsLast24Hours" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfPaymentAttemptsLastYear" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfPurchasesLast6Months" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -497,7 +1127,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -506,10 +1141,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfGiftCards" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -518,16 +1163,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "invoiceData" : {
-          "$ref" : "#/definitions/lineItemInvoiceData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/lineItemInvoiceData"
+            },
+            { "type" : "null" }
+          ]
         },
         "orderLineDetails" : {
-          "$ref" : "#/definitions/orderLineDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderLineDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "otherDetails" : {
-          "$ref" : "#/definitions/otherDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/otherDetails"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -536,7 +1201,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "description" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -545,19 +1215,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "accountNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "partialPan" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -566,7 +1261,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "checkInDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -575,10 +1275,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "retailerCountry" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "retailerName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -587,7 +1297,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "operatorId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -596,34 +1311,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInput" : {
-          "$ref" : "#/definitions/additionalOrderInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/additionalOrderInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "customer" : {
-          "$ref" : "#/definitions/customer"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customer"
+            },
+            { "type" : "null" }
+          ]
         },
         "discount" : {
-          "$ref" : "#/definitions/discount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/discount"
+            },
+            { "type" : "null" }
+          ]
         },
         "references" : {
-          "$ref" : "#/definitions/orderReferences"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderReferences"
+            },
+            { "type" : "null" }
+          ]
         },
         "shipping" : {
-          "$ref" : "#/definitions/shipping"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shipping"
+            },
+            { "type" : "null" }
+          ]
         },
         "shoppingCart" : {
-          "$ref" : "#/definitions/shoppingCart"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shoppingCart"
+            },
+            { "type" : "null" }
+          ]
         },
         "surchargeSpecificInput" : {
-          "$ref" : "#/definitions/surchargeSpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/surchargeSpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxPercentage" : {
-          "type" : "number"
+          "anyOf" : [
+            {
+              "type" : "number"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalTaxAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -632,34 +1397,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "discountAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "productBrand" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productPrice" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "productType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "quantity" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxPercentage" : {
-          "type" : "number"
+          "anyOf" : [
+            {
+              "type" : "number"
+            },
+            { "type" : "null" }
+          ]
         },
         "unit" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -668,28 +1483,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "descriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantParameters" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -698,10 +1553,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "purchaseType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "transactionType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -710,10 +1575,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "metaData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "travelData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -722,10 +1597,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "createDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfCardOnFileCreationAttemptsLast24Hours" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -734,13 +1619,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "gender" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "$ref" : "#/definitions/personalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalName"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -749,13 +1649,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -764,31 +1679,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "address" : {
-          "$ref" : "#/definitions/addressPersonal"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/addressPersonal"
+            },
+            { "type" : "null" }
+          ]
         },
         "addressIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "firstUsageDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isFirstUsage" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "method" : {
-          "$ref" : "#/definitions/shippingMethod"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shippingMethod"
+            },
+            { "type" : "null" }
+          ]
         },
         "shippingCost" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "shippingCostTax" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -797,16 +1757,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "details" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "speed" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -815,30 +1795,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountBreakdown" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/amountBreakdown"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/amountBreakdown"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "giftCardPurchase" : {
-          "$ref" : "#/definitions/giftCardPurchase"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/giftCardPurchase"
+            },
+            { "type" : "null" }
+          ]
         },
         "isPreOrder" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "items" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/lineItem"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/lineItem"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "preOrderItemAvailabilityDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "reOrderIndicator" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -847,28 +1857,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "authorizationMode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "autoCapture" : {
-          "$ref" : "#/definitions/autoCapture"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/autoCapture"
+            },
+            { "type" : "null" }
+          ]
         },
         "marketPlace" : {
-          "$ref" : "#/definitions/marketPlace"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/marketPlace"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentNumber" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "schemeReferenceData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "subsequentType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "token" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "transactionChannel" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -877,7 +1927,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "subsequentType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -886,10 +1941,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "mode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surchargeAmount" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

@@ -3,10 +3,20 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "bin" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "paymentContext" : {
-      "$ref" : "#/definitions/paymentContext"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/paymentContext"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -15,10 +25,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -27,13 +47,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isRecurring" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

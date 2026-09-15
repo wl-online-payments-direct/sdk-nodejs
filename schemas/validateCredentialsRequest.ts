@@ -3,10 +3,20 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "key" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "secret" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false

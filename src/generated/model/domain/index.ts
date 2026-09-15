@@ -19,6 +19,7 @@ export interface APIError {
 export interface Acceptance {
   acceptanceSystemApplicationId?: string | null;
   authorizationDate?: string | null;
+  authorizationMessageReference?: string | null;
 }
 
 export interface AccountOnFile {
@@ -52,6 +53,10 @@ export interface AcquirerSelectionInformation {
   fallbackLevel?: number | null;
   result?: string | null;
   ruleName?: string | null;
+}
+
+export interface AddAuthorizationDetailsResponse {
+  payment?: PaymentResponse | null;
 }
 
 export interface AdditionalOrderInput {
@@ -182,6 +187,12 @@ export interface AirlinePassenger {
   title?: string | null;
 }
 
+export interface Amex {
+  dpaData?: DpaData | null;
+  dpaTransactionOptions?: DpaTransactionOptions | null;
+  srcInitiatorId?: string | null;
+}
+
 export interface AmountBreakdown {
   amount?: number | null;
   type?: string | null;
@@ -190,6 +201,14 @@ export interface AmountBreakdown {
 export interface AmountOfMoney {
   amount?: number | null;
   currencyCode?: string | null;
+}
+
+export interface ApiParameters {
+  amex?: Amex | null;
+  cb?: PaymentProduct5002defaultBrandParameters | null;
+  eftpos?: PaymentProduct5002defaultBrandParameters | null;
+  mastercard?: Mastercard | null;
+  visa?: Visa | null;
 }
 
 export interface ApplePayLineItem {
@@ -208,6 +227,13 @@ export interface ApplePayRecurringPaymentRequest {
   paymentDescription?: string | null;
   regularBilling?: ApplePayLineItem | null;
   trialBilling?: ApplePayLineItem | null;
+}
+
+export interface AuthenticationOptions {
+  acquirerBIN?: string | null;
+  acquirerMerchantId?: string | null;
+  merchantCategoryCode?: string | null;
+  merchantCountryCode?: string | null;
 }
 
 export interface AutoCapture {
@@ -312,6 +338,40 @@ export interface CapturesResponse {
   captures?: Capture[] | null;
 }
 
+export interface CarRentalData {
+  agreementNumber?: string | null;
+  cardholderNotified?: boolean | null;
+  chargesAmount?: number | null;
+  chargesCategory?: string | null;
+  distanceMeasure?: number | null;
+  distanceUnit?: string | null;
+  driverIdentificationNumber?: string | null;
+  driverTaxNumber?: string | null;
+  pickup?: CarRentalPickupReturnData | null;
+  rentalRateAmount?: number | null;
+  rentalRateType?: string | null;
+  renterName?: string | null;
+  return?: CarRentalPickupReturnData | null;
+  taxExemptIndicator?: boolean | null;
+  tollFreeNumber?: string | null;
+  vehicle?: CarRentalVehicleData | null;
+}
+
+export interface CarRentalPickupReturnData {
+  address?: string | null;
+  city?: string | null;
+  country?: number | null;
+  date?: string | null;
+  location?: string | null;
+  postcode?: string | null;
+  state?: string | null;
+}
+
+export interface CarRentalVehicleData {
+  classId?: string | null;
+  identificationNumber?: string | null;
+}
+
 export interface Card {
   cardNumber?: string | null;
   cardholderName?: string | null;
@@ -404,6 +464,7 @@ export interface CardPaymentMethodSpecificInput {
   paymentProduct3013SpecificInput?: PaymentProduct3013SpecificInput | null;
   paymentProduct3208SpecificInput?: PaymentProduct3208SpecificInput | null;
   paymentProduct3209SpecificInput?: PaymentProduct3209SpecificInput | null;
+  paymentProduct5002SpecificInput?: PaymentProduct5002SpecificInput | null;
   paymentProductId?: number | null;
   recurring?: CardRecurrenceDetails | null;
   returnUrl?: string | null;
@@ -885,6 +946,14 @@ export interface Discount {
   amount?: number | null;
 }
 
+export interface DpaData {
+  dpaName?: string | null;
+}
+
+export interface DpaTransactionOptions {
+  threeDsInputData?: ThreeDsInputData | null;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface EmptyValidator {}
 
@@ -1082,6 +1151,14 @@ export interface ImportCofSeriesResponse {
   paymentId?: string | null;
 }
 
+export interface IncrementAuthorizationRequest {
+  amountOfMoney?: AmountOfMoney | null;
+}
+
+export interface IncrementAuthorizationResponse {
+  payment?: PaymentResponse | null;
+}
+
 export interface LabelTemplateElement {
   attributeKey?: string | null;
   mask?: string | null;
@@ -1201,6 +1278,12 @@ export interface MandateResponse {
 export interface MarketPlace {
   retailerCountry?: string | null;
   retailerName?: string | null;
+}
+
+export interface Mastercard {
+  authenticationOptions?: AuthenticationOptions | null;
+  srcInitiatorId?: string | null;
+  srciDpaId?: string | null;
 }
 
 export interface MerchantAction {
@@ -1498,6 +1581,7 @@ export interface PaymentProduct {
   paymentMethod?: string | null;
   paymentProduct302SpecificData?: PaymentProduct302SpecificData | null;
   paymentProduct320SpecificData?: PaymentProduct320SpecificData | null;
+  paymentProduct5002SpecificData?: PaymentProduct5002SpecificData | null;
   paymentProductGroup?: string | null;
   usesRedirectionTo3rdParty?: boolean | null;
 }
@@ -1592,6 +1676,20 @@ export interface PaymentProduct5001SpecificOutput {
   liability?: string | null;
   mobilePhoneNumber?: string | null;
   operationCode?: string | null;
+}
+
+export interface PaymentProduct5002SpecificData {
+  apiParameters?: ApiParameters | null;
+}
+
+export interface PaymentProduct5002SpecificInput {
+  checkoutResponseSignature?: string | null;
+  creditCardBrand?: string | null;
+}
+
+export interface PaymentProduct5002defaultBrandParameters {
+  srcDpaId?: string | null;
+  srcInitiatorId?: string | null;
 }
 
 export interface PaymentProduct5100SpecificInput {
@@ -2323,6 +2421,7 @@ export interface SubMerchant {
   companyName?: string | null;
   merchantCategoryCode?: string | null;
   merchantId?: string | null;
+  website?: string | null;
 }
 
 export interface SubmitBatchRequestBody {
@@ -2467,6 +2566,12 @@ export interface ThreeDSecureResults {
   xid?: string | null;
 }
 
+export interface ThreeDsInputData {
+  acquirerId?: string | null;
+  acquirerMid?: string | null;
+  requestorId?: string | null;
+}
+
 export interface TokenCard {
   alias?: string | null;
   data?: TokenCardData | null;
@@ -2517,6 +2622,10 @@ export interface Transaction {
   amount?: AmountOfMoney | null;
 }
 
+export interface UpdateAuthorizationAdditionalDataRequest {
+  carRentalData?: CarRentalData | null;
+}
+
 export interface ValidateCredentialsRequest {
   key?: string | null;
   secret?: string | null;
@@ -2529,4 +2638,18 @@ export interface ValidateCredentialsResponse {
 export interface ValueMappingElement {
   displayElements?: PaymentProductFieldDisplayElement[] | null;
   value?: string | null;
+}
+
+export interface Visa {
+  authenticationOptions?: VisaAuthenticationOptions | null;
+  encryptionKey?: string | null;
+  nModulus?: string | null;
+  srcInitiatorId?: string | null;
+  srciDpaId?: string | null;
+}
+
+export interface VisaAuthenticationOptions {
+  acquirerBIN?: string | null;
+  acquirerMerchantId?: string | null;
+  merchantName?: string | null;
 }

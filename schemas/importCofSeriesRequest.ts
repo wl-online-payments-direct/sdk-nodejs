@@ -3,22 +3,52 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "card" : {
-      "$ref" : "#/definitions/cardDataWithoutCvv"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/cardDataWithoutCvv"
+        },
+        { "type" : "null" }
+      ]
     },
     "currencyCode" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "paymentProductId" : {
-      "type" : "integer"
+      "anyOf" : [
+        {
+          "type" : "integer"
+        },
+        { "type" : "null" }
+      ]
     },
     "schemeReferenceData" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "tokenId" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "transactionLinkIdentifier" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -27,13 +57,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cardholderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "expiryDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

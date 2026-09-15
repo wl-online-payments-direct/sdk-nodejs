@@ -2,10 +2,10 @@ const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : [ "object", "null" ],
   "properties" : {
-    "paymentProductSession302SpecificInput" : {
+    "amountOfMoney" : {
       "anyOf" : [
         {
-          "$ref" : "#/definitions/paymentProductSession302SpecificInput"
+          "$ref" : "#/definitions/amountOfMoney"
         },
         { "type" : "null" }
       ]
@@ -13,18 +13,18 @@ const schema = {
   },
   "additionalProperties" : false,
   "definitions" : {
-    "paymentProductSession302SpecificInput" : {
+    "amountOfMoney" : {
       "type" : "object",
       "properties" : {
-        "displayName" : {
+        "amount" : {
           "anyOf" : [
             {
-              "type" : "string"
+              "type" : "integer"
             },
             { "type" : "null" }
           ]
         },
-        "domainName" : {
+        "currencyCode" : {
           "anyOf" : [
             {
               "type" : "string"

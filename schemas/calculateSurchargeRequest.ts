@@ -3,10 +3,20 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "amountOfMoney" : {
-      "$ref" : "#/definitions/amountOfMoney"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/amountOfMoney"
+        },
+        { "type" : "null" }
+      ]
     },
     "cardSource" : {
-      "$ref" : "#/definitions/cardSource"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/cardSource"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -15,10 +25,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -27,16 +47,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "card" : {
-          "$ref" : "#/definitions/surchargeCalculationCard"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/surchargeCalculationCard"
+            },
+            { "type" : "null" }
+          ]
         },
         "encryptedCustomerInput" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "hostedTokenizationId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "token" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -45,10 +85,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

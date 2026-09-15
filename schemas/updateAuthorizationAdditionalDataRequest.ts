@@ -2,50 +2,10 @@ const schema = {
   "$schema" : "http://json-schema.org/draft-04/schema#",
   "type" : [ "object", "null" ],
   "properties" : {
-    "amountOfMoney" : {
+    "carRentalData" : {
       "anyOf" : [
         {
-          "$ref" : "#/definitions/amountOfMoney"
-        },
-        { "type" : "null" }
-      ]
-    },
-    "cardPayoutMethodSpecificInput" : {
-      "anyOf" : [
-        {
-          "$ref" : "#/definitions/cardPayoutMethodSpecificInput"
-        },
-        { "type" : "null" }
-      ]
-    },
-    "descriptor" : {
-      "anyOf" : [
-        {
-          "type" : "string"
-        },
-        { "type" : "null" }
-      ]
-    },
-    "feedbacks" : {
-      "anyOf" : [
-        {
-          "$ref" : "#/definitions/feedbacks"
-        },
-        { "type" : "null" }
-      ]
-    },
-    "omnichannelPayoutSpecificInput" : {
-      "anyOf" : [
-        {
-          "$ref" : "#/definitions/omnichannelPayoutSpecificInput"
-        },
-        { "type" : "null" }
-      ]
-    },
-    "references" : {
-      "anyOf" : [
-        {
-          "$ref" : "#/definitions/paymentReferences"
+          "$ref" : "#/definitions/carRentalData"
         },
         { "type" : "null" }
       ]
@@ -53,10 +13,26 @@ const schema = {
   },
   "additionalProperties" : false,
   "definitions" : {
-    "amountOfMoney" : {
+    "carRentalData" : {
       "type" : "object",
       "properties" : {
-        "amount" : {
+        "agreementNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "cardholderNotified" : {
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "chargesAmount" : {
           "anyOf" : [
             {
               "type" : "integer"
@@ -64,21 +40,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "currencyCode" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        }
-      },
-      "additionalProperties" : false
-    },
-    "card" : {
-      "type" : "object",
-      "properties" : {
-        "cardNumber" : {
+        "chargesCategory" : {
           "anyOf" : [
             {
               "type" : "string"
@@ -86,53 +48,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "cardholderName" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "cvv" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "expiryDate" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        }
-      },
-      "additionalProperties" : false
-    },
-    "cardPayoutMethodSpecificInput" : {
-      "type" : "object",
-      "properties" : {
-        "card" : {
-          "anyOf" : [
-            {
-              "$ref" : "#/definitions/card"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "hostedFieldsSessionId" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "paymentProductId" : {
+        "distanceMeasure" : {
           "anyOf" : [
             {
               "type" : "integer"
@@ -140,7 +56,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "payoutReason" : {
+        "distanceUnit" : {
           "anyOf" : [
             {
               "type" : "string"
@@ -148,7 +64,141 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "token" : {
+        "driverIdentificationNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "driverTaxNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "pickup" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/carRentalPickupReturnData"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "rentalRateAmount" : {
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "rentalRateType" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "renterName" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "return" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/carRentalPickupReturnData"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "taxExemptIndicator" : {
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "tollFreeNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "vehicle" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/carRentalVehicleData"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "carRentalPickupReturnData" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "city" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "country" : {
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "date" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "location" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "postcode" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "state" : {
           "anyOf" : [
             {
               "type" : "string"
@@ -159,10 +209,10 @@ const schema = {
       },
       "additionalProperties" : false
     },
-    "feedbacks" : {
+    "carRentalVehicleData" : {
       "type" : "object",
       "properties" : {
-        "webhookUrl" : {
+        "classId" : {
           "anyOf" : [
             {
               "type" : "string"
@@ -170,95 +220,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "webhooksUrls" : {
-          "anyOf" : [
-            {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              },
-              "uniqueItems" : false
-            },
-            { "type" : "null" }
-          ]
-        }
-      },
-      "additionalProperties" : false
-    },
-    "omnichannelPayoutSpecificInput" : {
-      "type" : "object",
-      "properties" : {
-        "operatorId" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "paymentId" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        }
-      },
-      "additionalProperties" : false
-    },
-    "paymentReferences" : {
-      "type" : "object",
-      "properties" : {
-        "merchantComment" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "merchantParameters" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "merchantReconciliationReference" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "merchantReference" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "operationGroupReference" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "softDescriptor" : {
-          "anyOf" : [
-            {
-              "type" : "string"
-            },
-            { "type" : "null" }
-          ]
-        },
-        "structuredCreditorReference" : {
+        "identificationNumber" : {
           "anyOf" : [
             {
               "type" : "string"

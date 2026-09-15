@@ -3,28 +3,68 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "alias" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "customer" : {
-      "$ref" : "#/definitions/mandateCustomer"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/mandateCustomer"
+        },
+        { "type" : "null" }
+      ]
     },
     "customerReference" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "language" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "recurrenceType" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "returnUrl" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "signatureType" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "uniqueMandateReference" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -33,7 +73,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "iban" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -42,19 +87,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -63,10 +133,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "phoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -75,19 +155,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "bankAccountIban" : {
-          "$ref" : "#/definitions/bankAccountIban"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/bankAccountIban"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "contactDetails" : {
-          "$ref" : "#/definitions/mandateContactDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandateContactDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "mandateAddress" : {
-          "$ref" : "#/definitions/mandateAddress"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandateAddress"
+            },
+            { "type" : "null" }
+          ]
         },
         "personalInformation" : {
-          "$ref" : "#/definitions/mandatePersonalInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandatePersonalInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -96,10 +201,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "name" : {
-          "$ref" : "#/definitions/mandatePersonalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandatePersonalName"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -108,10 +223,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

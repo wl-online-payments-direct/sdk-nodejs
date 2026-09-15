@@ -3,7 +3,12 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "revocationReason" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false

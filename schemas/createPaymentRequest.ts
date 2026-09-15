@@ -3,37 +3,92 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "cardPaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/cardPaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/cardPaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "encryptedCustomerInput" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "feedbacks" : {
-      "$ref" : "#/definitions/feedbacks"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/feedbacks"
+        },
+        { "type" : "null" }
+      ]
     },
     "fraudFields" : {
-      "$ref" : "#/definitions/fraudFields"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/fraudFields"
+        },
+        { "type" : "null" }
+      ]
     },
     "hostedFieldsSessionId" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "hostedTokenizationId" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "mobilePaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/mobilePaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/mobilePaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "omnichannelPaymentSpecificInput" : {
-      "$ref" : "#/definitions/omnichannelPaymentSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/omnichannelPaymentSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "order" : {
-      "$ref" : "#/definitions/order"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/order"
+        },
+        { "type" : "null" }
+      ]
     },
     "redirectPaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/redirectPaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/redirectPaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     },
     "sepaDirectDebitPaymentMethodSpecificInput" : {
-      "$ref" : "#/definitions/sepaDirectDebitPaymentMethodSpecificInput"
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/sepaDirectDebitPaymentMethodSpecificInput"
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false,
@@ -42,16 +97,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineData" : {
-          "$ref" : "#/definitions/airlineData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/airlineData"
+            },
+            { "type" : "null" }
+          ]
         },
         "loanRecipient" : {
-          "$ref" : "#/definitions/loanRecipient"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/loanRecipient"
+            },
+            { "type" : "null" }
+          ]
         },
         "lodgingData" : {
-          "$ref" : "#/definitions/lodgingData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/lodgingData"
+            },
+            { "type" : "null" }
+          ]
         },
         "typeInformation" : {
-          "$ref" : "#/definitions/orderTypeInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderTypeInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -60,25 +135,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInfo" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "state" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -87,31 +197,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInfo" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "$ref" : "#/definitions/personalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalName"
+            },
+            { "type" : "null" }
+          ]
         },
         "state" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -120,87 +275,212 @@ const schema = {
       "type" : "object",
       "properties" : {
         "agentNumericCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "code" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightLegs" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/airlineFlightLeg"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/airlineFlightLeg"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "invoiceNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isETicket" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isRestrictedTicket" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isThirdParty" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "issueDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantCustomerId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengers" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/airlinePassenger"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/airlinePassenger"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "placeOfIssue" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "pnr" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "pointOfSale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "posCityCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketCurrency" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketDeliveryMethod" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ticketNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalFare" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalFee" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalTaxes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "travelAgencyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -209,67 +489,172 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineClass" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "arrivalAirport" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "arrivalTime" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "carrierCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "conjunctionTicket" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "couponNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "date" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "departureTime" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "endorsementOrRestriction" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "exchangeTicket" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fare" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fareBasis" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "fee" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "flightNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "legFare" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "number" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "originAirport" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerClass" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "stopoverCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -278,28 +663,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "airlineLoyaltyStatus" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passengerType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surnamePrefix" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -308,10 +733,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -320,10 +755,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -332,25 +777,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "label" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentTiming" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurringPaymentEndDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurringPaymentIntervalCount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurringPaymentIntervalUnit" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurringPaymentStartDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -359,19 +839,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "billingAgreement" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "managementUrl" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentDescription" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "regularBilling" : {
-          "$ref" : "#/definitions/applePayLineItem"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/applePayLineItem"
+            },
+            { "type" : "null" }
+          ]
         },
         "trialBilling" : {
-          "$ref" : "#/definitions/applePayLineItem"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/applePayLineItem"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -380,7 +885,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "delayInMinutes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -389,7 +899,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "iban" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -398,19 +913,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "colorDepth" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "javaEnabled" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "javaScriptEnabled" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "screenHeight" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "screenWidth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -419,16 +959,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cardholderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cvv" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "expiryDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -437,94 +997,252 @@ const schema = {
       "type" : "object",
       "properties" : {
         "allowDynamicLinking" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "authorizationMode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "autoCapture" : {
-          "$ref" : "#/definitions/autoCapture"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/autoCapture"
+            },
+            { "type" : "null" }
+          ]
         },
         "card" : {
-          "$ref" : "#/definitions/card"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/card"
+            },
+            { "type" : "null" }
+          ]
         },
         "cardOnFileRecurringExpiration" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cardOnFileRecurringFrequency" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cobrandSelectionIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "currencyConversion" : {
-          "$ref" : "#/definitions/currencyConversionInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/currencyConversionInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "initialSchemeTransactionId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isRecurring" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "marketPlace" : {
-          "$ref" : "#/definitions/marketPlace"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/marketPlace"
+            },
+            { "type" : "null" }
+          ]
         },
         "multiplePaymentInformation" : {
-          "$ref" : "#/definitions/multiplePaymentInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/multiplePaymentInformation"
+            },
+            { "type" : "null" }
+          ]
         },
         "networkTokenData" : {
-          "$ref" : "#/definitions/networkTokenData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/networkTokenData"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct130SpecificInput" : {
-          "$ref" : "#/definitions/paymentProduct130SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct130SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3012SpecificInput" : {
-          "$ref" : "#/definitions/paymentProduct3012SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct3012SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3013SpecificInput" : {
-          "$ref" : "#/definitions/paymentProduct3013SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct3013SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3208SpecificInput" : {
-          "$ref" : "#/definitions/paymentProduct3208SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct3208SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3209SpecificInput" : {
-          "$ref" : "#/definitions/paymentProduct3209SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct3209SpecificInput"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "paymentProduct5002SpecificInput" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct5002SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurring" : {
-          "$ref" : "#/definitions/cardRecurrenceDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/cardRecurrenceDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "returnUrl" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "schemeReferenceData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "skipAuthentication" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "subMerchant" : {
-          "$ref" : "#/definitions/subMerchant"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/subMerchant"
+            },
+            { "type" : "null" }
+          ]
         },
         "threeDSecure" : {
-          "$ref" : "#/definitions/threeDSecure"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/threeDSecure"
+            },
+            { "type" : "null" }
+          ]
         },
         "token" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "tokenize" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "transactionChannel" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "unscheduledCardOnFileRequestor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "unscheduledCardOnFileSequenceIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -533,7 +1251,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "recurringPaymentSequenceIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -542,7 +1265,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -551,19 +1279,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "faxNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "mobilePhoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "phoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "workPhoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -572,28 +1325,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "alias" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "customer" : {
-          "$ref" : "#/definitions/mandateCustomer"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandateCustomer"
+            },
+            { "type" : "null" }
+          ]
         },
         "customerReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "language" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurrenceType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "returnUrl" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "signatureType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "uniqueMandateReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -602,10 +1395,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acceptedByUser" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "dccSessionId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -614,34 +1417,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "account" : {
-          "$ref" : "#/definitions/customerAccount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerAccount"
+            },
+            { "type" : "null" }
+          ]
         },
         "accountType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "billingAddress" : {
-          "$ref" : "#/definitions/address"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/address"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyInformation" : {
-          "$ref" : "#/definitions/companyInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/companyInformation"
+            },
+            { "type" : "null" }
+          ]
         },
         "contactDetails" : {
-          "$ref" : "#/definitions/contactDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/contactDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "device" : {
-          "$ref" : "#/definitions/customerDevice"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerDevice"
+            },
+            { "type" : "null" }
+          ]
         },
         "fiscalNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "locale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantCustomerId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "personalInformation" : {
-          "$ref" : "#/definitions/personalInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -650,31 +1503,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "authentication" : {
-          "$ref" : "#/definitions/customerAccountAuthentication"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerAccountAuthentication"
+            },
+            { "type" : "null" }
+          ]
         },
         "changeDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "changedDuringCheckout" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "createDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "hadSuspiciousActivity" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "passwordChangeDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "passwordChangedDuringCheckout" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentAccountOnFile" : {
-          "$ref" : "#/definitions/paymentAccountOnFile"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentAccountOnFile"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentActivity" : {
-          "$ref" : "#/definitions/customerPaymentActivity"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerPaymentActivity"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -683,13 +1581,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "data" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "method" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "utcTimestamp" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -698,13 +1611,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "accountHolderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "bic" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "iban" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -713,25 +1641,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acceptHeader" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "browserData" : {
-          "$ref" : "#/definitions/browserData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/browserData"
+            },
+            { "type" : "null" }
+          ]
         },
         "deviceFingerprint" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ipAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "locale" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "timezoneOffsetUtcMinutes" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "userAgent" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -740,13 +1703,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "numberOfPaymentAttemptsLast24Hours" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfPaymentAttemptsLastYear" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfPurchasesLast6Months" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -755,19 +1733,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardholderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cryptogram" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "dpan" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "eci" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "expiryDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -776,7 +1779,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -785,34 +1793,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acsTransactionId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "appliedExemption" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cavv" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cavvAlgorithm" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "directoryServerTransactionId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "eci" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "flow" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "schemeRiskScore" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "threeDSecureVersion" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "xid" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -821,14 +1879,24 @@ const schema = {
       "type" : "object",
       "properties" : {
         "webhookUrl" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "webhooksUrls" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -837,17 +1905,32 @@ const schema = {
       "type" : "object",
       "properties" : {
         "blackListData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "customerIpAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productCategories" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -856,22 +1939,52 @@ const schema = {
       "type" : "object",
       "properties" : {
         "challengeCanvasSize" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "challengeIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "exemptionRequest" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "redirectionData" : {
-          "$ref" : "#/definitions/redirectionData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectionData"
+            },
+            { "type" : "null" }
+          ]
         },
         "skipAuthentication" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "skipSoftDecline" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -880,10 +1993,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfGiftCards" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -892,16 +2015,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "invoiceData" : {
-          "$ref" : "#/definitions/lineItemInvoiceData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/lineItemInvoiceData"
+            },
+            { "type" : "null" }
+          ]
         },
         "orderLineDetails" : {
-          "$ref" : "#/definitions/orderLineDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderLineDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "otherDetails" : {
-          "$ref" : "#/definitions/otherDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/otherDetails"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -910,7 +2053,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "description" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -919,19 +2067,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "accountNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "partialPan" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -940,7 +2113,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "checkInDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -949,19 +2127,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "city" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "countryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "houseNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "street" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "zip" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -970,10 +2173,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "phoneNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -982,19 +2195,44 @@ const schema = {
       "type" : "object",
       "properties" : {
         "bankAccountIban" : {
-          "$ref" : "#/definitions/bankAccountIban"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/bankAccountIban"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "contactDetails" : {
-          "$ref" : "#/definitions/mandateContactDetails"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandateContactDetails"
+            },
+            { "type" : "null" }
+          ]
         },
         "mandateAddress" : {
-          "$ref" : "#/definitions/mandateAddress"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandateAddress"
+            },
+            { "type" : "null" }
+          ]
         },
         "personalInformation" : {
-          "$ref" : "#/definitions/mandatePersonalInformation"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandatePersonalInformation"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1003,10 +2241,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "name" : {
-          "$ref" : "#/definitions/mandatePersonalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mandatePersonalName"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1015,10 +2263,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1027,10 +2285,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "retailerCountry" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "retailerName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1039,34 +2307,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "authorizationMode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "autoCapture" : {
-          "$ref" : "#/definitions/autoCapture"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/autoCapture"
+            },
+            { "type" : "null" }
+          ]
         },
         "decryptedPaymentData" : {
-          "$ref" : "#/definitions/decryptedPaymentData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/decryptedPaymentData"
+            },
+            { "type" : "null" }
+          ]
         },
         "encryptedPaymentData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "ephemeralKey" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct302SpecificInput" : {
-          "$ref" : "#/definitions/mobilePaymentProduct302SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mobilePaymentProduct302SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct320SpecificInput" : {
-          "$ref" : "#/definitions/mobilePaymentProduct320SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/mobilePaymentProduct320SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "publicKeyHash" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "requiresApproval" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1075,16 +2393,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "applePayRecurringPaymentRequest" : {
-          "$ref" : "#/definitions/applePayRecurringPaymentRequest"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/applePayRecurringPaymentRequest"
+            },
+            { "type" : "null" }
+          ]
         },
         "isRecurring" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurring" : {
-          "$ref" : "#/definitions/product302Recurring"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/product302Recurring"
+            },
+            { "type" : "null" }
+          ]
         },
         "tokenize" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1093,16 +2431,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "isRecurring" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "recurring" : {
-          "$ref" : "#/definitions/product320Recurring"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/product320Recurring"
+            },
+            { "type" : "null" }
+          ]
         },
         "threeDSecure" : {
-          "$ref" : "#/definitions/gPayThreeDSecure"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/gPayThreeDSecure"
+            },
+            { "type" : "null" }
+          ]
         },
         "tokenize" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1111,10 +2469,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "paymentPattern" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalNumberOfPayments" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1123,22 +2491,52 @@ const schema = {
       "type" : "object",
       "properties" : {
         "cardholderName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "cryptogram" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "eci" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "networkToken" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "schemeTokenRequestorId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "tokenExpiryDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1147,7 +2545,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "operatorId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1156,34 +2559,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "additionalInput" : {
-          "$ref" : "#/definitions/additionalOrderInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/additionalOrderInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "amountOfMoney" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         },
         "customer" : {
-          "$ref" : "#/definitions/customer"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customer"
+            },
+            { "type" : "null" }
+          ]
         },
         "discount" : {
-          "$ref" : "#/definitions/discount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/discount"
+            },
+            { "type" : "null" }
+          ]
         },
         "references" : {
-          "$ref" : "#/definitions/orderReferences"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/orderReferences"
+            },
+            { "type" : "null" }
+          ]
         },
         "shipping" : {
-          "$ref" : "#/definitions/shipping"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shipping"
+            },
+            { "type" : "null" }
+          ]
         },
         "shoppingCart" : {
-          "$ref" : "#/definitions/shoppingCart"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shoppingCart"
+            },
+            { "type" : "null" }
+          ]
         },
         "surchargeSpecificInput" : {
-          "$ref" : "#/definitions/surchargeSpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/surchargeSpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxPercentage" : {
-          "type" : "number"
+          "anyOf" : [
+            {
+              "type" : "number"
+            },
+            { "type" : "null" }
+          ]
         },
         "totalTaxAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1192,34 +2645,84 @@ const schema = {
       "type" : "object",
       "properties" : {
         "discountAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "productBrand" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "productPrice" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "productType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "quantity" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "taxPercentage" : {
-          "type" : "number"
+          "anyOf" : [
+            {
+              "type" : "number"
+            },
+            { "type" : "null" }
+          ]
         },
         "unit" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1228,28 +2731,68 @@ const schema = {
       "type" : "object",
       "properties" : {
         "descriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantComment" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantParameters" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReconciliationReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "operationGroupReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "softDescriptor" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "structuredCreditorReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1258,10 +2801,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "purchaseType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "transactionType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1270,10 +2823,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "metaData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "travelData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1282,10 +2845,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "createDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfCardOnFileCreationAttemptsLast24Hours" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1294,7 +2867,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "threeDSecure" : {
-          "$ref" : "#/definitions/paymentProduct130SpecificThreeDSecure"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct130SpecificThreeDSecure"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1303,16 +2881,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acquirerExemption" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantScore" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "numberOfItems" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "usecase" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1321,16 +2919,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "forceAuthentication" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isDeferredPayment" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "isWipTransaction" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "wipMerchantAuthenticationMethod" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1339,13 +2957,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "marketNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "purchasingBuyerReference1" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "purchasingBuyerReference2" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1354,7 +2987,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantFinanceCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1363,7 +3001,34 @@ const schema = {
       "type" : "object",
       "properties" : {
         "merchantFinanceCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "paymentProduct5002SpecificInput" : {
+      "type" : "object",
+      "properties" : {
+        "checkoutResponseSignature" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "creditCardBrand" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1372,7 +3037,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "delayInMinutes" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1381,13 +3051,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "dateOfBirth" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "gender" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "$ref" : "#/definitions/personalName"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/personalName"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1396,13 +3081,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "firstName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surname" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1411,7 +3111,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "recurringPaymentSequenceIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1420,7 +3125,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "recurringPaymentSequenceIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1429,91 +3139,236 @@ const schema = {
       "type" : "object",
       "properties" : {
         "paymentOption" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct11SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct11SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct11SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3103SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3103SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3103SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3112SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3112SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3112SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3116SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3116SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3116SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3203SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3203SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3203SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3204SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3204SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3204SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3302SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3302SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3302SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3306SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3306SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3306SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct3307SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct3307SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct3307SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5001SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5001SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5001SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5300SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5300SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5300SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5301SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5301SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5301SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5402SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5402SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5402SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5403SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5403SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5403SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5406SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5406SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5406SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5407SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5407SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5407SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5408SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5408SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5408SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5410SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5410SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5410SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5412SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5412SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5412SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct5601SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct5601SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct5601SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct809SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct809SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct809SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct840SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct840SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct840SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProduct900SpecificInput" : {
-          "$ref" : "#/definitions/redirectPaymentProduct900SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectPaymentProduct900SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "redirectionData" : {
-          "$ref" : "#/definitions/redirectionData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectionData"
+            },
+            { "type" : "null" }
+          ]
         },
         "requiresApproval" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "token" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "tokenize" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1522,7 +3377,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "skipEmailValidation" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1531,7 +3391,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1540,7 +3405,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1549,7 +3419,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1558,7 +3433,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "checkoutType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1567,10 +3447,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "aliasLabel" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "blikCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1579,13 +3469,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "organizationEntityType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "organizationRegistrationId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "vatId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1594,7 +3499,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "extraMerchantData" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1609,10 +3519,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "exemptionRequest" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "subsequentType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1621,31 +3541,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "birthCity" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "birthCountry" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "birthZipCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "channel" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "loyaltyCardNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "secondInstallmentPaymentDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "sessionDuration" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "title" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "transactionExpirationDateTime" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1654,7 +3619,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "paymentMethodType" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1663,7 +3633,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1672,7 +3647,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1681,7 +3661,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "customerBankAccount" : {
-          "$ref" : "#/definitions/customerBankAccount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerBankAccount"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1690,7 +3675,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "paymentProduct5704AutoCapture" : {
-          "$ref" : "#/definitions/paymentProduct5704AutoCapture"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/paymentProduct5704AutoCapture"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1699,10 +3689,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "customerBankAccount" : {
-          "$ref" : "#/definitions/customerBankAccount"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/customerBankAccount"
+            },
+            { "type" : "null" }
+          ]
         },
         "instantPaymentOnly" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1711,7 +3711,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "secondInstallmentPaymentDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1720,10 +3725,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "adjustableAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "beneficiaryId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1732,7 +3747,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "completeRemainingPaymentAmount" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1741,7 +3761,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "issuerId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1750,16 +3775,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "JavaScriptSdkFlow" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "addressSelectionAtPayPal" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "custom" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "payLater" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1768,7 +3813,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "captureTrigger" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1777,7 +3827,12 @@ const schema = {
       "type" : "object",
       "properties" : {
         "returnUrl" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1786,10 +3841,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "paymentProduct771SpecificInput" : {
-          "$ref" : "#/definitions/sepaDirectDebitPaymentProduct771SpecificInput"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/sepaDirectDebitPaymentProduct771SpecificInput"
+            },
+            { "type" : "null" }
+          ]
         },
         "paymentProductId" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1798,10 +3863,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "existingUniqueMandateReference" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "mandate" : {
-          "$ref" : "#/definitions/createMandateWithReturnUrl"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/createMandateWithReturnUrl"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1810,31 +3885,76 @@ const schema = {
       "type" : "object",
       "properties" : {
         "address" : {
-          "$ref" : "#/definitions/addressPersonal"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/addressPersonal"
+            },
+            { "type" : "null" }
+          ]
         },
         "addressIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "emailAddress" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "firstUsageDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "isFirstUsage" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "method" : {
-          "$ref" : "#/definitions/shippingMethod"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/shippingMethod"
+            },
+            { "type" : "null" }
+          ]
         },
         "shippingCost" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "shippingCostTax" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1843,16 +3963,36 @@ const schema = {
       "type" : "object",
       "properties" : {
         "details" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "name" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "speed" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "type" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1861,30 +4001,60 @@ const schema = {
       "type" : "object",
       "properties" : {
         "amountBreakdown" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/amountBreakdown"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/amountBreakdown"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "giftCardPurchase" : {
-          "$ref" : "#/definitions/giftCardPurchase"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/giftCardPurchase"
+            },
+            { "type" : "null" }
+          ]
         },
         "isPreOrder" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "items" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/lineItem"
-          },
-          "uniqueItems" : false
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/lineItem"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
         },
         "preOrderItemAvailabilityDate" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "reOrderIndicator" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1893,19 +4063,52 @@ const schema = {
       "type" : "object",
       "properties" : {
         "address" : {
-          "$ref" : "#/definitions/address"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/address"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyIdentificationNumber" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "companyName" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantCategoryCode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "website" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1914,10 +4117,20 @@ const schema = {
       "type" : "object",
       "properties" : {
         "mode" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "surchargeAmount" : {
-          "$ref" : "#/definitions/amountOfMoney"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/amountOfMoney"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1926,40 +4139,100 @@ const schema = {
       "type" : "object",
       "properties" : {
         "authenticationAmount" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "challengeCanvasSize" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "challengeIndicator" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "deviceChannel" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "exemptionRequest" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "externalCardholderAuthenticationData" : {
-          "$ref" : "#/definitions/externalCardholderAuthenticationData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/externalCardholderAuthenticationData"
+            },
+            { "type" : "null" }
+          ]
         },
         "merchantFraudRate" : {
-          "type" : "integer"
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
         },
         "priorThreeDSecureData" : {
-          "$ref" : "#/definitions/threeDSecureData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/threeDSecureData"
+            },
+            { "type" : "null" }
+          ]
         },
         "redirectionData" : {
-          "$ref" : "#/definitions/redirectionData"
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/redirectionData"
+            },
+            { "type" : "null" }
+          ]
         },
         "secureCorporatePayment" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "skipAuthentication" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         },
         "skipSoftDecline" : {
-          "type" : "boolean"
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1968,13 +4241,28 @@ const schema = {
       "type" : "object",
       "properties" : {
         "acsTransactionId" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "method" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         },
         "utcTimestamp" : {
-          "type" : "string"
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false

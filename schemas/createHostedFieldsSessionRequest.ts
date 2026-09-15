@@ -3,17 +3,32 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "locale" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "origin" : {
-      "type" : "string"
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
     },
     "tokens" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      },
-      "uniqueItems" : false
+      "anyOf" : [
+        {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false

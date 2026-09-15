@@ -1,6 +1,6 @@
 import client, { config } from "./init";
 import { PaymentContext } from "../../src";
-import { CreateHostedFieldsSessionResponse, CreatedTokenResponse, GetHostedFieldsSessionResponse } from "../../src/generated/model/domain/index.js";
+import { CreateHostedFieldsSessionResponse, CreatedTokenResponse, GetHostedFieldsSessionResponse, ErrorResponse } from "../../src/generated/model/domain/index.js";
 import { CreateHostedFieldsSessionRequestBuilder } from "./builders/hostedFields/CreateHostedFieldsSessionRequestBuilder";
 import { CreateTokenRequestBuilder } from "./builders/common/CreateTokenRequestBuilder";
 
@@ -36,10 +36,12 @@ describe("Hosted fields", () => {
     });
 
     describe("with missing locale", () => {
-      test("shouldThrowValidationException", () => {
+      test("shouldThrowValidationException", async () => {
         const request = new CreateHostedFieldsSessionRequestBuilder().withLocale(null).build();
+        const response = await client.hostedFields.createHostedFieldsSession(config.merchantId, request);
 
-        expect(() => client.hostedFields.createHostedFieldsSession(config.merchantId, request)).toThrow("is not of a type(s) string");
+        expect(response.isSuccess).toBe(false);
+        expect(response.status).toBe(400);
       });
     });
 

@@ -3,11 +3,16 @@ const schema = {
   "type" : [ "object", "null" ],
   "properties" : {
     "tokens" : {
-      "type" : "array",
-      "items" : {
-        "type" : "string"
-      },
-      "uniqueItems" : false
+      "anyOf" : [
+        {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false
+        },
+        { "type" : "null" }
+      ]
     }
   },
   "additionalProperties" : false
