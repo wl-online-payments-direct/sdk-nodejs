@@ -9,6 +9,6 @@ import { ProductGroupsClient } from "../model/productgroups/index.js";
 export function newProductGroupsClient(sdkContext: SdkContext): ProductGroupsClient {
   return {
     getProductGroups: getProductGroups(sdkContext),
-    getProductGroup: getProductGroup(sdkContext)
+    getProductGroup: getProductGroup(sdkContext),
   };
 }

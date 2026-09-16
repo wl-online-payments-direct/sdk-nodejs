@@ -7,6 +7,6 @@ import { CompleteClient } from "../model/complete/index.js";
 
 export function newCompleteClient(sdkContext: SdkContext): CompleteClient {
   return {
-    completePayment: completePayment(sdkContext)
+    completePayment: completePayment(sdkContext),
   };
 }

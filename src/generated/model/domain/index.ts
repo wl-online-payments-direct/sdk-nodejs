@@ -535,6 +535,7 @@ export interface CardPaymentMethodSpecificOutput {
   paymentProductId?: number | null;
   reattemptInstructions?: ReattemptInstructions | null;
   schemeReferenceData?: string | null;
+  schemeTransactionId?: string | null;
   threeDSecureResults?: ThreeDSecureResults | null;
   token?: string | null;
 }
