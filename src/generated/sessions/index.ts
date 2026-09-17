@@ -7,6 +7,6 @@ import { SessionsClient } from "../model/sessions/index.js";
 
 export function newSessionsClient(sdkContext: SdkContext): SessionsClient {
   return {
-    createSession: createSession(sdkContext),
+    createSession: createSession(sdkContext)
   };
 }

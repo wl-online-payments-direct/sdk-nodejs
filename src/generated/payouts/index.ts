@@ -9,6 +9,6 @@ import { PayoutsClient } from "../model/payouts/index.js";
 export function newPayoutsClient(sdkContext: SdkContext): PayoutsClient {
   return {
     createPayout: createPayout(sdkContext),
-    getPayout: getPayout(sdkContext),
+    getPayout: getPayout(sdkContext)
   };
 }

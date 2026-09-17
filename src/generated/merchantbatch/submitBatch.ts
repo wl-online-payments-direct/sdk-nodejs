@@ -22,7 +22,7 @@ export function submitBatch(
       throw new Error(isValidRequest.errors.toString());
     }
 
-        const context: PaymentContext = { gzip: true, ...(paymentContext ?? {}) };
+    const context: PaymentContext = { gzip: true, ...(paymentContext ?? {}) };
 
     return json(
       {

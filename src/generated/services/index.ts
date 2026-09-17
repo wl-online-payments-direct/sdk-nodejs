@@ -13,6 +13,6 @@ export function newServicesClient(sdkContext: SdkContext): ServicesClient {
     testConnection: testConnection(sdkContext),
     getIINDetails: getIINDetails(sdkContext),
     getDccRateInquiry: getDccRateInquiry(sdkContext),
-    surchargeCalculation: surchargeCalculation(sdkContext),
+    surchargeCalculation: surchargeCalculation(sdkContext)
   };
 }
