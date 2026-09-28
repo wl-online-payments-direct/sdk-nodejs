@@ -80,7 +80,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "pickup" : {
+        "pickupDetails" : {
           "anyOf" : [
             {
               "$ref" : "#/definitions/carRentalPickupReturnData"
@@ -112,7 +112,7 @@ const schema = {
             { "type" : "null" }
           ]
         },
-        "return" : {
+        "returnDetails" : {
           "anyOf" : [
             {
               "$ref" : "#/definitions/carRentalPickupReturnData"

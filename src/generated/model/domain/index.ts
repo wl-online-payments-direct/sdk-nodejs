@@ -347,11 +347,11 @@ export interface CarRentalData {
   distanceUnit?: string | null;
   driverIdentificationNumber?: string | null;
   driverTaxNumber?: string | null;
-  pickup?: CarRentalPickupReturnData | null;
+  pickupDetails?: CarRentalPickupReturnData | null;
   rentalRateAmount?: number | null;
   rentalRateType?: string | null;
   renterName?: string | null;
-  return?: CarRentalPickupReturnData | null;
+  returnDetails?: CarRentalPickupReturnData | null;
   taxExemptIndicator?: boolean | null;
   tollFreeNumber?: string | null;
   vehicle?: CarRentalVehicleData | null;
