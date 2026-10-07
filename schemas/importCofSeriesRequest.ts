@@ -18,6 +18,14 @@ const schema = {
         { "type" : "null" }
       ]
     },
+    "networkTokenData" : {
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/networkTokenData"
+        },
+        { "type" : "null" }
+      ]
+    },
     "paymentProductId" : {
       "anyOf" : [
         {
@@ -73,6 +81,60 @@ const schema = {
           ]
         },
         "expiryDate" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "networkTokenData" : {
+      "type" : "object",
+      "properties" : {
+        "cardholderName" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "cryptogram" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "eci" : {
+          "anyOf" : [
+            {
+              "type" : "integer"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "networkToken" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "schemeTokenRequestorId" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "tokenExpiryDate" : {
           "anyOf" : [
             {
               "type" : "string"

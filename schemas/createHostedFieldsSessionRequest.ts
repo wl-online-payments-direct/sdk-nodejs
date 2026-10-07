@@ -18,6 +18,14 @@ const schema = {
         { "type" : "null" }
       ]
     },
+    "paymentProductFilters" : {
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/paymentProductFiltersHostedFields"
+        },
+        { "type" : "null" }
+      ]
+    },
     "tokens" : {
       "anyOf" : [
         {
@@ -31,7 +39,39 @@ const schema = {
       ]
     }
   },
-  "additionalProperties" : false
+  "additionalProperties" : false,
+  "definitions" : {
+    "paymentProductFiltersHostedFields" : {
+      "type" : "object",
+      "properties" : {
+        "exclude" : {
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "integer"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
+        },
+        "restrictTo" : {
+          "anyOf" : [
+            {
+              "type" : "array",
+              "items" : {
+                "type" : "integer"
+              },
+              "uniqueItems" : false
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    }
+  }
 }
 
 export default schema;

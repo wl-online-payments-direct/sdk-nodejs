@@ -302,11 +302,13 @@ export interface CaptureOutput {
   merchantParameters?: string | null;
   mobilePaymentMethodSpecificOutput?: MobilePaymentMethodSpecificOutput | null;
   operationReferences?: OperationPaymentReferences | null;
+  paymentCreationDate?: string | null;
   paymentMethod?: string | null;
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   references?: PaymentReferences | null;
   sepaDirectDebitPaymentMethodSpecificOutput?: SepaDirectDebitPaymentMethodSpecificOutput | null;
   surchargeSpecificOutput?: SurchargeSpecificOutput | null;
+  transactionDate?: string | null;
 }
 
 export interface CapturePaymentBatchRequest {
@@ -643,6 +645,7 @@ export interface CreateHostedCheckoutResponse {
 export interface CreateHostedFieldsSessionRequest {
   locale?: string | null;
   origin?: string | null;
+  paymentProductFilters?: PaymentProductFiltersHostedFields | null;
   tokens?: string[] | null;
 }
 
@@ -1076,6 +1079,12 @@ export interface GetMandateResponse {
   mandate?: MandateResponse | null;
 }
 
+export interface GetPaymentLinksByMerchantGroupRequest {
+  filtering?: PaymentLinkOverviewFiltering | null;
+  pagination?: Pagination | null;
+  sorting?: PaymentLinkOverviewSorting | null;
+}
+
 export interface GetPaymentProductGroupsResponse {
   paymentProductGroups?: PaymentProductGroup[] | null;
 }
@@ -1142,6 +1151,7 @@ export interface IINDetail {
 export interface ImportCofSeriesRequest {
   card?: CardDataWithoutCvv | null;
   currencyCode?: string | null;
+  networkTokenData?: NetworkTokenData | null;
   paymentProductId?: number | null;
   schemeReferenceData?: string | null;
   tokenId?: string | null;
@@ -1404,6 +1414,7 @@ export interface OperationOutput {
   references?: PaymentReferences | null;
   status?: string | null;
   statusOutput?: PaymentStatusOutput | null;
+  transactionDate?: string | null;
 }
 
 export interface OperationPaymentReferences {
@@ -1470,6 +1481,11 @@ export interface OtherDetails {
   travelData?: string | null;
 }
 
+export interface Pagination {
+  page?: number | null;
+  pageSize?: number | null;
+}
+
 export interface PaymentAccountOnFile {
   createDate?: string | null;
   numberOfCardOnFileCreationAttemptsLast24Hours?: number | null;
@@ -1524,6 +1540,35 @@ export interface PaymentLinkOrderOutput {
   surchargeSpecificOutput?: SurchargeForPaymentLink | null;
 }
 
+export interface PaymentLinkOverviewEntry {
+  amount?: AmountOfMoney | null;
+  createdBy?: string | null;
+  creationDate?: string | null;
+  expirationDate?: string | null;
+  isReusableLink?: boolean | null;
+  merchantId?: string | null;
+  merchantReference?: string | null;
+  paymentLinkId?: string | null;
+  redirectionUrl?: string | null;
+  status?: string | null;
+}
+
+export interface PaymentLinkOverviewFiltering {
+  merchantIds?: string[] | null;
+  status?: string[] | null;
+}
+
+export interface PaymentLinkOverviewResponse {
+  pagination?: Pagination | null;
+  paymentLinkOverviewEntries?: PaymentLinkOverviewEntry[] | null;
+  total?: number | null;
+}
+
+export interface PaymentLinkOverviewSorting {
+  sortDirection?: string | null;
+  sortProperty?: string | null;
+}
+
 export interface PaymentLinkResponse {
   expirationDate?: string | null;
   isReusableLink?: boolean | null;
@@ -1555,6 +1600,7 @@ export interface PaymentOutput {
   discount?: Discount | null;
   merchantParameters?: string | null;
   mobilePaymentMethodSpecificOutput?: MobilePaymentMethodSpecificOutput | null;
+  paymentCreationDate?: string | null;
   paymentMethod?: string | null;
   redirectPaymentMethodSpecificOutput?: RedirectPaymentMethodSpecificOutput | null;
   references?: PaymentReferences | null;
@@ -1840,6 +1886,11 @@ export interface PaymentProductFiltersHostedCheckout {
   restrictTo?: PaymentProductFilter | null;
 }
 
+export interface PaymentProductFiltersHostedFields {
+  exclude?: number[] | null;
+  restrictTo?: number[] | null;
+}
+
 export interface PaymentProductFiltersHostedTokenization {
   exclude?: PaymentProductFilterHostedTokenization | null;
   restrictTo?: PaymentProductFilterHostedTokenization | null;
@@ -1937,6 +1988,7 @@ export interface PayoutErrorResponse {
 
 export interface PayoutOutput {
   amountOfMoney?: AmountOfMoney | null;
+  paymentCreationDate?: string | null;
   payoutCardPaymentMethodSpecificOutput?: PayoutCardPaymentMethodSpecificOutput | null;
   payoutReason?: string | null;
   references?: PaymentReferences | null;
@@ -2205,7 +2257,10 @@ export interface RedirectionData {
 }
 
 export interface RefundCardMethodSpecificOutput {
+  acceptance?: Acceptance | null;
+  authorisationCode?: string | null;
   currencyConversion?: CurrencyConversion | null;
+  reattemptInstructions?: ReattemptInstructions | null;
   totalAmountPaid?: number | null;
   totalAmountRefunded?: number | null;
 }
@@ -2236,9 +2291,11 @@ export interface RefundOutput {
   merchantParameters?: string | null;
   mobileRefundMethodSpecificOutput?: RefundMobileMethodSpecificOutput | null;
   operationReferences?: OperationPaymentReferences | null;
+  paymentCreationDate?: string | null;
   paymentMethod?: string | null;
   redirectRefundMethodSpecificOutput?: RefundRedirectMethodSpecificOutput | null;
   references?: PaymentReferences | null;
+  transactionDate?: string | null;
 }
 
 export interface RefundPaymentBatchRequest {
@@ -2353,6 +2410,12 @@ export interface SessionResponse {
   clientSessionId?: string | null;
   customerId?: string | null;
   invalidTokens?: string[] | null;
+}
+
+export interface SharePaymentLinkRequest {
+  channel?: string | null;
+  locale?: string | null;
+  recipient?: string | null;
 }
 
 export interface Shipping {

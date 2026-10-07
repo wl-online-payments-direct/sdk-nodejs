@@ -7,6 +7,7 @@ import { newHostedCheckoutClient } from "./generated/hostedcheckout/index.js";
 import { newHostedTokenizationClient } from "./generated/hostedtokenization/index.js";
 import { newHostedFieldsClient } from "./generated/hostedfields/index.js";
 import { newPaymentsClient } from "./generated/payments/index.js";
+import { newPaymentLinksClient } from "./generated/paymentlinks/index.js";
 import { newCapturesClient } from "./generated/captures/index.js";
 import { newRefundsClient } from "./generated/refunds/index.js";
 import { newCompleteClient } from "./generated/complete/index.js";
@@ -23,7 +24,6 @@ import { newTokenizationClient } from "./generated/tokenization/index.js";
 import { newPayoutsClient } from "./generated/payouts/index.js";
 import { newMandatesClient } from "./generated/mandates/index.js";
 import { newPrivacyPolicyClient } from "./generated/privacypolicy/index.js";
-import { newPaymentLinksClient } from "./generated/paymentlinks/index.js";
 import { newMerchantBatchClient } from "./generated/merchantbatch/index.js";
 
 export function newClient(sdkContext: SdkContext): Client {
@@ -32,6 +32,7 @@ export function newClient(sdkContext: SdkContext): Client {
     hostedTokenization: newHostedTokenizationClient(sdkContext),
     hostedFields: newHostedFieldsClient(sdkContext),
     payments: newPaymentsClient(sdkContext),
+    paymentLinks: newPaymentLinksClient(sdkContext),
     captures: newCapturesClient(sdkContext),
     refunds: newRefundsClient(sdkContext),
     complete: newCompleteClient(sdkContext),
@@ -48,7 +49,6 @@ export function newClient(sdkContext: SdkContext): Client {
     payouts: newPayoutsClient(sdkContext),
     mandates: newMandatesClient(sdkContext),
     privacyPolicy: newPrivacyPolicyClient(sdkContext),
-    paymentLinks: newPaymentLinksClient(sdkContext),
     merchantBatch: newMerchantBatchClient(sdkContext),
     context: sdkContext
   };

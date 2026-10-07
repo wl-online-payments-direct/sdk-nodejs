@@ -1,6 +1,6 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "10.0.0",
+  "version": "10.1.0",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
   "bugs": {
@@ -74,6 +74,11 @@
     "ts-node": "^10.9.2",
     "typedoc": "^0.25.13",
     "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "@stoplight/prism-core": "5.8.0",
+    "@stoplight/prism-http": "5.12.0",
+    "@stoplight/prism-http-server": "5.12.0"
   },
   "engines": {
     "node": ">=18"
