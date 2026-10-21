@@ -20,6 +20,8 @@ export class CreatePaymentRequestBuilder {
 
   private paymentMethodType = PaymentMethodType.CARD;
   private autoCapture = false;
+  private authorizationMode = "FINAL_AUTHORIZATION";
+  private paymentProductId = 1;
 
   withCardNumber(cardNumber: string): this {
     this.cardNumber = cardNumber;
@@ -76,6 +78,16 @@ export class CreatePaymentRequestBuilder {
     return this;
   }
 
+  withAuthorizationMode(authorizationMode: string): this {
+    this.authorizationMode = authorizationMode;
+    return this;
+  }
+
+  withPaymentProductId(paymentProductId: number): this {
+    this.paymentProductId = paymentProductId;
+    return this;
+  }
+
   build(): CreatePaymentRequest {
     if (this.paymentMethodType === PaymentMethodType.CARD) {
       return {
@@ -93,10 +105,10 @@ export class CreatePaymentRequestBuilder {
   private buildCardPaymentInput() {
     return {
       card: this.buildCard(),
-      authorizationMode: "FINAL_AUTHORIZATION",
+      authorizationMode: this.authorizationMode,
       transactionChannel: "ECOMMERCE",
       returnUrl: "https://example.com/return",
-      paymentProductId: 1,
+      paymentProductId: this.paymentProductId,
       ...(this.autoCapture && { autoCapture: { delayInMinutes: 10 } })
     };
   }

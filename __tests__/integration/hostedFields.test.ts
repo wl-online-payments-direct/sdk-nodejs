@@ -1,6 +1,6 @@
 import client, { config } from "./init";
 import { PaymentContext } from "../../src";
-import { CreateHostedFieldsSessionResponse, CreatedTokenResponse, GetHostedFieldsSessionResponse, ErrorResponse } from "../../src/generated/model/domain/index.js";
+import { CreateHostedFieldsSessionResponse, CreatedTokenResponse, GetHostedFieldsSessionResponse } from "../../src/generated/model/domain/index.js";
 import { CreateHostedFieldsSessionRequestBuilder } from "./builders/hostedFields/CreateHostedFieldsSessionRequestBuilder";
 import { CreateTokenRequestBuilder } from "./builders/common/CreateTokenRequestBuilder";
 
