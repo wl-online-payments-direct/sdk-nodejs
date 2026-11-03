@@ -1154,6 +1154,7 @@ export interface ImportCofSeriesRequest {
   networkTokenData?: NetworkTokenData | null;
   paymentProductId?: number | null;
   schemeReferenceData?: string | null;
+  subMerchant?: SubMerchant | null;
   tokenId?: string | null;
   transactionLinkIdentifier?: string | null;
 }

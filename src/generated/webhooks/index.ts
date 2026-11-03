@@ -9,6 +9,6 @@ import { WebhooksClient } from "../model/webhooks/index.js";
 export function newWebhooksClient(sdkContext: SdkContext): WebhooksClient {
   return {
     validateWebhookCredentials: validateWebhookCredentials(sdkContext),
-    sendTestWebhook: sendTestWebhook(sdkContext)
+    sendTestWebhook: sendTestWebhook(sdkContext),
   };
 }

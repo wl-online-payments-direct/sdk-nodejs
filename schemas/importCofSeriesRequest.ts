@@ -42,6 +42,14 @@ const schema = {
         { "type" : "null" }
       ]
     },
+    "subMerchant" : {
+      "anyOf" : [
+        {
+          "$ref" : "#/definitions/subMerchant"
+        },
+        { "type" : "null" }
+      ]
+    },
     "tokenId" : {
       "anyOf" : [
         {
@@ -61,6 +69,68 @@ const schema = {
   },
   "additionalProperties" : false,
   "definitions" : {
+    "address" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInfo" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "city" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "countryCode" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "houseNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "state" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "street" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "zip" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
     "cardDataWithoutCvv" : {
       "type" : "object",
       "properties" : {
@@ -135,6 +205,60 @@ const schema = {
           ]
         },
         "tokenExpiryDate" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "subMerchant" : {
+      "type" : "object",
+      "properties" : {
+        "address" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/address"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "companyIdentificationNumber" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "companyName" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "merchantCategoryCode" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "merchantId" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "website" : {
           "anyOf" : [
             {
               "type" : "string"

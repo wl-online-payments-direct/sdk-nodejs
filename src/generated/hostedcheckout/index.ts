@@ -9,6 +9,6 @@ import { HostedCheckoutClient } from "../model/hostedcheckout/index.js";
 export function newHostedCheckoutClient(sdkContext: SdkContext): HostedCheckoutClient {
   return {
     createHostedCheckout: createHostedCheckout(sdkContext),
-    getHostedCheckout: getHostedCheckout(sdkContext)
+    getHostedCheckout: getHostedCheckout(sdkContext),
   };
 }

@@ -15,6 +15,6 @@ export function newPaymentLinksClient(sdkContext: SdkContext): PaymentLinksClien
     createPaymentLink: createPaymentLink(sdkContext),
     getPaymentLinksByMerchantGroupId: getPaymentLinksByMerchantGroupId(sdkContext),
     getPaymentLinkById: getPaymentLinkById(sdkContext),
-    cancelPaymentLinkById: cancelPaymentLinkById(sdkContext)
+    cancelPaymentLinkById: cancelPaymentLinkById(sdkContext),
   };
 }
