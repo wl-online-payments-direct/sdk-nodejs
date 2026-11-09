@@ -447,6 +447,10 @@ export interface CardInfo {
   paymentProductId?: number | null;
 }
 
+export interface CardInstallmentDetails {
+  installmentPaymentSequenceIndicator?: string | null;
+}
+
 export interface CardPaymentMethodSpecificInput {
   allowDynamicLinking?: boolean | null;
   authorizationMode?: string | null;
@@ -457,6 +461,7 @@ export interface CardPaymentMethodSpecificInput {
   cobrandSelectionIndicator?: string | null;
   currencyConversion?: CurrencyConversionInput | null;
   initialSchemeTransactionId?: string | null;
+  installment?: CardInstallmentDetails | null;
   isRecurring?: boolean | null;
   marketPlace?: MarketPlace | null;
   multiplePaymentInformation?: MultiplePaymentInformation | null;
@@ -482,6 +487,7 @@ export interface CardPaymentMethodSpecificInput {
   transactionChannel?: string | null;
   unscheduledCardOnFileRequestor?: string | null;
   unscheduledCardOnFileSequenceIndicator?: string | null;
+  validationRules?: CreditCardValidationRules | null;
 }
 
 export interface CardPaymentMethodSpecificInputBase {
@@ -490,6 +496,7 @@ export interface CardPaymentMethodSpecificInputBase {
   autoCapture?: AutoCapture | null;
   currencyConversionSpecificInput?: CurrencyConversionSpecificInput | null;
   initialSchemeTransactionId?: string | null;
+  installment?: CardInstallmentDetails | null;
   marketPlace?: MarketPlace | null;
   multiplePaymentInformation?: MultiplePaymentInformation | null;
   paymentProduct130SpecificInput?: PaymentProduct130SpecificInput | null;
@@ -507,6 +514,7 @@ export interface CardPaymentMethodSpecificInputBase {
   transactionChannel?: string | null;
   unscheduledCardOnFileRequestor?: string | null;
   unscheduledCardOnFileSequenceIndicator?: string | null;
+  validationRules?: CreditCardValidationRules | null;
 }
 
 export interface CardPaymentMethodSpecificInputForHostedCheckout {
@@ -662,6 +670,7 @@ export interface CreateHostedTokenizationRequest {
   askConsumerConsent?: boolean | null;
   creditCardSpecificInput?: CreditCardSpecificInputHostedTokenization | null;
   locale?: string | null;
+  origin?: string | null;
   paymentProductFilters?: PaymentProductFiltersHostedTokenization | null;
   tokens?: string | null;
   variant?: string | null;
@@ -1758,6 +1767,10 @@ export interface PaymentProduct5407 {
   qrCode?: string | null;
 }
 
+export interface PaymentProduct5407AutoCapture {
+  delayInMinutes?: number | null;
+}
+
 export interface PaymentProduct5412 {
   appUrl?: string | null;
   pollingUrl?: string | null;
@@ -1769,10 +1782,6 @@ export interface PaymentProduct5500SpecificOutput {
   paymentEndDate?: string | null;
   paymentReference?: string | null;
   paymentStartDate?: string | null;
-}
-
-export interface PaymentProduct5704AutoCapture {
-  delayInMinutes?: number | null;
 }
 
 export interface PaymentProduct771SpecificOutput {
@@ -2214,7 +2223,7 @@ export interface RedirectPaymentProduct5406SpecificInput {
 }
 
 export interface RedirectPaymentProduct5407SpecificInput {
-  paymentProduct5704AutoCapture?: PaymentProduct5704AutoCapture | null;
+  paymentProduct5407AutoCapture?: PaymentProduct5407AutoCapture | null;
 }
 
 export interface RedirectPaymentProduct5408SpecificInput {

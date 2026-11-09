@@ -26,6 +26,14 @@ const schema = {
         { "type" : "null" }
       ]
     },
+    "origin" : {
+      "anyOf" : [
+        {
+          "type" : "string"
+        },
+        { "type" : "null" }
+      ]
+    },
     "paymentProductFilters" : {
       "anyOf" : [
         {

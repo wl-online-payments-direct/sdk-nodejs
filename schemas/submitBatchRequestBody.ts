@@ -1179,6 +1179,20 @@ const schema = {
       },
       "additionalProperties" : false
     },
+    "cardInstallmentDetails" : {
+      "type" : "object",
+      "properties" : {
+        "installmentPaymentSequenceIndicator" : {
+          "anyOf" : [
+            {
+              "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
     "cardPaymentMethodSpecificInput" : {
       "type" : "object",
       "properties" : {
@@ -1250,6 +1264,14 @@ const schema = {
           "anyOf" : [
             {
               "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "installment" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/cardInstallmentDetails"
             },
             { "type" : "null" }
           ]
@@ -1429,6 +1451,14 @@ const schema = {
             },
             { "type" : "null" }
           ]
+        },
+        "validationRules" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/creditCardValidationRules"
+            },
+            { "type" : "null" }
+          ]
         }
       },
       "additionalProperties" : false
@@ -1472,6 +1502,14 @@ const schema = {
           "anyOf" : [
             {
               "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "installment" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/cardInstallmentDetails"
             },
             { "type" : "null" }
           ]
@@ -1608,6 +1646,14 @@ const schema = {
           "anyOf" : [
             {
               "type" : "string"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "validationRules" : {
+          "anyOf" : [
+            {
+              "$ref" : "#/definitions/creditCardValidationRules"
             },
             { "type" : "null" }
           ]
@@ -2184,6 +2230,28 @@ const schema = {
           "anyOf" : [
             {
               "$ref" : "#/definitions/paymentReferences"
+            },
+            { "type" : "null" }
+          ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "creditCardValidationRules" : {
+      "type" : "object",
+      "properties" : {
+        "cvvMandatoryForExistingToken" : {
+          "anyOf" : [
+            {
+              "type" : "boolean"
+            },
+            { "type" : "null" }
+          ]
+        },
+        "cvvMandatoryForNewToken" : {
+          "anyOf" : [
+            {
+              "type" : "boolean"
             },
             { "type" : "null" }
           ]
@@ -4203,7 +4271,7 @@ const schema = {
       },
       "additionalProperties" : false
     },
-    "paymentProduct5704AutoCapture" : {
+    "paymentProduct5407AutoCapture" : {
       "type" : "object",
       "properties" : {
         "delayInMinutes" : {
@@ -4958,10 +5026,10 @@ const schema = {
     "redirectPaymentProduct5407SpecificInput" : {
       "type" : "object",
       "properties" : {
-        "paymentProduct5704AutoCapture" : {
+        "paymentProduct5407AutoCapture" : {
           "anyOf" : [
             {
-              "$ref" : "#/definitions/paymentProduct5704AutoCapture"
+              "$ref" : "#/definitions/paymentProduct5407AutoCapture"
             },
             { "type" : "null" }
           ]
