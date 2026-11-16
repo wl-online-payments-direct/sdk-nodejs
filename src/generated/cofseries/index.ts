@@ -7,6 +7,6 @@ import { CofSeriesClient } from "../model/cofseries/index.js";
 
 export function newCofSeriesClient(sdkContext: SdkContext): CofSeriesClient {
   return {
-    importCofSeries: importCofSeries(sdkContext),
+    importCofSeries: importCofSeries(sdkContext)
   };
 }

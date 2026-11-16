@@ -7,6 +7,6 @@ import { SubsequentClient } from "../model/subsequent/index.js";
 
 export function newSubsequentClient(sdkContext: SdkContext): SubsequentClient {
   return {
-    subsequentPayment: subsequentPayment(sdkContext),
+    subsequentPayment: subsequentPayment(sdkContext)
   };
 }

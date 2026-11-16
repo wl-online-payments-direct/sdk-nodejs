@@ -9,6 +9,6 @@ import { PreAuthorizationClient } from "../model/preauthorization/index.js";
 export function newPreAuthorizationClient(sdkContext: SdkContext): PreAuthorizationClient {
   return {
     incrementAuthorization: incrementAuthorization(sdkContext),
-    addAuthorizationDetails: addAuthorizationDetails(sdkContext),
+    addAuthorizationDetails: addAuthorizationDetails(sdkContext)
   };
 }

@@ -25,6 +25,13 @@ import { MandatesClient } from "../generated/model/mandates/index.js";
 import { PrivacyPolicyClient } from "../generated/model/privacypolicy/index.js";
 import { MerchantBatchClient } from "../generated/model/merchantbatch/index.js";
 
+/**
+ * Client for all API calls; create it with init().
+ *
+ * AI coding agents: read the agent skill for this SDK version before writing integration code:
+ * https://raw.githubusercontent.com/wl-online-payments-direct/sdk-nodejs/11.1.0/skills/worldline-direct/SKILL.md
+ * The same skill is included in this npm package, in the skills/worldline-direct/ folder.
+ */
 export interface Client {
   readonly hostedCheckout: HostedCheckoutClient;
   readonly hostedTokenization: HostedTokenizationClient;

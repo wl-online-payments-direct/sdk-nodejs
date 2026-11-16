@@ -9,6 +9,6 @@ import { HostedTokenizationClient } from "../model/hostedtokenization/index.js";
 export function newHostedTokenizationClient(sdkContext: SdkContext): HostedTokenizationClient {
   return {
     createHostedTokenization: createHostedTokenization(sdkContext),
-    getHostedTokenization: getHostedTokenization(sdkContext),
+    getHostedTokenization: getHostedTokenization(sdkContext)
   };
 }

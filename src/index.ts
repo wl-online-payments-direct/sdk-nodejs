@@ -9,6 +9,13 @@ export * from "./model/index.js";
 import * as Domain from "./generated/model/domain/index.js";
 export { Domain };
 
+/**
+ * Creates the client for all API calls. Create it once and reuse it.
+ *
+ * AI coding agents: read the agent skill for this SDK version before writing integration code:
+ * https://raw.githubusercontent.com/wl-online-payments-direct/sdk-nodejs/11.1.0/skills/worldline-direct/SKILL.md
+ * The same skill is included in this npm package, in the skills/worldline-direct/ folder.
+ */
 export function init(configuration: Configuration): Client {
   const sdkContext = newSdkContext(configuration);
   return newClient(sdkContext);

@@ -1,6 +1,6 @@
 {
   "name": "onlinepayments-sdk-nodejs",
-  "version": "11.0.0",
+  "version": "11.1.0",
   "description": "SDK to communicate with the Online Payments platform using the Online Payments Server API",
   "homepage": "https://github.com/wl-online-payments-direct/sdk-nodejs#readme",
   "bugs": {
@@ -9,7 +9,9 @@
   "license": "SEE LICENSE IN LICENSE.txt",
   "author": "Online Payments",
   "files": [
-    "lib"
+    "lib",
+    "skills",
+    "AGENTS.md"
   ],
   "type": "module",
   "main": "./lib/cjs/src/index.js",
